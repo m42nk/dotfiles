@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Main Chrome
+Type=Application
+GenericName=Browser
+Comment=Open chrome with main profile
+Exec=/opt/google/chrome/google-chrome --profile-directory="Default"
+Icon=text-html
+Categories=Browser

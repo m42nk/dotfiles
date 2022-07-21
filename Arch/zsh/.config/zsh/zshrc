@@ -1,0 +1,145 @@
+#!/bin/env zsh
+# source if exists
+src(){ [[ -f "$1" ]] && source "$1" }
+
+src ~/.profile
+
+# zsh exports
+export HISTFILE=~/.zsh_history
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+export ZSHZ_DATA="$XDG_CONFIG_HOME/zsh/z/"
+export ZSHZ_TILDE=1
+
+# autoload
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# zstyle ':completion:*' completer _complete
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+# zstyle ':completion:*' completer _expand
+# zstyle ':completion:*' auto-description 'specify: %d'
+
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+zstyle ':completion:*' hosts off            # don't autocomplete host names
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*:*:*:*:*' menu select
+# zstyle ':completion:*' special-dirs true # complete . and ..
+
+autoload -Uz compinit
+compinit -d $XDG_DATA_HOME/zcompdump
+
+# remove duplicate entry on $PATH
+typeset -U path PATH
+
+# options
+setopt auto_cd
+setopt append_history
+setopt extended_history
+setopt inc_append_history
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups # do not put duplicated command into history list
+setopt hist_save_no_dups    # do not save duplicated command
+setopt hist_reduce_blanks   # remove unnecessary blanks
+# setopt share_history          # share command history data
+
+setopt menu_complete
+setopt extended_glob
+setopt no_match
+setopt interactive_comments
+
+src ~/.config/zsh/functions.zsh
+src ~/.config/zsh/aliases.zsh
+src ~/.config/zsh/autostarts.zsh
+src ~/.config/zsh/fzf.zsh
+src ~/.config/zsh/bookmarks.zsh
+
+# cht.sh completion
+fpath=($XDG_CONFIG_HOME/zsh/cht-autocomplete.zsh $fpath)
+
+# plugins
+ZPLUGINDIR="$XDG_DATA_HOME/zsh/plugins"
+ZSH_CUSTOM="$XDG_DATA_HOME/zsh"
+src ~/.config/zsh/unplugged.zsh
+
+plugins=(
+  zdharma-continuum/fast-syntax-highlighting
+  Aloxaf/fzf-tab
+  agkozak/zsh-z
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-completions
+  tom-doerr/zsh_codex
+  # wfxr/forgit
+  # jeffreytse/zsh-vi-mode
+)
+
+for repo in $plugins; do
+  plugin-load https://github.com/${repo}.git
+done
+
+unset repo
+
+# bindings
+bindkey -e
+bindkey "^@" _expand_alias
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey '^T' fzf-file-widget
+bindkey '\ec' fzf-cd-widget
+bindkey '^R' fzf-history-widget
+bindkey "\e[3~" delete-char
+bindkey '^X' create_completion
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# asdf
+src /opt/asdf-vm/asdf.sh
+
+eval "$(starship init zsh)"
+
+CLEAR=(
+  celar
+  ckear
+  clae
+  claer
+  clare
+  clea
+  cler
+  clera
+  laer
+  lear
+  rls
+)
+
+for c in "${CLEAR[@]}"; do
+  alias $c="clear"
+done
+unset $CLEAR
+
+if [[ $(which thefuck) ]]; then
+  eval $(thefuck --alias fuck)
+fi
+
+# ignore ls and clear from ZSH HISTORY
+HISTORY_IGNORE="$HISTORY_IGNORE|ls|clear|cd|cd ..|$(echo $CLEAR | tr ' ' '|')"

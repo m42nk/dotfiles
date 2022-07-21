@@ -1,0 +1,34 @@
+session: JARKOM
+
+root: ~/College/Jarkom/gns/config
+
+
+before_start:
+  - tmux bind "'" run asd
+
+env:
+  ALABASTA: 5008
+  BLUENO: 5035
+  CALMBELT: 5043
+  CIPHER: 5037
+  COURTYARD: 5041
+  DORIKI: 5001
+  ELENA: 5047
+  ENIESLOBBY: 5045
+  FOOSHA: 5002
+  FUKUROU: 5068
+  GUANHAO: 5006
+  JABRA: 5056
+  JIPANGU: 5039
+  JORGE: 5052
+  MAINGATE: 5054
+  OIMO: 5010
+  PUCCI: 5014
+  SEASTONE: 5012
+  WATER7: 5004
+
+windows:
+  - name: Main
+    root: .
+    commands:
+      - clear

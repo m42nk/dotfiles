@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+# --auto-detect-wm \
+tdrop \
+  --monitor-aware \
+  --pointer-monitor-detection \
+  --wm=kwin \
+  -w 50% \
+  -h 50% \
+  -x 50% \
+  --activate \
+  --remember \
+  alacritty --class tdrop.alacritty -e tmux
+
+

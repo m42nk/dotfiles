@@ -1,0 +1,26 @@
+super + Return
+  dropdown-term
+
+super + m
+  google-chrome-stable
+
+super + shift + Return
+  alacritty
+
+super + ctrl + r
+  killall plasmashell; kwin_x11 --replace; kstart plasmashell
+
+super + period
+  rofimoji -a type copy -s neutral
+
+super + c
+  notify-send -a "Visual Studio Code" -i visual-studio-code "VSCode" "Launching Code"; code
+
+super + r ; c
+  rofi-code -c code
+
+super + r ; t
+  rofi-brotab
+
+super + r ; l
+  rofi-localhost

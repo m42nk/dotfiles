@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+# Faster key repeat and delay
+# xset r rate 210 40
+xset r rate 210 25
+
+# setxkbmap -option caps:ctrl_modifier
+
+# Tap is Esc, hold is Ctrl
+setxkbmap -option caps:ctrl_modifier
+
+# But when it is pressed only once, treat it as escape.
+# killall xcape 2>/dev/null ; xcape -e 'Caps_Lock=Escape'

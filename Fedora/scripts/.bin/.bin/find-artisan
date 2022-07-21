@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+FILENAME="artisan"
+
+IFS=$'\n'
+# FIND=( $(fd --exact-depth 1 --max-results 1 --glob "$FILENAME" "$PWD") )
+FIND=( $(fd --exact-depth 1 --max-results 1 --glob "$FILENAME") )
+
+while [[ -z "$FIND" ]]; do
+  [[ $PWD = '/' ]] || [[ $PWD = $HOME ]] && echo "Artisan not found" && exit
+  cd ..
+  FIND=( $(fd --exact-depth 1 --max-results 1 --glob "$FILENAME") )
+done
+
+# echo $(dirname "$FIND")
+php "$FIND" "$@"

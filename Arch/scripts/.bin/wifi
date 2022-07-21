@@ -1,0 +1,24 @@
+#!/bin/env bash
+
+INTERFACE="wlan0"
+
+case "$1" in
+  gn)
+    iwctl station "$INTERFACE" get-networks
+    ;;
+  sc|scan)
+    iwctl station "$INTERFACE" scan
+    ;;
+  fgt|forget)
+    iwctl known-networks "$2" forget
+    ;;
+  cn|conn|connect)
+    iwctl station "$INTERFACE" connect "$2"
+    ;;
+  df|default)
+    iwctl station "$INTERFACE" "$@"
+    ;;
+  *)
+    iwctl "$@"
+    ;;
+esac

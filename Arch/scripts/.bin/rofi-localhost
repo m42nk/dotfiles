@@ -1,0 +1,25 @@
+#!/bin/env bash
+
+source bash_util_fn
+
+# declare common ports array
+PORTS=(
+    3000
+    3001
+    3000
+    8080
+    5000
+)
+
+if [ -n "$1" ]; then
+    xdg-open "http://localhost:$1"
+    exit 0
+fi
+
+echo ${PORTS[@]} | tr " " "\n" | rofi -dmenu -p localhost: | _cap
+
+if [ -z "$(_ret)" ]; then
+    exit 0;
+fi
+
+xdg-open "http://localhost:$(_ret)"

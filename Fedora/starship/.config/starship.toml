@@ -1,0 +1,4 @@
+[status]
+symbol = "🔴"
+format = '[$int]($style) '
+disabled = false

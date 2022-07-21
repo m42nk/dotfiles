@@ -1,0 +1,61 @@
+session: JARKOM
+
+root: ~/College/Jarkom/gns/config
+
+# before_start:
+#   - vbox start gns3
+
+# stop:
+#   - vbox
+
+windows:
+  - name: Server
+    root: . 
+    commands:
+      - clear
+      - vbox start gns3 --headless
+      - while ! nc -z gns3 22; do sleep 1; done
+      - ssh gns3@gns3
+
+  - name: EniesLobby
+    root: . 
+    commands:
+      - while ! nc -z gns3 5011; do sleep 1; done
+      - alias go="telnet gns3 5011"
+      - telnet gns3 5011 # EniesLobby
+
+  - name: Water7
+    root: . 
+    commands:
+      - while ! nc -z gns3 5013; do sleep 1; done
+      - alias go="telnet gns3 5013"
+      - telnet gns3 5013 # Water7
+
+  - name: Skypie
+    root: . 
+    commands:
+      - while ! nc -z gns3 5004; do sleep 1; done
+      - alias go="telnet gns3 5004"
+      - telnet gns3 5004 # Skypie
+
+  - name: Loguetown
+    root: . 
+    commands:
+      - while ! nc -z gns3 5007; do sleep 1; done
+      - alias go="telnet gns3 5007"
+      - telnet gns3 5007 # Loguetown
+
+  - name: Alabasta
+    root: . 
+    commands:
+      - while ! nc -z gns3 5009; do sleep 1; done
+      - alias go="telnet gns3 5009"
+      - telnet gns3 5009 # Alabasta
+
+  - name: Foosha
+    root: . 
+    commands:
+      - while ! nc -z gns3 5000; do sleep 1; done
+      - alias go="telnet gns3 5000"
+      - telnet gns3 5000 # Foosha
+

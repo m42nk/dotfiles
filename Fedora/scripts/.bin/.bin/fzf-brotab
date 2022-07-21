@@ -1,0 +1,20 @@
+#!/bin/env bash
+
+# This script is used to focus browser based on tab name
+
+# use fzf to select the tab from the command output
+selected=$(bt list | sed -r 's|([^\t]+)\t([^\t]+)\t([^\t]+)|\1\t\2|' | fzf)
+
+# the `selected` variable has the format of
+# <tab_id>: <tab_name>
+# tab_id="$(echo "$selected" | cut -d ':' -f 1)"
+# tab_title="$(echo "$selected" | cut -d ':' -f 2)"
+tab_id="$(echo "$selected" | awk '{print $1}')"
+tab_title="$(echo "$selected" | awk '{print $2}')"
+
+# use `bt activate` to focus the selected tab
+# use xdotool to focus using window title
+bt activate "$tab_id"
+
+WID=$(xdotool search --name "$tab_title")
+xdotool windowactivate --sync "$WID"

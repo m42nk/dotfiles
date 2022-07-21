@@ -1,0 +1,7 @@
+require("packer").startup(function()
+  use("wbthomason/packer.nvim")
+  use("tpope/vim-abolish")
+  use("tpope/vim-repeat")
+  use("tpope/vim-surround")
+  use("ggandor/lightspeed.nvim")
+end)

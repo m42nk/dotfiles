@@ -1,0 +1,1 @@
+fzf --header "$(boxen "C-A: Kill | C-F: Preview")" --bind 'ctrl-a:execute(less {})' --layout reverse-list

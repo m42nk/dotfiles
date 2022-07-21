@@ -1,0 +1,41 @@
+#!/bin/env python3
+
+import libtmux
+from os import path
+
+session_name = "PROJECT"
+root = "~/Codes/IEO-2023/"
+
+windows = [
+    {"name": "Client", "dir": "Client", "command": "npm run dev"},
+    {"name": "Keystone", "dir": "Keystone", "command": "npm run dev"},
+]
+
+
+def main():
+    server = libtmux.Server()
+
+    session = server.find_where({"session_name": session_name})
+
+    if not session:
+        session = server.new_session(
+            session_name=session_name,
+            attach=False,
+        )
+
+    for window in windows:
+        w = session.find_where({"window_name": window["name"]})
+
+        if w:
+            w.kill_window()
+
+        p = session.new_window(
+            window_name=window["name"],
+            start_directory=path.join(root, window["dir"]),
+        ).panes[0]
+
+        p.send_keys(window["command"])
+
+
+if __name__ == "__main__":
+    main()

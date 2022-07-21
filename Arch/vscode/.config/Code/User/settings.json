@@ -1,0 +1,148 @@
+{
+  "activitusbar.showSourceControlCounter": true,
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "monospace",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.maxColumn": 50,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fit",
+  "editor.tabSize": 2,
+  "security.workspace.trust.enabled": false,
+  "terminal.external.linuxExec": "alacritty",
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.tabs.title": "${process} - Terminal",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "window.dialogStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "window.restoreWindows": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "zsh"
+    },
+    "tmux": {
+      "path": "tmux",
+      "args": [
+        "new",
+        "-f",
+        "/home/m42nk/.config/tmux/code.conf",
+        "-As",
+        "CODE"
+      ],
+      "icon": "terminal-tmux"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.automationProfile.linux": {
+    "path": "zsh"
+  },
+  "editor.fontLigatures": true,
+  "material-icon-theme.saturation": 0,
+  "peacock.affectEditorGroupBorder": true,
+  "peacock.affectSideBarBorder": true,
+  "peacock.affectStatusAndTitleBorders": true,
+  "peacock.affectTabActiveBorder": true,
+  "python.formatting.provider": "black",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "workbench.list.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "editor.renderWhitespace": "trailing",
+  "files.trimTrailingWhitespace": true,
+  "reactComponentGenerator.language": "js",
+  "reactComponentGenerator.stylesLanguage": "css",
+  "ACReactComponentGenerator.global.lifecycleType": "reactv16",
+  "ACReactComponentGenerator.global.quotes": "double",
+  "ACReactComponentGenerator.styleFile.create": false,
+  "glean.useExportDefault": true,
+  "workbench.colorTheme": "Horizon Italic",
+  "git.autofetch": true,
+  "glean.jsFilesExtensions": ["jsx", "tsx"],
+  "update.mode": "none",
+  "javascript.validate.enable": true,
+  "git.enableSmartCommit": true,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "breadcrumbs.enabled": false,
+  "window.titleBarStyle": "custom",
+  "gitlens.menus": {
+    "editorGroup": {
+      "blame": false,
+      "compare": false
+    }
+  },
+  "workbench.layoutControl.enabled": false,
+  "editor.minimap.enabled": false,
+  "npm.keybindingsChangedWarningShown": true,
+  "workbench.activityBar.visible": false,
+  "emmet.includeLanguages": {
+    "mdx": "html"
+  },
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "double"
+    }
+  },
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.activeIconPack": "react",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    "tw\\.[^`]+`([^`]*)`",
+    "tw\\(.*?\\).*?`([^`]*)"
+  ],
+  "editor.lightbulb.enabled": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  }
+  // "tailwindCSS.includeLanguages": {
+  // "typescript": "javascript",
+  // "typescriptreact": "javascript"
+  // },
+
+  // "[css]": {
+  // "[css]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[jsonc]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[javascriptreact]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // }
+}

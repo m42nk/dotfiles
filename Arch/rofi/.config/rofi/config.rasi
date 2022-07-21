@@ -1,0 +1,13 @@
+configuration {
+  icon-theme: "Papirus";
+  modi: "window,run,ssh";
+  matching: "regex";
+  sidebar-mode: false;
+}
+
+/* @import "squared-nord.rasi" */
+/* @import "dracula.rasi" */
+
+/* @theme "/usr/share/rofi/themes/solarized.rasi" */
+
+@theme "~/.config/rofi/nord.rasi"

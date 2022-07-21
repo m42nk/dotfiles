@@ -1,0 +1,14 @@
+#!/bin/env bash
+
+set -e
+
+SCRIPT="$1"
+
+# check if the script exists
+if [ ! $(comand -v "$SCRIPT") ]; then
+    echo "The script $SCRIPT does not exist"
+    exit 1
+fi
+
+# edit the script
+$EDITOR $(which $SCRIPT)

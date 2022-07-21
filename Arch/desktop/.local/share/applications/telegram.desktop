@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Telegram
+Type=Link
+GenericName=Internet Messenger
+Comment=Open Telegram on browser
+URL=https://web.telegram.org
+Icon=text-html
+Categories=Network;InstantMessaging

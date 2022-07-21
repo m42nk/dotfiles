@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+FILENAME="composer.json"
+
+PWD=${1:-"$PWD"}
+
+IFS=$'\n'
+FIND=( $(fd --exact-depth 1 --max-results 1 "$FILENAME" "$PWD") )
+
+while [[ -z "$FIND" ]]; do
+  cd ..
+  FIND=( $(fd --exact-depth 1 --max-results 1 "$FILENAME" "$PWD") )
+done
+
+echo $(dirname "$FIND")

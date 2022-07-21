@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+FIFOFILE="/tmp/xob-volume-fifo"
+
+if [ ! -e $FIFOFILE ]; then
+  mkfifo $FIFOFILE
+fi
+
+# tail -f $FIFOFILE | xob -m 100
+tail -f $FIFOFILE | xob -m 100

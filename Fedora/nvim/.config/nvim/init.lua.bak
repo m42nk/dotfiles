@@ -1,0 +1,118 @@
+require("packer").startup(function()
+  use("wbthomason/packer.nvim")
+  use("tpope/vim-abolish")
+  use("tpope/vim-repeat")
+  use("tpope/vim-surround")
+  use("ggandor/lightspeed.nvim")
+end)
+
+vim.g.mapleader = " "
+vim.o.clipboard = "unnamedplus"
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.foldmethod = "syntax"
+-- vim.o.listchars =
+vim.cmd([[
+  set list
+  set listchars=tab:»·,eol:↲,nbsp:␣,extends:…,precedes:<,extends:>,trail:·,space:␣,
+]])
+
+vim.cmd('source /home/m42nk/.config/nvim/vim/generals.vim')
+
+function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then
+      options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+-- control + dot
+
+map("n", "<Leader>h", ":nohlsearch<CR>", { silent = true })
+map("n", "<Leader><Space>", "<Cmd>call VSCodeNotify('workbench.action.files.save')<CR>")
+map("n", "<Leader>f", "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
+map("n", "<Leader>F", "<Cmd>call VSCodeNotify('workbench.action.showCommands')<CR>")
+map("x", "<C-S-P>", "<Cmd>call VSCodeNotifyVisual('workbench.action.showCommands', 1)<CR>")
+
+
+map("n", "H", "<Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>")
+map("n", "L", "<Cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<CR>")
+
+map("n", "gl",  "<Cmd>call VSCodeNotify('editor.action.quickFix')<CR>")
+
+map("n", "<Leader>c",  "<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
+map("n", "<C-w>",  "<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
+
+-- workbench.explorer.fileView.focus
+-- map("n", "<Leader>e", "<Cmd>call VSCodeNotify('workbench.files.action.focusOpenEditorsView')<CR>")
+map("n", "<Leader>e", "<Cmd>call VSCodeNotify('workbench.explorer.fileView.focus')<CR>")
+
+map("x", "<Leader>/",  "<Plug>VSCodeCommentary")
+map("n", "<Leader>/", "<Plug>VSCodeCommentaryLine")
+
+map("x", "gc",  "<Plug>VSCodeCommentary")
+map("n", "gc",  "<Plug>VSCodeCommentary")
+map("o", "gc",  "<Plug>VSCodeCommentary")
+map("n", "gcc", "<Plug>VSCodeCommentaryLine")
+
+map("n", "<C-j>", "<Cmd>call VSCodeNotify('workbench.action.togglePanel')<CR>")
+-- xnoremap <C-S-P> <Cmd>call VSCodeNotifyVisual('workbench.action.showCommands', 1)<CR>
+map("x", "<C-'>", "<Cmd>call VSCodeNotifyVisual('editor.action.quickfix', 1)<CR>")
+map("v", "<C-'>", "<Cmd>call VSCodeNotifyVisual('editor.action.quickfix', 1)<CR>")
+
+-- fold
+
+vim.cmd([[
+nnoremap <silent> za <Cmd>call VSCodeNotify('editor.toggleFold')<CR>
+nnoremap <silent> zR <Cmd>call VSCodeNotify('editor.unfoldAll')<CR>
+nnoremap <silent> zM <Cmd>call VSCodeNotify('editor.foldAll')<CR>
+nnoremap <silent> zo <Cmd>call VSCodeNotify('editor.unfold')<CR>
+nnoremap <silent> zO <Cmd>call VSCodeNotify('editor.unfoldRecursively')<CR>
+nnoremap <silent> zc <Cmd>call VSCodeNotify('editor.fold')<CR>
+nnoremap <silent> zC <Cmd>call VSCodeNotify('editor.foldRecursively')<CR>
+
+nnoremap <silent> z1 <Cmd>call VSCodeNotify('editor.foldLevel1')<CR>
+nnoremap <silent> z2 <Cmd>call VSCodeNotify('editor.foldLevel2')<CR>
+nnoremap <silent> z3 <Cmd>call VSCodeNotify('editor.foldLevel3')<CR>
+nnoremap <silent> z4 <Cmd>call VSCodeNotify('editor.foldLevel4')<CR>
+nnoremap <silent> z5 <Cmd>call VSCodeNotify('editor.foldLevel5')<CR>
+nnoremap <silent> z6 <Cmd>call VSCodeNotify('editor.foldLevel6')<CR>
+nnoremap <silent> z7 <Cmd>call VSCodeNotify('editor.foldLevel7')<CR>
+
+xnoremap <silent> zV <Cmd>call VSCodeNotify('editor.foldAllExcept')<CR>
+
+function! MoveCursor(direction) abort
+  if(reg_recording() == '' && reg_executing() == '')
+      return 'g'.a:direction
+  else
+      return a:direction
+  endif
+endfunction
+
+nmap <expr> j MoveCursor('j')
+nmap <expr> k MoveCursor('k')
+]])
+
+vim.cmd([[
+  au TextYankPost * silent! lua vim.highlight.on_yank()
+]])
+
+-- vim.cmd([[
+--   function! VSCodeNotifyVisual(cmd, leaveSelection, ...)
+--     let mode = mode()
+--     if mode ==# 'V'
+--         let startLine = line('v')
+--         let endLine = line('.')
+--         call VSCodeNotifyRange(a:cmd, startLine, endLine, a:leaveSelection, a:000)
+--     elseif mode ==# 'v' || mode ==# "\<C-v>"
+--         let startPos = getpos('v')
+--         let endPos = getpos('.')
+--         call VSCodeNotifyRangePos(a:cmd, startPos[1], endPos[1], startPos[2], endPos[2] + 1, a:leaveSelection, a:000)
+--     else
+--         call VSCodeNotify(a:cmd, a:000)
+--     endif
+-- endfunction
+
+-- xnoremap <C-S-P> <Cmd>call VSCodeNotifyVisual('workbench.action.showCommands', 1)<CR>
+-- ]])

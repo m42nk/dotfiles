@@ -1,0 +1,34 @@
+session: IEO
+
+root: ~/Codes/IEO-2023/
+
+before_start:
+  - systemctl start postgresql
+  # - docker-compose up -d
+
+stop:
+  # - docker-compose down
+
+windows:
+  - name: Keystone
+    root: ./Keystone
+    commands:
+      - clear
+
+  - name: Next
+    root: ./Client
+    commands:
+      - clear
+
+  - name: Server
+    root: ./Keystone
+    layout: tiled
+    commands:
+      - clear
+      - yarn dev
+    panes:
+      - type: vertical # this is not working
+        root: ../Client
+        commands:
+          - clear
+          - yarn dev

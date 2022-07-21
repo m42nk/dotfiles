@@ -1,0 +1,7 @@
+#!/bin/env python
+
+import requests as r
+from hashlib import md5
+
+res = r.get("https://id.its.ac.id/internetaccess/auth.php")
+print(res.url)

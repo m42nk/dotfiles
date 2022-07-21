@@ -1,0 +1,44 @@
+#!/bin/env bash
+
+PROMPT="> "
+OUTPUT=""
+
+while test $# -gt 0; do
+  case "$1" in
+    -h|--help)
+      echo "prompt - simple prompt inquirer and formatter"
+      echo " "
+      echo "USAGE"
+      echo "$ prompt [-f format] [-p prompt]"
+      echo " "
+      echo "FORMAT"
+      echo "use pound sign (#) to indicate user input"
+      echo "Example: "
+      echo "\$ prompt -p \"Username: \" -f \"Halo, #\""
+      echo "\$ Username: m42nk"
+      echo "\$ Hello, m42nk"
+      exit 0
+      ;;
+    -f*)
+      shift
+      export OUTPUT="$1"
+      shift
+      ;;
+    -p*)
+      shift
+      export PROMPT="$1"
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+read -p "$PROMPT" INPUT
+
+if [[ -n $OUTPUT ]]; then
+  echo $OUTPUT | sed -e "s|#|$INPUT|g"
+else
+  echo $INPUT
+fi
