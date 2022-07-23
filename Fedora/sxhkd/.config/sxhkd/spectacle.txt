@@ -1,0 +1,8 @@
+cutNames
+_launch
+WindowUnderCursorScreenShot
+FullScreenScreenShot
+RectangularRegionScreenShot
+CurrentMonitorScreenShot
+ActiveWindowScreenShot
+OpenWithoutScreenshot

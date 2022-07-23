@@ -20,8 +20,14 @@ super + d
 super + {_, shift +} {1-5}
   kde-invoke kwin "{Switch,Window} to Desktop {1-5}"
 
+super + {_, shift +} grave
+  kde-invoke kwin "{Switch,Window} to Desktop 5"
+
 super + {_, shift +} o
   kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}
+
+super + {ctrl,shift} + s
+  kde-invoke org_kde_spectacle_desktop {"_launch","RectangularRegionScreenShot"}
 
 super + {h,j,k,l}
   kde-invoke kwin "Switch Window {Left,Down,Up,Right}"
