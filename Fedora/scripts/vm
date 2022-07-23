@@ -1,0 +1,43 @@
+#!/bin/env node
+
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
+const stdin = process.stdin;
+
+(async () => {
+  /* if (process.argv.length <= 2) {
+   *   exec('vboxmanage startvm "Deepin-i3"');
+   *   process.exit();
+   * } */
+
+  const { stdout: rawList } = await exec("vboxmanage list vms");
+  const arr = rawList.split("\n");
+  arr.pop();
+
+  arr.forEach((item, idx) => {
+    const [name, id] = item.split(" ");
+    console.log(`[${idx}] ${name.replace(/"/g, "")} -- ${id}`);
+  });
+
+  stdin.resume();
+  stdin.setEncoding("utf8");
+
+  //send data as soon as input recieved
+  stdin.setRawMode(true);
+
+  stdin.on("data", function (key) {
+    // ctrl-c
+    if (key === "\u0003") {
+      process.exit();
+    }
+
+    if (Number(key) < arr.length) {
+      console.log(key);
+      const selected = arr[key].split(" ")[0];
+      exec(`vboxmanage startvm ${selected}`);
+      process.exit();
+    } else {
+      console.log("Invalid index!");
+    }
+  });
+})();

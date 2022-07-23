@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+google-chrome-stable --new-window --app="https://www.notion.so/DUMP-f214f52aac204a34a71ca3c7f457b093"

@@ -1,0 +1,14 @@
+#! /bin/bash
+
+gethdmi=`xrandr | grep HDMI | grep " connected"`
+hdmino=`echo $gethdmi | awk '{ print $1 }'`
+
+if [[ -n $gethdmi ]]; then
+  layout-dual-monitor.sh 
+else
+  layout-single-monitor.sh 
+fi
+
+awesome-client "awesome.restart()"
+
+# nitrogen --restore

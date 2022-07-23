@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+# Spawn a small terminal running predefined commands
+
+set -o pipefail
+
+FILE="$HOME/.config/quickterm-commands"
+PWD=${1:-"$PWD"}
+
+LINE=$(grep -E "^$PWD/? " $FILE)
+if [[ -n "$LINE" ]]; then
+  CMD=$(echo "$LINE" | sed -E "s|$PWD/? (.*)$|\1|")
+
+  [[ "$CMD" = "\$SHELL" ]] && WAIT="exit"
+  tmux split-window -c "$PWD" -v -l "30%" "$CMD; press-any-key"
+else
+	tmux menu \
+    -T "::Quickterm command not found here::" \
+    "Run terminal" t "split-window -c $PWD -vl '30%'" \
+    "Add new command" a "display-popup -h 3 -E \"prompt -p 'Enter Command: ' -f '$PWD #' >> $FILE\"" \
+    "Edit available commands" e "neww $EDITOR $FILE'"
+fi

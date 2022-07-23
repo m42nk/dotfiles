@@ -169,7 +169,7 @@ alias sqlpad="docker"
 
 alias ccw='cd $(code-current-workspace || echo ".")'
 
-if [[ $(tmux display-message -p '#S') = "CODE" ]]; then
+if [[ $(tmux has 2>/dev/null) ]] && [[ $(tmux display-message -p '#S') = "CODE" ]]; then
   alias edit="code -r"
   alias e="code -r"
   alias vim="code -r"

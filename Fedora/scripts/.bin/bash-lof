@@ -1,0 +1,23 @@
+#!/bin/env bash
+
+PROG_NAME="$1"
+DESKTOP="$(xdotool get_desktop)"
+
+if [[ -z "${PROG_NAME}" ]]; then
+    echo "Program name is required"
+    exit 1
+fi
+
+# _code(){
+#     xdotool search --desktop ${DESKTOP} --class "code" windowactivate ||
+# }
+
+PROGS=(
+  "code"
+  "devtools"
+  "chrome"
+  "datagrip"
+  "postman"
+)
+
+printf "%s\n" ${PROGS[@]} | rofi -dmenu

@@ -1,0 +1,103 @@
+#!/bin/env bash
+
+set -euo pipefail
+
+LOGFILE=""
+ROFI_ARGS=()
+KB_ACCEPT_APPEND=""
+MODE=""
+while getopts "m:l:" OPTION; do 
+    case "$OPTION" in
+        m)
+            MODE="$OPTARG"
+            case "$MODE" in
+                alttab)
+                    ROFI_ARGS+=( -show window -selected-row 1) # -selected-row is only available in https://github.com/davatorium/rofi/pull/909
+                    KB_ACCEPT_APPEND=",!Alt+Alt_L"
+                    ;;
+                altspace)
+                    ROFI_ARGS+=( -show window )
+                    ;;
+                superspace)
+                    ROFI_ARGS+=( -show drun )
+                    ;;
+                *)
+                    echo "unknown mode $MODE";
+                    exit 1 # todo use libnotify to display error
+                    ;;
+            esac
+            ;;
+        l)
+            LOGFILE="$OPTARG"
+            ;;
+        *)
+            echo "unknown option '$OPTION'"
+            exit 1
+            ;;
+    esac
+done
+
+if [ "$MODE" == "" ]; then
+    echo "must specify a mode"
+    exit 1
+fi
+
+if [ "$LOGFILE" != "" ]; then
+    echo "redirecting output to file"
+    exec >> "$LOGFILE"
+    exec 2>&1
+fi
+
+# launch rofi
+export ROFI_DUMP_WINDOW_POSITION="$(mktemp)" # see below
+rofi \
+    -kb-cancel "Alt+Escape,Escape" \
+    -kb-accept-entry '!Alt-Tab,!Alt+Down,!Alt+ISO_Left_Tab,!Alt+Up,Return'$KB_ACCEPT_APPEND \
+    -kb-row-down 'Alt-Tab,Alt+Down,Down' \
+    -kb-row-up 'Alt+ISO_Left_Tab,Alt+Up,Up' \
+    "${ROFI_ARGS[@]}"&
+rofipid="$!"
+
+# The following Strategies move the mouse into the rofi window and back to where it came from.
+# (this is a work around for https://github.com/davatorium/rofi/issues/38#issuecomment-469064051 )
+
+# Strategy 1
+#echo "move mouse to center screen (best effort, fast because we avoid the search)"
+#xdotool mousemove 960 540 sleep 0.1 mousemove restore
+
+# Strategy 2
+#echo "move mouse to rofi center (precise, but slow due to search and fails sometimes)"
+#(
+#    source <(xdotool search --sync --limit 1 --pid "$rofipid" --class Rofi getwindowgeometry --shell)
+#    xdotool mousemove $X $Y sleep 0.1 mousemove restore
+#)
+
+# Strategy 3
+# diff --git a/source/view.c b/source/view.c
+# index 5ba1309a..11d98840 100644
+# --- a/source/view.c
+# +++ b/source/view.c
+# @@ -411,6 +411,15 @@ static void rofi_view_calculate_window_position ( RofiViewState *state )
+#      RofiDistance y = rofi_theme_get_distance ( WIDGET ( state->main_window ), "y-offset", config.y_offset );
+#      state->x += distance_get_pixel ( x, ROFI_ORIENTATION_HORIZONTAL );
+#      state->y += distance_get_pixel ( y, ROFI_ORIENTATION_VERTICAL );
+# +
+# +    // dump position to file if desired
+# +    const char *dump_file_path = getenv("ROFI_DUMP_WINDOW_POSITION");
+# +    static FILE *dump_file = NULL;
+# +    if (dump_file_path) {
+# +        if (!dump_file) dump_file = fopen(dump_file_path, "w");
+# +        fprintf(dump_file, "X=%d\nY=%d\nWIDTH=%d\nHEIGHT=%d\n", state->x, state->y, state->width, state->height);
+# +        fflush(dump_file);
+# +    }
+#  }
+#  
+#  static void rofi_view_window_update_size ( RofiViewState * state )
+(
+    while test ! -e $ROFI_DUMP_WINDOW_POSITION ||  test $(wc -l "$ROFI_DUMP_WINDOW_POSITION" | awk '{print $1}') -lt 4 ; do sleep 0.05; done
+    source "$ROFI_DUMP_WINDOW_POSITION"
+    xdotool mousemove $X $Y sleep 0.1 mousemove restore
+)
+
+rm "$ROFI_DUMP_WINDOW_POSITION"
+wait "$rofipid"

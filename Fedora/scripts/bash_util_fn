@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+# capture the output of a command so it can be retrieved with ret
+_cap () { tee /tmp/capture.out; }
+
+# return the output of the most recent command that was captured by cap
+_ret () { cat /tmp/capture.out; }
+
+# capture the output of a command so it can be retrieved with ret
+_out_cap () { tee /tmp/capture.out; }
+
+# return the output of the most recent command that was captured by cap
+_out_get () { cat /tmp/capture.out; }
+
+_out_empty () { [[ -z "$(_out_get)" ]] && true || false; }

@@ -1,0 +1,9 @@
+[Plugins]
+DictionaryEnabled=false
+appstreamEnabled=false
+konsoleprofilesEnabled=false
+locationsEnabled=false
+plasma-runner-baloosearchEnabled=false
+plasma-runner-browserhistoryEnabled=false
+plasma-runnners-activitiesEnabled=false
+recentdocumentsEnabled=false

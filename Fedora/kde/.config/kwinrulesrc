@@ -64,6 +64,11 @@ types=4
 wmclass=lattedock
 wmclassmatch=1
 
+[55109bdd-8c2b-4af2-8540-e95fa98d5c04]
+Description=tdrop term skip animation
+wmclass=tdrop.alacritty
+wmclassmatch=1
+
 [55e1af54-4c6a-4d19-8def-a461ec95f0db]
 Description=Window settings for DevTools -
 skipswitcher=true
@@ -118,12 +123,8 @@ wmclass=lattedock
 wmclassmatch=1
 
 [8]
-Description=Window settings for DevTools -
-above=true
-skipswitcherrule=2
-title=DevTools -
-titlematch=2
-wmclass=google-chrome
+Description=tdrop term skip animation
+wmclass=tdrop.alacritty
 wmclassmatch=1
 
 [9879e089-a75e-4fe0-a4a3-2b0ec616ee91]

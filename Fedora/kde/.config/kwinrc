@@ -60,13 +60,11 @@ hide-titlesEnabled=false
 krohnkiteEnabled=false
 kwin-rectangleEnabled=false
 kwin-script-tilingEnabled=false
-kwin4_effect_fadedesktopEnabled=true
 kwin4_effect_squashEnabled=false
 kwin4_effect_translucencyEnabled=true
 magiclampEnabled=true
 overviewEnabled=true
 quick-tile-2Enabled=false
-slideEnabled=false
 switchAllWindowsScreenEnabled=false
 synchronizeskipswitcherEnabled=false
 thumbnailasideEnabled=true
@@ -88,9 +86,14 @@ count=0
 
 [TabBox]
 DelayTime=0
-LayoutName=thumbnail_grid
+HighlightWindows=false
+LayoutName=org.kde.breeze.desktop
+
+[Windows]
+RollOverDesktops=false
 
 [org.kde.kdecoration2]
+BorderSize=None
 BorderSizeAuto=false
 ButtonsOnLeft=
 ButtonsOnRight=IAX
