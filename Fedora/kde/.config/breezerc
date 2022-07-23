@@ -1,0 +1,6 @@
+[Common]
+OutlineCloseButton=true
+
+[Windeco]
+ButtonSize=ButtonSmall
+TitleAlignment=AlignLeft

@@ -23,8 +23,11 @@ super + {_, shift +} {1-5}
 super + {_, shift +} o
   kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}
 
-super + {_,shift +} {h,j,k,l}
-  kde-invoke kwin "{Switch Window,Window Quick Tile} {Left,Bottom,Top,Right}"
+super + {h,j,k,l}
+  kde-invoke kwin "Switch Window {Left,Down,Up,Right}"
+
+super + shift + {h,j,k,l}
+  kde-invoke kwin "Window Quick Tile {Left,Bottom,Top,Right}"
 
 super + r; super + r
   notify-send -a sxhkd "sxhkd" "reloading keys..."; killall -SIGUSR1 sxhkd

@@ -91,6 +91,9 @@ favoritesPortedToKAstats=true
 icon=fedora-logo-icon
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
+[Containments][2][Applets][32][Shortcuts]
+global=Meta+F1
+
 [Containments][2][Applets][4]
 immutability=1
 plugin=org.kde.plasma.pager
@@ -136,7 +139,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=90
+PreloadWeight=95
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
