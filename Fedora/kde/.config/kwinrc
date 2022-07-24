@@ -58,6 +58,7 @@ ZoomFactor=2
 /* Alt=org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Expose */
 
 [MouseBindings]
+CommandAllWheel=Raise/Lower
 CommandTitlebarWheel=Raise/Lower
 
 [Plugins]

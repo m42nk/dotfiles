@@ -104,6 +104,17 @@ types=4
 wmclass=lattedock
 wmclassmatch=1
 
+[70451b80-a06e-4526-96fa-fd95d1f2482f]
+Description=Window settings for google-chrome
+clientmachine=localhost
+title=THE CROWD WORK SPECIAL | Andrew Schulz | Stand Up Comedy - YouTube
+types=1
+windowrole=pop-up
+windowrolematch=1
+wmclass=crx_kmfikkopdhmbdbkndkamabamlkkgkpod google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
 [7585d080-cb9e-4b28-a9d6-85521ce328cb]
 Description=Line to Desktop 5
 desktops=be3980e2-e7e2-4568-a241-df0cb67615ab
@@ -142,8 +153,8 @@ wmclass=virtualbox manager
 wmclassmatch=1
 
 [General]
-count=8
-rules=1,2,3,4,5,6,7,8
+count=9
+rules=70451b80-a06e-4526-96fa-fd95d1f2482f,1,2,3,4,5,6,7,8
 
 [a0ffbde0-487a-4af2-98d8-04114ab8394b]
 Description=Desktop 3 - Postman

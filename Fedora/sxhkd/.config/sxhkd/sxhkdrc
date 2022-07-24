@@ -44,6 +44,12 @@ super + shift + q
 super + ctrl + t
   kde-invoke kwin "ToggleCurrentThumbnail"
 
+super + ctrl + l
+  notify-send "Locking session..."; kde-invoke ksmserver "Lock Session"
+
+super + ctrl + q
+  notify-send "Logging out..."; kde-invoke ksmserver "Log Out"
+
 super + ctrl + m
   kde-invoke kmix "mic_mute"
 

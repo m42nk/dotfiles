@@ -44,10 +44,6 @@ Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
 _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
-[khotkeys]
-_k_friendly_name=Custom Shortcuts Service
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
-
 [kmix]
 _k_friendly_name=Audio Volume
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Decrease Microphone Volume
@@ -59,7 +55,7 @@ mute=Volume Mute,Volume Mute,Mute
 
 [ksmserver]
 Halt Without Confirmation=none,,Halt Without Confirmation
-Lock Session=,Meta+L\tScreensaver,Lock Session
+Lock Session=none,Meta+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
 Log Out Without Confirmation=none,,Log Out Without Confirmation
 Reboot Without Confirmation=none,,Reboot Without Confirmation

@@ -52,6 +52,7 @@ alias ctmp="mkdir -p /tmp/scratch && cd /tmp/scratch"
 alias tmp="mkdir -p /tmp/scratch && $EDITOR /tmp/scratch/tmp"
 
 alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh"
+alias chkb="$EDITOR $HOME/.config/sxhkd/sxhkdrc && echo 'Reloading sxhkd'; killall -SIGUSR1 sxhkd"
 alias zrc="$EDITOR $HOME/.config/zsh/zshrc"
 
 alias art="find-artisan"
@@ -178,5 +179,7 @@ fi
 
 alias sysctl="sudo systemctl"
 alias sude="sudoedit"
+
+alias rgconf="rg --follow --ignore-case --iglob='!google-chrome' --iglob='!discord' --iglob='!Code' --iglob='!obs-studio'"
 
 # alias codemin="code --extensions-dir ~/vscode_profiles/minimal/exts --user-data-dir ~/vscode_profiles/minimal/data"
