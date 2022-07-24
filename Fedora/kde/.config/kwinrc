@@ -36,12 +36,18 @@ ZoomFactor=2
 [Effect-diminactive]
 Strength=10
 
+[Effect-overview]
+BorderActivate=0
+
 [Effect-slide]
 HorizontalGap=0
 SlideBackground=false
 
 [Effect-thumbnailaside]
 MaxWidth=500
+
+[Effect-windowview]
+BorderActivateAll=9
 
 [Effect-zoom]
 EnableFocusTracking=true

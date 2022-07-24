@@ -14,7 +14,11 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.potd
+
+[Containments][1][ConfigDialog]
+DialogHeight=565
+DialogWidth=720
 
 [Containments][1][Configuration]
 PreloadWeight=0
@@ -26,6 +30,11 @@ ToolBoxButtonY=20
 
 [Containments][1][Wallpaper][org.kde.image][General]
 Image=file:///home/m42nk/Pictures/Wallpapers/night-city-dreamin'-by-uhello_hurricane-cyberpunk-2077-1920×1200.jpg
+SlidePaths=/usr/share/wallpapers
+
+[Containments][1][Wallpaper][org.kde.potd][General]
+FillMode=2
+Provider=simonstalenhag
 
 [Containments][2]
 activityId=
@@ -42,6 +51,10 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
 PreloadWeight=0
+
+[Containments][2][Applets][20][Configuration][Appearance]
+customDateFormat=ddd, d MMM yy
+dateFormat=custom
 
 [Containments][2][Applets][20][Configuration][ConfigDialog]
 DialogHeight=540
@@ -92,7 +105,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][32][Configuration]
-PreloadWeight=60
+PreloadWeight=100
 
 [Containments][2][Applets][32][Configuration][ConfigDialog]
 DialogHeight=540
@@ -137,6 +150,7 @@ DialogWidth=720
 groupingStrategy=0
 launchers=
 maxStripes=1
+showOnlyCurrentScreen=true
 
 [Containments][2][Applets][53]
 immutability=1
@@ -172,7 +186,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=88
+PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -194,13 +208,21 @@ immutability=1
 lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.potd
+
+[Containments][25][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][25][Configuration]
 PreloadWeight=10
 
 [Containments][25][Wallpaper][org.kde.image][General]
 Image=file:///home/m42nk/Pictures/Wallpapers/night-city-dreamin'-by-uhello_hurricane-cyberpunk-2077-1920×1200.jpg
+
+[Containments][25][Wallpaper][org.kde.potd][General]
+FillMode=2
+Provider=unsplash
 
 [Containments][8]
 activityId=
@@ -279,21 +301,24 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][19][Configuration]
-PreloadWeight=0
+PreloadWeight=20
+
+[Containments][8][Applets][19][Configuration][General]
+currentTab=streams
 
 [Containments][8][Applets][22]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][23]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][24]
 immutability=1
@@ -307,7 +332,11 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][26][Configuration]
-PreloadWeight=42
+PreloadWeight=39
+
+[Containments][8][Applets][26][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][8][Applets][9]
 immutability=1
@@ -325,3 +354,4 @@ knownItems=org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,or
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=desktop:/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,0,3debb176-6e88-439e-a25e-4e9d1a6229d2

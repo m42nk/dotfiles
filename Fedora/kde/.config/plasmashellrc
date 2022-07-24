@@ -1,5 +1,11 @@
-[PlasmaTransientsConfig]
-PreloadWeight=10
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Pictures/Wallpapers/download.png,file:$HOME/Pictures/Wallpapers/night-city-dreamin'-by-uhello_hurricane-cyberpunk-2077-1920×1200.jpg
+Recent URLs[$e]=file:$HOME/Pictures/
+detailViewIconSize=16
+
+[KPropertiesDialog]
+HDMI-2 eDP-1 Height 1920x1080=453
+HDMI-2 eDP-1 Width 1920x1080=410
 
 [PlasmaViews][Panel 2]
 alignment=132

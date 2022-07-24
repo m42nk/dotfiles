@@ -1,0 +1,313 @@
+-- ActivityManager
+switch-to-activity-61f69d4c-f6fb-40d0-b221-02dd8dddc74d
+switch-to-activity-19e2b1cd-221f-4749-97d5-a6beebc3d22b
+switch-to-activity-3debb176-6e88-439e-a25e-4e9d1a6229d2
+switch-to-activity-954b098f-2a04-4385-a312-3f903e60ca68
+
+
+-- Alacritty_desktop
+_launch
+New
+
+
+-- KDE_Keyboard_Layout_Switcher
+Switch to Next Keyboard Layout
+
+
+-- google_chrome_desktop
+new-private-window
+_launch
+new-window
+
+
+-- kaccess
+Toggle Screen Reader On and Off
+
+
+-- kalarm
+stopAudio
+newAudio
+spread
+newDisplay
+newEmail
+newCommand
+
+
+-- kcm_touchpad
+Toggle Touchpad
+Disable Touchpad
+Enable Touchpad
+
+
+-- kded5
+Show System Activity
+display
+
+
+-- khotkeys
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}
+
+
+-- kmix
+mute
+increase_microphone_volume
+mic_mute
+decrease_volume
+increase_volume
+decrease_microphone_volume
+
+
+-- ksmserver
+Halt Without Confirmation
+Lock Session
+Log Out Without Confirmation
+Reboot Without Confirmation
+Log Out
+
+
+-- kwin
+ToggleCurrentThumbnail
+Switch to Screen 3
+Window to Screen 5
+Walk Through Windows of Current Application (Reverse)
+Window Below Other Windows
+Switch to Screen 7
+Window to Desktop 20
+Invert Screen Colors
+Window One Desktop Up
+MoveZoomDown
+Window to Desktop 12
+view_zoom_in
+Window Pack Down
+MoveZoomRight
+Switch to Desktop 15
+Switch to Screen 2
+Window to Desktop 6
+Walk Through Windows of Current Application Alternative (Reverse)
+Window to Next Desktop
+Window Quick Tile Bottom Left
+Switch to Previous Screen
+MoveMouseToFocus
+Switch to Desktop 8
+Walk Through Windows Alternative (Reverse)
+Switch to Desktop 19
+Window Fullscreen
+Switch to Next Screen
+Switch One Desktop to the Left
+Window to Desktop 17
+Switch One Desktop Up
+Window Maximize Vertical
+Window Resize
+Window On All Desktops
+Window Quick Tile Top
+Switch to Desktop 9
+MoveZoomUp
+Switch to Next Desktop
+Switch to Desktop 11
+Window to Desktop 2
+view_zoom_out
+Activate Window Demanding Attention
+Window to Desktop 5
+Window to Next Screen
+Window to Desktop 11
+Window Move Center
+Window Pack Up
+Switch to Desktop 10
+Window Grow Vertical
+Switch to Previous Desktop
+Switch to Desktop 3
+Window to Desktop 16
+Window to Screen 4
+Window to Screen 3
+Switch Window Up
+Window Pack Left
+Window Quick Tile Top Right
+Window to Desktop 19
+Window Shrink Vertical
+Switch to Screen 4
+Window to Screen 2
+Switch One Desktop to the Right
+Window Move
+view_actual_size
+MoveMouseToCenter
+Decrease Opacity
+Window to Screen 6
+Switch to Desktop 16
+Suspend Compositing
+Walk Through Desktop List (Reverse)
+Window Quick Tile Left
+Walk Through Windows
+Window to Desktop 18
+Window Operations Menu
+Window to Desktop 4
+Window Quick Tile Top Left
+Switch to Screen 5
+Window One Desktop Down
+Window Quick Tile Right
+Walk Through Desktop List
+Window Maximize Horizontal
+Window to Desktop 15
+Window Quick Tile Bottom
+Window to Desktop 1
+Expose
+Window Raise
+Window to Desktop 13
+Window to Previous Screen
+Window to Screen 0
+Setup Window Shortcut
+Window to Screen 1
+Window One Desktop to the Left
+Switch to Desktop 5
+ShowDesktopGrid
+Switch Window Left
+Switch to Screen 1
+Window No Border
+Kill Window
+Window Lower
+Switch to Desktop 6
+Switch to Desktop 12
+Switch to Desktop 7
+ExposeAll
+Window Pack Right
+Show Desktop
+Window to Desktop 8
+Window to Desktop 3
+Switch to Desktop 4
+Switch to Desktop 18
+Window One Desktop to the Right
+Window Minimize
+ExposeClass
+Window to Previous Desktop
+Switch to Desktop 20
+Window Maximize
+Switch to Desktop 14
+Window Above Other Windows
+MoveZoomLeft
+Toggle Night Color
+Window to Desktop 9
+Switch to Desktop 13
+Switch Window Right
+Window to Desktop 14
+Increase Opacity
+Switch to Screen 6
+Walk Through Windows of Current Application
+Window Shade
+Window Shrink Horizontal
+Switch to Desktop 2
+Overview
+Walk Through Windows Alternative
+Walk Through Windows (Reverse)
+Switch to Desktop 17
+Window to Desktop 10
+Walk Through Windows of Current Application Alternative
+Walk Through Desktops (Reverse)
+Window Close
+Window Quick Tile Bottom Right
+Switch Window Down
+Switch One Desktop Down
+Window to Screen 7
+Walk Through Desktops
+Switch to Desktop 1
+Toggle Window Raise/Lower
+Switch to Screen 0
+Window to Desktop 7
+Window Grow Horizontal
+
+
+-- mediacontrol
+pausemedia
+previousmedia
+mediavolumeup
+nextmedia
+stopmedia
+mediavolumedown
+playpausemedia
+playmedia
+
+
+-- org_kde_dolphin_desktop
+_launch
+
+
+-- org_kde_konsole_desktop
+NewTab
+_launch
+NewWindow
+
+
+-- org_kde_krunner_desktop
+_launch
+RunClipboard
+
+
+-- org_kde_plasma_emojier_desktop
+_launch
+
+
+-- org_kde_powerdevil
+Decrease Keyboard Brightness
+Decrease Screen Brightness
+Turn Off Screen
+Hibernate
+Increase Keyboard Brightness
+Increase Screen Brightness
+Toggle Keyboard Backlight
+PowerDown
+PowerOff
+Sleep
+
+
+-- org_kde_spectacle_desktop
+ActiveWindowScreenShot
+WindowUnderCursorScreenShot
+_launch
+CurrentMonitorScreenShot
+OpenWithoutScreenshot
+RectangularRegionScreenShot
+FullScreenScreenShot
+
+
+-- plasmashell
+activate task manager entry 5
+cycleNextAction
+show-on-mouse-pos
+activate task manager entry 6
+activate task manager entry 8
+clear-history
+cycle-panels
+stop current activity
+activate task manager entry 9
+activate task manager entry 7
+toggle do not disturb
+show-barcode
+edit_clipboard
+repeat_action
+activate task manager entry 4
+activate task manager entry 1
+next activity
+previous activity
+activate task manager entry 2
+manage activities
+show dashboard
+switch to next activity
+switch to previous activity
+clipboard_action
+cyclePrevAction
+activate task manager entry 10
+activate widget 32
+activate task manager entry 3
+
+
+-- systemsettings_desktop
+kcm-lookandfeel
+powerdevilprofilesconfig
+_launch
+screenlocker
+kcm-kscreen
+kcm-users
+
+
+-- yakuake
+toggle-window-state
+
+

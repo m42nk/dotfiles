@@ -6,7 +6,7 @@ super + Return
   dropdown-term
 
 super + backslash
-  kde-invoke kwin "Overview"
+  kde-invoke kwin "ExposeAll"
 
 super + f
   kde-invoke kwin "Window Maximize"
@@ -43,6 +43,9 @@ super + shift + q
 
 super + ctrl + t
   kde-invoke kwin "ToggleCurrentThumbnail"
+
+super + ctrl + m
+  kde-invoke kmix "mic_mute"
 
 # alt + Tab
 #   rofi-alt-tab -m alttab

@@ -177,5 +177,6 @@ if [[ $(tmux has 2>/dev/null) ]] && [[ $(tmux display-message -p '#S') = "CODE" 
 fi
 
 alias sysctl="sudo systemctl"
+alias sude="sudoedit"
 
 # alias codemin="code --extensions-dir ~/vscode_profiles/minimal/exts --user-data-dir ~/vscode_profiles/minimal/data"
