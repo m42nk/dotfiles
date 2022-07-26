@@ -1,9 +1,17 @@
 [$Version]
 update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
 
+[General]
+clipboardGroup=PostScreenshotCopyImage
+
 [GuiConfig]
-cropRegion=473,305,360,665
-window-position=2167,337
+cropRegion=-1,-1,1921,613
+window-position=0,20
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Pictures/Screenshot_20220726_204341.png,file:$HOME/Pictures/Screenshot_20220726_204341.png
+Recent URLs[$e]=file:$HOME/Pictures/
+detailViewIconSize=16
 
 [Save]
-lastSaveLocation=file:///home/m42nk/Pictures/Screenshot_20220724_143152.png
+lastSaveLocation=file:///home/m42nk/Pictures/Screenshot_20220726_205123.png

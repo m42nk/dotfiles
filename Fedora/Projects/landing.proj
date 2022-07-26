@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+run () {
+    notify-send -a "proj" "proj" "Launching $1"
+    nohup $@ > /dev/null 2>&1
+}
+
+search () {
+    xdotool search --all --desktop $(xdotool get_desktop) $@
+}
+
+search --classname tdrop.alacritty windowactivate || run dropdown-term
+search --classname google-chrome || run google-chrome
+search --classname code || run code $HOME/Codes/landing-page
+

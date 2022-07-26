@@ -1,6 +1,10 @@
 #!/bin/bash
 
-exec /usr/bin/google-chrome-stable --force-dark-mode --app='chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html' & exit
+exec /usr/bin/google-chrome-stable \
+  --profile-directory=Default \
+	--force-dark-mode \
+	--app='chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html'
+
 # nohup /usr/bin/google-chrome-stable --app='chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html' > /dev/null
 # disown
 

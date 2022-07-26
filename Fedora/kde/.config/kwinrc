@@ -36,9 +36,6 @@ ZoomFactor=2
 [Effect-diminactive]
 Strength=10
 
-[Effect-overview]
-BorderActivate=0
-
 [Effect-slide]
 HorizontalGap=0
 SlideBackground=false
@@ -100,9 +97,9 @@ LayoutName=org.kde.breeze.desktop
 RollOverDesktops=false
 
 [org.kde.kdecoration2]
-BorderSize=None
+BorderSize=Tiny
 BorderSizeAuto=false
 ButtonsOnLeft=
 ButtonsOnRight=IAX
-library=org.kde.breeze
-theme=Breeze
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__ActiveAccentFrame

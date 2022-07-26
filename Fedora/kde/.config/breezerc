@@ -1,6 +1,9 @@
 [Common]
 OutlineCloseButton=true
 
+[Style]
+MenuOpacity=70
+
 [Windeco]
 ButtonSize=ButtonSmall
 TitleAlignment=AlignLeft

@@ -245,7 +245,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][12]
 immutability=1
@@ -318,21 +318,21 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=5
+PreloadWeight=10
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=10
 
 [Containments][8][Applets][26]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][26][Configuration]
-PreloadWeight=31
+PreloadWeight=0
 
 [Containments][8][Applets][26][Configuration][ConfigDialog]
 DialogHeight=540

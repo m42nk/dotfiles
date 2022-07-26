@@ -19,7 +19,7 @@ ColorAmount=0.025
 ColorEffect=2
 ContrastAmount=0.1
 ContrastEffect=2
-Enable=false
+Enable=true
 IntensityAmount=0
 IntensityEffect=0
 
@@ -137,9 +137,10 @@ ForegroundVisited=155,89,182
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorSchemeHash=bcce7c1c6181c5e14e633cd8301e7a9036b67ac6
+ColorSchemeHash=b66d875e8a0ef4fa30c20ec4064d3b693a97e048
 XftHintStyle=hintslight
 XftSubPixel=rgb
+accentColorFromWallpaper=false
 toolBarFont=Noto Sans,9,-1,5,50,0,0,0,0,0
 
 [KDE]
@@ -170,7 +171,9 @@ View Style=DetailTree
 activeBackground=49,54,59
 activeBlend=252,252,252
 activeFont=Noto Sans,7,-1,5,50,0,0,0,0,0
-activeForeground=252,252,252
+activeForeground=0,0,0
+frame=203,213,225
 inactiveBackground=42,46,50
 inactiveBlend=161,169,177
 inactiveForeground=161,169,177
+inactiveFrame=239,240,241

@@ -5,6 +5,12 @@
 super + Return
   dropdown-term
 
+super + period
+  rofimoji -a type -s neutral
+
+super + shift + Return
+  alacritty
+
 super + backslash
   kde-invoke kwin "ExposeAll"
 
@@ -12,16 +18,22 @@ super + f
   kde-invoke kwin "Window Maximize"
 
 super + m
-  google-chrome || google-chrome-stable
+  google-chrome --force-dark-mode || google-chrome-stable --force-dark-mode
 
 super + d
   kde-invoke kwin "Show Desktop"
 
+super + c
+  code
+
+super + b
+  kde-invoke kwin "Window No Border"
+
 super + {_, shift +} {1-5}
   kde-invoke kwin "{Switch,Window} to Desktop {1-5}"
 
-super + {_, shift +} grave
-  kde-invoke kwin "{Switch,Window} to Desktop 5"
+super + grave
+  line-lof
 
 super + {_, shift +} o
   kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}

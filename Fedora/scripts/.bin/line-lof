@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+# Launch or focus Line chrome extension
+
+xdotool search --name LINE windowactivate || line
