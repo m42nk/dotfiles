@@ -2,19 +2,33 @@
 update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
 
 [General]
+LastTargetDir[$e]=file:$HOME/Downloads
 LastUsedVersion=210800
+SideBarPage=operations
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=32
+Recent Files[$e]=twitter.com_nofelldown_with_replies.png,file:$HOME/Downloads/twitter.com_nofelldown_with_replies.png
+Recent URLs[$e]=file:$HOME/Downloads/
+detailViewIconSize=16
 
 [MainWindow]
+HDMI-2 eDP-1 Window-Maximized 1920x1080=true
+HDMI-2 eDP-1 XPosition 1920x1080=2560
+HDMI-2 eDP-1 YPosition 1920x1080=310
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAAoAAAAGyAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAP2AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1 XPosition 1920x1080=820
 eDP-1 YPosition 1920x1080=345
 
 [Recent Files]
 File1[$e]=$HOME/Pictures/Screenshot_20220726_192740.png
+File2[$e]=$HOME/Downloads/twitter.com_nofelldown_with_replies.png
 Name1[$e]=Screenshot_20220726_192740.png
+Name2[$e]=twitter.com_nofelldown_with_replies.png
+
+[SideBar]
+IsVisible ViewMode=true
+SideBarSplitterSizes=222,1697

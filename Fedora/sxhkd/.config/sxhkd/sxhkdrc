@@ -14,6 +14,9 @@ super + shift + Return
 super + backslash
   kde-invoke kwin "ExposeAll"
 
+super + u
+  kde-invoke kwin "Activate Window Demanding Attention"
+
 super + f
   kde-invoke kwin "Window Maximize"
 

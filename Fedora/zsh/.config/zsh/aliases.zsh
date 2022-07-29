@@ -178,7 +178,8 @@ if [[ $(tmux has 2>/dev/null) ]] && [[ $(tmux display-message -p '#S') = "CODE" 
 fi
 
 alias sysctl="sudo systemctl"
-alias sude="sudoedit"
+alias suded="sudoedit"
+alias se="sudoedit"
 
 alias rgconf="rg --follow --ignore-case --iglob='!google-chrome' --iglob='!discord' --iglob='!Code' --iglob='!obs-studio'"
 

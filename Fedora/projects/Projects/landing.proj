@@ -11,5 +11,5 @@ search () {
 
 search --classname tdrop.alacritty windowactivate || run dropdown-term
 search --classname google-chrome || run google-chrome
-search --classname code || run code $HOME/Codes/landing-page
+search --classname code  || run code $HOME/Codes/landing-page
 

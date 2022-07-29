@@ -94,7 +94,9 @@ HighlightWindows=false
 LayoutName=org.kde.breeze.desktop
 
 [Windows]
+ActiveMouseScreen=false
 RollOverDesktops=false
+SeparateScreenFocus=true
 
 [org.kde.kdecoration2]
 BorderSize=Tiny
