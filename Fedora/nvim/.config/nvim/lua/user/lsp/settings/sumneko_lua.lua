@@ -1,5 +1,5 @@
-return {
-    _disable_formatting = true,
+local opts = {
+	-- _disable_formatting = true,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -17,3 +17,12 @@ return {
 		},
 	},
 }
+
+local ok, lua_dev = pcall(require, "lua-dev")
+if ok then
+	opts = lua_dev.setup(opts)
+end
+
+opts._disable_formatting = true
+
+return opts
