@@ -1,4 +1,5 @@
 alias vim="$EDITOR"
+alias vim="nvim"
 alias v="$EDITOR"
 # alias code="vscodium"
 
