@@ -56,6 +56,7 @@ alias chkb="$EDITOR $HOME/.config/sxhkd/sxhkdrc && echo 'Reloading sxhkd'; killa
 alias zrc="$EDITOR $HOME/.config/zsh/zshrc"
 
 alias art="find-artisan"
+alias alt="sudo su - alternate"
 
 alias yst="yarn start"
 alias yrdd="yarn develop"

@@ -10,6 +10,7 @@ export HISTSIZE=999999999
 export SAVEHIST=$HISTSIZE
 export ZSHZ_DATA="$XDG_CONFIG_HOME/zsh/z/"
 export ZSHZ_TILDE=1
+export ZSH_CONFIG="$XDG_CONFIG_HOME/zsh"
 
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -34,6 +35,12 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 autoload -Uz compinit
 compinit -d $XDG_DATA_HOME/zcompdump
+
+# completions
+autoload -U compinit
+fpath=($ZSH_CONFIG/completions/ $fpath)
+
+# plugins
 
 # remove duplicate entry on $PATH
 typeset -U path PATH
@@ -60,10 +67,6 @@ src ~/.config/zsh/fzf.zsh
 src ~/.config/zsh/bookmarks.zsh
 src ~/.config/zsh/asdf.zsh
  
-# # cht.sh completion
-# fpath=($XDG_CONFIG_HOME/zsh/cht-autocomplete.zsh $fpath)
-
-# plugins
 ZPLUGINDIR="$XDG_DATA_HOME/zsh/plugins"
 ZSH_CUSTOM="$XDG_DATA_HOME/zsh"
 

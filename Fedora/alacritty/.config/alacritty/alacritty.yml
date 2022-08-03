@@ -3,21 +3,21 @@
 #   - ~/.config/alacritty/nord.yml
 
 font:
-  normal:
-    family: monospace
-    style: Regular
-
-  bold:
-    family: monospace
-    style: Bold
-
   # normal:
-  #   family: FiraCode Nerd Font
+  #   family: monospace
   #   style: Regular
 
   # bold:
-  #   family: FiraCode Nerd Font
+  #   family: monospace
   #   style: Bold
+
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
 
   size: 11
 
