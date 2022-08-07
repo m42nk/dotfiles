@@ -9,3 +9,7 @@ Places Icons Static Size=22
 [MainWindow]
 MenuBar=Disabled
 ToolBarsMovable=Disabled
+
+[Open-with settings]
+CompletionMode=1
+History=gwe

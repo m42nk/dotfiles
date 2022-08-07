@@ -1,6 +1,11 @@
 [$Version]
 update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
 
+[Crop]
+CropAdvancedSettingsEnabled=true
+CropRatioHeight=6
+CropRatioWidth=4
+
 [General]
 LastTargetDir[$e]=file:$HOME/Downloads
 LastUsedVersion=210800
@@ -9,16 +14,17 @@ SideBarPage=operations
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=32
-Recent Files[$e]=twitter.com_nofelldown_with_replies.png,file:$HOME/Downloads/twitter.com_nofelldown_with_replies.png
+Recent Files[$e]=twitter.com_nofelldown_with_replies.png,file:$HOME/Downloads/kk.jpg,file:$HOME/Downloads/KTP_Syakhisk.jpg,file:$HOME/Downloads/twitter.com_nofelldown_with_replies.png
 Recent URLs[$e]=file:$HOME/Downloads/
 detailViewIconSize=16
 
 [MainWindow]
-HDMI-2 eDP-1 Window-Maximized 1920x1080=true
-HDMI-2 eDP-1 XPosition 1920x1080=2560
-HDMI-2 eDP-1 YPosition 1920x1080=310
+HDMI-2 eDP-1 Height 1920x1080=684
+HDMI-2 eDP-1 Width 1920x1080=642
+HDMI-2 eDP-1 XPosition 1920x1080=2949
+HDMI-2 eDP-1 YPosition 1920x1080=239
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAP2AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAAoIAAAJ+AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1 XPosition 1920x1080=820
 eDP-1 YPosition 1920x1080=345
@@ -26,9 +32,13 @@ eDP-1 YPosition 1920x1080=345
 [Recent Files]
 File1[$e]=$HOME/Pictures/Screenshot_20220726_192740.png
 File2[$e]=$HOME/Downloads/twitter.com_nofelldown_with_replies.png
+File3[$e]=$HOME/Downloads/pas-foto.png
+File4[$e]=$HOME/Downloads/kk.pdf
 Name1[$e]=Screenshot_20220726_192740.png
 Name2[$e]=twitter.com_nofelldown_with_replies.png
+Name3[$e]=pas-foto.png
+Name4[$e]=kk.pdf
 
 [SideBar]
 IsVisible ViewMode=true
-SideBarSplitterSizes=222,1697
+SideBarSplitterSizes=200,440

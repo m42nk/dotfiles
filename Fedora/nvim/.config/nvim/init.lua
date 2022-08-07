@@ -1,12 +1,17 @@
-require "user.settings"
-require "user.plugins"
-require "user.colorscheme"
-require "user.lsp"
+pcall(require, "impatient")
 
+require "user.settings"
+require "user.packer"
+require "user.globals"
+
+require "user.commands"
+require "user.autocommands"
+require "user.colorscheme"
+
+require "user.lsp"
 require "user.cmp"
 require "user.treesitter"
-require "user.telescope"
-require "user.project"
-require "user.lastplace"
 
 require "user.keymaps"
+-- require "user.reload"
+-- require "user.restore-on-project"

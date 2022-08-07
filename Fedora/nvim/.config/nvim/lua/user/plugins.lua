@@ -1,98 +1,180 @@
------------------------------------------------------------
--- Plugin manager configuration file
------------------------------------------------------------
+return {
+  ----------------------------------
+  -- Core
+  ----------------------------------
+  {
+    -- Package manager
+    "wbthomason/packer.nvim",
+  },
+  {
+    -- Lua helper function
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    -- Neovim lua "lsp"
+    "folke/lua-dev.nvim",
+  },
+  {
+    -- Add web dev icon
+    "kyazdani42/nvim-web-devicons",
+  },
+  {
+    -- Improve startup time
+    "lewis6991/impatient.nvim",
+  },
+  {
+    -- Time tracker
+    "wakatime/vim-wakatime",
+  },
 
--- Plugin manager: packer.nvim
--- url: https://github.com/wbthomason/packer.nvim
+  ----------------------------------
+  -- LSP
+  ----------------------------------
+  {
+    -- LSP package manager
+    "williamboman/mason.nvim",
 
--- Automatically install packer
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    -- Mason x lspconfig, automates hook setup, etc
+    "williamboman/mason-lspconfig.nvim",
 
-local ok, packer = pcall(require, "packer")
-if not ok then
-	return
-end
+    -- Configuration for LSPs
+    "neovim/nvim-lspconfig",
 
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	vim.o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. vim.o.runtimepath
-end
+    -- Attach non-lsp (linter, formatter)
+    -- as lsp
+    "jose-elias-alvarez/null-ls.nvim",
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+    -- Loading spinner for lsp
+    "j-hui/fidget.nvim",
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+    -- Highlight symbols under cursor
+    -- like vscode
+    "RRethy/vim-illuminate",
+  },
 
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
+  ----------------------------------
+  -- Completions
+  ----------------------------------
+  {
+    -- Completion engine
+    "hrsh7th/nvim-cmp",
+  },
+  {
+    -- Completion sources
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "saadparwaiz1/cmp_luasnip",
+  },
 
-return require("packer").startup(function(use)
-	-- Plugins
-	use({ "wbthomason/packer.nvim" })
-	use({ "nvim-lua/plenary.nvim" })
-	use({ "nvim-telescope/telescope.nvim" })
+  ----------------------------------
+  -- Snippets
+  ----------------------------------
+  {
+    -- Snippet engine
+    "L3MON4D3/LuaSnip",
+  },
+  {
+    "rafamadriz/friendly-snippets",
+    enable = false,
+  },
 
-	use({ "ahmedkhalf/project.nvim" })
+  ----------------------------------
+  -- Treesitter
+  ----------------------------------
+  {
+    -- Treesitter engine
+    "nvim-treesitter/nvim-treesitter",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    "windwp/nvim-ts-autotag",
+    "nvim-treesitter/playground",
+  },
 
-	-- Colorschemes
-	use({ "navarasu/onedark.nvim" })
+  ----------------------------------
+  -- Minor feature improvement
+  ----------------------------------
+  {
+    -- Powerful autopair
+    "windwp/nvim-autopairs",
 
-	-- LSP
-	use({ "williamboman/mason.nvim" })
-	use({ "williamboman/mason-lspconfig.nvim" })
-	use({ "neovim/nvim-lspconfig" })
-	use({ "jose-elias-alvarez/null-ls.nvim" })
-	use({ "j-hui/fidget.nvim" })
+    -- Readline operation like shell
+    "linty-org/readline.nvim",
 
-	use({ "RRethy/vim-illuminate" }) -- Highlight symbols
+    -- Remember last place on file reopen
+    "ethanholz/nvim-lastplace",
 
-	-- Completions
-	use({ "hrsh7th/nvim-cmp" })
-	use({ "hrsh7th/cmp-buffer" })
-	use({ "hrsh7th/cmp-path" })
-	use({ "saadparwaiz1/cmp_luasnip" })
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
+    -- Add more useful textobjects
+    -- https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
+    "wellle/targets.vim",
 
-	-- Snippets
-	use({ "L3MON4D3/LuaSnip" })
-	use({ "rafamadriz/friendly-snippets" })
+    -- Convert single <-> multiline code
+    "AndrewRadev/splitjoin.vim",
 
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter" })
+    -- Git signcolumn colored lines (like vscode)
+    "lewis6991/gitsigns.nvim",
 
-	use({ "junegunn/vim-easy-align" })
-	use({ "numToStr/Comment.nvim" })
-	use({ "linty-org/readline.nvim" })
-	use({ "ethanholz/nvim-lastplace" })
-	use({ "folke/lua-dev.nvim" })
+    -- Better jump movements with hints
+    "ggandor/leap.nvim",
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+    -- Swap nodes using treesitter
+    "mizlan/iswap.nvim",
+
+    -- Improve neovim input ui
+    "stevearc/dressing.nvim",
+
+    -- -- Climb the syntax tree
+    -- "drybalka/tree-climber.nvim",
+  },
+
+  ----------------------------------
+  -- General
+  ----------------------------------
+  {
+    -- tpope
+    "tpope/vim-surround",
+    "tpope/vim-abolish",
+    "tpope/vim-repeat",
+    "tpope/vim-fugitive",
+  },
+  {
+    -- Colorschemes
+    "navarasu/onedark.nvim",
+    "folke/tokyonight.nvim",
+  },
+  {
+    -- Comment engine
+    "numToStr/Comment.nvim",
+  },
+  {
+    -- Telescope by Telescopic Johnson
+    "nvim-telescope/telescope.nvim",
+  },
+  {
+    -- Project management, automate root-change
+    "ahmedkhalf/project.nvim",
+  },
+  {
+    -- Alignment tools, good for configs
+    "junegunn/vim-easy-align",
+  },
+  {
+    -- Show buffers at top (like tabs in vscode)
+    "akinsho/bufferline.nvim",
+  },
+  {
+    -- Status line
+    "nvim-lualine/lualine.nvim",
+  },
+  {
+    -- Tree Explorer
+    "kyazdani42/nvim-tree.lua",
+  },
+  {
+    -- Colorize color values
+    "norcalli/nvim-colorizer.lua",
+  },
+}
