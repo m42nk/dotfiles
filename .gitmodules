@@ -1,0 +1,3 @@
+[submodule "Fedora/nvim/.config/nvim"]
+	path = Fedora/nvim/.config/nvim
+	url = git@github.com:m42nk/dotfiles-nvim.git
