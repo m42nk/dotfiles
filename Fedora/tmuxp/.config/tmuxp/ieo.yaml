@@ -1,0 +1,14 @@
+session_name: IEO
+start_directory: $HOME/Codes/IEO-2023/Client
+windows:
+  - window_name: Main
+    panes:
+      - pane
+
+  - window_name: Server
+    layout: even-vertical
+    panes:
+      - npm run dev
+      - shell_command:
+        - cd ../Keystone
+        - echo "Not started"
