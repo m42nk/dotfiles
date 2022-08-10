@@ -9,7 +9,7 @@ super + period
   rofimoji -a type -s neutral
 
 super + shift + Return
-  alacritty
+  kitty
 
 super + backslash
   kde-invoke kwin "ExposeAll"
