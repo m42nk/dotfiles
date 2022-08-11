@@ -5,6 +5,7 @@ update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_remember
 clipboardGroup=PostScreenshotCopyImage
 
 [GuiConfig]
+cropRegion=2329,761,111,24
 window-position=0,20
 
 [KFileDialog Settings]
@@ -13,4 +14,4 @@ Recent URLs[$e]=file:$HOME/Pictures/
 detailViewIconSize=16
 
 [Save]
-lastSaveLocation=file:///home/m42nk/Pictures/Screenshot_20220809_014955.png
+lastSaveLocation=file:///home/m42nk/Pictures/Screenshot_20220811_234034.png
