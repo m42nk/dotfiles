@@ -1,5 +1,11 @@
 #!/bin/env bash
 
+#####################################
+## Test your terminal features
+## Used for checking if your terminal supports 
+## italic, curly-underline, 256 colors, etc
+#####################################
+
 echo -e "Checking 256 color support (Color should transition smoothly)"
 awk 'BEGIN{
     s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
