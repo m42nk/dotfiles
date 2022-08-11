@@ -1,6 +1,6 @@
 [KFileDialog Settings]
-Recent Files[$e]=file:$HOME/default.kksrc,file:$HOME/Pictures/Wallpapers/wallpapersden.com_cool-4k-pattern_3840x2160.jpg,file:$HOME/Pictures/Wallpapers/download.png
-Recent URLs[$e]=file:$HOME/,file:$HOME/Pictures/Wallpapers/,file:$HOME/Pictures/,file:$HOME/Documents/
+Recent Files[$e]=file:$HOME/default.kksrc,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Med Ita Nerd Font Complete Mono.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Med Ita Nerd Font Complete Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Med Ita Nerd Font Complete.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Medium Nerd Font Complete Mono Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Medium Nerd Font Complete Mono.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Medium Nerd Font Complete Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Medium Nerd Font Complete.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Nerd Font Complete Mono Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Nerd Font Complete Mono.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Nerd Font Complete Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Medium Nerd Font Complete.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete Mono Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete Mono.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete Windows Compatible.ttf,file:$HOME/Downloads/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete.ttf,file:$HOME/Pictures/Wallpapers/wallpapersden.com_cool-4k-pattern_3840x2160.jpg,file:$HOME/Pictures/Wallpapers/download.png
+Recent URLs[$e]=file:$HOME/,file:$HOME/Pictures/Wallpapers/,file:$HOME/Pictures/,file:$HOME/Documents/,file:$HOME/Downloads/JetBrainsMono/
 detailViewIconSize=16
 
 [KPropertiesDialog]
@@ -8,10 +8,10 @@ HDMI-2 eDP-1 Height 1920x1080=458
 HDMI-2 eDP-1 Width 1920x1080=410
 
 [MainWindow]
-HDMI-2 eDP-1 Height 1920x1080=1051
-HDMI-2 eDP-1 Width 1920x1080=1026
-HDMI-2 eDP-1 XPosition 1920x1080=2422
-HDMI-2 eDP-1 YPosition 1920x1080=25
+HDMI-2 eDP-1 Height 1920x1080=927
+HDMI-2 eDP-1 Width 1920x1080=1423
+HDMI-2 eDP-1 XPosition 1920x1080=1924
+HDMI-2 eDP-1 YPosition 1920x1080=89
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAABAIAAAQbAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
