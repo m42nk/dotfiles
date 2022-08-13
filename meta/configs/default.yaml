@@ -1,0 +1,3 @@
+- link:
+    $HOME/.config/nvim: nvim
+    $HOME/.config/tmux: tmux
