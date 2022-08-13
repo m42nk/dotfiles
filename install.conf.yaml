@@ -4,10 +4,9 @@
 
 - clean: ['~', '~/.config']
 
-# - link:
-    # ~/.tmux.conf: tmux.conf
-    # ~/.vim: vim
-    # ~/.vimrc: vimrc
+- link:
+     ~/.config/nvim: nvim
+     ~/.config/tmux: tmux
 
 - create:
     - ~/.config

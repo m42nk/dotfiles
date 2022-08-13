@@ -1,9 +1,26 @@
-## To Do
+## Todo
 
-- fira code
+- Install dependencies
+  > fd
+  > rg
+  > exa
+  > tmux
+  > zsh
+  > git
+  > node
+    > typescript
+  > go
+  > nvim
 
 
-## Doing
+- Install mac dependencies
+  > brew
 
+- Setup brew env on shell
+  > link man pages brew
+   > https://apple.stackexchange.com/questions/111061/linking-manuals-from-homebrew
+   > `source /etc/profile`
 
-## Done
+- Install fonts
+
+- Make submodule change is pushable via fugitive 
