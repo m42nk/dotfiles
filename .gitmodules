@@ -4,3 +4,7 @@
 [submodule "Fedora/tmux/.config/tmux"]
 	path = Fedora/tmux/.config/tmux
 	url = https://github.com/m42nk/dotfiles-tmux
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
