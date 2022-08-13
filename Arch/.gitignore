@@ -1,8 +1,0 @@
-.zsh_history
-.zcompdump-*
-lunarvim/**/plugin/
-lunarvim-old/
-
-smug/.config/smug/smug.log
-
-zsh/.config/zsh/z

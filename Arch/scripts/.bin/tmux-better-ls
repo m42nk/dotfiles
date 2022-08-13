@@ -1,2 +1,0 @@
-#!/bin/bash
-tmux list-panes -a -F "#{session_name}:#{session_windows}|#{pane_current_command}:#{pane_current_path}"

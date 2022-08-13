@@ -1,9 +1,0 @@
-#!/bin/env bash
-
-# echo $PWD
-read -p "TODO: " ANSWER
-TODOFILE=""
-
-# [[ -e TODO.md ]] && TODOFILE=TODO.md || TODOFILE=~/TODO.md
-TODOFILE="$HOME/TODO.md"
-sed -i "3i - $ANSWER" $TODOFILE

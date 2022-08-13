@@ -1,5 +1,0 @@
-#!/bin/env bash
-
-PROMPT=${1:-'Press any key to continue'}
-
-read -n 1 -s -r -p "$PROMPT"

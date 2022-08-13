@@ -1,8 +1,0 @@
-#!/bin/env bash
-
-sessions=$(tmux list-sessions | grep -v attached | awk -F':' '{print $1}')
-
-for sess in $sessions; do
-  tmux kill-session -t $sess
-  echo "Killed session $sess"
-done

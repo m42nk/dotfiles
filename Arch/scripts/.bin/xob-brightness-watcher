@@ -1,9 +1,0 @@
-#!/bin/env bash
-
-FIFOFILE="/tmp/xob-brightness-fifo"
-
-if [ ! -e $FIFOFILE ]; then
-  mkfifo $FIFOFILE
-fi
-
-tail -f $FIFOFILE | xob -m 100

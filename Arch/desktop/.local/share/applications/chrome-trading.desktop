@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Trading Chrome
-Type=Application
-GenericName=Browser
-Comment=Open chrome with custom profile
-Exec=/opt/google/chrome/google-chrome --profile-directory="Profile 2"
-Icon=text-html
-Categories=Browser

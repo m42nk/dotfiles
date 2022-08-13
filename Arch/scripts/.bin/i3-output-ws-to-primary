@@ -1,5 +1,0 @@
-#!/bin/bash
-
-PRIMARY_SCREEN=$( xrandr -q | awk '/ connected primary/ {print $1}' )
-# [ -n "$PRIMARY_SCREEN" ] && i3-msg "move workspace to output $PRIMARY_SCREEN"
-[ -n "$PRIMARY_SCREEN" ] && i3-msg "workspace 1" && i3-msg "move workspace to $PRIMARY_SCREEN"

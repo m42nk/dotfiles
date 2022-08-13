@@ -1,4 +1,0 @@
-#! /bin/bash
-PIC_PATH=$(xprop -id $(xdotool getactivewindow) WM_CLASS | awk -F'"' '$0=$2')_$(date +%s).png
-maim ~/Pictures/$PIC_PATH
-notify-send "Screenshot saved at $PIC_PATH"
