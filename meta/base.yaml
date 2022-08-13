@@ -15,3 +15,6 @@
         force: true
     $HOME/.config:
         recursive: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

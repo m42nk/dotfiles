@@ -2,10 +2,14 @@
 	path = nvim
 	url = https://github.com/m42nk/dotfiles-nvim
 	ignore = dirty
+	branch = master
+	update = rebase
 [submodule "dotfiles-tmux"]
 	path = tmux
 	url = https://github.com/m42nk/dotfiles-tmux
 	ignore = dirty
+	branch = master
+	update = rebase
 [submodule "dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
