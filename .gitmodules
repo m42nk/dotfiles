@@ -1,9 +1,11 @@
-[submodule "Fedora/nvim/.config/nvim"]
+[submodule "dotfiles-nvim"]
 	path = nvim
 	url = https://github.com/m42nk/dotfiles-nvim
-[submodule "Fedora/tmux/.config/tmux"]
+	ignore = dirty
+[submodule "dotfiles-tmux"]
 	path = tmux
 	url = https://github.com/m42nk/dotfiles-tmux
+	ignore = dirty
 [submodule "dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
