@@ -86,3 +86,9 @@ $ ./install-config [some-config] [other-config]
 
 Note:
  - Multiple argument is supported if you want to install multiple config from `./meta/configs`
+
+
+### Credits and inspiration
+- [dotbot](https://github.com/anishathalye/dotbot)
+- [ecarlson94](https://github.com/ecarlson94/dotbot-template)
+- [vbriand](https://github.com/vbriand/dotfiles)

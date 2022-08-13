@@ -1,0 +1,28 @@
+# Taps
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+# Tools
+brew "git"
+brew "node"
+
+# Superior editor
+brew "neovim", args: ['HEAD']
+
+# Shell
+brew "zsh"
+
+# Utilities
+brew "fd"
+brew "fzf"
+brew "ripgrep"
+brew "exa"
+brew "tldr"
+
+# GUI apps
+cask "rectangle"
+
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
