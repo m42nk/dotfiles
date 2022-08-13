@@ -1,0 +1,12 @@
+- link:
+    # ~/.config/kitty:
+    #     path: kitty/*
+    #     glob: true
+    #     exclude: [ kitty/*.macos.conf ]
+    ~/.config/kitty: kitty
+    ~/.config/kitty/kitty.conf:
+        path: kitty/kitty.macos.conf
+        if: '[ `uname` = Darwin ]'
+
+- create:
+  - ~/.config/kitty
