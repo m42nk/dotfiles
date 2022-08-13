@@ -1,6 +1,9 @@
 #!/bin/env bash
 
-# --auto-detect-wm \
+# TODO: 
+# if only want one instance of terminal, create a bash script instaed of
+# using tdrop
+
 tdrop \
   --monitor-aware \
   --pointer-monitor-detection \
@@ -10,7 +13,23 @@ tdrop \
   -x 50% \
   --activate \
   --remember \
-  kitty --class tdrop.kitty tmux
-  # alacritty --class tdrop.alacritty -e tmux
+  kitty --class tdrop.kitty sh -c "tmux a || tmux"
+
+# if ! xdotool search --class tdrop.kitty --desktop "$(xdotool get_desktop)"; then
+# # --auto-detect-wm \
+# tdrop \
+#   --monitor-aware \
+#   --pointer-monitor-detection \
+#   --wm=kwin \
+#   -w 50% \
+#   -h 50% \
+#   -x 50% \
+#   --activate \
+#   --remember \
+#   kitty --class tdrop.kitty sh -c "tmux a || tmux"
+#   # alacritty --class tdrop.alacritty -e tmux
+# else
+#   tdrop --activate
+# fi
 
 
