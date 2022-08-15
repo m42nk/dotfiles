@@ -1,0 +1,79 @@
+#!/usr/bin/env zsh
+
+#####################################
+## --------------------------------
+##               __             
+##   ____  _____/ /_  __________
+##  /_  / / ___/ __ \/ ___/ ___/
+##   / /_(__  ) / / / /  / /__  
+##  /___/____/_/ /_/_/   \___/  
+##                  -by m42nk   
+## --------------------------------
+#####################################
+
+#####################################
+## Core
+#####################################
+
+## Source helper, only source when file exists
+src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
+
+## $ZSH - useful for reference in script
+export ZSH="$HOME/.config/zsh"
+
+## Use xdg-base-dir directories
+src $ZSH/xdg-base-dir.zsh
+
+#####################################
+## Zsh variables
+#####################################
+
+export HISTFILE=$HOME/.zsh_history
+
+## Z command config
+export ZSHZ_DATA="$XDG_DATA_HOME/zsh/z/" # Cache file
+export ZSHZ_TILDE=1                      # Replace home dir with ~ (tilde)
+
+#####################################
+## Zsh options
+#####################################
+
+setopt auto_cd              # cd to directories without typing cd
+setopt auto_pushd           # auto push directories to directory stack, use `dirs` to check
+
+setopt append_history       # Allow multiple zsh instance to append to history
+setopt extended_history     # Extended history format
+setopt inc_append_history   # Append to history without having to exit zsh
+setopt hist_find_no_dups    # Remove duplicate from find history (ctrl+r)
+setopt hist_ignore_all_dups # Remove older command if duplicated
+setopt hist_reduce_blanks   # Remove unnecessary blanks
+setopt hist_ignore_space    # Don't add to history if a command starts with space
+
+# setopt menu_complete      # Put first match if multiple match is found
+setopt extended_glob        # Extended globbing
+setopt nomatch              # Print error if no match is found
+setopt interactive_comments # Allow comments on interactive shell
+
+#####################################
+## Completions
+#####################################
+src $ZSH/completion.zsh
+
+#####################################
+## Variables
+#####################################
+
+#####################################
+## External
+#####################################
+
+export TERM="xterm-256color"
+
+alias vim="nvim"
+alias ez="exec zsh"
+
+# autoload -Uz compinit && compinit
+
+source /etc/profile
+
+eval "$(starship init zsh)"

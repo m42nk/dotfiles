@@ -1,3 +1,4 @@
 - link:
+    $HOME/.config/zsh: zsh
     $HOME/.config/nvim: nvim
     $HOME/.config/tmux: tmux

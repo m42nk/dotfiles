@@ -13,6 +13,7 @@ brew "neovim", args: ['HEAD']
 
 # Shell
 brew "zsh"
+brew "libxdg-basedir"
 brew "pfetch"
 
 # Utilities
@@ -20,7 +21,7 @@ brew "fd"
 brew "fzf"
 brew "ripgrep"
 brew "exa"
-brew "tldr"
+brew "tealdeer"
 
 # GUI apps
 cask "rectangle"
