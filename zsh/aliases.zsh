@@ -119,3 +119,26 @@ if [[ $(tmux has 2>/dev/null) ]] && [[ $(tmux display-message -p '#S') = "CODE" 
   alias vim="code -r"
   alias lg='lazygit --use-config-file="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/config-code.yml"'
 fi
+
+
+## -- aliasing clear
+
+clear=(
+  celar
+  ckear
+  clae
+  claer
+  clare
+  clea
+  cler
+  clera
+  laer
+  lear
+  rls
+)
+
+for c in "${clear[@]}"; do
+  alias $c="clear"
+done
+
+unset $clear

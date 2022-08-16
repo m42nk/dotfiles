@@ -72,7 +72,14 @@ src $ZSH/plugins.zsh
 
 ## External
 export TERM="xterm-256color"
+
 alias vim="nvim"
 alias ez="exec zsh"
 
-eval "$(starship init zsh)"
+if [[ "$(command -v starship)" ]]; then
+  eval $(starship init zsh)
+fi
+
+if [[ "$(command -v thefuck)" ]]; then
+  eval $(thefuck --alias fuck)
+fi
