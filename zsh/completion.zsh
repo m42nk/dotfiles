@@ -10,7 +10,7 @@
 ## Completion Engine
 autoload -Uz compinit
 
-## Cache completion setting
+## Start the completion engine and cache completion setting
 compinit -d $XDG_DATA_HOME/zcompdump
 
 ## Load custom completion
@@ -20,20 +20,29 @@ fpath+=("$ZSH/completions")
 # _expand_alias # expand alias on tab
 # _extensions # complete extensions when typing *.
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing [%d]'
 
-# Cache completion result (useful for apt, dnf, or pacman)
+# Formatting and verbosity
+zstyle ':completion:*' verbose yes    # Verbose completion
+zstyle ':completion:*' format 'Completing [%d]'
+zstyle ':completion:*' auto-description 'specify: %d'
+
+## Cache completion result (useful for apt, dnf, or pacman)
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 
-# Make lowercase match uppercase also, but uppercase won't match lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+## Ignore case in matches, try to complete from any parts of text
+## eg. file: _ABC123; if you type 123<tab> it will try to match that too
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# Don't autocomplete host names
+zstyle ':completion:*' hosts off      
 
-zstyle ':completion:*' verbose true # Verbose completion
-zstyle ':completion:*' hosts off            # Don't autocomplete host names
-zstyle ':completion:*' auto-description 'specify: %d'
+# Group matches
+zstyle ':completion:*' group-name ''
+
+# Colorize ls
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Completion menu
-# zstyle ':completion:*:*:*:*:*' menu select=2 interactive
-zstyle '*:completion:*' menu select=2
+# Use select menu if there's more than 2 match
+zstyle '*:completion:*' menu select=2 
 
