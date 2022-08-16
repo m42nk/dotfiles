@@ -26,7 +26,8 @@ alias cp="cp -iv"      # Verbose + safer cp
 ## Program specific alias
 
 ## -- Git
-alias cdg="cd `git rev-parse --show-toplevel`" # Cd to git root
+alias cdg="cd \`git rev-parse --show-toplevel\`" # Cd to git root
+alias lg="nvim -c '0G'" # Vim fugitive
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
@@ -86,7 +87,7 @@ alias wifi-qr="nmcli device wifi show-password"
 ## one-char
 alias d="dots"         # Custom scripts to fzf dotfiles
 alias e="code -r"      # Open using existing vscode window
-alias g="nvim -c '0G'" # Vim fugitive
+alias g="git"          # Vim fugitive
 alias l="ls -lab"      # Why ls when you can l
 alias p="ping 8.8.8.8" # Ping!
 alias x="chmod +x"     # Add executable permission to file
@@ -103,6 +104,8 @@ alias mkd="mkdir -pv"                      # Idempotent and verbose mkdir
 alias dfx="df -x tmpfs -h"                 # List disk free
 
 ## Other
+
+alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh"
 
 ## -- Systemctl (linux only)
 alias start="sudo systemctl start"
