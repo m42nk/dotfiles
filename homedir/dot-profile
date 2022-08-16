@@ -1,0 +1,39 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_RUNTIME_DIR="$HOME/.xdg"
+
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+export WINIT_X11_SCALE_FACTOR=1
+export LESSHISTFILE=-
+
+# Custom Vars
+export DOTFILES="$HOME/Dotfiles"
+export CODESDIR="$HOME/Codes"
+export DOTS="$DOTFILES"
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export PAGER="less --mouse"
+
+export PATH="$HOME/.bin/:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/bin:$PATH"
+
+export BM="$HOME/Bookmarks"
+
+# Colored man page
+export LESS_TERMCAP_md=$'\e[01;31m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;44;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[01;32m'
+
+export PF_INFO="ascii title os wm editor kernel uptime"
+
+export VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallery'
+export VSCODE_GALLERY_CACHE_URL='https://vscode.blob.core.windows.net/gallery/index'
+export VSCODE_GALLERY_ITEM_URL='https://marketplace.visualstudio.com/items'
+export VSCODE_GALLERY_CONTROL_URL=''
+export VSCODE_GALLERY_RECOMMENDATIONS_URL=''

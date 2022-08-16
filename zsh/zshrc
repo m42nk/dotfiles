@@ -25,7 +25,15 @@ src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
 src $ZSH/xdg-base-dir.zsh
 
 ## Source global variables set in profile
-src ~/.profile
+src /etc/profile
+src $HOME/.profile
+
+## External script
+src $ZSH/functions.zsh
+src $ZSH/aliases.zsh
+src $ZSH/autostarts.zsh
+src $ZSH/fzf.zsh
+src $ZSH/asdf.zsh
 
 ## Variables
 export HISTFILE=$HOME/.zsh_history
@@ -37,8 +45,8 @@ export ZSHZ_TILDE=1                      # Replace home dir with ~ (tilde)
 ## Zsh options
 setopt auto_cd              # cd to directories without typing cd
 setopt auto_pushd           # Push the current directory visited on the stack.
-setopt pushd_ignore_dups    # Do not store duplicates in the stack.
-setopt pushd_silent         # Do not print the directory stack after pushd or popd.
+setopt pushd_ignore_dups    # Don't store duplicates in the stack.
+setopt pushd_silent         # Don't print the directory stack after pushd or popd.
 setopt interactive_comments # Allow comments on interactive shell
 
 setopt append_history       # Allow multiple zsh instance to append to history
@@ -62,17 +70,13 @@ _comp_options+=(globdots)   # Include dotfile in completion without typing `.`
 src $ZSH/completion.zsh
 
 ## Plugins
-
 src $ZSH/plugins.zsh
 
 ## External
 export TERM="xterm-256color"
-
 alias vim="nvim"
 alias ez="exec zsh"
 
 # autoload -Uz compinit && compinit
-
-source /etc/profile
 
 eval "$(starship init zsh)"
