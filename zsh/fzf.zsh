@@ -5,6 +5,10 @@ export FZF_DEFAULT_OPTS="--bind tab:down,btab:up --layout reverse --cycle"
 export FZF_ALT_C_COMMAND='fd --type d --follow --exclude node_modules'
 export FZF_COMPLETION_TRIGGER='@'
 
+if [[ -f ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+fi
+
 if [[ -f "${BASE}/etc_profile.d_fzf.zsh" ]]; then
   source ${BASE}/etc_profile.d_fzf.zsh
 fi
