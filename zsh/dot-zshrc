@@ -1,1 +1,5 @@
 source ~/.config/zsh/zshrc
+
+## TODO: move dis
+export PATH="/usr/local/opt/erlang@22/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/erlang@22/lib"
