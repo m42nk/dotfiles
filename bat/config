@@ -9,3 +9,8 @@
 
 # Use C++ syntax for Arduino .ino files
 --map-syntax "*.ino:C++"
+
+# show non printable char
+# --show-all
+
+--pager="less -RFX -S"

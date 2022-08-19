@@ -23,6 +23,7 @@ alias lsnew="exa -1snew" # Ls sort by newest (bottom -> top)
 alias mv="mv -iv"      # Verbose + safer move
 alias cp="cp -iv"      # Verbose + safer cp
 alias vim="nvim"
+alias cat="bat"
 
 ## Program specific alias
 

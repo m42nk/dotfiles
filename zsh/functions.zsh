@@ -10,3 +10,5 @@ cdn () { cd $(\ls -dt */ | head -n1) }
 # Pick command to copy from history using fzf
 cpcmd () { fc -ln | fzf | xclip -sel clip }
 
+# Colorized help
+help() { "$@" --help 2>&1 | bat --plain --language=help }
