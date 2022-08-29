@@ -44,6 +44,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
+alias grw="gh repo view --web"
 
 ## -- Docker
 alias deit="docker exec -it"
@@ -85,6 +86,9 @@ alias waitfi="while ! ping -c 1 google.com; do sleep 0.5; done"
 alias wf="while ! ping -c 1 google.com; do sleep 0.5; done"
 alias wifi-qr="nmcli device wifi show-password"
 
+## -- Elixir
+alias imx="iex -S mix"
+
 
 ## one-char
 alias d="dots"         # Custom scripts to fzf dotfiles
@@ -107,6 +111,7 @@ alias dfx="df -x tmpfs -h"                 # List disk free
 
 ## Other
 
+alias exi="exit"
 alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh"
 
 ## -- Systemctl (linux only)
@@ -121,7 +126,6 @@ if [[ $(tmux has 2>/dev/null) ]] && [[ $(tmux display-message -p '#S') = "CODE" 
   alias vim="code -r"
   alias lg='lazygit --use-config-file="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/config-code.yml"'
 fi
-
 
 ## -- aliasing clear
 

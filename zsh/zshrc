@@ -61,7 +61,8 @@ setopt extended_glob        # Extended globbing
 setopt nomatch              # Print error if no match is found
 setopt list_rows_first      # Sort match in row instead of cols
 setopt list_packed          # Completion menu takes less space
-setopt auto_param_slash     # Add trailing / at the end of directory
+setopt no_auto_param_slash  # Add trailing / at the end of directory
+setopt auto_remove_slash  # Add trailing / at the end of directory
 _comp_options+=(globdots)   # Include dotfile in completion without typing `.`
 
 ## Completions
@@ -74,7 +75,8 @@ src $ZSH/plugins.zsh
 src $ZSH/keybind.zsh
 
 ## External
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)

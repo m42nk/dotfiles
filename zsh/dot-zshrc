@@ -1,5 +1,17 @@
 source ~/.config/zsh/zshrc
 
 ## TODO: move dis
-export PATH="/usr/local/opt/erlang@22/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/erlang@22/lib"
+# export PATH="/usr/local/opt/erlang@22/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/erlang@22/lib"
+# export PATH="/usr/local/opt/libxslt/bin:$PATH"
+# export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+
+# export KERL_CONFIGURE_OPTIONS="--with-ssl=`brew --prefix openssl` \
+#                                --with-wx-config=`brew --prefix wxmac`/bin/wx-config \
+#                                --without-javac"
+
+_ERL_VER="24"
+export PATH="/usr/local/opt/erlang@${_ERL_VER}/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/erlang@${_ERL_VER}/lib"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
