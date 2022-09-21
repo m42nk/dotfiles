@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if ! command -v "taskell"; then
+  echo "taskell is not installed"
+  exit 1
+fi
+
+# If no args
+
+if [[ -z "$1" ]]; then
+  taskell "$(cat /tmp/todofile)"
+fi
+
+# Args
+
+if [[ "$1" == "add" ]] && [[ -n "$2" ]]; then
+  echo "Adding $2 as todo"
+  echo "${PWD}/$2" > /tmp/todofile
+fi

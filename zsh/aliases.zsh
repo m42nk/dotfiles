@@ -33,18 +33,25 @@ alias lg="nvim -c '0G'" # Vim fugitive
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
+alias gd="git diff"
 alias gp="git push"
 alias gpf="git push --force"
 alias gco="git checkout"
+alias gcl="git clone"
 alias gba="git branch -a"
 alias gss="git status -s"
 alias grv="git remote --verbose"
 alias gcan="git commit --amend --no-edit"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias glog5="glog -n 5"
 alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
+
+## -- Node
+alias nrd="npm run dev"
+alias nr="npm run"
 
 ## -- Docker
 alias deit="docker exec -it"

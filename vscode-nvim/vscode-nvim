@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+export NVIM_CONFIG_HOME="$HOME/.config/vscode-nvim"
+export XDG_CONFIG_HOME="$NVIM_CONFIG_HOME"
+export XDG_DATA_HOME="$NVIM_CONFIG_HOME/rtp/.local/share"
+export XDG_CACHE_HOME="$NVIM_CONFIG_HOME/rtp/.cache"
+export XDG_STATE_HOME="$NVIM_CONFIG_HOME/rtp/.local/state"
+
+# echo $NVIM_CONFG_HOME
+# echo $XDG_CONFIG_HOME
+# echo $XDG_DATA_HOME
+# echo $XDG_CACHE_HOME
+# echo $XDG_STATE_HOME
+
+nvim $@
