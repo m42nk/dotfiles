@@ -11,9 +11,10 @@ IFS=: read -ra selected < <(
       --disabled --query "$INITIAL_QUERY" \
       --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
       --delimiter : \
-      --preview 'bat --color=always {1} --highlight-line {2}' \
-      --preview-window right
+      --preview "bat --color=always --highlight-line {2} {1}" \
+      --preview-window top,+{2}-/2
 )
 [ -n "${selected[0]}" ] && nvim +${selected[1]} "${selected[0]}"
 # [ -n "${selected[0]}" ] && code -g "${selected[0]}:${selected[1]}"
 #  'up,60%,border-bottom,+{2}+3/3,~3'
+# --preview "bat --color=always {1} --highlight-line {2} --line-range +{2}:" \

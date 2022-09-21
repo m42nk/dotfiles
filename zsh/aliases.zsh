@@ -155,3 +155,5 @@ for c in "${clear[@]}"; do
 done
 
 unset $clear
+
+alias frp="fzf-rg-preview"
