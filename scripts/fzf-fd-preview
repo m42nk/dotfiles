@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# 1. Search for text in files using Ripgrep
+# 2. Interactively restart Ripgrep with reload action
+# 3. Open the file in Vim
+FD_PREFIX="fd --color=always "
+EXA_PREFIX="exa --icons "
+BAT_PREFIX="bat --color=always "
+INITIAL_QUERY="${*:-}"
+
+IFS=: read -r selected < <(
+	FZF_DEFAULT_COMMAND="$FD_PREFIX $INITIAL_QUERY" \
+		fzf --ansi \
+    --disabled \
+    --query "$INITIAL_QUERY" \
+    --bind "change:reload:sleep 0.1; $FD_PREFIX {q} . || true" \
+		--preview "[[ -d '{}' ]] && $EXA_PREFIX {} || $BAT_PREFIX {}" \
+		--preview-window top,+{2}-/2
+)
+
+[ -n "${selected}" ] && nvim "${selected}"

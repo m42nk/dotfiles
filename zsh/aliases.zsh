@@ -156,4 +156,5 @@ done
 
 unset $clear
 
-alias frp="fzf-rg-preview"
+alias fr="fzf-rg-preview"
+alias ff="fzf-fd-preview"
