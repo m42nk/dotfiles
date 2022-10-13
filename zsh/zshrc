@@ -35,6 +35,8 @@ src $ZSH/asdf.zsh
 
 ## Variables
 export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
 
 ## Z command config
 export ZSHZ_DATA="$XDG_DATA_HOME/zsh/z/" # Cache file

@@ -1,5 +1,4 @@
 lua require("plugins")
-echo "halo"
 
 " ---
 " Options

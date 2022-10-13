@@ -10,7 +10,8 @@ source ~/.config/zsh/zshrc
 #                                --with-wx-config=`brew --prefix wxmac`/bin/wx-config \
 #                                --without-javac"
 
-_ERL_VER="24"
+# _ERL_VER="24"
+_ERL_VER="22"
 export PATH="/usr/local/opt/erlang@${_ERL_VER}/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/erlang@${_ERL_VER}/lib"
 

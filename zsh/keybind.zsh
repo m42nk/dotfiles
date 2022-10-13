@@ -4,7 +4,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
-bindkey '^T' fzf-file-widget
+# bindkey '^T' fzf-file-widget
+bindkey -s '^T' '^ufzf-fd-preview^M'
 bindkey '\ec' fzf-cd-widget
 bindkey '^R' fzf-history-widget
 bindkey "\e[3~" delete-char
