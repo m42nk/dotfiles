@@ -23,13 +23,15 @@ alias lsnew="exa -1snew" # Ls sort by newest (bottom -> top)
 alias mv="mv -iv"      # Verbose + safer move
 alias cp="cp -iv"      # Verbose + safer cp
 alias vim="nvim"
+alias v="nvim"
 alias cat="bat"
 
 ## Program specific alias
 
 ## -- Git
 alias cdg="cd \`git rev-parse --show-toplevel\`" # Cd to git root
-alias lg="nvim -c '0G'" # Vim fugitive
+# alias lg="nvim -c '0G'" # Vim fugitive
+alias lg="lazygit" # Vim fugitive
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
@@ -159,3 +161,8 @@ unset $clear
 
 alias fr="fzf-rg-preview"
 alias ff="fzf-fd-preview"
+alias tun="~/Work/scripts/bastion.sh"
+alias mobile='qrencode -t ansiutf8 http://$(ipconfig getifaddr en0):3000'
+
+alias ieobak="bash $HOME/Codes/IEO-2023/Backups/scripts/cron_db_backup.sh"
+alias vite="npm init vite@latest"
