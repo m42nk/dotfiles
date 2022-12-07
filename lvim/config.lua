@@ -1,25 +1,16 @@
--- vim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+require("custom.options")
+require("custom.tmux")
+require("custom.fold")
+require("custom.highlight")
+require("custom.telescope")
 
--- general
 lvim.log.level = "info"
-lvim.format_on_save = {
-  enabled = true,
-  pattern = "*.lua",
-  timeout = 1000,
-}
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
-
--- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.transparent_window = true
+lvim.lsp.diagnostics.virtual_text = false
 
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-d>"] = "10j"
+lvim.keys.normal_mode["<C-u>"] = "10k"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -29,16 +20,14 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.colorscheme = "lunar"
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerSync
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-
--- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.terminal.active = true
+lvim.builtin.alpha.active = true
+
+lvim.builtin.nvimtree.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.breadcrumbs.active = false
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
@@ -93,12 +82,3 @@ lvim.builtin.treesitter.auto_install = true
 --       cmd = "TroubleToggle",
 --     },
 -- }
-
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
