@@ -46,12 +46,46 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [kmix]
 _k_friendly_name=Audio Volume
+decrease-volume-Beep@HDA Intel PCH=none,none,Decrease volume of Beep on HDA Intel PCH
+decrease-volume-Capture@HDA Intel PCH=none,none,Decrease volume of Capture on HDA Intel PCH
+decrease-volume-Headphone@HDA Intel PCH=none,none,Decrease volume of Headphone on HDA Intel PCH
+decrease-volume-Internal Mic Boost@HDA Intel PCH=none,none,Decrease volume of Internal Mic Boost on HDA Intel PCH
+decrease-volume-Master@HDA Intel PCH=none,none,Decrease volume of Master on HDA Intel PCH
+decrease-volume-Mic Boost@HDA Intel PCH=none,none,Decrease volume of Mic Boost on HDA Intel PCH
+decrease-volume-Mic@USB PnP Audio Device=none,none,Decrease volume of Mic on USB PnP Audio Device
+decrease-volume-PCM@HDA Intel PCH=none,none,Decrease volume of PCM on HDA Intel PCH
+decrease-volume-PCM@USB PnP Audio Device=none,none,Decrease volume of PCM on USB PnP Audio Device
+decrease-volume-Speaker@HDA Intel PCH=none,none,Decrease volume of Speaker on HDA Intel PCH
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Decrease Microphone Volume
 decrease_volume=Volume Down,Volume Down,Decrease Volume
+increase-volume-Beep@HDA Intel PCH=none,none,Increase volume of Beep on HDA Intel PCH
+increase-volume-Capture@HDA Intel PCH=none,none,Increase volume of Capture on HDA Intel PCH
+increase-volume-Headphone@HDA Intel PCH=none,none,Increase volume of Headphone on HDA Intel PCH
+increase-volume-Internal Mic Boost@HDA Intel PCH=none,none,Increase volume of Internal Mic Boost on HDA Intel PCH
+increase-volume-Master@HDA Intel PCH=none,none,Increase volume of Master on HDA Intel PCH
+increase-volume-Mic Boost@HDA Intel PCH=none,none,Increase volume of Mic Boost on HDA Intel PCH
+increase-volume-Mic@USB PnP Audio Device=none,none,Increase volume of Mic on USB PnP Audio Device
+increase-volume-PCM@HDA Intel PCH=none,none,Increase volume of PCM on HDA Intel PCH
+increase-volume-PCM@USB PnP Audio Device=none,none,Increase volume of PCM on USB PnP Audio Device
+increase-volume-Speaker@HDA Intel PCH=none,none,Increase volume of Speaker on HDA Intel PCH
 increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Increase Microphone Volume
 increase_volume=Volume Up,Volume Up,Increase Volume
 mic_mute=Microphone Mute\tMeta+Volume Mute,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
+toggle-mute-Auto Gain Control@USB PnP Audio Device=none,none,Mute Auto Gain Control on USB PnP Audio Device
+toggle-mute-Beep@HDA Intel PCH=none,none,Mute Beep on HDA Intel PCH
+toggle-mute-Capture@HDA Intel PCH=none,none,Mute Capture on HDA Intel PCH
+toggle-mute-Headphone@HDA Intel PCH=none,none,Mute Headphone on HDA Intel PCH
+toggle-mute-IEC958 2@HDA Intel PCH=none,none,Mute IEC958 2 on HDA Intel PCH
+toggle-mute-IEC958 3@HDA Intel PCH=none,none,Mute IEC958 3 on HDA Intel PCH
+toggle-mute-IEC958@HDA Intel PCH=none,none,Mute IEC958 on HDA Intel PCH
+toggle-mute-Internal Mic Boost@HDA Intel PCH=none,none,Mute Internal Mic Boost on HDA Intel PCH
+toggle-mute-Master@HDA Intel PCH=none,none,Mute Master on HDA Intel PCH
+toggle-mute-Mic Boost@HDA Intel PCH=none,none,Mute Mic Boost on HDA Intel PCH
+toggle-mute-Mic@USB PnP Audio Device=none,none,Mute Mic on USB PnP Audio Device
+toggle-mute-PCM@HDA Intel PCH=none,none,Mute PCM on HDA Intel PCH
+toggle-mute-PCM@USB PnP Audio Device=none,none,Mute PCM on USB PnP Audio Device
+toggle-mute-Speaker@HDA Intel PCH=none,none,Mute Speaker on HDA Intel PCH
 
 [ksmserver]
 Halt Without Confirmation=none,,Halt Without Confirmation
@@ -67,6 +101,7 @@ Decrease Opacity=none,,Decrease Opacity of Active Window by 5 %
 Expose=none,Ctrl+F9,Toggle Present Windows (Current desktop)
 ExposeAll=none,Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=none,Ctrl+F7,Toggle Present Windows (Window class)
+ExposeClassCurrentDesktop=none,none,Toggle Present Windows (Window class on current desktop)
 Increase Opacity=none,,Increase Opacity of Active Window by 5 %
 Invert Screen Colors=none,,Invert Screen Colors
 Kill Window=none,Meta+Ctrl+Esc,Kill Window
@@ -78,7 +113,7 @@ MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=none,Meta+W,Toggle Overview
 Setup Window Shortcut=none,,Setup Window Shortcut
-Show Desktop=none,Meta+D,Show Desktop
+Show Desktop=none,Meta+D,Peek at Desktop
 ShowDesktopGrid=none,Meta+F8,Show Desktop Grid
 Suspend Compositing=none,Alt+Shift+F12,Suspend Compositing
 Switch One Desktop Down=none,Meta+Ctrl+Down,Switch One Desktop Down
@@ -207,7 +242,7 @@ Window to Screen 6=none,,Window to Screen 6
 Window to Screen 7=none,,Window to Screen 7
 _k_friendly_name=KWin
 view_actual_size=none,Meta+0,Zoom to Actual Size
-view_zoom_in=none,Meta+=,Zoom In
+view_zoom_in=none,Meta++,Zoom In
 view_zoom_out=none,Meta+-,Zoom Out
 
 [mediacontrol]
@@ -224,6 +259,10 @@ stopmedia=Media Stop,Media Stop,Stop media playback
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
 _launch=Meta+E,Meta+E,Dolphin
+
+[org.kde.kcalc.desktop]
+_k_friendly_name=KCalc
+_launch=Launch (1),Launch (1),KCalc
 
 [org.kde.konsole.desktop]
 NewTab=none,none,Open a New Tab
