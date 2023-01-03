@@ -1,0 +1,23 @@
+#!/bin/env bash
+
+TEMPFILE="/tmp/code-current-workspace.tmp"
+
+if [[ "$1" = "a" ]]; then
+
+  if [[ -z "$2" ]]; then
+    echo "Folder '\$2' cannot be empty"
+    exit 1
+  fi
+
+  RESOLVED="$(readlink -f "$2")"
+
+  echo "$RESOLVED" > $TEMPFILE
+  echo "Added $RESOLVED to the list of workspaces"
+  exit 0
+fi
+
+if ! [[ -f "$TEMPFILE" ]] || [[ -z "$(cat $TEMPFILE)" ]]; then
+  exit 1
+fi
+
+cat $TEMPFILE

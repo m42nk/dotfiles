@@ -1,0 +1,31 @@
+#!/bin/env bash
+
+PROJ_DIR="$HOME/Projects"
+PROJ_NAME="$1"
+
+list_proj () {
+  ls $PROJ_DIR/*.proj \
+  | xargs basename \
+  | sed "s/\(.*\).proj/- \1/"
+}
+
+if [[ -z "$PROJ_NAME" ]]; then
+  echo "Usage:"
+  echo "`basename $0` <project_name>"
+  echo ""
+  echo "Available projects:"
+  list_proj
+  exit 1
+fi
+
+if ! [[ -f "${PROJ_DIR}/${PROJ_NAME}.proj" ]]; then
+  echo "Project '$PROJ_NAME' doesn't exist"
+  echo ""
+  echo "Available projects:"
+  list_proj
+
+  exit 1
+fi
+
+exec ${PROJ_DIR}/${PROJ_NAME}.proj
+

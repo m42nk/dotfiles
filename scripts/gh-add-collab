@@ -1,0 +1,62 @@
+#!/bin/env bash
+# vim: ft=bash
+
+#####################################
+## Add main account (syakhisk) as
+## collaborator in dotfiles account (m42nk)
+## based on: https://github.com/cli/cli/issues/2807
+## and: https://gist.github.com/yermulnik/017837c01879ed3c7489cc7cf749ae47
+#####################################
+
+_repo="$1"
+_username_main="syakhisk"
+_username_alt="m42nk"
+_cfg_main="$HOME/.config/gh/hosts.yml.main"
+_cfg_alt="$HOME/.config/gh/hosts.yml.m42nk"
+_token_main=""
+_token_alt=""
+
+if [[ -z "$_repo" ]]; then
+  echo -e "Usage:\n $(basename "$0") [repo_name]"
+  exit 1
+fi
+
+if [[ ! -f "${_cfg_main}" ]]; then
+  echo "${_cfg_main} not found!"
+  exit 1
+fi
+
+if [[ ! -f "${_cfg_alt}" ]]; then
+  echo "${_cfg_alt} not found!"
+  exit 1
+fi
+
+_token_alt="$(sed -nE '/oauth_token: /s/.*oauth_token: (.)/\1/p' "${_cfg_alt}")"
+_token_main="$(sed -nE '/oauth_token: /s/.*oauth_token: (.)/\1/p' "${_cfg_main}")"
+
+jsonVal() {
+    python3 -c "import sys, json; print(json.load(sys.stdin)[\"$1\"])";
+}
+
+addCollab () {
+  # add collaborator
+  _res="$(\
+    gh api \
+    --method=PUT \
+    -H="Authorization: token $_token_alt" \
+    "repos/${_username_alt}/${_repo}/collaborators/${_username_main}" \
+  )"
+
+  # get invite url
+  echo "${_res}" | jsonVal "url"
+}
+
+echo "Inviting $_username_main to $_username_alt/$_repo"
+_invite_url="$(addCollab)"
+
+# Main acc accepts invitation
+echo "Accepting invitation from $_username_alt on $_username_main"
+gh api \
+  --method=PATCH \
+  -H="Authorization: token $_token_main" \
+  "$_invite_url"

@@ -1,0 +1,2 @@
+#!/bin/env bash
+brightnessctl i | grep -Po '[0-9]+(?=%)' | head -1  >> /tmp/xob-brightness-fifo

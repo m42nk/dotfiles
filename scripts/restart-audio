@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+# systemctl --user enable --now pipewire-pulse
+# systemctl --user enable --now pipewire
+
+systemctl --user restart --now pipewire-pulse
+systemctl --user restart --now pipewire

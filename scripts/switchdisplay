@@ -1,0 +1,21 @@
+#! /bin/bash
+
+gethdmi=`xrandr | grep HDMI | grep " connected"`
+hdmino=`echo $gethdmi | awk '{ print $1 }'`
+
+notify-send -t 1000 "Switching display..."
+
+if [[ -n $gethdmi ]]; then
+  layout-dual-monitor.sh 
+else
+  layout-single-monitor.sh 
+fi
+
+nitrogen --restore
+
+# if [ -n `command -v i3-msg` ]; then
+if [[ "$DESKTOP_SESSION" = "i3" ]]; then
+  i3-msg -- focus output primary
+fi
+
+notify-send -t 1000 "Display switched!"

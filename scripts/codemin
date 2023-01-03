@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+codium --extensions-dir ~/vscode_profiles/minimal/exts --user-data-dir ~/vscode_profiles/minimal/data

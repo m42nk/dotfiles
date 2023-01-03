@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+set -e
+
+notify-send -a "KDE Restart" "KDE Restart" "Restaring $i"
+kquitapp5 plasmashell 1>/dev/null
+kquitapp5 kglobalaccel 1>/dev/null
+
+kstart5 plasmashell 1>/dev/null
+kstart5 kwin_x11 -- --replace 1>/dev/null
+kstart5 kglobalaccel5 1>/dev/null

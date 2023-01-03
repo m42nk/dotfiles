@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+set -e
+
+if [[ $# -lt 2 ]]; then
+  echo "Insufficient number of argument"
+  exit 1
+fi
+
+COMPONENT="$1"
+SHORTCUTNAME="$2"
+
+qdbus org.kde.kglobalaccel "/component/$COMPONENT" invokeShortcut "$SHORTCUTNAME"

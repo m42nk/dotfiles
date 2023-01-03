@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+TEMPFILE="/tmp/maindir-md"
+
+if [[ -z $(cat $TEMPFILE) ]]; then
+  echo ""
+fi
