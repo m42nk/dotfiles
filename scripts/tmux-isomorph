@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# tmux new-session -A -s asd
+# tmux attach || tmux
+
+tmux new-session -A
