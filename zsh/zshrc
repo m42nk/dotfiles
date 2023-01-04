@@ -32,6 +32,7 @@ src $ZSH/aliases.zsh
 src $ZSH/autostarts.zsh
 src $ZSH/fzf.zsh
 src $ZSH/asdf.zsh
+src $ZSH/system-specific.zsh
 
 ## Variables
 export HISTFILE=$HOME/.zsh_history
