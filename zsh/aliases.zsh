@@ -17,7 +17,7 @@ alias -g .....="../../../.."
 ##  prefix it with backslash (\)
 ##  eg. \ls, \rm -rf
 
-alias rm="trash"       # Put to trash instead of remove
+# alias rm="trash"       # Put to trash instead of remove
 alias ls="exa --icons" # Pretty ls
 alias lsnew="exa -1snew" # Ls sort by newest (bottom -> top)
 alias mv="mv -iv"      # Verbose + safer move
@@ -166,3 +166,12 @@ alias mobile='qrencode -t ansiutf8 http://$(ipconfig getifaddr en0):3000'
 
 alias ieobak="bash $HOME/Codes/IEO-2023/Backups/scripts/cron_db_backup.sh"
 alias vite="npm init vite@latest"
+
+# alias sstart="sudo service apache2 start"
+# alias sstop="sudo service apache2 stop"
+# alias sreload="sudo service apache2 reload"
+
+alias a2start="sudo service apache2 start"
+alias a2stop="sudo service apache2 stop"
+alias a2reload="sudo service apache2 reload"
+alias a2restart="sudo service apache2 restart"

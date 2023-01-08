@@ -80,6 +80,9 @@ src $ZSH/keybind.zsh
 ## Hook
 src $ZSH/hook.zsh
 
+## Kubernetes
+src $ZSH/k8s.zsh
+
 ## External
 # export TERM="xterm-256color"
 # export TERM="xterm-256color"
