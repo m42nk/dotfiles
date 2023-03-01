@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+wsl.exe --terminate docker-desktop
+wsl.exe --terminate docker-desktop-data

@@ -37,6 +37,8 @@ alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias gp="git push"
+alias gsw="git switch"
+alias gst="git stash"
 alias gpf="git push --force"
 alias gco="git checkout"
 alias gcl="git clone"
@@ -51,6 +53,7 @@ alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
+alias gpl="git pull"
 
 ## -- Node
 alias nrd="npm run dev"
@@ -63,6 +66,7 @@ alias dwp="docker-compose run --rm cli"
 alias dcud="docker-compose up -d"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
+alias dps="docker ps --format '{{.ID}}\t{{.Image}}\t{{.Names}}' | column --table"
 
 ## -- Tmux
 alias t="tmux"
@@ -162,7 +166,11 @@ unset $clear
 alias fr="fzf-rg-preview"
 alias ff="fzf-fd-preview"
 alias tun="~/Work/scripts/bastion.sh"
-alias mobile='qrencode -t ansiutf8 http://$(ipconfig getifaddr en0):3000'
+# alias mobile='qrencode -t ansiutf8 http://$(ipconfig getifaddr en0):3000'
+alias mobile3000='qrencode -t ansiutf8 http://$(ip -4 addr | grep eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}"):3000'
+alias mobile5173='qrencode -t ansiutf8 http://$(ip -4 addr | grep eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}"):5173'
+alias asd='ip -4 addr | grep eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}"'
+
 
 alias ieobak="bash $HOME/Codes/IEO-2023/Backups/scripts/cron_db_backup.sh"
 alias vite="npm init vite@latest"
