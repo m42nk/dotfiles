@@ -1,0 +1,63 @@
+#!/bin/env bash
+
+# Colors
+_red() { echo -e "\e[31m$1\e[0m"; }
+_green() { echo -e "\e[32m$1\e[0m"; }
+_gray() { echo -e "\e[90m$1\e[0m"; }
+_blue() { echo -e "\e[34m$1\e[0m"; }
+
+branch="$1"
+
+if [[ -z "$branch" ]]; then
+	echo "Missing branch name"
+	echo -e "Usage:"
+	echo -e "\t$(basename "$0") <branch-name>"
+	exit 1
+fi
+
+current_branch="$(git branch --show-current)"
+
+echo "Are you sure you want to create"
+echo "a new worktree called '$(_green "$branch")' from '$(_blue "$current_branch")'? [y/N]"
+read -n 1 -r
+echo
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+	echo "Aborting"
+	exit 1
+fi
+
+# if branch name contains a slash, convert them to double underscores
+target_dir="../${branch//\//__}"
+
+# confirm target_dir to user eg: "target_dir (default)" with default from above or "target_dir ($target_dir)" and prompt default
+read -r -p "Target directory: " -i "$target_dir" -e target_dir
+
+if [[ -d "$target_dir" ]]; then
+	echo "Target directory '$(_red "$target_dir")' already exists"
+	exit 1
+fi
+
+# check if branch exists locally
+local_branch="$(git branch --list "$branch")"
+remote_branch="$(git branch --list -r "origin/$branch")"
+
+if [[ -z "$local_branch" && -z "$remote_branch" ]]; then
+	echo "Branch '$(_red "$branch")' does not exist"
+	echo "Creating..."
+	git worktree add -b "$branch" "$target_dir"
+
+	exit 0
+fi
+
+git worktree add "$target_dir" "$branch"
+
+# prompt change to new worktree
+echo "Switch to new worktree? [y/N]"
+read -n 1 -r
+echo
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	cd "$target_dir" || exit
+	exec "$SHELL"
+fi
