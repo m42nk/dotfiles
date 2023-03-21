@@ -47,13 +47,13 @@ alias gss="git status -s"
 alias grv="git remote --verbose"
 alias gcan="git commit --amend --no-edit"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias glog5="glog -n 5"
-alias glogn="glog -n 5"
+alias glogn="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 5"
 alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
 alias gpl="git pull"
+alias gbro='gh browse --branch $(git branch --show-current)'
 
 ## -- Node
 alias nrd="npm run dev"

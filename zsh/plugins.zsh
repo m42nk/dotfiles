@@ -1,4 +1,5 @@
 ZPLUGINDIR="$XDG_DATA_HOME/zsh/plugins"
+export ZSH_CUSTOM="$XDG_DATA_HOME/zsh"
 
 src $ZSH/unplugged.zsh
 
@@ -8,6 +9,7 @@ plugins=(
   agkozak/zsh-z
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-completions
+  zsh_codex
   # tom-doerr/zsh_codex
   # wfxr/forgit
   # jeffreytse/zsh-vi-mode
