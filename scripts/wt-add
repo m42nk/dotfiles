@@ -52,12 +52,16 @@ fi
 
 git worktree add "$target_dir" "$branch"
 
-# prompt change to new worktree
-echo "Switch to new worktree? [y/N]"
-read -n 1 -r
-echo
+# print command to change to new worktree
+echo "Switch to new worktree with:"
+echo -e "\t$(_gray "cd") $(_green "$target_dir")"
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-	cd "$target_dir" || exit
-	exec "$SHELL"
-fi
+# prompt change to new worktree
+# echo "Switch to new worktree? [y/N]"
+# read -n 1 -r
+# echo
+
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
+# 	cd "$target_dir" || exit
+# 	exec "$SHELL"
+# fi

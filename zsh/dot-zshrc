@@ -1,4 +1,5 @@
 source ~/.config/zsh/zshrc
+export OPENAI_API_KEY=$(cat ~/.config/openai-api-keys)
 
 # export PATH="/usr/local/opt/erlang@22/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/erlang@22/lib"

@@ -183,3 +183,18 @@ alias a2start="sudo service apache2 start"
 alias a2stop="sudo service apache2 stop"
 alias a2reload="sudo service apache2 reload"
 alias a2restart="sudo service apache2 restart"
+
+alias pn=pnpm
+
+alias ttd='tt -t 15 -csv >> ~/wpm.csv'
+
+gdif(){
+  if [ -z "$1" ]; then
+    echo "Please provide a filename"
+    return
+  fi
+  converted_filename="$(wslpath "$1")"
+  valid_filename="$(wslpath "$1" | sed 's/[^a-zA-Z0-9]/_/g')"
+  echo "--$valid_filename | $converted_filename--"
+  git diff "$converted_filename" | tee $HOME/Work/vsms/SYNC-DIFF/$valid_filename.diff
+}

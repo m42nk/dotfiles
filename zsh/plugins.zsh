@@ -15,6 +15,8 @@ plugins=(
   # jeffreytse/zsh-vi-mode
 )
 
+source ./git-auto-fetch.zsh
+
 for repo in $plugins; do
   plugin-load https://github.com/${repo}.git
 done
