@@ -1,6 +1,6 @@
 preexec(){
   case "$1" in
-    nrd|"npm run dev"|yrd|"yarn dev")
+    nrd|"npm run dev"|yrd|"yarn dev"|"pn dev")
       echo "::Rename tmux Server::"
       tmux rename-window "Server"
       ;;

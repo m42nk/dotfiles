@@ -46,6 +46,8 @@ if [[ -z "$local_branch" && -z "$remote_branch" ]]; then
 	echo "Branch '$(_red "$branch")' does not exist"
 	echo "Creating..."
 	git worktree add -b "$branch" "$target_dir"
+  echo "Switch to new worktree with:"
+  echo -e "\t$(_gray "cd") $(_green "$target_dir")"
 
 	exit 0
 fi

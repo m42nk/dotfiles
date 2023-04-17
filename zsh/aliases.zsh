@@ -185,6 +185,7 @@ alias a2reload="sudo service apache2 reload"
 alias a2restart="sudo service apache2 restart"
 
 alias pn=pnpm
+alias pnif="pnpm install --filter"
 
 alias ttd='tt -t 15 -csv >> ~/wpm.csv'
 
