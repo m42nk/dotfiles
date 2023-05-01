@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+set -e
+
+# shellcheck disable=2046,2086
+SCRIPT_DIR="$(realpath $(dirname ${BASH_SOURCE[0]}))"
+source "${SCRIPT_DIR}/.env.install"
+
+printLineBanner() {
+  printf '\e[1;34m%0.s#\e[0m' $(seq 1 $(stty size | awk '{print $2}'))
+}
+
+cd "${BASE_DIR}"
+git submodule update --init --recursive
+
+
+# Verify dotbot profile exists
+# Checks if the file exists in ./profiles/ folder
+exitIfProfileNotFound=false    # used as a flag to exit IF a profile is NOT found
+for profile in ${@}; do
+  profileFilepath="${PROFILES_DIR}/${profile}"
+
+  if [[ ! -e $profileFilepath ]]; then
+    echo -e "Dotbot profile \\033[1;31m$profileFilepath \\033[0mNOT found"
+
+    exitIfProfileNotFound=true
+  fi
+done
+
+# exit if a profile filepath is NOT found
+if [[ $exitIfProfileNotFound == true ]]; then
+  echo -e "\nexiting"
+  exit 1
+fi
+
+# cleanup variables
+unset exitIfProfileNotFound
+
+# Running profile
+
+# loop through each argument
+for profile in ${@}; do
+    # extract dotbot configs to run
+    while IFS= read -r config; do
+        CONFIGS+=" ${config}"
+    # read lines that DON'T start with #
+    done < <(grep -v '^#' "${PROFILES_DIR}/$profile")
+
+    echo "CONFIG:"
+    echo "$CONFIGS"
+
+    # print line banner multiple times
+    printLineBanner
+    echo -e "\nRunning profile \e[1;34m$profile\e[0m\n"
+
+    # run profile configs
+    source ./install-standalone "${CONFIGS}"
+
+    # cleanup variables
+    unset CONFIGS
+done
+
+cd "${BASE_DIR}"
+
+echo "Restart your terminal..."
+
