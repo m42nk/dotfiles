@@ -1,0 +1,3 @@
+- link:
+    ~/.zshrc: zsh/dot-zshrc
+    ~/.config/zsh: zsh

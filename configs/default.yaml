@@ -1,7 +1,0 @@
-- link:
-    $HOME/.zshrc: zsh/dot-zshrc
-    $HOME/.config/zsh: zsh
-
-    $HOME/.config/bat: bat
-
-    $HOME/.config/tmux: tmux
