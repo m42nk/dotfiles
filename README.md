@@ -4,36 +4,31 @@
 > [Source](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 
 
-## Dotfile management tools
-
-This dotfiles is powered by [dotbot](https://github.com/anishathalye/dotbot)
-
-
 ## Directory structure
 ```
 .
 ├── .meta/
 ├── .misc/
 ├── profiles/
+│   ├── default
+│   └── [more-profile]
 ├── configs/
+│   ├── zsh.yaml
+│   ├── neovim.yaml
+│   └── [more-config]
 ├── os/
+│   ├── macos
+│   └── [more-os]
 └── packages/
+    ├── zsh/
+    ├── nvim/
+    └── [other-packages]
 ```
+## Dotfile management tools
 
-## Directory structure
-```
-.
-├── install-profile
-├── install-standalone
-└── meta/
-    ├── base.yaml
-    ├── configs/
-    │   ├── [some-config].yaml
-    │   └── [more-config].yaml
-    └── profiles/
-        ├── [some-proile]
-        └── [other-profile]
-```
+- [dotbot](https://github.com/anishathalye/dotbot)
+- [ansible](https://ansible.com)
+
 
 ### Config
 A `config` is a `.yaml` file similar to dotbot's `install.conf.yaml`.
@@ -42,7 +37,7 @@ This is a set of instruction and directive to install your dotfiles
 
 Example:
 ```yaml
-# ./meta/configs/default.yaml
+# ./configs/default.yaml
 
 - link:
     $HOME/.config/nvim: nvim
@@ -58,7 +53,7 @@ You can make each profile a machine that have different configs attached to it.
 
 Example:
 ```
-# ./meta/profiles/linux
+# ./profiles/linux
 
 default
 xorg
@@ -66,19 +61,19 @@ kde
 ```
 
 ```
-# ./meta/profiles/macos
+# ./profiles/macos
 
 default
 brew
 ```
 
 
-### `./meta/profiles/`
+### `./profiles/`
 A directory which contains all of the profile
 
 
 ### `install-profile`
-A script to install **configurations** based on a **profile** defined in `./meta/profiles`.
+A script to install **configurations** based on a **profile** defined in `./profiles`.
 
 
 Usage:
@@ -88,18 +83,19 @@ $ ./install-profile [some-profile]
 
 
 ### `install-standalone`
-A script to install **configurations** based on a **config** defined in `./meta/configs`.
+A script to install **configurations** based on a **config** defined in `./configs`.
 
 Usage:
 ```
-$ ./install-config [some-config] [other-config]
+$ ./install-standalone [some-config] [other-config]
 ```
 
 Note:
- - Multiple argument is supported if you want to install multiple config from `./meta/configs`
+ - Multiple argument is supported if you want to install multiple config from `./configs`
 
 
 ### Credits and inspiration
+- [ansible-dotfiles (TODO)]()
 - [dotbot](https://github.com/anishathalye/dotbot)
 - [ecarlson94](https://github.com/ecarlson94/dotbot-template)
 - [vbriand](https://github.com/vbriand/dotfiles)
