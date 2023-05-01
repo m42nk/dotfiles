@@ -1,11 +1,11 @@
 [submodule "dotfiles-nvim"]
-	path = configs/nvim
+	path = packages/nvim
 	url = https://github.com/m42nk/dotfiles-nvim
 	ignore = dirty
 	branch = master
 	update = rebase
 [submodule "dotfiles-tmux"]
-	path = configs/tmux
+	path = packages/tmux
 	url = https://github.com/m42nk/dotfiles-tmux
 	ignore = dirty
 	branch = master
