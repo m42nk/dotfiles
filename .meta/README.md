@@ -12,17 +12,6 @@ This dotfiles is powered by [dotbot](https://github.com/anishathalye/dotbot)
 ## Directory structure
 ```
 .
-├── .meta/
-├── .misc/
-├── profiles/
-├── configs/
-├── os/
-└── packages/
-```
-
-## Directory structure
-```
-.
 ├── install-profile
 ├── install-standalone
 └── meta/

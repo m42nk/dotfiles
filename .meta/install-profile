@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+source ./install.env
+
+echo $META_DIR
