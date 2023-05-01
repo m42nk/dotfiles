@@ -1,25 +1,6 @@
 #!/usr/bin/env bash
 
 # used for running individual installation scripts located in ./meta/configs/ folder
-# usage:
-# ./install-standalone nvim
-# ./install-standalone tmux
-# ./install-standalone zsh
-#
-# or
-# ./install-standalone nvim tmux zsh
-#
-# NOTE: to run a config in sudo, then add '-sudo' as a suffix of the config to run.
-# Ex: ./install-standalone apt-sudo
-# check: https://github.com/ecarlson94/dotbot-template#for-installing-single-configurations
-#
-# ./meta/configs/ folder will contain .yaml files that will be used as config. It
-# has the same directives as the default dotbot install-conf.yaml
-# check: https://github.com/anishathalye/dotbot#full-example
-#
-# obtained from https://github.com/anishathalye/dotbot/wiki/Tips-and-Tricks#install-standalone
-# author ecarlson94
-
 set -e
 
 BASE_CONFIG="base"
