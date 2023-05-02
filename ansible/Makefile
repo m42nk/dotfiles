@@ -1,4 +1,4 @@
-DOCKER_TAG ?= ansbile-ubuntu:0.0.0
+DOCKER_TAG ?= ansible-ubuntu:0.0.0
 TARGET_USER ?= ${USER}
 TARGET_DIR ?= /home/${TARGET_USER}/ansible
 

@@ -25,16 +25,41 @@
       tags:
         - curl
 
+    # - name: install latest git | apt
+    #   become: true
+    #   ansible.builtin.apt_repository:
+    #     validate_certs: no
+    #     repo: 'ppa:git-core/ppa'
+    #     state: present
+
+    - name: check git ppa | command
+      shell: apt-cache policy | grep -q git-core/ppa
+      ignore_errors: true
+      register: git_ppa
+      changed_when: false
+      tags:
+        - git
+
+    - name: add git ppa | command
+      become: true
+      command: add-apt-repository -y ppa:git-core/ppa
+      when: git_ppa.rc != 0
+      args:
+        creates: /etc/apt/sources.list.d/git-core-ubuntu-ppa-jammy.list
+
     - name: install latest git | apt
-      apt_repository:
-        repo: ppa:git-core/ppa
+      become: true
+      apt:
+        name: git
         state: present
+        update_cache: true
+      tags:
+        - git
 
     - name: install gh cli | apt
       become: true
       apt:
-        name: 
-          - gh
+        name: gh
         state: present
       when: '"gh" not in ansible_facts.packages'
       tags:

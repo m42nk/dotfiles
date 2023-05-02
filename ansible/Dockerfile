@@ -3,10 +3,11 @@ FROM ubuntu:22.04
 RUN apt-get update
 RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y sudo
-RUN pip install ansible
-RUN ansible-galaxy collection install community.general
 RUN apt-get install -y git
 RUN apt-get install -y python3-apt
+RUN apt-get install -y software-properties-common
+RUN pip install ansible
+RUN ansible-galaxy collection install community.general
 
 ENV TARGET_USER m42nk
 ENV TARGET_DIR /home/${TARGET_USER}/ansible
