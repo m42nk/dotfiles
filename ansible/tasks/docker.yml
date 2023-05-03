@@ -1,0 +1,45 @@
+- name: add docker gpg apt key | apt_key
+  become: true
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add docker repository | apt_repository
+  become: true
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: update apt and install docker-ce | apt
+  become: true
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: true
+
+
+# ARCHIVE:
+# - name: check docker installed | command
+#   become: true
+#   command: docker --version
+#   register: docker_installed
+#   ignore_errors: true
+#   changed_when: false
+#   tags:
+#     - docker
+
+# - name: install docker | curl
+#   become: true
+#   shell: curl -fsSL https://get.docker.com | sh
+#   when: docker_installed.rc != 0
+#   tags:
+#     - docker
+
+# - name: add user to docker group | user
+#   become: true
+#   shell: usermod -aG docker "{{ ansible_user_id }}"
+#   tags:
+#     - docker
+
+
+# vim: filetype=yaml.ansible

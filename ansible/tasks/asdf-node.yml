@@ -1,0 +1,33 @@
+- name: add node plugin | asdf
+  shell: "source ~/.asdf/asdf.sh && asdf plugin add nodejs"
+  args:
+    executable: /bin/bash
+  register: asdf_node
+  changed_when: false
+  failed_when: 
+    - 'asdf_node.rc != 0' # fail if exit code is not 0
+    - '"already added" not in asdf_node.stderr' # ignore error if plugin already added
+  tags:
+    - asdf
+
+- name: install node {{ node_version }} | asdf
+  shell: |
+    source ~/.asdf/asdf.sh
+    asdf install nodejs {{ node_version }}
+  args:
+    executable: /bin/bash
+  changed_when: false
+  tags:
+    - asdf 
+
+- name: set node 18.12.0 as global | asdf
+  shell: |
+    source ~/.asdf/asdf.sh
+    asdf global nodejs {{ node_version }}
+  changed_when: false
+  args:
+    executable: /bin/bash
+  tags:
+    - asdf
+
+# vim: filetype=yaml.ansible

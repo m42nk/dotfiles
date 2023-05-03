@@ -1,0 +1,29 @@
+- name: add neovim ppa
+  become: true
+  apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu YOUR_UBUNTU_VERSION_HERE main
+    state: present
+  tags:
+    - neovim
+
+- name: update apt and install neovim | apt
+  become: true
+  apt:
+    name: neovim
+    state: latest
+    update_cache: true
+  tags:
+    - neovim
+
+# ARCHIVE:
+# # TODO: this neovim is outdated, use ppa or snap instead
+# - name: install neovim | apt
+#   become: true
+#   apt:
+#     name: neovim
+#     state: present
+#   when: '"neovim" not in ansible_facts.packages'
+#   tags:
+#     - neovim
+
+# vim: filetype=yaml.ansible

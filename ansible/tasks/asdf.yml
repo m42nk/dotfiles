@@ -1,0 +1,17 @@
+- name: install curl | apt
+  become: true
+  apt:
+    name: curl
+    state: present
+  when: '"curl" not in ansible_facts.packages'
+  tags:
+    - asdf
+
+- name: clone asdf version manager | git
+  git:
+    repo: 'https://github.com/asdf-vm/asdf.git'
+    dest: '~/.asdf'
+  tags:
+    - asdf
+
+# vim: filetype=yaml.ansible

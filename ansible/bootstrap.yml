@@ -1,8 +1,9 @@
 - name: Bootstrap development environment
   hosts: localhost
+  connection: local
 
   pre_tasks:
-    - name: Gather the package facts
+    - name: Gather package facts
       package_facts:
         manager: auto
 
@@ -16,206 +17,15 @@
       changed_when: false
 
   tasks:
-    - name: install curl | apt
-      become: true
-      apt:
-        name: curl
-        state: present
-      when: '"curl" not in ansible_facts.packages'
-      tags:
-        - curl
-
-    # - name: install latest git | apt
-    #   become: true
-    #   ansible.builtin.apt_repository:
-    #     validate_certs: no
-    #     repo: 'ppa:git-core/ppa'
-    #     state: present
-
-    - name: check git ppa | command
-      shell: apt-cache policy | grep -q git-core/ppa
-      ignore_errors: true
-      register: git_ppa
-      changed_when: false
-      tags:
-        - git
-
-    - name: add git ppa | command
-      become: true
-      command: add-apt-repository -y ppa:git-core/ppa
-      when: git_ppa.rc != 0
-      args:
-        creates: /etc/apt/sources.list.d/git-core-ubuntu-ppa-jammy.list
-
-    - name: install latest git | apt
-      become: true
-      apt:
-        name: git
-        state: present
-        update_cache: true
-      tags:
-        - git
-
-    - name: install gh cli | apt
-      become: true
-      apt:
-        name: gh
-        state: present
-      when: '"gh" not in ansible_facts.packages'
-      tags:
-        - git
-        - gh
-      # TODO: login to gh?
-      # TODO: gh auth setup-git
-
-    - name: clone asdf version manager | git
-      git:
-        repo: 'https://github.com/asdf-vm/asdf.git'
-        dest: '~/.asdf'
-      tags:
-        - asdf
-
-    - name: add node plugin | asdf
-      shell: source ~/.asdf/asdf.sh && asdf plugin add nodejs
-      register: asdf_node_install_result
-      failed_when: 
-        - 'asdf_node_install_result.rc != 0' # fail if exit code is not 0
-        - '"already added" not in asdf_node_install_result.stderr' # ignore error if plugin already added
-      args:
-        executable: /bin/bash
-      tags:
-        - asdf
-
-    - name: install node lts | asdf
-      shell: source ~/.asdf/asdf.sh && asdf install nodejs lts
-      retries: 3
-      delay: 1
-      register: result
-      until: result.rc == 0
-      args:
-        executable: /bin/bash
-      tags:
-        - asdf 
-
-    - name: set node lts as global | asdf
-      shell: source ~/.asdf/asdf.sh && asdf global nodejs lts
-      args:
-        executable: /bin/bash
-      tags:
-        - asdf
-
-    - name: install zsh | apt
-      become: true
-      apt:
-        name: zsh
-        state: present
-      when: '"zsh" not in ansible_facts.packages'
-      tags:
-        - zsh
-
-    - name: set zsh as default shell | chsh
-      become: true
-      user:
-        name: "{{ ansible_user_id }}"
-        shell: /usr/bin/zsh
-      tags:
-        - zsh
-
-    - name: check starship prompt installed | command
-      command: starship --version
-      register: starship_installed
-      ignore_errors: true
-      changed_when: false
-      tags:
-        - zsh
-
-    - name: install starship prompt | curl
-      shell: curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
-      when: starship_installed.rc != 0
-      tags:
-        - zsh
-
-    - name: install tmux | apt
-      become: true
-      apt:
-        name: tmux
-        state: present
-      when: '"tmux" not in ansible_facts.packages'
-      tags:
-        - tmux
-
-    - name: check docker installed | command
-      become: true
-      command: docker --version
-      register: docker_installed
-      ignore_errors: true
-      changed_when: false
-      tags:
-        - docker
-
-    - name: install docker | curl
-      become: true
-      shell: curl -fsSL https://get.docker.com | sh
-      when: docker_installed.rc != 0
-      tags:
-        - docker
-
-    - name: add user to docker group | user
-      become: true
-      shell: usermod -aG docker "{{ ansible_user_id }}"
-      tags:
-        - docker
-
-    # - name: install snap | apt
-    #   become: true
-    #   apt:
-    #     name: snapd
-    #     state: present
-    #   when: '"snapd" not in ansible_facts.packages'
-    #   environment:
-    #     SNAPCRAFT_SETUP_CORE: 1
-    #   tags:
-    #     - snap
-    #     - neovim
-
-    # - name: check snapd service | service
-    #   service:
-    #     name: snapd
-    #     state: started
-    #     enabled: true
-    #   environment:
-    #     SNAPCRAFT_SETUP_CORE: 1
-
-    # - name: install neovim | snap
-    #   become: true
-    #   snap:
-    #     name: nvim
-    #     classic: true
-    #     channel: latest/edge
-    #     state: present
-    #   environment:
-    #     SNAPCRAFT_SETUP_CORE: 1
-    #   tags:
-    #     - neovim
-
-    # TODO: this neovim is outdated, use ppa or snap instead
-    - name: install neovim | apt
-      become: true
-      apt:
-        name: neovim
-        state: present
-      when: '"neovim" not in ansible_facts.packages'
-      tags:
-        - neovim
-
-    - name: clone dotfiles | git
-      git:
-        repo: 'https://github.com/m42nk/dotfiles.git'
-        dest: '~/Dotfiles'
-        update: false # skip if already cloned
-        recursive: true # clone submodules
-        track_submodules: true # get latest commit of submodules
-      tags:
-        - dotfiles
+    - import_tasks: tasks/git.yml
+    - import_tasks: tasks/asdf.yml
+    - import_tasks: tasks/asdf-node.yml
+      vars:
+        node_version: 18.12.0
+    # - import_tasks: tasks/setup-dotfiles.yml
+    - import_tasks: tasks/neovim.yml
+    - import_tasks: tasks/docker.yml
+    - import_tasks: tasks/sudo-no-password.yml
+    - import_tasks: tasks/zsh.yml
 
 # vim: filetype=yaml.ansible

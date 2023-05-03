@@ -1,0 +1,9 @@
+    # - name: clone dotfiles | git
+    #   git:
+    #     repo: 'https://github.com/m42nk/dotfiles.git'
+    #     dest: '~/Dotfiles'
+    #     update: false # skip if already cloned
+    #     recursive: true # clone submodules
+    #     track_submodules: true # get latest commit of submodules
+    #   tags:
+    #     - dotfiles
