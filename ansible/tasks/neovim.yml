@@ -1,12 +1,18 @@
-- name: add neovim ppa
+- name: add add neovim ppa sign key
+  become: true
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 55F96FCF8231B6DD
+
+- name: add neovim ppa | apt_repository
   become: true
   apt_repository:
-    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/stable/ubuntu YOUR_UBUNTU_VERSION_HERE main
+    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/unstable/ubuntu jammy main
     state: present
   tags:
     - neovim
 
-- name: update apt and install neovim | apt
+- name: install latest neovim from ppa | apt
   become: true
   apt:
     name: neovim

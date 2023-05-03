@@ -10,7 +10,7 @@
     repo: deb https://download.docker.com/linux/ubuntu focal stable
     state: present
 
-- name: update apt and install docker-ce | apt
+- name: install latest docker-ce from ppa | apt
   become: true
   apt:
     name: docker-ce

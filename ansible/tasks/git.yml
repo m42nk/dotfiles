@@ -1,19 +1,18 @@
-- name: check git ppa | command
-  shell: apt-cache policy | grep -q git-core/ppa
-  ignore_errors: true
-  register: git_ppa
-  changed_when: false
+- name: add add git ppa sign key
+  become: true
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: A1715D88E1DF1F24
+
+- name: add git ppa | apt_repository
+  become: true
+  apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/git-core/ppa/ubuntu jammy main
+    state: present
   tags:
     - git
 
-- name: add git ppa | command
-  become: true
-  command: add-apt-repository -y ppa:git-core/ppa
-  when: git_ppa.rc != 0
-  args:
-    creates: /etc/apt/sources.list.d/git-core-ubuntu-ppa-jammy.list
-
-- name: install latest git | apt
+- name: install latest git from ppa | apt
   become: true
   apt:
     name: git
