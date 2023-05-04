@@ -13,6 +13,7 @@ Package to install:
 - `fd`
 - `delta`
 - `kitty`
+- `python3-venv`
 
 Setups to do:
 - Update alternatives, set `EDITOR` to `nvim`
