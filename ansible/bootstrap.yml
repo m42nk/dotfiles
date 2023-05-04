@@ -6,6 +6,7 @@
     - name: Gather package facts
       package_facts:
         manager: auto
+      tags: install
 
     - name: update | apt
       become: true
@@ -15,6 +16,7 @@
         cache_valid_time: 3600
         state: present
       changed_when: false
+      tags: install
 
   tasks:
     - import_tasks: tasks/git.yml

@@ -22,11 +22,13 @@
   changed_when: false
   tags:
     - zsh
+    - starship
 
 - name: install starship prompt | curl
   shell: curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
   when: starship_installed.rc != 0
   tags:
     - zsh
+    - starship
 
 # vim: filetype=yaml.ansible
