@@ -12,6 +12,7 @@ Package to install:
 - `exa`
 - `fd`
 - `delta`
+- `kitty`
 
 Setups to do:
 - Update alternatives, set `EDITOR` to `nvim`
@@ -27,7 +28,8 @@ Setups to do:
     git config --global user.name "Syakhisk Al-Azmi"
     ```
 
-- NerdFont
+- NerdFont (done, with ansible)
 - Wakatime apikey
 - Neovim unattended first setup
+- Chrome
 

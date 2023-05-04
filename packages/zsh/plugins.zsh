@@ -9,7 +9,7 @@ plugins=(
   agkozak/zsh-z
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-completions
-  zsh_codex
+  # zsh_codex
   # tom-doerr/zsh_codex
   # wfxr/forgit
   # jeffreytse/zsh-vi-mode

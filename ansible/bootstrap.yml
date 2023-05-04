@@ -29,5 +29,7 @@
     - import_tasks: tasks/docker.yml
     - import_tasks: tasks/sudo-no-password.yml
     - import_tasks: tasks/zsh.yml
+    - import_tasks: tasks/fonts.yml
+      tags: fonts
 
 # vim: filetype=yaml.ansible
