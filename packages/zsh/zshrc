@@ -90,6 +90,7 @@ src $ZSH/k8s.zsh
 ## Work
 ## check if hostname starts with "OMG-"
 [[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh
+[[ "$(hostname)" =~ ^starlink ]] && src $ZSH/work__mceasy.zsh
 
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)
