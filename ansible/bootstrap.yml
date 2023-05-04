@@ -1,0 +1,31 @@
+- name: Bootstrap development environment
+  hosts: localhost
+  connection: local
+
+  pre_tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: update | apt
+      become: true
+      apt:
+        force_apt_get: true
+        update_cache: true
+        cache_valid_time: 3600
+        state: present
+      changed_when: false
+
+  tasks:
+    - import_tasks: tasks/git.yml
+    - import_tasks: tasks/asdf.yml
+    - import_tasks: tasks/asdf-node.yml
+      vars:
+        node_version: 18.12.0
+    # - import_tasks: tasks/setup-dotfiles.yml
+    - import_tasks: tasks/neovim.yml
+    - import_tasks: tasks/docker.yml
+    - import_tasks: tasks/sudo-no-password.yml
+    - import_tasks: tasks/zsh.yml
+
+# vim: filetype=yaml.ansible

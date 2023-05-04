@@ -1,0 +1,35 @@
+- name: add add neovim ppa sign key
+  become: true
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 55F96FCF8231B6DD
+
+- name: add neovim ppa | apt_repository
+  become: true
+  apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/neovim-ppa/unstable/ubuntu jammy main
+    state: present
+  tags:
+    - neovim
+
+- name: install latest neovim from ppa | apt
+  become: true
+  apt:
+    name: neovim
+    state: latest
+    update_cache: true
+  tags:
+    - neovim
+
+# ARCHIVE:
+# # TODO: this neovim is outdated, use ppa or snap instead
+# - name: install neovim | apt
+#   become: true
+#   apt:
+#     name: neovim
+#     state: present
+#   when: '"neovim" not in ansible_facts.packages'
+#   tags:
+#     - neovim
+
+# vim: filetype=yaml.ansible

@@ -1,0 +1,32 @@
+- name: install zsh | apt
+  become: true
+  apt:
+    name: zsh
+    state: present
+  when: '"zsh" not in ansible_facts.packages'
+  tags:
+    - zsh
+
+- name: set zsh as default shell | chsh
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/zsh
+  tags:
+    - zsh
+
+- name: check starship prompt installed | command
+  command: starship --version
+  register: starship_installed
+  ignore_errors: true
+  changed_when: false
+  tags:
+    - zsh
+
+- name: install starship prompt | curl
+  shell: curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
+  when: starship_installed.rc != 0
+  tags:
+    - zsh
+
+# vim: filetype=yaml.ansible

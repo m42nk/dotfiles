@@ -1,0 +1,36 @@
+- name: add add git ppa sign key
+  become: true
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: A1715D88E1DF1F24
+
+- name: add git ppa | apt_repository
+  become: true
+  apt_repository:
+    repo: deb https://ppa.launchpadcontent.net/git-core/ppa/ubuntu jammy main
+    state: present
+  tags:
+    - git
+
+- name: install latest git from ppa | apt
+  become: true
+  apt:
+    name: git
+    state: present
+    update_cache: true
+  tags:
+    - git
+
+- name: install gh cli | apt
+  become: true
+  apt:
+    name: gh
+    state: present
+  when: '"gh" not in ansible_facts.packages'
+  tags:
+    - git
+    - gh
+    # TODO: login to gh?
+    # TODO: gh auth setup-git
+
+# vim: filetype=yaml.ansible
