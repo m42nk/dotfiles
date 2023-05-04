@@ -1,11 +1,13 @@
 FROM ubuntu:22.04
 
 RUN apt-get update
-RUN apt-get install -y python3 python3-pip
-RUN apt-get install -y sudo
-RUN apt-get install -y git
-RUN apt-get install -y python3-apt
-RUN apt-get install -y software-properties-common
+RUN apt-get install -y \
+    python3 python3-pip \
+    sudo \
+    git \
+    python3-apt \
+    software-properties-common 
+
 RUN pip install ansible
 RUN ansible-galaxy collection install community.general
 
@@ -17,14 +19,8 @@ RUN useradd \
       --password "$(openssl passwd -1 ${TARGET_USER})" \
       --gid root \
       --groups sudo 
+
 USER ${TARGET_USER}
 WORKDIR ${TARGET_DIR}
-
-## Using volume instead
-# COPY . .
-
-## Run from makefile
-# ENV MAKEFILE_ANSIBLE play
-# CMD [ "sh", "-c", "make ${MAKEFILE_ANSIBLE}; bash" ]
 
 CMD [ "bash" ]
