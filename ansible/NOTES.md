@@ -14,6 +14,7 @@ Package to install:
 - `delta` (via ansible, curl files)
 - `kitty`
 - `python3-venv`
+- `lazygit`
 
 Setups to do:
 - Update alternatives, set `EDITOR` to `nvim`
@@ -29,8 +30,25 @@ Setups to do:
     git config --global user.name "Syakhisk Al-Azmi"
     ```
 
-- NerdFont (done, with ansible)
 - Wakatime apikey
-- Neovim unattended first setup
 - Chrome
 - Setup touchpad scroll natural
+
+Post Install:
+- `cd $DOTFILES/ansible && make --tags "all"`
+- gh auth login
+- Setup dotfiles (need to makesure above packages are installed first)
+- Neovim unattended first setup
+    - wakatime api key
+    - setup `:Copilot`
+
+
+Order of run:
+- Clone this repo
+    ```
+    cd $HOME
+    git clone --recursive https://github.com/m42nk/dotfiles Dotfiles
+    cd dotfiles/ansible
+    ./prepare.sh
+    make --tags "all"
+    ```

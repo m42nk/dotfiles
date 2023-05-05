@@ -31,5 +31,6 @@
     - import_tasks: tasks/zsh.yml
     - import_tasks: tasks/fonts.yml
       tags: fonts
+    - import_tasks: tasks/packages.yml
 
 # vim: filetype=yaml.ansible

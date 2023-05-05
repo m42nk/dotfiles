@@ -1,0 +1,8 @@
+- name: install tmux | apt
+  become: true
+  apt: 
+    name: tmux
+    state: present
+  when: '"tmux" not in ansible_facts.packages'
+  tags:
+    - tmux
