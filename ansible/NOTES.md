@@ -1,6 +1,6 @@
 ## Notes
 
-What I realized after installing Ubuntu Desktop on bare metal without ansible:
+What I realized after installing Ubuntu Desktop on bare metal without ansible (KDE Plasma):
 
 Package to install:
 - `build-essentials`
@@ -10,8 +10,8 @@ Package to install:
 - `tealdeer`
 - `bat`
 - `exa`
-- `fd`
-- `delta`
+- `fd-find`
+- `delta` (via ansible, curl files)
 - `kitty`
 - `python3-venv`
 
@@ -33,4 +33,4 @@ Setups to do:
 - Wakatime apikey
 - Neovim unattended first setup
 - Chrome
-
+- Setup touchpad scroll natural
