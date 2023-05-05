@@ -24,3 +24,4 @@ link-vsms(){
 
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
+alias create-pr="gh pr create --base develop-platform"
