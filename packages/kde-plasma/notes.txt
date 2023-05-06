@@ -1,6 +1,0 @@
-khotkeysrc
-kwinrc
-kwinrulesrc
-kdeglobals
-plasmashellrc
-krunnerrc

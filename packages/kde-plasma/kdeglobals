@@ -137,10 +137,14 @@ ForegroundVisited=155,89,182
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorSchemeHash=0d37ac7d257c7643ff5540889d5368b99875ad6b
+ColorSchemeHash=bcce7c1c6181c5e14e633cd8301e7a9036b67ac6
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
+
+[KScreen]
+ScaleFactor=1.25
+ScreenScaleFactors=eDP=1.25;HDMI-A-0=1.25;DisplayPort-0=1.25;
 
 [WM]
 activeBackground=49,54,59
