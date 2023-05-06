@@ -1,0 +1,11 @@
+# Custom desktop file to enable dark mode on linux
+
+- defaults:
+    link:
+      if: '[ `uname -s` = Linux ]'
+
+- link:
+    ~/.local/share/applications/google-chrome.desktop : chrome/google-chrome.desktop
+
+- create:
+  - ~/.local/share/applications/
