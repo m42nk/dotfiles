@@ -142,6 +142,24 @@ ColorSchemeHash=bcce7c1c6181c5e14e633cd8301e7a9036b67ac6
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
 
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=138
+View Style=DetailTree
+
 [KScreen]
 ScaleFactor=1.25
 ScreenScaleFactors=eDP=1.25;HDMI-A-0=1.25;DisplayPort-0=1.25;

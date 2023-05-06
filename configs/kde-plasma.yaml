@@ -5,3 +5,4 @@
     ~/.config/kwinrc: kde-plasma/kwinrc
     ~/.config/kwinrulesrc: kde-plasma/kwinrulesrc
     ~/.config/plasmashellrc: kde-plasma/plasmashellrc
+    ~/.config/kglobalshortcutsrc: kde-plasma/kglobalshortcutsrc

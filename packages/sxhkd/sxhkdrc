@@ -23,20 +23,11 @@ super + f
 super + m
   google-chrome --force-dark-mode || google-chrome-stable --force-dark-mode
 
-super + d
-  kde-invoke kwin "Show Desktop"
-
-super + c
-  code
-
 super + b
   kde-invoke kwin "Window No Border"
 
 super + {_, shift +} {1-5}
   kde-invoke kwin "{Switch,Window} to Desktop {1-5}"
-
-super + grave
-  line-lof
 
 super + {_, shift +} o
   kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}
@@ -67,6 +58,15 @@ super + ctrl + q
 
 super + ctrl + m
   kde-invoke kmix "mic_mute"
+
+# super + grave
+#   line-lof
+
+# super + d
+#   kde-invoke kwin "Show Desktop"
+
+# super + c
+#   code
 
 # alt + Tab
 #   rofi-alt-tab -m alttab

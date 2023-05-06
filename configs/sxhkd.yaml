@@ -1,0 +1,5 @@
+- link:
+    ~/.config/sxhkd/sxhkdrc: sxhkd/sxhkdrc
+
+- create:
+  - ~/.config/sxhkd/
