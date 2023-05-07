@@ -1,0 +1,5 @@
+[ELAN0754:00 04F3:315D Touchpad]
+clickMethodAreas=false
+clickMethodClickfinger=true
+naturalScroll=true
+tapToClick=true

@@ -7,4 +7,5 @@
     ~/.config/plasmashellrc: kde-plasma/plasmashellrc
     ~/.config/kglobalshortcutsrc: kde-plasma/kglobalshortcutsrc
     ~/.config/plasma-org.kde.plasma.desktop-appletsrc: kde-plasma/plasma-org.kde.plasma.desktop-appletsrc
+    ~/.config/touchpadxlibinputrc: kde-plasma/touchpadxlibinputrc
 

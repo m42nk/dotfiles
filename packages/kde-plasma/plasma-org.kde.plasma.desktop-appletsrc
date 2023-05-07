@@ -78,7 +78,7 @@ plugin=org.kde.plasma.icontasks
 PreloadWeight=0
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,applications:org.kde.discover.desktop,preferred://filemanager
+launchers=applications:systemsettings.desktop,applications:org.kde.discover.desktop
 
 [Containments][2][Applets][6]
 immutability=1
