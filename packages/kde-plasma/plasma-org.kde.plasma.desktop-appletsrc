@@ -53,7 +53,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][37][Configuration]
-PreloadWeight=55
+PreloadWeight=47
 
 [Containments][2][Applets][37][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -96,7 +96,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=51
+PreloadWeight=53
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -121,7 +121,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][27][Configuration]
-PreloadWeight=42
+PreloadWeight=34
 
 [Containments][27][General]
 ToolBoxButtonState=topcenter
@@ -223,7 +223,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][12][Configuration]
-PreloadWeight=3
+PreloadWeight=0
 
 [Containments][8][Applets][13]
 immutability=1
@@ -293,7 +293,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][25]
 immutability=1
@@ -323,4 +323,4 @@ scaleIconsToFit=true
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0
+screenMapping=desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0

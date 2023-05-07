@@ -1,6 +1,14 @@
 [$Version]
 update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
 
+[3]
+Description=Spotify on Third Workspace
+desktops=5c3b462d-1350-418a-89c0-6ef48eda2497
+desktopsrule=3
+title=Spotify
+wmclass=spotify
+wmclassmatch=1
+
 [72f52e24-eb20-42ee-9512-1470b0a5b640]
 Description=Whatsapp on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
@@ -10,8 +18,8 @@ windowrole=pop-up
 wmclassmatch=1
 
 [General]
-count=3
-rules=72f52e24-eb20-42ee-9512-1470b0a5b640,b17f986b-8cfa-488b-bab4-041a58249712,a6e5d733-41ce-45d8-af46-6addff9c1e9e
+count=1
+rules=3
 
 [a6e5d733-41ce-45d8-af46-6addff9c1e9e]
 Description=Spotify on Third Workspace
