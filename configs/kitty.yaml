@@ -1,0 +1,5 @@
+- link:
+    ~/.config/kitty/kitty.conf: kitty/kitty.linux.conf
+
+- create:
+    ~/.config/kitty/

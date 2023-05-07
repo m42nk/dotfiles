@@ -1,22 +1,11 @@
 #!/bin/env bash
 
-# TODO: 
-# if only want one instance of terminal, create a bash script instaed of
-# using tdrop
+kitty --class tdrop.kitty sh -c "tmux a || tmux"
 
-tdrop \
-  --monitor-aware \
-  --pointer-monitor-detection \
-  --wm=kwin \
-  -w 50% \
-  -h 50% \
-  -x 50% \
-  --activate \
-  --remember \
-  kitty --class tdrop.kitty sh -c "tmux a || tmux"
+# # TODO: 
+# # if only want one instance of terminal, create a bash script instaed of
+# # using tdrop
 
-# if ! xdotool search --class tdrop.kitty --desktop "$(xdotool get_desktop)"; then
-# # --auto-detect-wm \
 # tdrop \
 #   --monitor-aware \
 #   --pointer-monitor-detection \
@@ -27,9 +16,22 @@ tdrop \
 #   --activate \
 #   --remember \
 #   kitty --class tdrop.kitty sh -c "tmux a || tmux"
-#   # alacritty --class tdrop.alacritty -e tmux
-# else
-#   tdrop --activate
-# fi
+
+# # if ! xdotool search --class tdrop.kitty --desktop "$(xdotool get_desktop)"; then
+# # # --auto-detect-wm \
+# # tdrop \
+# #   --monitor-aware \
+# #   --pointer-monitor-detection \
+# #   --wm=kwin \
+# #   -w 50% \
+# #   -h 50% \
+# #   -x 50% \
+# #   --activate \
+# #   --remember \
+# #   kitty --class tdrop.kitty sh -c "tmux a || tmux"
+# #   # alacritty --class tdrop.alacritty -e tmux
+# # else
+# #   tdrop --activate
+# # fi
 
 
