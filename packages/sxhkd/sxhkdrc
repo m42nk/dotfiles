@@ -1,9 +1,5 @@
-# qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.shortcutNames
-
-# super + ctrl + q
-
 super + Return
-  dropdown-term
+  $HOME/.bin/dropdown-term
 
 # super + period
 #   rofimoji -a type -s neutral
@@ -15,58 +11,58 @@ super + shift + Return
   kitty
 
 super + backslash
-  kde-invoke kwin "ExposeAll"
+  $HOME/.bin/kde-invoke kwin "ExposeAll"
 
 super + u
-  kde-invoke kwin "Activate Window Demanding Attention"
+  $HOME/.bin/kde-invoke kwin "Activate Window Demanding Attention"
 
 super + f
-  kde-invoke kwin "Window Maximize"
+  $HOME/.bin/kde-invoke kwin "Window Maximize"
 
 super + m
   google-chrome --force-dark-mode || google-chrome-stable --force-dark-mode
 
 super + b
-  kde-invoke kwin "Window No Border"
+  $HOME/.bin/kde-invoke kwin "Window No Border"
 
 super + {_, shift +} {1-5}
-  kde-invoke kwin "{Switch,Window} to Desktop {1-5}"
+  $HOME/.bin/kde-invoke kwin "{Switch,Window} to Desktop {1-5}"
 
 super + {_, shift +} o
-  kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}
+  $HOME/.bin/kde-invoke kwin {"Switch to Previous Screen", "Window to Next Screen"}
 
 super + {ctrl,shift} + s
-  kde-invoke org_kde_spectacle_desktop {"_launch","RectangularRegionScreenShot"}
+  $HOME/.bin/kde-invoke org_kde_spectacle_desktop {"_launch","RectangularRegionScreenShot"}
 
 super + {h,j,k,l}
-  kde-invoke kwin "Switch Window {Left,Down,Up,Right}"
+  $HOME/.bin/kde-invoke kwin "Switch Window {Left,Down,Up,Right}"
 
 super + shift + {h,j,k,l}
-  kde-invoke kwin "Window Quick Tile {Left,Bottom,Top,Right}"
+  $HOME/.bin/kde-invoke kwin "Window Quick Tile {Left,Bottom,Top,Right}"
 
 super + r; super + r
   notify-send -a sxhkd "sxhkd" "reloading keys..."; killall -SIGUSR1 sxhkd
 
 super + shift + q
-  kde-invoke kwin "Window Close"
+  $HOME/.bin/kde-invoke kwin "Window Close"
 
 super + ctrl + t
-  kde-invoke kwin "ToggleCurrentThumbnail"
+  $HOME/.bin/kde-invoke kwin "ToggleCurrentThumbnail"
 
 super + ctrl + l
-  notify-send "Locking session..."; kde-invoke ksmserver "Lock Session"
+  notify-send "Locking session..."; $HOME/.bin/kde-invoke ksmserver "Lock Session"
 
 super + ctrl + q
-  notify-send "Logging out..."; kde-invoke ksmserver "Log Out"
+  notify-send "Logging out..."; $HOME/.bin/kde-invoke ksmserver "Log Out"
 
 super + ctrl + m
-  kde-invoke kmix "mic_mute"
+  $HOME/.bin/kde-invoke kmix "mic_mute"
 
 # super + grave
 #   line-lof
 
 # super + d
-#   kde-invoke kwin "Show Desktop"
+#   $HOME/.bin/kde-invoke kwin "Show Desktop"
 
 # super + c
 #   code
@@ -75,7 +71,7 @@ super + ctrl + m
 #   rofi-alt-tab -m alttab
 
 # super + {h,j,k,l}
-#   kde-invoke kwin "Window Pack {Left,Down,Up,Right}" # snap to nearest edge
+#   $HOME/.bin/kde-invoke kwin "Window Pack {Left,Down,Up,Right}" # snap to nearest edge
 
 # alt + Tab
 #  qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "Walk Through Windows"

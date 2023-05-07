@@ -136,7 +136,7 @@ ForegroundPositive[$d]
 ForegroundVisited[$d]
 
 [Data]
-DataCount=3
+DataCount=4
 
 [Data_1]
 Comment=KMenuEdit Global Shortcuts
@@ -198,7 +198,7 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_2Triggers0]
-Key=Ctrl+Alt+T
+Key=
 Type=SHORTCUT
 Uuid={84a3e048-302d-41af-9f85-abf40264ac1e}
 
@@ -1019,6 +1019,32 @@ TriggersCount=1
 GesturePointData=0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1
 Type=GESTURE
 
+[Data_4]
+Comment=Comment
+Enabled=true
+Name=sxhkd
+Type=SIMPLE_ACTION_DATA
+
+[Data_4Actions]
+ActionsCount=1
+
+[Data_4Actions0]
+CommandURL=/home/m42nk/.bin/autostart-sxhkd
+Type=COMMAND_URL
+
+[Data_4Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_4Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_4Triggers0]
+Key=Meta+Ctrl+Alt+Return
+Type=SHORTCUT
+Uuid={9c66bb26-b9a8-42d7-bc11-c2c5d3b3fc7b}
+
 [General]
 BrowserApplication[$d]
 ColorScheme[$d]
@@ -1054,6 +1080,7 @@ PathCombo Completionmode[$d]
 Show Bookmarks[$d]
 Show Full Path[$d]
 Show Inline Previews[$d]
+Show Preview[$d]
 Show Speedbar[$d]
 Show hidden files[$d]
 Sort by[$d]

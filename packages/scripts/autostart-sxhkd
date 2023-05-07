@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+notify-send "sxhkd" "Starting sxhkd"
+
+if command -v sxhkd >/dev/null 2>&1; then
+    killall sxhkd > /dev/null
+fi
+
+if [[ ! -f $HOME/.config/sxhkd/sxhkdrc ]]; then
+  notify-send "sxhkd" "No config file found, copying default config to $HOME/.config/sxhkd/sxhkdrc"
+fi
+
+
+DISPLAY=:0 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &> $HOME/.sxhkd.out.log &

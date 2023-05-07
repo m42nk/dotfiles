@@ -23,7 +23,8 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{84a3e048-302d-41af-9f85-abf40264ac1e}=Ctrl+Alt+T,none,Launch Konsole
+{84a3e048-302d-41af-9f85-abf40264ac1e}=none,none,Launch Konsole
+{9c66bb26-b9a8-42d7-bc11-c2c5d3b3fc7b}=Meta+Ctrl+Alt+Return,none,sxhkd
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 
 [kmix]

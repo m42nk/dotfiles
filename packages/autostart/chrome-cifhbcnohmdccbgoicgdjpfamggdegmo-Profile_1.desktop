@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=/opt/google/chrome/google-chrome "--profile-directory=Profile 1" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo --force-dark-mode --enable-features=WebUIDarkMode --force-dark-mode --enable-features=WebUIDarkMode
+Icon=chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1
+Name=Microsoft Teams
+StartupWMClass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo
+Terminal=false
+Type=Application
+Version=1.0

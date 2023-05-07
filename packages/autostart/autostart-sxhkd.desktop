@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/m42nk/.bin/autostart-sxhkd
+Icon=
+Name=autostart-sxhkd
+Path=
+Terminal=False
+Type=Application
