@@ -1,4 +1,5 @@
 - link:
+    # ~/.config/: kde-plasma
     ~/.config/kdeglobals: kde-plasma/kdeglobals
     ~/.config/khotkeysrc: kde-plasma/khotkeysrc
     ~/.config/krunnerrc: kde-plasma/krunnerrc
@@ -6,3 +7,5 @@
     ~/.config/kwinrulesrc: kde-plasma/kwinrulesrc
     ~/.config/plasmashellrc: kde-plasma/plasmashellrc
     ~/.config/kglobalshortcutsrc: kde-plasma/kglobalshortcutsrc
+    ~/.config/plasma-org.kde.plasma.desktop-appletsrc: kde-plasma/plasma-org.kde.plasma.desktop-appletsrc
+

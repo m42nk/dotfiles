@@ -6,5 +6,20 @@ OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=746f5cd6-a196-484b-ab06-7dbed6a5cb49
-Number=1
+Id_2=0fea5868-2086-46d7-b757-e27466d8f275
+Id_3=5c3b462d-1350-418a-89c0-6ef48eda2497
+Name_1=Main
+Name_2=Chats
+Name_3=Music
+Number=3
 Rows=1
+
+[Effect-Slide]
+Duration=100
+HorizontalGap=0
+
+[Plugins]
+desktopchangeosdEnabled=true
+
+[Windows]
+RollOverDesktops=false
