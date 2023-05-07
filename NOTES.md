@@ -3,6 +3,7 @@
 What I realized after installing Ubuntu Desktop on bare metal without ansible (KDE Plasma):
 
 Package to install:
+- `keynav`
 - `touche` (flatpak)
 - `touchegg` (ppa:touchegg/stable)
 - `xsel`

@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-kitty --class tdrop.kitty sh -c "tmux a || tmux"
+kitty --class tdrop.kitty sh -c "tmux -u a || tmux -u"
 
 # # TODO: 
 # # if only want one instance of terminal, create a bash script instaed of
