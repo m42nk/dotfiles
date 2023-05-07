@@ -1,5 +1,6 @@
 - link:
     ~/.config/kitty/kitty.conf: kitty/kitty.linux.conf
+    ~/.config/kitty/ayu.conf: kitty/ayu.conf
 
-- create:
-    ~/.config/kitty/
+# - create:
+#     ~/.config/kitty/

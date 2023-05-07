@@ -8,6 +8,9 @@ super + Return
 # super + period
 #   rofimoji -a type -s neutral
 
+super + shift + s
+  spectacle --region
+
 super + shift + Return
   kitty
 
