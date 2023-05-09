@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Launch or focus Kitty terminal
+
+xdotool search --class Kitty windowactivate || kitty sh -c "tmux -u a || tmux -u"

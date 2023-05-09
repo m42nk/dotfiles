@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Launch or focus Kitty terminal
+
+xdotool search --onlyvisible --class google-chrome windowactivate || google-chrome

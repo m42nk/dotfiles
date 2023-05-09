@@ -1,5 +1,5 @@
 super + Return
-  $HOME/.bin/dropdown-term
+  $HOME/.bin/lof-kitty
 
 # super + period
 #   rofimoji -a type -s neutral

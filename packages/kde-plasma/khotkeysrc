@@ -1045,6 +1045,10 @@ Key=Meta+Ctrl+Alt+Return
 Type=SHORTCUT
 Uuid={9c66bb26-b9a8-42d7-bc11-c2c5d3b3fc7b}
 
+[DirSelect Dialog]
+DirSelectDialog Size[$d]
+History Items[$d]
+
 [General]
 BrowserApplication[$d]
 ColorScheme[$d]

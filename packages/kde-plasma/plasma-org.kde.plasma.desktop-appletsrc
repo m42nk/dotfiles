@@ -19,7 +19,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][2][Applets][21]
 immutability=1
@@ -53,7 +53,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][37][Configuration]
-PreloadWeight=15
+PreloadWeight=20
 
 [Containments][2][Applets][37][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -96,7 +96,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=21
+PreloadWeight=51
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -108,28 +108,6 @@ PreloadWeight=0
 
 [Containments][2][General]
 AppletOrder=3;5;6;37;7;20;21
-
-[Containments][27]
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
-activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][27][Configuration]
-PreloadWeight=2
-
-[Containments][27][General]
-ToolBoxButtonState=topcenter
-ToolBoxButtonX=559
-ToolBoxButtonY=20
-
-[Containments][27][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][29]
 activityId=
@@ -195,6 +173,46 @@ DialogWidth=1920
 [Containments][29][General]
 AppletOrder=31;34;32;33;30
 
+[Containments][40]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
+activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.slideshow
+
+[Containments][40][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][40][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][40][Wallpaper][org.kde.slideshow][General]
+SlidePaths=/home/m42nk/Downloads/Wallpaper
+
+[Containments][41]
+activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.slideshow
+
+[Containments][41][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][41][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/2560x1440.jpg
+
+[Containments][41][Wallpaper][org.kde.slideshow][General]
+SlidePaths=/home/m42nk/Downloads/Wallpaper
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -230,7 +248,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][14]
 immutability=1
@@ -265,7 +283,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][19]
 immutability=1
@@ -286,14 +304,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=10
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=10
 
 [Containments][8][Applets][25]
 immutability=1
