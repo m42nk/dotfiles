@@ -1,14 +1,27 @@
+[ActionsWidget]
+ColumnState=AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAi0AAAACAQAAAQAAAAAAAAAAAAAAAH3/////AAAAgQAAAAAAAAACAAAA+gAAAAEAAAAAAAABMwAAAAEAAAAAAAAD6AAAAAB9
+
+[ConfigDialog]
+eDP Height 1920x1080=571
+eDP Width 1920x1080=712
+
+[General]
+Number of Actions=0
+
 [KFileDialog Settings]
 detailViewIconSize=16
 
-[PlasmaTransientsConfig]
-PreloadWeight=26
+[PlasmaViews][Panel 2]
+panelOpacity=0
 
 [PlasmaViews][Panel 2][Defaults]
 thickness=30
 
 [PlasmaViews][Panel 2][Horizontal1920]
 thickness=30
+
+[PlasmaViews][Panel 29]
+alignment=132
 
 [PlasmaViews][Panel 29][Defaults]
 thickness=20

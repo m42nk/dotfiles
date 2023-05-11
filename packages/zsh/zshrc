@@ -92,6 +92,15 @@ src $ZSH/k8s.zsh
 [[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh
 [[ "$(hostname)" =~ ^starlink ]] && src $ZSH/work__mceasy.zsh
 
+## Don't use zsh when in pve (sshfs), starship hangs
+__use_bash_on_sshfs() {
+  echo "Entering bash on $PWD"
+  bash 
+  cd $HOME
+}
+[[ "$(pwd)" =~ ^$HOME/mnt/pve ]] && __use_bash_on_sshfs
+
+
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)
 fi

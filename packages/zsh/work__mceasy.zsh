@@ -2,7 +2,8 @@
 ## Aliases
 ##
 
-VSMS_WT_DIR="$HOME/Work/vsms"
+MCEASY_DIR="$HOME/Work"
+VSMS_WT_DIR="$HOME/vsms"
 
 link-vsms(){
   CURR_GIT_ROOT="$(git rev-parse --show-toplevel)"
@@ -25,3 +26,11 @@ link-vsms(){
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
 alias create-pr="gh pr create --base develop-platform"
+
+# env vars
+[[ -f "$MCEASY_DIR/shell-env-vars" ]] && source "$MCEASY_DIR/shell-env-vars"
+
+# jira
+# if command -v jira &> /dev/null; then
+#   eval $(jira completion zsh)
+# fi

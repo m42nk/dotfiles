@@ -9,6 +9,14 @@ title=Spotify
 wmclass=spotify
 wmclassmatch=1
 
+[2]
+Description=Whatsapp on Second Workspace
+desktops=0fea5868-2086-46d7-b757-e27466d8f275
+desktopsrule=3
+wmclass=crx_hnpfjngllnobngcgfapefoaidbinmjnm google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
 [20bd36ce-217a-405f-9e41-51921786c214]
 Description=Teams on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
@@ -18,11 +26,12 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=Spotify on Third Workspace
-desktops=5c3b462d-1350-418a-89c0-6ef48eda2497
+Description=Teams on Second Workspace
+desktops=0fea5868-2086-46d7-b757-e27466d8f275
 desktopsrule=3
 title=Spotify
-wmclass=spotify
+wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
+wmclasscomplete=true
 wmclassmatch=1
 
 [5e2b31fc-d785-421a-95ec-803411948d86]
@@ -43,7 +52,7 @@ wmclassmatch=1
 
 [General]
 count=3
-rules=1,5e2b31fc-d785-421a-95ec-803411948d86,20bd36ce-217a-405f-9e41-51921786c214
+rules=1,2,3
 
 [a6e5d733-41ce-45d8-af46-6addff9c1e9e]
 Description=Spotify on Third Workspace
