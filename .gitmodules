@@ -12,6 +12,11 @@
 	url = https://github.com/m42nk/dotfiles-tmux
 	branch = master
 	update = rebase
+[submodule "dotfiles-secret"]
+  path = packages/secrets
+	url = https://github.com/m42nk/dotfiles-secret
+	branch = master
+	update = rebase
 
 ; [submodule "dotfiles-nvim"]
 ; 	path = packages/nvim
