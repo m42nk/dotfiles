@@ -3,7 +3,7 @@
 ##
 
 MCEASY_DIR="$HOME/Work"
-VSMS_WT_DIR="$HOME/vsms"
+VSMS_WT_DIR="$HOME/Work/vsms"
 
 link-vsms(){
   CURR_GIT_ROOT="$(git rev-parse --show-toplevel)"
@@ -31,6 +31,14 @@ alias create-pr="gh pr create --base develop-platform"
 [[ -f "$MCEASY_DIR/shell-env-vars" ]] && source "$MCEASY_DIR/shell-env-vars"
 
 # jira
-# if command -v jira &> /dev/null; then
-#   eval $(jira completion zsh)
-# fi
+jira-fe(){
+  jira issue list --columns key,type,summary,status -q'project = DEVA AND summary ~ "\\[FE\\]" AND sprint in openSprints()'
+}
+
+jira-sprint(){
+  jira issue list -q"project = DEVA and sprint in openSprints()"
+}
+
+if [[ $(command -v google-chrome) ]] && [[ $(command -v jira) ]]; then
+  export JIRA_BROWSER="$(which google-chrome)"
+fi

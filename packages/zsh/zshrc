@@ -98,7 +98,7 @@ __use_bash_on_sshfs() {
   bash 
   cd $HOME
 }
-[[ "$(pwd)" =~ ^$HOME/mnt/pve ]] && __use_bash_on_sshfs
+[[ "$(pwd)" =~ ^$HOME/sshfs ]] && __use_bash_on_sshfs
 
 
 if [[ "$(command -v starship)" ]]; then

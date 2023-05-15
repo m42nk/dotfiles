@@ -189,6 +189,9 @@ alias pnf="pnpm --filter"
 
 alias ttd='tt -t 15 -csv >> ~/wpm.csv'
 
+alias download-vpn="node ~/Codes/myits-vpn-download-script/index.js"
+alias itsvpn="node ~/Codes/myits-vpn-download-script/index.js"
+
 gdif(){
   if [ -z "$1" ]; then
     echo "Please provide a filename"

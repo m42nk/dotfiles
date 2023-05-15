@@ -1,5 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-34155dba-af19-4b7e-9e94-a294d8e8a769=none,none,Switch to activity "Saved"
 switch-to-activity-5c0b94d4-49b8-449e-8f68-35516c3ddd12=none,none,Switch to activity "Default"
 switch-to-activity-eb16d42c-4a97-458a-97ad-b2682a2cbad1=none,none,Switch to activity "Default"
 

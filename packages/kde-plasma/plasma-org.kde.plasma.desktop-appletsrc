@@ -19,7 +19,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][2][Applets][21]
 immutability=1
@@ -53,7 +53,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][37][Configuration]
-PreloadWeight=1
+PreloadWeight=0
 
 [Containments][2][Applets][37][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -102,7 +102,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=77
+PreloadWeight=94
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -156,7 +156,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][29][Applets][32][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][29][Applets][32][Configuration][Appearance]
 boldText=true
@@ -210,6 +210,8 @@ Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-q27l5l.png
 SlidePaths=/home/m42nk/Downloads/Wallpaper
 
 [Containments][41]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
 activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
 formfactor=0
 immutability=1
@@ -226,8 +228,32 @@ DialogWidth=960
 Image=file:///usr/share/wallpapers/Next/contents/images/2560x1440.jpg
 
 [Containments][41][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-q27l5l.png
+Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-9d6m2w.png
 SlidePaths=/home/m42nk/Downloads/Wallpaper
+
+[Containments][42]
+activityId=34155dba-af19-4b7e-9e94-a294d8e8a769
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][42][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][43]
+activityId=34155dba-af19-4b7e-9e94-a294d8e8a769
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][43][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][8]
 activityId=
@@ -257,14 +283,14 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][12][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][8][Applets][13]
 immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][8][Applets][14]
 immutability=1
@@ -320,14 +346,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=14
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=6
+PreloadWeight=27
 
 [Containments][8][Applets][25]
 immutability=1

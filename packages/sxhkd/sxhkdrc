@@ -19,6 +19,9 @@ super + u
 super + f
   $HOME/.bin/kde-invoke kwin "Window Maximize"
 
+super + shift + f
+  $HOME/.bin/kde-invoke kwin "Window Minimize"
+
 super + m
   google-chrome --force-dark-mode || google-chrome-stable --force-dark-mode
 
