@@ -1,0 +1,6 @@
+- shell:
+  - cp -f secrets/todoist/config.json ~/.config/todoist/config.json
+
+- create:
+    ~/.config/todoist:
+      mode: 0600

@@ -87,6 +87,9 @@ src $ZSH/k8s.zsh
 # export TERM="xterm-256color"
 # export TERM="xterm-256color"
 
+## Todoist
+src $ZSH/todoist/todoist.zsh
+
 ## Work
 ## check if hostname starts with "OMG-"
 [[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh

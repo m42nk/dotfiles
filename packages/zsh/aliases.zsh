@@ -69,7 +69,6 @@ alias dcd="docker-compose down"
 alias dps="docker ps --format '{{.ID}}\t{{.Image}}\t{{.Names}}' | column --table"
 
 ## -- Tmux
-alias t="tmux"
 alias tls='tmux list-session'
 alias tks='tmux kill-server'
 alias tcl='tmux-clean'
@@ -202,3 +201,5 @@ gdif(){
   echo "--$valid_filename | $converted_filename--"
   git diff "$converted_filename" | tee $HOME/Work/vsms/SYNC-DIFF/$valid_filename.diff
 }
+
+alias t="todoist"
