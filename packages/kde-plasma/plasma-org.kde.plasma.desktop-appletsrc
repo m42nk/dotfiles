@@ -74,6 +74,85 @@ lowPrioritySensorIds=["network/all/download","network/all/upload"]
 [Containments][2][Applets][37][Configuration][org.kde.ksysguard.linechart][General]
 historyAmount=30
 
+[Containments][2][Applets][44]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][44][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+title=Memory Usage
+
+[Containments][2][Applets][44][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][2][Applets][44][Configuration][SensorColors]
+memory/physical/used=47,51,56
+
+[Containments][2][Applets][44][Configuration][SensorLabels]
+memory/physical/used=Mem
+
+[Containments][2][Applets][44][Configuration][Sensors]
+highPrioritySensorIds=["memory/physical/used"]
+lowPrioritySensorIds=[]
+totalSensors=[]
+
+[Containments][2][Applets][45]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][45][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+title=Total CPU Use
+
+[Containments][2][Applets][45][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][2][Applets][45][Configuration][SensorColors]
+cpu/all/usage=42,46,50
+
+[Containments][2][Applets][45][Configuration][SensorLabels]
+cpu/all/usage=CPU     \s
+
+[Containments][2][Applets][45][Configuration][Sensors]
+highPrioritySensorIds=["cpu/all/usage"]
+lowPrioritySensorIds=[]
+totalSensors=[]
+
+[Containments][2][Applets][46]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][46][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+
+[Containments][2][Applets][46][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][2][Applets][46][Configuration][SensorColors]
+cpu/cpu\temperature=148,61,233
+cpu/cpu0/temperature=61,174,233
+cpu/cpu1/temperature=61,88,233
+cpu/cpu10/temperature=61,233,120
+cpu/cpu11/temperature=61,233,206
+cpu/cpu2/temperature=120,61,233
+cpu/cpu3/temperature=206,61,233
+cpu/cpu4/temperature=233,61,174
+cpu/cpu5/temperature=233,61,88
+cpu/cpu6/temperature=233,120,61
+cpu/cpu7/temperature=233,206,61
+cpu/cpu8/temperature=174,233,61
+cpu/cpu9/temperature=88,233,61
+lmsensors/acpitz-acpi-0/temp1=49,54,59
+
+[Containments][2][Applets][46][Configuration][SensorLabels]
+lmsensors/acpitz-acpi-0/temp1=Temp        \s
+
+[Containments][2][Applets][46][Configuration][Sensors]
+highPrioritySensorIds=["lmsensors/acpitz-acpi-0/temp1"]
+
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
@@ -113,7 +192,7 @@ DialogWidth=1920
 PreloadWeight=0
 
 [Containments][2][General]
-AppletOrder=3;5;6;37;7;20;21
+AppletOrder=3;5;46;45;44;6;37;7;20;21
 
 [Containments][29]
 activityId=
@@ -318,7 +397,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][17][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][18]
 immutability=1
@@ -353,7 +432,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=27
+PreloadWeight=42
 
 [Containments][8][Applets][25]
 immutability=1
@@ -383,4 +462,4 @@ scaleIconsToFit=true
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0
+screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0

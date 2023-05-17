@@ -12,7 +12,7 @@ Number of Actions=0
 detailViewIconSize=16
 
 [PlasmaViews][Panel 2]
-panelOpacity=0
+panelOpacity=2
 
 [PlasmaViews][Panel 2][Defaults]
 thickness=30

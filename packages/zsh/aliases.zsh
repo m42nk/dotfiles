@@ -203,3 +203,5 @@ gdif(){
 }
 
 alias t="todoist"
+
+alias vbox="virtualbox"

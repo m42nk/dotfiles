@@ -25,7 +25,7 @@ link-vsms(){
 
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
-alias create-pr="gh pr create --base develop-platform"
+alias pr-create="gh pr create --base develop-platform"
 
 # env vars
 [[ -f "$MCEASY_DIR/shell-env-vars" ]] && source "$MCEASY_DIR/shell-env-vars"
