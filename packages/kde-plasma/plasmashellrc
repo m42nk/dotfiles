@@ -12,7 +12,7 @@ Number of Actions=0
 detailViewIconSize=16
 
 [PlasmaViews][Panel 2]
-panelOpacity=2
+panelOpacity=1
 
 [PlasmaViews][Panel 2][Defaults]
 thickness=30
@@ -22,6 +22,7 @@ thickness=30
 
 [PlasmaViews][Panel 29]
 alignment=132
+panelOpacity=1
 
 [PlasmaViews][Panel 29][Defaults]
 thickness=20

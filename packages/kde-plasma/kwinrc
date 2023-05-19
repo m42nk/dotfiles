@@ -41,3 +41,9 @@ HighlightWindows=false
 
 [Windows]
 RollOverDesktops=false
+
+[org.kde.kdecoration2]
+BorderSize=None
+BorderSizeAuto=false
+library=org.kde.breeze
+theme=Breeze
