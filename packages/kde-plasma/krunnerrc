@@ -1,2 +1,15 @@
 [PlasmaRunnerManager]
 migrated=true
+
+[Plugins]
+CharacterRunnerEnabled=false
+DictionaryEnabled=false
+appstreamEnabled=false
+bookmarksEnabled=false
+browserhistoryEnabled=false
+browsertabsEnabled=false
+katesessionsEnabled=false
+konsoleprofilesEnabled=false
+krunner_spellcheckEnabled=false
+recentdocumentsEnabled=false
+webshortcutsEnabled=false

@@ -43,7 +43,9 @@ HighlightWindows=false
 RollOverDesktops=false
 
 [org.kde.kdecoration2]
-BorderSize=None
+BorderSize=Tiny
 BorderSizeAuto=false
+ButtonsOnLeft=M
+ButtonsOnRight=HSIAX
 library=org.kde.breeze
 theme=Breeze

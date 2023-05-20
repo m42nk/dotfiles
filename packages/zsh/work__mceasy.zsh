@@ -32,11 +32,13 @@ alias pr-create="gh pr create --base develop-platform"
 
 # jira
 jira-fe(){
-  jira issue list --columns key,type,summary,status -q'project = DEVA AND summary ~ "\\[FE\\]" AND sprint in openSprints()'
+  # jira issue list --columns key,type,summary,status -q'project = DEVA AND summary ~ "\\[FE\\]" AND sprint in openSprints()'
+  jira issue list --columns key,type,summary,status -q'project = ME AND summary ~ "\\[FE\\]" AND sprint in openSprints()'
 }
 
 jira-sprint(){
-  jira issue list -q"project = DEVA and sprint in openSprints()"
+  # jira issue list -q"project = DEVA and sprint in openSprints()"
+  jira issue list -q"project = ME and sprint in openSprints()"
 }
 
 if [[ $(command -v google-chrome) ]] && [[ $(command -v jira) ]]; then
