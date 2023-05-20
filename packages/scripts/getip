@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-_IP="$(ip -br a | grep -E 'wlp2s0|wlan0' | awk '{print $3}')"
+_IP="$(ip -br a | grep -E 'wlp2s0|wlan0|wlo1' | awk '{print $3}')"
 
 if [ ! -z ${_IP} ]; then
   echo "| ${_IP} |"

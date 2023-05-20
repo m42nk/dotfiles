@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/m42nk/Dotfiles/packages/scripts/kde-panel-no-shadow
+Icon=
+Name=kde-panel-no-shadow
+Path=
+Terminal=False
+Type=Application

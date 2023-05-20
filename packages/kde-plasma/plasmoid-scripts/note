@@ -1,0 +1,5 @@
+# dbus-monitor --profile | grep -v newSensorData
+# dbus-monitor "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'" --profile
+# dbus-monitor | while read LINE; do echo $LINE; done
+# dbus-monitor | grep --line-buffered "$WATCH_FOR" | while read LINE; do echo $LINE; done
+

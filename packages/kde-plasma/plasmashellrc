@@ -11,6 +11,10 @@ Number of Actions=0
 [KFileDialog Settings]
 detailViewIconSize=16
 
+[KPropertiesDialog]
+eDP Height 1920x1080=490
+eDP Width 1920x1080=473
+
 [PlasmaTransientsConfig]
 PreloadWeight=42
 

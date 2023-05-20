@@ -1,0 +1,41 @@
+#!/bin/env bash
+
+ID=1
+PROPERTY_WATCHER="interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'"
+WATCH_FOR="/org/mpris/MediaPlayer2"
+
+dbus-monitor "$PROPERTY_WATCHER" --profile |
+	grep --line-buffered "$WATCH_FOR" |
+	while read -r LINE; do
+		METADATA=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata)
+    PLAYBACK=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlaybackStatus)
+		TITLE=$(echo "$METADATA" | grep "xesam:title" | cut -d':' -f3 | sed 's/^ *//g')
+		ARTIST=$(echo "$METADATA" | grep "xesam:artist" | cut -d':' -f3 | sed 's/^ *//g')
+    [[ "$PLAYBACK" == "Playing" ]] && ICON="" || ICON=""
+    COMMAND="plasmawindowed org.kde.plasma.mediacontroller"
+		DATA="| A | $ICON $TITLE - $ARTIST | $TITLE - $ARTIST | $COMMAND |"
+    # 
+
+		qdbus org.kde.plasma.doityourselfbar /id_$ID \
+			org.kde.plasma.doityourselfbar.pass "$DATA"
+
+    echo "$LINE"
+	done
+
+# dbus-monitor "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'" --profile
+# dbus-monitor | while read LINE; do echo $LINE; done
+
+# OUTPUT:
+# mpris:artUrl: https://i.scdn.co/image/ab67616d0000b273a78f0301e25e24a2f8bfbb9f
+# mpris:length: 240407000
+# mpris:trackid: /com/spotify/track/33yngwxcYNnUVpaGWq2MYz
+# xesam:album: Flavour
+# xesam:albumArtist: Paul Cherry
+# xesam:artist: Paul Cherry
+# xesam:autoRating: 0.44
+# xesam:discNumber: 1
+# xesam:title: Like Yesterday
+# xesam:trackNumber: 3
+# xesam:url: https://open.spotify.com/track/33yngwxcYNnUVpaGWq2MYz
+
+# | A | Label text | Tooltip text | command_to_execute_on_click |
