@@ -1,0 +1,20 @@
+#!/bin/env bash
+
+PROPERTY_WATCHER="destination='org.kde.KWin',path='/VirtualDesktopManager',member='Get'"
+WATCH_FOR="/VirtualDesktopManager"
+
+# qdbus org.kde.plasma.doityourselfbar /id_$ID \
+#   org.kde.plasma.doityourselfbar.pass "| A | Play Something! | | |"
+LAST_WINDOW=""
+
+xdotool search . behave %@ focus exec xdotool getwindowfocus getwindowname |
+	grep --line-buffered "" |
+	while read -r LINE; do
+    if [[ "$LINE" == "$LAST_WINDOW" ]]; then
+      continue
+    fi
+
+    LAST_WINDOW="$LINE"
+		echo "$LINE"
+		qdbus org.freedesktop.Notifications /org/kde/osdService org.kde.osdService.showText alienarena "$LINE"
+	done
