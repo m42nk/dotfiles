@@ -64,6 +64,12 @@ super + ctrl + m
 super + ctrl + space
   $HOME/.bin/passman
 
+super + space
+  rofi -show window
+
+super + ctrl + p
+  $HOME/.bin/passman
+
 # super + grave
 #   line-lof
 

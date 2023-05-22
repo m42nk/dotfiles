@@ -4,6 +4,9 @@ ID=1
 PROPERTY_WATCHER="interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'"
 WATCH_FOR="/org/mpris/MediaPlayer2"
 
+qdbus org.kde.plasma.doityourselfbar /id_$ID \
+  org.kde.plasma.doityourselfbar.pass "| A | Play Something! | | |"
+
 dbus-monitor "$PROPERTY_WATCHER" --profile |
 	grep --line-buffered "$WATCH_FOR" |
 	while read -r LINE; do

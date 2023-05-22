@@ -188,8 +188,8 @@ alias pnf="pnpm --filter"
 
 alias ttd='tt -t 15 -csv >> ~/wpm.csv'
 
-alias download-vpn="node ~/Codes/myits-vpn-download-script/index.js"
-alias itsvpn="node ~/Codes/myits-vpn-download-script/index.js"
+alias itsvpn-downloadonly="node ~/Codes/myits-vpn-download-script/index.js"
+alias itsvpn="cd ~/VPNs && node ~/Codes/myits-vpn-download-script/index.js && unzip -o Server2.zip"
 
 gdif(){
   if [ -z "$1" ]; then

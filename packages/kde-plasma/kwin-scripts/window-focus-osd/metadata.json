@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Name": "My Script",
+        "Description": "Description of the script",
+        "Icon": "preferences-system-windows",
+        
+        "Authors": [
+            {
+                "Email": "username@gmail.com",
+                "Name": "Firstname Lastname"
+            }
+        ],
+        "Id": "myscript",
+        "Version": "1.0",
+        "License": "GPLv3",
+        "Website": "https://github.com/username/myscript"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}

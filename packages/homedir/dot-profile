@@ -14,6 +14,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_RUNTIME_DIR="$HOME/.xdg"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/snapd/desktop/"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
@@ -54,6 +55,7 @@ export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 # vim: ft=bash
 
 if [ -e /home/m42nk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/m42nk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /etc/profile.d/apps-bin-path.sh ]; then emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'; fi
 
 # if command -v autostart-sxhkd; then
 #     autostart-sxhkd

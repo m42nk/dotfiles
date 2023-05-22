@@ -2,6 +2,7 @@
 update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default
 
 [Compositing]
+GLTextureFilter=1
 OpenGLIsUnsafe=false
 
 [Desktops]
@@ -26,9 +27,20 @@ HorizontalGap=0
 MaxWidth=600
 Opacity=80
 
+[Effect-kwin4_effect_translucency]
+MoveResize=69
+
+[NightColor]
+LatitudeAuto=-7.2484
+LongitudeAuto=112.7419
+
 [Plugins]
 desktopchangeosdEnabled=true
+glideEnabled=true
+kwin4_effect_geometry_changeEnabled=true
+kwin4_effect_scaleEnabled=false
 kwin4_effect_squashEnabled=false
+kwin4_effects_foldpopupsEnabled=false
 magiclampEnabled=true
 thumbnailasideEnabled=true
 wobblywindowsEnabled=true
