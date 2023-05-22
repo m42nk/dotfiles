@@ -16,7 +16,8 @@
   path = packages/secrets
 	url = https://github.com/m42nk/dotfiles-secret
 	branch = master
-	update = rebase
+  ;update = rebase 
+	update = none; skip init
 
 ; [submodule "dotfiles-nvim"]
 ; 	path = packages/nvim
