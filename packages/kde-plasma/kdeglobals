@@ -142,6 +142,7 @@ History Items[$e]=file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/
 [General]
 AccentColor=94,129,172
 BrowserApplication=google-chrome.desktop
+ColorScheme=Sweet
 ColorSchemeHash=a054744e5da530142f039caa182148b170643d2e
 TerminalApplication=konsole
 TerminalService=org.kde.konsole.desktop

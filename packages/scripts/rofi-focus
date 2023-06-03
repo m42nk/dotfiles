@@ -1,0 +1,27 @@
+#!/bin/env bash
+
+declare -A windows
+windows["WhatsApp"]="crx_hnpfjngllnobngcgfapefoaidbinmjnm.Google-chrome"
+windows["Teams"]="crx_cifhbcnohmdccbgoicgdjpfamggdegmo.Google-chrome"
+windows["Kitty"]="kitty.kitty"
+windows["Spotify"]="spotify.Spotify"
+windows["DevTools"]="DevTools"
+windows["Chrome"]="google-chrome.Google-chrome"
+
+# Get all keys and pipe them to rofi
+SELECTED=$(echo "${!windows[@]}" | tr ' ' '\n' | rofi -dmenu -i -p "Focus on: ")
+
+# Get the value of the selected key
+QUERY=${windows[$SELECTED]}
+
+# wmctrl -lx | grep -i $QUERY | awk '{print $1}' | xargs -r -I{} wmctrl -i -a {}
+WINDOW_ID=$(wmctrl -lx | grep -i "$QUERY" | awk '{print $1}')
+
+if [ -n "$WINDOW_ID" ]; then
+	wmctrl -i -a "$WINDOW_ID"
+else
+	notify-send "$0" "No window found for $SELECTED"
+fi
+
+# rofi -dmenu <<EOD | xargs -r -I{} notify-send {}
+# EOD

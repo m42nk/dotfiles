@@ -1,3 +1,4 @@
 - link:
     ~/.zshrc: zsh/dot-zshrc
+    ~/.zprofile: zsh/zprofile
     ~/.config/zsh: zsh

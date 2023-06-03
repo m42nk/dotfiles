@@ -158,7 +158,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=84
+PreloadWeight=92
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -199,7 +199,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=67
+PreloadWeight=92
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -254,6 +254,7 @@ DialogHeight=720
 DialogWidth=960
 
 [Containments][29][Applets][51][Configuration][Preferences]
+AddDesktopButtonShow=false
 DesktopButtonsHorizontalMargin=4
 DesktopButtonsSetCommonSizeForAll=true
 DesktopButtonsSpacing=4
@@ -286,16 +287,36 @@ DialogWidth=880
 
 [Containments][29][Applets][59][Configuration][Preferences]
 BlockIndicatorsStyle=5
+BlockLabelsMaximumLength=85
 DBusInstanceId=1
 DBusSuccess=true
 StartupScriptPath=/home/m42nk/Dotfiles/packages/kde-plasma/plasmoid-scripts/spotify
+
+[Containments][29][Applets][60]
+immutability=1
+plugin=org.kde.plasma.appmenu
+
+[Containments][29][Applets][60][Configuration][Appearance]
+compactView=true
+
+[Containments][29][Applets][60][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
+[Containments][29][Applets][61]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
+[Containments][29][Applets][61][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
 
 [Containments][29][ConfigDialog]
 DialogHeight=93
 DialogWidth=1920
 
 [Containments][29][General]
-AppletOrder=51;34;59;57;33;30
+AppletOrder=51;60;34;59;57;33;30;61
 
 [Containments][40]
 ItemGeometries-1920x1080=
@@ -316,11 +337,11 @@ DialogWidth=960
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=446
 ToolBoxButtonY=20
-positions={"1920x1080":["3"\\,"16"\\,"desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop"\\,"0"\\,"0"\\,"desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop"\\,"1"\\,"0"\\,"desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"\\,"2"\\,"0"]}
+positions={"1920x1080":["4"\\,"16"\\,"desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg"\\,"1"\\,"1"\\,"desktop:/res"\\,"0"\\,"1"\\,"desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop"\\,"1"\\,"0"\\,"desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop"\\,"0"\\,"0"\\,"desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop"\\,"2"\\,"1"\\,"desktop:/spotify.desktop"\\,"3"\\,"0"\\,"desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"\\,"2"\\,"0"]}
 sortMode=-1
 
 [Containments][40][Wallpaper][org.kde.image][General]
-Image=file:///home/m42nk/Dotfiles/packages/wallpapers/wallhaven-6kd9d7.png
+Image=file:///home/m42nk/Desktop/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg
 
 [Containments][40][Wallpaper][org.kde.slideshow][General]
 Image=file:///home/m42nk/Wallpapers/wallhaven-6kd9d7.png
@@ -340,6 +361,10 @@ wallpaperplugin=org.kde.image
 [Containments][41][ConfigDialog]
 DialogHeight=720
 DialogWidth=960
+
+[Containments][41][General]
+positions={"1920x1080":[]}
+sortMode=-1
 
 [Containments][41][Wallpaper][org.kde.image][General]
 Image=file:///home/m42nk/Dotfiles/packages/wallpapers/wallhaven-6kd9d7.png
@@ -407,7 +432,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=0
+PreloadWeight=9
 
 [Containments][8][Applets][14]
 immutability=1
@@ -463,14 +488,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=92
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=70
 
 [Containments][8][Applets][25]
 immutability=1
@@ -500,5 +525,5 @@ scaleIconsToFit=true
 shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
-itemsOnDisabledScreens=
-screenMapping=desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0
+itemsOnDisabledScreens=1,1,desktop:/dishub.png
+screenMapping=desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/res,0

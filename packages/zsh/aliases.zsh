@@ -18,7 +18,7 @@ alias -g .....="../../../.."
 ##  eg. \ls, \rm -rf
 
 # alias rm="trash"       # Put to trash instead of remove
-alias ls="exa --icons" # Pretty ls
+alias ls="exa --icons --group-directories-first" # Pretty ls
 alias lsnew="exa -1snew" # Ls sort by newest (bottom -> top)
 alias mv="mv -iv"      # Verbose + safer move
 alias cp="cp -iv"      # Verbose + safer cp
@@ -54,6 +54,7 @@ alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
 alias gpl="git pull"
 alias gbro='gh browse --branch $(git branch --show-current)'
+alias gs="gss"
 
 ## -- Node
 alias nrd="npm run dev"
@@ -126,6 +127,7 @@ alias dfx="df -x tmpfs -h"                 # List disk free
 
 alias exi="exit"
 alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh"
+alias chkb="$EDITOR ~/.config/sxhkd/sxhkdrc"
 
 ## -- Systemctl (linux only)
 alias start="sudo systemctl start"

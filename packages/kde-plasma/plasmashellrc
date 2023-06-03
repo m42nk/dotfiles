@@ -10,10 +10,14 @@ Number of Actions=0
 
 [KFileDialog Settings]
 detailViewIconSize=16
+iconViewIconSize=64
 
 [KPropertiesDialog]
 eDP Height 1920x1080=490
-eDP Width 1920x1080=473
+eDP Width 1920x1080=482
+
+[PlasmaTransientsConfig]
+PreloadWeight=18
 
 [PlasmaViews][Panel 2]
 panelOpacity=1
@@ -29,9 +33,11 @@ alignment=132
 panelOpacity=1
 
 [PlasmaViews][Panel 29][Defaults]
+minLength=1548
 thickness=20
 
 [PlasmaViews][Panel 29][Horizontal1920]
+minLength=1548
 thickness=20
 
 [ScreenConnectors]

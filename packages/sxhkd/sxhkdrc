@@ -11,7 +11,7 @@ super + shift + Return
   kitty
 
 super + backslash
-  $HOME/.bin/kde-invoke kwin "ExposeAll"
+  sleep 0.1 && $HOME/.bin/kde-invoke kwin "ExposeAll"
 
 super + u
   $HOME/.bin/kde-invoke kwin "Activate Window Demanding Attention"
@@ -53,7 +53,7 @@ super + ctrl + t
   $HOME/.bin/kde-invoke kwin "ToggleCurrentThumbnail"
 
 super + ctrl + l
-  notify-send "Locking session..."; $HOME/.bin/kde-invoke ksmserver "Lock Session"
+  sleep 0.1 && notify-send "Locking session..."; $HOME/.bin/kde-invoke ksmserver "Lock Session"
 
 super + ctrl + q
   notify-send "Logging out..."; $HOME/.bin/kde-invoke ksmserver "Log Out"
@@ -65,6 +65,12 @@ super + ctrl + space
   $HOME/.bin/passman
 
 super + space
+  rofi -show window
+
+super + ctrl + b
+  $HOME/.bin/rofi-bluetooth
+
+super + a
   rofi -show window
 
 super + ctrl + p

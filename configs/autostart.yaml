@@ -1,2 +1,5 @@
 - link:
-    ~/.config/autostart: autostart
+    ~/.config/autostart: 
+      path: autostart/*
+      glob: true
+      relink: true

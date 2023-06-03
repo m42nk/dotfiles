@@ -55,8 +55,8 @@ export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 # vim: ft=bash
 
 if [ -e /home/m42nk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/m42nk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-if [ -e /etc/profile.d/apps-bin-path.sh ]; then emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'; fi
 
 # if command -v autostart-sxhkd; then
 #     autostart-sxhkd
 # fi
+. "$HOME/.cargo/env"
