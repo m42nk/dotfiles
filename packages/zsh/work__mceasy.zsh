@@ -25,7 +25,7 @@ link-vsms(){
 
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
-alias pr-create="gh pr create --base develop-platform --reviewer ersakanti31 --reviewer fathilarham"
+alias pr-create="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
 # alias move-branch-to-inactive='fd -d 1 -E develop-platform -E inactives -E staging -a -x git -C develop-platform worktree move "{}" inactives'
 
 # env vars

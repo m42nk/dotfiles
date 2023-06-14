@@ -49,7 +49,9 @@ wobblywindowsEnabled=true
 PopupHideDelay=500
 
 [TabBox]
+DelayTime=0
 HighlightWindows=false
+LayoutName=org.kde.breeze.desktop
 
 [Windows]
 RollOverDesktops=false

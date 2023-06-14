@@ -207,3 +207,5 @@ gdif(){
 alias t="todoist"
 
 alias vbox="virtualbox"
+
+alias arduino="arduino-cli"
