@@ -2,6 +2,29 @@ source ~/.config/zsh/zshrc
 
 [[ -e "$HOME/.config/openai-api-keys" ]] && export OPENAI_API_KEY=$(cat ~/.config/openai-api-keys)
 
+# added by Nix installer
+if [ -e /home/m42nk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/m42nk/.nix-profile/etc/profile.d/nix.sh; fi
+
+# pnpm
+export PNPM_HOME="/home/m42nk/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH=$PATH:/home/m42nk/.spicetify
+
+
+
+
+
+
+
+
+
+
+
 # export PATH="/usr/local/opt/erlang@22/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/erlang@22/lib"
 # export PATH="/usr/local/opt/libxslt/bin:$PATH"
@@ -26,14 +49,3 @@ source ~/.config/zsh/zshrc
 
 # alias kuttle_stg="sshuttle --dns -r kt-2-d75d5dd7b-7kpfd -e $HOME/Work/_misc/kuttle 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 10.59.17.0/32"
 
-if [ -e /home/m42nk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/m42nk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# pnpm
-export PNPM_HOME="/home/m42nk/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-export PATH=$PATH:/home/m42nk/.spicetify

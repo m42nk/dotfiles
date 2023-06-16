@@ -44,6 +44,9 @@ export LESS_TERMCAP_so=$'\e[01;44;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[01;32m'
 
+# `watch` command interval
+export WATCH_INTERVAL=1
+
 export PF_INFO="ascii title os wm editor kernel uptime"
 
 export VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallery'

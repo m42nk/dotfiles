@@ -111,3 +111,7 @@ fi
 if [[ "$(command -v thefuck)" ]]; then
   eval $(thefuck --alias fuck)
 fi
+
+if [[ "$(command -v minikube)" ]]; then
+  source $ZSH/minikube.zsh
+fi
