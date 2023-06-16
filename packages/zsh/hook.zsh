@@ -12,3 +12,26 @@ preexec(){
       ;;
   esac
 }
+
+
+___rename-tmux-session-on-dirs() {
+  emulate -L zsh
+
+  case "$PWD" in
+    ("$HOME/Work"*)
+      [ -n "$TMUX" ] && tmux rename-session "Work"
+      ;;
+    (*)
+      ;;
+  esac
+
+
+  # ("$HOME/Work"*|"$HOME/Codes")
+  #   echo "::Rename tmux Session::"
+  #   ;;
+
+}
+
+add-zsh-hook chpwd ___rename-tmux-session-on-dirs
+
+
