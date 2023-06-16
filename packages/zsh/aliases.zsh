@@ -12,6 +12,9 @@ alias -g ...="../.."
 alias -g ....="../../.."
 alias -g .....="../../../.."
 
+# alias -g @@="$HOME/todo"
+hash -d t="$HOME/todo"
+
 ## Overwrite existing command
 ##  to use actual command without alias
 ##  prefix it with backslash (\)

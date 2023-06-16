@@ -384,6 +384,8 @@ Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-9d6m2w.png
 SlidePaths=/home/m42nk/Downloads/Wallpaper
 
 [Containments][42]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
 activityId=34155dba-af19-4b7e-9e94-a294d8e8a769
 formfactor=0
 immutability=1
@@ -442,7 +444,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=7
+PreloadWeight=12
 
 [Containments][8][Applets][14]
 immutability=1
