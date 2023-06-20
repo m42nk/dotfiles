@@ -3,8 +3,10 @@ update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-vir
 
 [1]
 Description=Spotify on Third Workspace
+clientmachine=localhost
 desktops=5c3b462d-1350-418a-89c0-6ef48eda2497
 desktopsrule=3
+skipswitcher=true
 title=Spotify
 wmclass=spotify
 wmclassmatch=1
@@ -14,6 +16,7 @@ Description=Whatsapp on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
 desktopsrule=3
 fsplevel=4
+title=Spotify
 wmclass=crx_hnpfjngllnobngcgfapefoaidbinmjnm google-chrome
 wmclasscomplete=true
 wmclassmatch=1
@@ -31,6 +34,15 @@ Description=Teams on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
 desktopsrule=3
 fsplevel=4
+title=Spotify
+wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
+[4]
+Description=Teams on Second Workspace
+desktops=0fea5868-2086-46d7-b757-e27466d8f275
+desktopsrule=3
 title=Spotify
 wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
 wmclasscomplete=true
@@ -68,4 +80,14 @@ wmclassmatch=1
 Description=Teams on Second Workspace
 title=Microsoft Teams
 windowrole=pop-up
+wmclassmatch=1
+
+[d6eb3f52-0731-4f2e-ac4c-c2f2e11b43d6]
+Description=Window settings for
+clientmachine=localhost
+skipswitcher=true
+skipswitcherrule=3
+title=Picture in picture
+titlematch=1
+types=1
 wmclassmatch=1

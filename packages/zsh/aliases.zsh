@@ -65,11 +65,11 @@ alias nr="npm run"
 
 ## -- Docker
 alias deit="docker exec -it"
-alias dwpb="docker-compose run --rm cli bash"
-alias dwp="docker-compose run --rm cli"
-alias dcud="docker-compose up -d"
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
+alias dwpb="docker compose run --rm cli bash"
+alias dwp="docker compose run --rm cli"
+alias dcud="docker compose up -d"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 alias dps="docker ps --format '{{.ID}}\t{{.Image}}\t{{.Names}}' | column --table"
 
 ## -- Tmux
