@@ -16,8 +16,8 @@ Number=3
 Rows=1
 
 [Effect-Magnifier]
-Height=600
-Width=800
+Height=500
+Width=500
 
 [Effect-Slide]
 Duration=100
@@ -42,8 +42,10 @@ kwin4_effect_scaleEnabled=false
 kwin4_effect_squashEnabled=false
 kwin4_effects_foldpopupsEnabled=false
 magiclampEnabled=true
+magnifierEnabled=true
 thumbnailasideEnabled=true
 wobblywindowsEnabled=true
+zoomEnabled=false
 
 [Script-desktopchangeosd]
 PopupHideDelay=500

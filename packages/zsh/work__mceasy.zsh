@@ -23,6 +23,47 @@ link-vsms(){
   echo "Linked node_modules"
 }
 
+wt-inactive(){
+  INACTIVE_DIR="$VSMS_WT_DIR/inactives"
+
+  if [[ -z "$1" ]]; then
+    echo "Usage: wt-inactive <worktree-dir>"
+    return 1
+  fi
+
+  if [[ ! -d "$1" ]]; then
+    echo "$1 is not a directory"
+    return 1
+  fi
+
+  CWD="$(pwd)"
+  cd $VSMS_WT_DIR/develop-platform
+  git worktree move "$1" "$INACTIVE_DIR/$1"
+  echo "Moved $1 to $INACTIVE_DIR/$1"
+  cd "$CWD"
+}
+
+wt-activate(){
+  INACTIVE_DIR="$VSMS_WT_DIR/inactives"
+
+  if [[ -z "$1" ]]; then
+    echo "Usage: wt-activate <worktree-dir>"
+    return 1
+  fi
+
+  if [[ ! -d "$1" ]]; then
+    echo "$1 is not a directory"
+    return 1
+  fi
+
+  CWD="$(pwd)"
+  cd $VSMS_WT_DIR/develop-platform
+  git worktree move "$INACTIVE_DIR/$1" "$VSMS_WT_DIR/$1"
+  echo "Moved $INACTIVE_DIR/$1 to $1"
+  cd "$CWD"
+}
+
+
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
 alias pr-create="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"

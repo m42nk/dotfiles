@@ -22,7 +22,14 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
-PreloadWeight=7
+PreloadWeight=0
+
+[Containments][2][Applets][20][Configuration][Appearance]
+showSeconds=true
+
+[Containments][2][Applets][20][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
 
 [Containments][2][Applets][21]
 immutability=1
@@ -158,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -202,14 +209,38 @@ plugin=org.kde.plasma.colorpicker
 PreloadWeight=0
 
 [Containments][2][Applets][62][Configuration][General]
-history=#99a1b1
+history=#0e1419,#c1c9d6,#2a2e32,#99a1b1
+
+[Containments][2][Applets][63]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][63][Configuration]
+PreloadWeight=10
+
+[Containments][2][Applets][63][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+title=Used Swap Memory
+
+[Containments][2][Applets][63][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
+[Containments][2][Applets][63][Configuration][SensorColors]
+memory/swap/usedPercent=42,46,50
+
+[Containments][2][Applets][63][Configuration][SensorLabels]
+memory/swap/usedPercent=󰓢
+
+[Containments][2][Applets][63][Configuration][Sensors]
+highPrioritySensorIds=["memory/swap/usedPercent"]
 
 [Containments][2][Applets][7]
 immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -220,7 +251,7 @@ DialogWidth=1920
 PreloadWeight=0
 
 [Containments][2][General]
-AppletOrder=49;5;46;45;44;6;37;62;7;20;21
+AppletOrder=49;5;46;45;44;63;6;37;62;7;20;21
 
 [Containments][29]
 activityId=
@@ -328,35 +359,6 @@ DialogWidth=1920
 [Containments][29][General]
 AppletOrder=51;60;34;59;57;33;30;61
 
-[Containments][40]
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
-activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][40][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
-
-[Containments][40][General]
-ToolBoxButtonState=topcenter
-ToolBoxButtonX=446
-ToolBoxButtonY=20
-positions={"1920x1080":["4"\\,"16"\\,"desktop:/PLACEHOLDER_a3dbd4291043152_0.png"\\,"0"\\,"4"\\,"desktop:/spotify.desktop"\\,"3"\\,"0"\\,"desktop:/surat_mahasiswa_template_id_1.pdf"\\,"0"\\,"2"\\,"desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"\\,"2"\\,"0"\\,"desktop:/wps-office-prometheus.desktop"\\,"0"\\,"3"\\,"desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop"\\,"2"\\,"1"\\,"desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop"\\,"1"\\,"0"\\,"desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg"\\,"1"\\,"1"\\,"desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop"\\,"0"\\,"0"\\,"desktop:/res"\\,"0"\\,"1"]}
-sortMode=-1
-
-[Containments][40][Wallpaper][org.kde.image][General]
-Image=file:///home/m42nk/Desktop/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg
-
-[Containments][40][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/m42nk/Wallpapers/wallhaven-6kd9d7.png
-SlidePaths=/home/m42nk/Downloads/Wallpaper
-
 [Containments][41]
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
@@ -373,7 +375,7 @@ DialogHeight=720
 DialogWidth=960
 
 [Containments][41][General]
-positions={"1920x1080":[]\\,"3840x2160":[]}
+positions={"1920x1080":[]\\,"3840x2160":[]\\,"2560x1440":[""]}
 sortMode=-1
 
 [Containments][41][Wallpaper][org.kde.image][General]
@@ -407,6 +409,20 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][43][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][66]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
+activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][66][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][8]
@@ -444,7 +460,10 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=9
+PreloadWeight=97
+
+[Containments][8][Applets][13][Configuration][General]
+currentTab=streams
 
 [Containments][8][Applets][14]
 immutability=1
@@ -479,7 +498,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=0
+PreloadWeight=4
 
 [Containments][8][Applets][19]
 immutability=1
@@ -500,7 +519,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][8][Applets][24]
 immutability=1
@@ -538,4 +557,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/res,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/wps-office-prometheus.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0
+screenMapping=desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/spotify.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/res,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/steam.desktop,0

@@ -39,6 +39,14 @@ wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
 wmclasscomplete=true
 wmclassmatch=1
 
+[3167273f-868a-49ea-b6bc-f061da776fba]
+Description=Skip Alt-Tab
+skipswitcher=true
+skipswitcherrule=5
+title=SKIP_TAB
+titlematch=2
+types=1
+
 [4]
 Description=Teams on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275

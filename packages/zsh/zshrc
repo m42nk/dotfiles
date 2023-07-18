@@ -109,7 +109,7 @@ if [[ "$(command -v starship)" ]]; then
 fi
 
 if [[ "$(command -v thefuck)" ]]; then
-  eval $(thefuck --alias fuck)
+  eval $(thefuck --alias fk)
 fi
 
 if [[ "$(command -v minikube)" ]]; then

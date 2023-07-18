@@ -48,4 +48,3 @@ export PATH=$PATH:/home/m42nk/.spicetify
 # # if [ -f '/Users/Syakhisk.a.interns/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Syakhisk.a.interns/google-cloud-sdk/completion.zsh.inc'; fi
 
 # alias kuttle_stg="sshuttle --dns -r kt-2-d75d5dd7b-7kpfd -e $HOME/Work/_misc/kuttle 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 10.59.17.0/32"
-

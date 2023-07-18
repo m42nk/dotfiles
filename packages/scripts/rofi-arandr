@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+LAYOUTS_DIR="$HOME/.screenlayout"
+
+SELECTED=$(ls $LAYOUTS_DIR | sed 's/\.sh$//g' | rofi -dmenu -i -p "Focus on: ")
+
+if [ -n "$SELECTED" ]; then
+    $LAYOUTS_DIR/$SELECTED.sh
+fi
+

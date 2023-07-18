@@ -22,6 +22,7 @@ hash -d t="$HOME/todo"
 
 # alias rm="trash"       # Put to trash instead of remove
 alias ls="exa --icons --group-directories-first" # Pretty ls
+alias sl="ls" # Pretty ls
 alias lsnew="exa -1snew" # Ls sort by newest (bottom -> top)
 alias mv="mv -iv"      # Verbose + safer move
 alias cp="cp -iv"      # Verbose + safer cp
@@ -55,9 +56,10 @@ alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
-alias gpl="git pull"
+alias gpl='git pull $(git remote) $(git branch --show-current)'
 alias gbro='gh browse --branch $(git branch --show-current)'
 alias gs="gss"
+alias gcb="git branch --show-current"
 
 ## -- Node
 alias nrd="npm run dev"
@@ -212,3 +214,7 @@ alias t="todoist"
 alias vbox="virtualbox"
 
 alias arduino="arduino-cli"
+
+function getrev(){
+  echo "$(git remote get-url origin)/blob/$(git rev-parse HEAD)/$(git rev-parse --show-prefix)$1"
+}
