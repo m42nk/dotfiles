@@ -216,7 +216,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][63][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2][Applets][63][Configuration][Appearance]
 chartFace=org.kde.ksysguard.textonly
@@ -375,7 +375,7 @@ DialogHeight=720
 DialogWidth=960
 
 [Containments][41][General]
-positions={"1920x1080":[]\\,"3840x2160":[]\\,"2560x1440":[""]}
+positions={"1920x1080":[]\\,"3840x2160":[]\\,"2560x1440":[""]\\,"1280x800":[]}
 sortMode=-1
 
 [Containments][41][Wallpaper][org.kde.image][General]
@@ -460,10 +460,10 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=97
+PreloadWeight=78
 
 [Containments][8][Applets][13][Configuration][General]
-currentTab=streams
+raiseMaximumVolume=true
 
 [Containments][8][Applets][14]
 immutability=1
@@ -498,7 +498,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=4
+PreloadWeight=2
 
 [Containments][8][Applets][19]
 immutability=1
@@ -526,7 +526,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=92
+PreloadWeight=97
 
 [Containments][8][Applets][25]
 immutability=1
@@ -557,4 +557,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/spotify.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/res,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/steam.desktop,0
+screenMapping=desktop:/spotify.desktop,0,desktop:/res,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/steam.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0

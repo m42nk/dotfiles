@@ -41,6 +41,7 @@ alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias gp="git push"
+alias gaa="git add -A"
 alias gsw="git switch"
 alias gst="git stash"
 alias gpf="git push --force"
@@ -217,4 +218,12 @@ alias arduino="arduino-cli"
 
 function getrev(){
   echo "$(git remote get-url origin)/blob/$(git rev-parse HEAD)/$(git rev-parse --show-prefix)$1"
+}
+
+alias dns="bash $HOME/VPNs/add-dns.sh"
+
+cpath(){
+  _path="$1"
+  echo "Copying path: $(realpath "$_path")"
+  realpath "$_path" | xclip -selection clipboard
 }

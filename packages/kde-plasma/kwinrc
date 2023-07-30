@@ -24,8 +24,8 @@ Duration=100
 HorizontalGap=0
 
 [Effect-ThumbnailAside]
-MaxWidth=600
-Opacity=80
+MaxWidth=500
+Opacity=60
 
 [Effect-kwin4_effect_translucency]
 MoveResize=69
