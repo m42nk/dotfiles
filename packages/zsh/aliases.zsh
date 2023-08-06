@@ -227,3 +227,6 @@ cpath(){
   echo "Copying path: $(realpath "$_path")"
   realpath "$_path" | xclip -selection clipboard
 }
+
+
+alias rmgpucache="rm -r $HOME/.config/google-chrome/Default/GPUCache/"

@@ -240,7 +240,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=100
+PreloadWeight=97
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -422,6 +422,10 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][66][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
 [Containments][66][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
@@ -460,7 +464,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=78
+PreloadWeight=61
 
 [Containments][8][Applets][13][Configuration][General]
 raiseMaximumVolume=true
@@ -498,7 +502,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][8][Applets][19]
 immutability=1
@@ -519,14 +523,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=100
+PreloadWeight=97
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=97
+PreloadWeight=89
 
 [Containments][8][Applets][25]
 immutability=1
@@ -557,4 +561,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/spotify.desktop,0,desktop:/res,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/steam.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0
+screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/steam.desktop,0,desktop:/res,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/Steam Linux Runtime - Sniper.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/Brawlhalla.desktop,0,desktop:/Proton Experimental.desktop,0
