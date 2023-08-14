@@ -13,8 +13,8 @@ detailViewIconSize=16
 iconViewIconSize=64
 
 [KPropertiesDialog]
-eDP Height 1920x1080=490
-eDP Width 1920x1080=482
+eDP Height 1920x1080=477
+eDP Width 1920x1080=617
 
 [PlasmaTransientsConfig]
 PreloadWeight=42
@@ -38,6 +38,9 @@ thickness=20
 
 [PlasmaViews][Panel 29][Horizontal1920]
 minLength=1920
+thickness=20
+
+[PlasmaViews][Panel 29][Horizontal2560]
 thickness=20
 
 [ScreenConnectors]

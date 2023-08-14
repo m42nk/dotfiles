@@ -1,0 +1,30 @@
+#!/bin/env bash
+
+cache_file="$HOME/.cache/rofi-jira"
+
+if [ ! -f $cache_file ]; then
+	touch $cache_file
+fi
+
+favorites=(
+	ME-708
+	ME-123
+)
+
+options=$(
+	echo ${favorites[@]}
+	tac $cache_file
+)
+
+result=$(
+	echo $options | tr ' ' '\n' | awk '!a[$0]++' |
+		rofi -dmenu -p "Jira Ticket:" -filter "ME-"
+)
+
+if [ -z "$result" ]; then
+  exit 0
+fi
+
+echo $result >>$cache_file
+
+xdg-open "https://mceasy.atlassian.net/browse/$result"

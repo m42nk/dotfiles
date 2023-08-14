@@ -230,3 +230,6 @@ cpath(){
 
 
 alias rmgpucache="rm -r $HOME/.config/google-chrome/Default/GPUCache/"
+cht(){
+  cht.sh "$@" | bat
+}

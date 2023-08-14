@@ -193,6 +193,7 @@ DialogWidth=960
 groupingAppIdBlacklist=google-chrome.desktop
 groupingLauncherUrlBlacklist=applications:google-chrome.desktop
 launchers=
+sortingStrategy=2
 
 [Containments][2][Applets][6]
 immutability=1
@@ -209,7 +210,7 @@ plugin=org.kde.plasma.colorpicker
 PreloadWeight=0
 
 [Containments][2][Applets][62][Configuration][General]
-history=#0e1419,#c1c9d6,#2a2e32,#99a1b1
+history=#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
 
 [Containments][2][Applets][63]
 immutability=1
@@ -240,7 +241,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -368,7 +369,7 @@ immutability=1
 lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.potd
 
 [Containments][41][ConfigDialog]
 DialogHeight=720
@@ -380,6 +381,10 @@ sortMode=-1
 
 [Containments][41][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][41][Wallpaper][org.kde.potd][General]
+FillMode=2
+Provider=natgeo
 
 [Containments][41][Wallpaper][org.kde.slideshow][General]
 Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-9d6m2w.png
@@ -413,6 +418,7 @@ Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][66]
 ItemGeometries-1920x1080=
+ItemGeometries-2560x1440=
 ItemGeometriesHorizontal=
 activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
 formfactor=0
@@ -420,7 +426,7 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.potd
 
 [Containments][66][ConfigDialog]
 DialogHeight=660
@@ -428,6 +434,10 @@ DialogWidth=880
 
 [Containments][66][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][66][Wallpaper][org.kde.potd][General]
+FillMode=2
+Provider=simonstalenhag
 
 [Containments][8]
 activityId=
@@ -464,7 +474,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=61
+PreloadWeight=46
 
 [Containments][8][Applets][13][Configuration][General]
 raiseMaximumVolume=true
@@ -530,7 +540,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=89
+PreloadWeight=97
 
 [Containments][8][Applets][25]
 immutability=1
@@ -560,5 +570,5 @@ scaleIconsToFit=true
 shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
-itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/steam.desktop,0,desktop:/res,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/Steam Linux Runtime - Sniper.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/Brawlhalla.desktop,0,desktop:/Proton Experimental.desktop,0
+itemsOnDisabledScreens=
+screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/spotify.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/dishub.png,1,desktop:/Yudisium Syakhisk,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/wps-office-prometheus.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/res,0

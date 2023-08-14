@@ -1,6 +1,0 @@
-#!/bin/env bash
-
-LANG="$1"
-Q="$(shift; echo "$@" | sed "s/\s/+/")"
-
-curl --silent cht.sh/$LANG/"$Q" | less -R

@@ -67,6 +67,10 @@ super + ctrl + space
 super + space
   rofi -show window
 
+
+super + ctrl + o
+  $HOME/.bin/rofi-jira
+
 super + ctrl + b
   $HOME/.bin/rofi-bluetooth
 

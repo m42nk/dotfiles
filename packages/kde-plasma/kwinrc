@@ -44,6 +44,7 @@ kwin4_effects_foldpopupsEnabled=false
 magiclampEnabled=true
 magnifierEnabled=true
 thumbnailasideEnabled=true
+virtual-desktops-only-on-primaryEnabled=true
 wobblywindowsEnabled=true
 zoomEnabled=false
 

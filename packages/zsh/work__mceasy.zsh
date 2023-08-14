@@ -1,3 +1,8 @@
+_red() { echo -e "\e[31m$1\e[0m"; }
+_green() { echo -e "\e[32m$1\e[0m"; }
+_gray() { echo -e "\e[90m$1\e[0m"; }
+_blue() { echo -e "\e[34m$1\e[0m"; }
+
 ##
 ## Aliases
 ##
@@ -7,6 +12,7 @@ VSMS_WT_DIR="$HOME/Work/vsms"
 
 link-vsms(){
   CURR_GIT_ROOT="$(git rev-parse --show-toplevel)"
+  SRC_BRANCH="${1:-develop-platform}"
 
   # check if pwd is inside vsms 
   if [[ ! $CURR_GIT_ROOT =~ $VSMS_WT_DIR ]]; then
@@ -15,11 +21,11 @@ link-vsms(){
   fi
 
   # link env
-  ln -s "${CURR_GIT_ROOT}/k8s/configs/env/development-platform/.env" "${CURR_GIT_ROOT}/.env.development"
+  ln -s "${VSMS_WT_DIR}/${SRC_BRANCH}/.env.development" "${CURR_GIT_ROOT}/.env.development"
   echo "Linked .env.development"
 
   # link node_modules
-  ln -s "${VSMS_WT_DIR}/develop-platform/node_modules" "${CURR_GIT_ROOT}/node_modules"
+  ln -s "${VSMS_WT_DIR}/${SRC_BRANCH}/node_modules" "${CURR_GIT_ROOT}/node_modules"
   echo "Linked node_modules"
 }
 
@@ -63,10 +69,23 @@ wt-activate(){
   cd "$CWD"
 }
 
+# pr-create(){
+#   # alias pr-create="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
+#   default_branch="develop-platform"
+#   read "target_branch?Target branch (default: $default_branch): "
+
+#   if [[ -z "$target_branch" ]]; then
+#     target_branch="$default_branch"
+#   fi
+
+#   echo "Creating PR to $target_branch"
+# }
+
 
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
-alias pr-create="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
+alias pr-create-feature="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
+alias pr-create-relfix="gh pr create --base staging --reviewer ersakantibelva --reviewer fathilarham --reviewer ahmadmustainmarzuki"
 # alias move-branch-to-inactive='fd -d 1 -E develop-platform -E inactives -E staging -a -x git -C develop-platform worktree move "{}" inactives'
 
 # env vars
