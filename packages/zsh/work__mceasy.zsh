@@ -30,7 +30,7 @@ link-vsms(){
 }
 
 wt-inactive(){
-  INACTIVE_DIR="$VSMS_WT_DIR/inactives"
+  INACTIVE_DIR="$VSMS_WT_DIR/_inactives"
 
   if [[ -z "$1" ]]; then
     echo "Usage: wt-inactive <worktree-dir>"
@@ -50,7 +50,7 @@ wt-inactive(){
 }
 
 wt-activate(){
-  INACTIVE_DIR="$VSMS_WT_DIR/inactives"
+  INACTIVE_DIR="$VSMS_WT_DIR/_inactives"
 
   if [[ -z "$1" ]]; then
     echo "Usage: wt-activate <worktree-dir>"
@@ -81,9 +81,14 @@ wt-activate(){
 #   echo "Creating PR to $target_branch"
 # }
 
+icr(){
+  ICR_DIR="$VSMS_WT_DIR/_icr-sandbox"
+  code "$ICR_DIR"
+}
 
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
+alias lvstg="link-vsms staging"
 alias pr-create-feature="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
 alias pr-create-relfix="gh pr create --base staging --reviewer ersakantibelva --reviewer fathilarham --reviewer ahmadmustainmarzuki"
 # alias move-branch-to-inactive='fd -d 1 -E develop-platform -E inactives -E staging -a -x git -C develop-platform worktree move "{}" inactives'

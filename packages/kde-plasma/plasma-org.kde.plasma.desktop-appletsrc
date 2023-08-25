@@ -22,7 +22,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][2][Applets][20][Configuration][Appearance]
 showSeconds=true
@@ -533,14 +533,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=97
+PreloadWeight=81
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=97
+PreloadWeight=80
 
 [Containments][8][Applets][25]
 immutability=1
@@ -571,4 +571,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/spotify.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/dishub.png,1,desktop:/Yudisium Syakhisk,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/wps-office-prometheus.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/res,0
+screenMapping=desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/dishub.png,1,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/res,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/spotify.desktop,0

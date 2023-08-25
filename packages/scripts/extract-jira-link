@@ -1,0 +1,27 @@
+#!/usr/bin/env zx
+
+// https://mceasy.atlassian.net/jira/people/63b4e3a5082abdd71bb65d8d/boards/62?modal=detail&selectedIssue=ME-2258
+// https://mceasy.atlassian.net/browse/ME-2258
+
+// get ticket number from both format
+const getTicketNumber = (url) => {
+  const regex = /(?:browse|selectedIssue)=([A-Z]+-[0-9]+)/
+  const match = url.match(regex)
+  if (match) {
+    return match[1]
+  }
+
+  return null
+}
+
+const url = argv._[0] || await question('Enter Jira URL: ')
+
+const ticketNumber = getTicketNumber(url)
+
+if (ticketNumber) {
+  console.log(ticketNumber)
+} else {
+  console.log('No ticket number found')
+}
+
+// vim: ft=javascript
