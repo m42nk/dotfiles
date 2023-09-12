@@ -25,6 +25,9 @@ super + shift + f
 super + m
   google-chrome --force-dark-mode || google-chrome-stable --force-dark-mode
 
+super + shift + m
+  microsoft-edge --force-dark-mode || microsoft-edge-stable --force-dark-mode
+
 super + b
   $HOME/.bin/kde-invoke kwin "Window No Border"
 

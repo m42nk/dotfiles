@@ -4,3 +4,9 @@ clickMethodClickfinger=true
 naturalScroll=true
 pointerAcceleration=0.2
 tapToClick=true
+
+[Elan Touchpad]
+clickMethodAreas=false
+clickMethodClickfinger=true
+naturalScroll=false
+tapToClick=true

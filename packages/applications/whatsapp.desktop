@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm --force-dark-mode --enable-features=WebUIDarkMode --force-device-scale-factor=1.125
+Icon=chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default
+Name=WhatsApp Web
+StartupWMClass=WhatsApp
+Terminal=false
+Type=Application
+Version=1.0

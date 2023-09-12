@@ -165,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=92
+PreloadWeight=97
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -173,6 +173,7 @@ DialogWidth=960
 
 [Containments][2][Applets][49][Configuration][General]
 favoritesPortedToKAstats=true
+icon=start-here-kubuntu
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][49][Shortcuts]
@@ -210,7 +211,7 @@ plugin=org.kde.plasma.colorpicker
 PreloadWeight=0
 
 [Containments][2][Applets][62][Configuration][General]
-history=#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
+history=#030712,#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
 
 [Containments][2][Applets][63]
 immutability=1
@@ -241,7 +242,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=92
+PreloadWeight=82
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -296,16 +297,20 @@ DialogHeight=720
 DialogWidth=960
 
 [Containments][29][Applets][51][Configuration][Preferences]
-AddDesktopButtonShow=false
-DesktopButtonsHorizontalMargin=4
 DesktopButtonsSetCommonSizeForAll=true
 DesktopButtonsSpacing=4
-DesktopButtonsVerticalMargin=4
+DesktopButtonsVerticalMargin=0
+DesktopIndicatorsCustomColorForCurrentDesktop=#7661ac
+DesktopIndicatorsCustomColorForIdleDesktops=#00000000
+DesktopIndicatorsCustomColorForOccupiedIdleDesktops=#50ffffff
 DesktopIndicatorsDistinctForDesktopsNeedingAttention=true
-DesktopIndicatorsStyle=5
+DesktopIndicatorsStyle=2
+DesktopIndicatorsStyleBlockRadius=0
 DesktopLabelsBoldFontForCurrentDesktop=true
 DesktopLabelsCustomFont=JetBrainsMono Nerd Font
-DesktopLabelsStyle=2
+DesktopLabelsCustomFontSize=14
+DesktopLabelsStyle=1
+EmptyDesktopsRenameAs=Desktop
 MouseWheelRemoveDesktopOnClick=false
 
 [Containments][29][Applets][57]
@@ -358,69 +363,12 @@ DialogHeight=93
 DialogWidth=1920
 
 [Containments][29][General]
-AppletOrder=51;60;34;59;57;33;30;61
+AppletOrder=51;60;34;57;59;33;30;61
 
-[Containments][41]
+[Containments][67]
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.potd
-
-[Containments][41][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
-
-[Containments][41][General]
-positions={"1920x1080":[]\\,"3840x2160":[]\\,"2560x1440":[""]\\,"1280x800":[]}
-sortMode=-1
-
-[Containments][41][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
-
-[Containments][41][Wallpaper][org.kde.potd][General]
-FillMode=2
-Provider=natgeo
-
-[Containments][41][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/m42nk/Downloads/Wallpaper/wallhaven-9d6m2w.png
-SlidePaths=/home/m42nk/Downloads/Wallpaper
-
-[Containments][42]
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
-activityId=34155dba-af19-4b7e-9e94-a294d8e8a769
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][42][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
-
-[Containments][43]
-activityId=34155dba-af19-4b7e-9e94-a294d8e8a769
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][43][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
-
-[Containments][66]
-ItemGeometries-1920x1080=
-ItemGeometries-2560x1440=
-ItemGeometriesHorizontal=
-activityId=eb16d42c-4a97-458a-97ad-b2682a2cbad1
+activityId=58db076a-68b1-43b5-a34e-cd9ca380c227
 formfactor=0
 immutability=1
 lastScreen=0
@@ -428,16 +376,34 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.potd
 
-[Containments][66][ConfigDialog]
-DialogHeight=660
-DialogWidth=880
+[Containments][67][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
-[Containments][66][Wallpaper][org.kde.image][General]
+[Containments][67][General]
+ToolBoxButtonState=topcenter
+ToolBoxButtonX=534
+ToolBoxButtonY=20
+
+[Containments][67][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
-[Containments][66][Wallpaper][org.kde.potd][General]
+[Containments][67][Wallpaper][org.kde.potd][General]
+Category=1065374
 FillMode=2
-Provider=simonstalenhag
+Provider=unsplash
+
+[Containments][68]
+activityId=58db076a-68b1-43b5-a34e-cd9ca380c227
+formfactor=0
+immutability=1
+lastScreen=2
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][68][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][8]
 activityId=
@@ -474,7 +440,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][8][Applets][13][Configuration][General]
 raiseMaximumVolume=true
@@ -533,14 +499,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=87
+PreloadWeight=57
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=51
+PreloadWeight=0
 
 [Containments][8][Applets][25]
 immutability=1
@@ -571,4 +537,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/res,0,desktop:/spotify.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0
+screenMapping=desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/spotify_spotify.desktop,0,desktop:/res,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/Interview.html,0,desktop:/steam.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0

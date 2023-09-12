@@ -12,7 +12,8 @@ VSMS_WT_DIR="$HOME/Work/vsms"
 
 link-vsms(){
   CURR_GIT_ROOT="$(git rev-parse --show-toplevel)"
-  SRC_BRANCH="${1:-develop-platform}"
+  # SRC_BRANCH="${1:-develop-platform}"
+  SRC_BRANCH="${1:-develop-vms}"
 
   # check if pwd is inside vsms 
   if [[ ! $CURR_GIT_ROOT =~ $VSMS_WT_DIR ]]; then

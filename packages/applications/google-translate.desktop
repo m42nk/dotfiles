@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Icon=google-translate
+Name=Google Translate
+Exec=google-chrome --app="https://translate.google.com" && xdotool search --sync --classname GoogleTranslate set_window --class GoogleTranslate
+StartupWMClass=crx_aghbiahbpaijignceidepookljebhfak
+Terminal=false
+Hidden=false
+Categories=Utility

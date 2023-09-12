@@ -1,0 +1,5 @@
+- link:
+    ~/.local/share/applications: 
+      path: applications/*
+      glob: true
+      relink: true

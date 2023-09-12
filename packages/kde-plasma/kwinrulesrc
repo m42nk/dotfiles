@@ -13,7 +13,7 @@ wmclassmatch=1
 
 [2]
 Description=Whatsapp on Second Workspace
-desktops=0fea5868-2086-46d7-b757-e27466d8f275
+desktops=33307401-1c75-49d5-8cfa-c3ecd3c872d2
 desktopsrule=3
 fsplevel=4
 title=Spotify
@@ -98,4 +98,10 @@ skipswitcherrule=3
 title=Picture in picture
 titlematch=1
 types=1
+wmclassmatch=1
+
+[fc97e600-97f0-4680-8865-ce6b0c43b7c6]
+Description=Icon - Google Translate
+wmclass=translate.google.com google-chrome
+wmclasscomplete=true
 wmclassmatch=1

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+TARGET="${1:-https://google.com}"
+
+google-chrome \
+  --profile-directory=Default \
+  --force-dark-mode \
+  --app="$TARGET"

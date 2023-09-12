@@ -7,11 +7,10 @@ OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=746f5cd6-a196-484b-ab06-7dbed6a5cb49
-Id_2=0fea5868-2086-46d7-b757-e27466d8f275
-Id_3=5c3b462d-1350-418a-89c0-6ef48eda2497
-Name_1=Main
-Name_2=Chats
-Name_3=Music
+Id_2=6251e000-f20d-4cf8-ab72-6c140db62a95
+Id_3=3a857332-7844-443c-86d1-2fd244e8db47
+Name_1=Desktop
+Name_3=Desktop
 Number=3
 Rows=1
 
@@ -62,5 +61,6 @@ RollOverDesktops=false
 [org.kde.kdecoration2]
 BorderSize=Tiny
 BorderSizeAuto=false
-ButtonsOnLeft=M
-ButtonsOnRight=HSIAX
+ButtonsOnLeft=
+library=org.kde.breeze
+theme=Breeze
