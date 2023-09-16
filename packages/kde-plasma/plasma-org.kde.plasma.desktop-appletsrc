@@ -165,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -208,10 +208,10 @@ immutability=1
 plugin=org.kde.plasma.colorpicker
 
 [Containments][2][Applets][62][Configuration]
-PreloadWeight=0
+PreloadWeight=25
 
 [Containments][2][Applets][62][Configuration][General]
-history=#030712,#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
+history=#f41d00,#137c55,#030712,#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
 
 [Containments][2][Applets][63]
 immutability=1
@@ -242,7 +242,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=82
+PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -358,12 +358,26 @@ plugin=org.kde.plasma.lock_logout
 DialogHeight=660
 DialogWidth=880
 
+[Containments][29][Applets][69]
+immutability=1
+plugin=org.kde.plasma.doityourselfbar
+
+[Containments][29][Applets][69][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
+[Containments][29][Applets][69][Configuration][Preferences]
+BlockIndicatorsStyle=5
+DBusInstanceId=2
+DBusSuccess=true
+StartupScriptPath=/home/m42nk/Dotfiles/packages/kde-plasma/plasmoid-scripts/watson-timetracker\n
+
 [Containments][29][ConfigDialog]
 DialogHeight=93
 DialogWidth=1920
 
 [Containments][29][General]
-AppletOrder=51;60;34;57;59;33;30;61
+AppletOrder=51;60;69;34;57;59;33;30;61
 
 [Containments][67]
 ItemGeometries-1920x1080=
@@ -440,7 +454,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=0
+PreloadWeight=2
 
 [Containments][8][Applets][13][Configuration][General]
 raiseMaximumVolume=true
@@ -499,14 +513,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=57
+PreloadWeight=83
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=52
 
 [Containments][8][Applets][25]
 immutability=1
@@ -537,4 +551,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/spotify_spotify.desktop,0,desktop:/res,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/Interview.html,0,desktop:/steam.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0
+screenMapping=desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/spotify.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/Interview.html,0,desktop:/spotify_spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/steam.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/wps-office-prometheus.desktop,0,desktop:/res,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0

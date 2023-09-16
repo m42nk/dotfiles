@@ -1,0 +1,41 @@
+#!/bin/env bash
+
+# Output format
+# Project testing started a minute ago (2023.09.16 19:35:43+0700)
+
+RAW="$(watson status)"
+
+# If 'No project started' then echo default message
+if [[ "$RAW" == *"No project started"* ]]; then
+    echo ""
+    exit 0
+fi
+
+PROJECT_NAME="$(echo "$RAW" | grep -oP '(?<=Project ).*(?= started)')"
+DURATION="$(echo "$RAW" | grep -oP '(?<=started ).*(?= ago)')"
+STARTED_AT="$(echo "$RAW" | grep -oP '(?<=\().*(?=\))')"
+STARTED_TIME="$(echo "$STARTED_AT" | grep -oP '(?<= ).*(?=\+)')"
+
+# Get started time
+STARTED_TIME="$(date -d "$STARTED_TIME" +%s)"
+
+# Get now time
+NOW="$(date +%s)"
+
+# Get duration
+DURATION="$(($NOW - $STARTED_TIME))"
+
+# Convert to h m s
+H="$((DURATION / 3600))"
+M="$((DURATION % 3600 / 60))"
+S="$((DURATION % 60))"
+
+# make the if one line
+H="$(if [ "$H" -eq 0 ]; then echo ""; else echo "${H}h"; fi)"
+M="$(if [ "$M" -eq 0 ]; then echo ""; else echo "${M}m"; fi)"
+S="$(if [ "$S" -eq 0 ]; then echo ""; else echo "${S}s"; fi)"
+
+# Trim start and end whitespace
+TRIMMED_TIME="$(echo "$H $M $S" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+
+echo "$PROJECT_NAME - $TRIMMED_TIME"

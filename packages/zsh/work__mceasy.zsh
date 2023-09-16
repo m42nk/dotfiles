@@ -44,7 +44,7 @@ wt-inactive(){
   fi
 
   CWD="$(pwd)"
-  cd $VSMS_WT_DIR/develop-platform
+  cd $VSMS_WT_DIR/develop-vms
   git worktree move "$1" "$INACTIVE_DIR/$1"
   echo "Moved $1 to $INACTIVE_DIR/$1"
   cd "$CWD"
@@ -64,7 +64,7 @@ wt-activate(){
   fi
 
   CWD="$(pwd)"
-  cd $VSMS_WT_DIR/develop-platform
+  cd $VSMS_WT_DIR/develop-vms
   git worktree move "$INACTIVE_DIR/$1" "$VSMS_WT_DIR/$1"
   echo "Moved $INACTIVE_DIR/$1 to $1"
   cd "$CWD"
@@ -90,8 +90,13 @@ icr(){
 alias vsms="cd ${VSMS_WT_DIR}"
 alias lv="link-vsms"
 alias lvstg="link-vsms staging"
-alias pr-create-feature="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
-alias pr-create-relfix="gh pr create --base staging --reviewer ersakantibelva --reviewer fathilarham --reviewer ahmadmustainmarzuki"
+
+# alias pr-create-feature="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
+# alias pr-create-relfix="gh pr create --base staging --reviewer ersakantibelva --reviewer fathilarham --reviewer ahmadmustainmarzuki"
+
+alias pr-create-feature="gh pr create --base develop-vms --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
+alias pr-create-relfix="gh pr create --base staging --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
+
 # alias move-branch-to-inactive='fd -d 1 -E develop-platform -E inactives -E staging -a -x git -C develop-platform worktree move "{}" inactives'
 
 # env vars

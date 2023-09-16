@@ -7,14 +7,14 @@
 ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
 #####################################
 
+## Load custom completion
+fpath+=("$ZSH/completions")
+
 ## Completion Engine
 autoload -Uz compinit
 
 ## Start the completion engine and cache completion setting
 compinit -d $XDG_DATA_HOME/zcompdump
-
-## Load custom completion
-fpath+=("$ZSH/completions")
 
 # _expand # expand env var
 # _expand_alias # expand alias on tab

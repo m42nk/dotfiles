@@ -1,0 +1,26 @@
+#!/bin/env bash
+
+ID=2
+SCRIPT_PATH=$(dirname "$(realpath -s "$0")")
+
+# qdbus org.kde.plasma.doityourselfbar /id_$ID \
+# 	org.kde.plasma.doityourselfbar.pass "| A | Play Something! | | |"
+
+while true; do
+  OUTPUT="$($SCRIPT_PATH/_watson-display)"
+  PROJECT=$(echo "$OUTPUT" | cut -d'[' -f1)
+  TIME=$(echo "$OUTPUT" | cut -d'[' -f2 | cut -d']' -f1)
+
+  OUTPUT_QT="
+  <font color='#ffffff'><b>$PROJECT</b></font>
+  [<font color='#107a55'><b>$TIME</b></font>]
+  "
+
+  DATA="| A | $OUTPUT_QT | Project: $PROJECT \| Elapsed: $TIME | |"
+
+	qdbus org.kde.plasma.doityourselfbar /id_$ID \
+		org.kde.plasma.doityourselfbar.pass "$DATA"
+
+	echo "$OUTPUT"
+	sleep 1
+done

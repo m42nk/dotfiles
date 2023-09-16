@@ -9,9 +9,12 @@ OpenGLIsUnsafe=false
 Id_1=746f5cd6-a196-484b-ab06-7dbed6a5cb49
 Id_2=6251e000-f20d-4cf8-ab72-6c140db62a95
 Id_3=3a857332-7844-443c-86d1-2fd244e8db47
+Id_4=2c3bbd2c-42c2-4298-b162-e4759b4f4209
 Name_1=Desktop
+Name_2=Desktop
 Name_3=Desktop
-Number=3
+Name_4=Desktop
+Number=4
 Rows=1
 
 [Effect-Magnifier]
@@ -19,8 +22,9 @@ Height=500
 Width=500
 
 [Effect-Slide]
-Duration=100
+Duration=50
 HorizontalGap=0
+VerticalGap=0
 
 [Effect-ThumbnailAside]
 MaxWidth=500
@@ -48,7 +52,7 @@ wobblywindowsEnabled=true
 zoomEnabled=false
 
 [Script-desktopchangeosd]
-PopupHideDelay=500
+PopupHideDelay=250
 
 [TabBox]
 DelayTime=0

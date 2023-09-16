@@ -94,6 +94,7 @@ src $ZSH/todoist/todoist.zsh
 ## check if hostname starts with "OMG-"
 [[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh
 [[ "$(hostname)" =~ ^starlink ]] && src $ZSH/work__mceasy.zsh
+[[ "$(hostname)" =~ ^coruscant ]] && src $ZSH/work__mceasy.zsh
 
 ## Don't use zsh when in pve (sshfs), starship hangs
 __use_bash_on_sshfs() {

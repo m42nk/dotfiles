@@ -4,7 +4,7 @@ update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-vir
 [1]
 Description=Spotify on Third Workspace
 clientmachine=localhost
-desktops=5c3b462d-1350-418a-89c0-6ef48eda2497
+desktops=3a857332-7844-443c-86d1-2fd244e8db47
 desktopsrule=3
 skipswitcher=true
 title=Spotify
@@ -13,7 +13,7 @@ wmclassmatch=1
 
 [2]
 Description=Whatsapp on Second Workspace
-desktops=33307401-1c75-49d5-8cfa-c3ecd3c872d2
+desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
 desktopsrule=3
 fsplevel=4
 title=Spotify
@@ -31,7 +31,7 @@ wmclassmatch=1
 
 [3]
 Description=Teams on Second Workspace
-desktops=0fea5868-2086-46d7-b757-e27466d8f275
+desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
 desktopsrule=3
 fsplevel=4
 title=Spotify
@@ -47,13 +47,27 @@ title=SKIP_TAB
 titlematch=2
 types=1
 
+[36de702b-8108-405d-90e5-868e85d1d907]
+Description=Skip DevTools Edge
+skipswitcherrule=2
+skiptaskbarrule=2
+title=DevTools
+titlematch=2
+windowrole=pop-up
+windowrolematch=1
+wmclass=microsoft-edge
+wmclassmatch=1
+
 [4]
-Description=Teams on Second Workspace
+Description=Skip DevTools Edge
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
-desktopsrule=3
-title=Spotify
-wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
-wmclasscomplete=true
+skipswitcherrule=2
+skiptaskbarrule=2
+title=DevTools
+titlematch=2
+windowrole=pop-up
+windowrolematch=1
+wmclass=microsoft-edge
 wmclassmatch=1
 
 [5e2b31fc-d785-421a-95ec-803411948d86]
@@ -73,8 +87,8 @@ windowrole=pop-up
 wmclassmatch=1
 
 [General]
-count=3
-rules=1,2,3
+count=4
+rules=1,2,3,4
 
 [a6e5d733-41ce-45d8-af46-6addff9c1e9e]
 Description=Spotify on Third Workspace

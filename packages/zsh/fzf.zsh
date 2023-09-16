@@ -24,4 +24,3 @@ _fzf_compgen_dir() {
     --exclude ".git" \
     . "$1"
 }
-
