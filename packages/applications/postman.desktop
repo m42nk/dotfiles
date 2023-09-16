@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Icon=Postman
+Name=Postman Custom
+Terminal=false
+Hidden=false
+Exec=/snap/bin/postman

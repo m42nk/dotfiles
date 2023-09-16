@@ -7,7 +7,7 @@ RAW="$(watson status)"
 
 # If 'No project started' then echo default message
 if [[ "$RAW" == *"No project started"* ]]; then
-    echo ""
+    echo "[No Time Tracked]"
     exit 0
 fi
 

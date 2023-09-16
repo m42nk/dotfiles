@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Icon=android-messages-desktop
+Name=Line Messenger
+Terminal=false
+Hidden=false
+Exec=/home/m42nk/.bin/line

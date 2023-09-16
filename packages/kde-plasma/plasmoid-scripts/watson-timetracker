@@ -11,8 +11,12 @@ while true; do
   PROJECT=$(echo "$OUTPUT" | cut -d'[' -f1)
   TIME=$(echo "$OUTPUT" | cut -d'[' -f2 | cut -d']' -f1)
 
+  # Truncate project name to 15
+  TRUNCATED="$(printf '%.15s..' "$PROJECT")"
+
+
   OUTPUT_QT="
-  <font color='#ffffff'><b>$PROJECT</b></font>
+  <font color='#ffffff'><b>$TRUNCATED</b></font>
   [<font color='#107a55'><b>$TIME</b></font>]
   "
 
