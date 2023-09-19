@@ -1,0 +1,77 @@
+#!/usr/bin/env zx
+
+$.verbose = false;
+const args = argv["_"];
+const TABFS_DIR = `${os.homedir()}/Repos/TabFS/fs/mnt`;
+
+if (args.length === 0) {
+  const [tabs, windows] = await Promise.all([showTabs(), showWindows()]);
+
+  const tabsOutput = formatOutputTabs(tabs);
+  const windowsOutput = formatOutputWindows(windows);
+
+  console.log([windowsOutput, tabsOutput].join("\n"));
+}
+
+if (args.length > 0) {
+  // console.log(args);
+
+}
+
+function activateTab() {}
+function activateWindow() {}
+
+function formatOutputTabs(tabs) {
+  return tabs.map((tab) => `[T]\t${tab.id}\t${tab.title}`).join("\n");
+}
+
+function formatOutputWindows(windows) {
+  return windows.map((window) => `[W]\t${window.id}\t${window.title}`).join("\n");
+}
+
+async function showTabs() {
+  const tabs = [];
+  const tabsDir = path.join(TABFS_DIR, "tabs", "by-id");
+
+  const ids = await $`ls ${tabsDir}`;
+
+  for (const id of ids.stdout.split("\n")) {
+    if (!id) continue;
+
+    const tab = {
+      id,
+      title: "",
+      url: "",
+    };
+
+    const raw_title = await $`cat ${path.join(tabsDir, id, "title.txt")}`;
+    tab.title = raw_title.stdout.trim();
+
+    const raw_url = await $`cat ${path.join(tabsDir, id, "url.txt")}`;
+    tab.url = raw_url.stdout.trim();
+
+    tabs.push(tab);
+  }
+
+  return tabs;
+}
+
+async function showWindows() {
+  const windows = [];
+
+  const rawWindows = await $`wmctrl -l`;
+  rawWindows.stdout.split("\n").forEach((line) => {
+    let [id, desktop, _host, ...title] = line.split(/\s+/);
+    title = title.join(" ");
+
+    if (desktop === "-1") return;
+
+    if (id && desktop && title) {
+      windows.push({ id, desktop, title });
+    }
+  });
+
+  return windows;
+}
+
+// vim: ft=javascript

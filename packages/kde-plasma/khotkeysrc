@@ -141,7 +141,7 @@ DataCount=4
 [Data_1]
 Comment=KMenuEdit Global Shortcuts
 DataCount=2
-Enabled=true
+Enabled=false
 Name=KMenuEdit
 SystemGroup=1
 Type=ACTION_DATA_GROUP
@@ -619,7 +619,7 @@ Uuid={52ce57fa-0a2f-49d4-bf0f-912d2e06c908}
 [Data_3]
 Comment=Basic Konqueror gestures.
 DataCount=14
-Enabled=true
+Enabled=false
 ImportId=konqueror_gestures_kde321
 Name=Konqueror Gestures
 SystemGroup=0

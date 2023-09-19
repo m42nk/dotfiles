@@ -66,5 +66,6 @@ RollOverDesktops=false
 BorderSize=Tiny
 BorderSizeAuto=false
 ButtonsOnLeft=
+ButtonsOnRight=HFIAX
 library=org.kde.breeze
 theme=Breeze
