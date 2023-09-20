@@ -1,34 +1,122 @@
 #!/usr/bin/env zx
 
+/*
+ * TODO:
+ * - Add icons
+ * - Refactor
+ *    - Format output better
+ *    - Add window icons
+ *    - Make rofi meta formatting more readable
+ * - Probably add jsdoc
+ * - optimize perf
+ */
+
 $.verbose = false;
+
+const LOG_PATH = `${os.homedir()}/.config/rofi/scripts/tabwin.log`;
 const args = argv["_"];
 const TABFS_DIR = `${os.homedir()}/Repos/TabFS/fs/mnt`;
 
 if (args.length === 0) {
-  const [tabs, windows] = await Promise.all([showTabs(), showWindows()]);
+  const [tabs, windows] = await Promise.all([getTabs(), getWindows()]);
 
   const tabsOutput = formatOutputTabs(tabs);
   const windowsOutput = formatOutputWindows(windows);
 
-  console.log([windowsOutput, tabsOutput].join("\n"));
+  const configs = [
+    ["prompt", "Switcher"],
+    ["no-custom", "true"],
+  ];
+
+  for (const config of configs) {
+    echo(`\0${config[0]}\x1f${config[1]}\n`);
+  }
+
+  echo([windowsOutput, tabsOutput].join("\n"));
 }
 
 if (args.length > 0) {
-  // console.log(args);
+  $`echo ${args.join(" ")} > ${LOG_PATH}`;
+
+  const rofiInfo = process.env["ROFI_INFO"];
+
+  // await $`echo $ROFI_INFO >> ${LOG_PATH}`;
+  // await $`echo $ROFI_DATA >> ${LOG_PATH}`;
+  // await $`echo $ROFI_RETV >> ${LOG_PATH}`;
+
+  if (rofiInfo.startsWith("window__")) {
+    const windowId = rofiInfo.split("__")[1];
+    activateWindow(windowId);
+  }
+
+  if (rofiInfo.startsWith("tab__")) {
+    const tabId = rofiInfo.split("__")[1];
+    activateTab(tabId);
+  }
 }
 
-function activateTab() {}
-function activateWindow() {}
+function activateTab(tabId) {
+  const tabBasePath = path.join(TABFS_DIR, "tabs", "by-id", tabId);
+  $`echo true > ${path.join(tabBasePath, "active")}`;
+  $`echo true > ${path.join(tabBasePath, "window", "focused")}`;
+}
+
+function activateWindow(windowId) {
+  $`wmctrl -ia ${windowId}`;
+}
 
 function formatOutputTabs(tabs) {
-  return tabs.map((tab) => `[T]\t${tab.id}\t${tab.title}`).join("\n");
+  const output = [];
+  for (const tab of tabs) {
+    const url = formatUrl(tab.url);
+    const title = formatTitle(tab.title);
+    const meta = `${tab.title} ${tab.id} ${tab.url}`;
+
+    const options = [
+      ["icon", "browser"],
+      ["meta", meta],
+      ["info", "tab__" + tab.id],
+    ];
+
+    const optionsString = "\0" + options.flat(Infinity).join("\x1f");
+
+    output.push(`${url}\t${title}${optionsString}`);
+  }
+
+  return output.join("\n");
+}
+
+function formatUrl(url) {
+  let urlObj = new URL(url);
+
+  return (urlObj.hostname + urlObj.pathname).slice(0, 20) + "...";
+}
+
+function formatTitle(title) {
+  return title.length > 20 ? title.slice(0, 40) + "..." : title;
 }
 
 function formatOutputWindows(windows) {
-  return windows.map((window) => `[W]\t${window.id}\t${window.title}`).join("\n");
+  const output = [];
+  for (const w of windows) {
+    const title = formatTitle(w.title);
+    const meta = `${w.title} ${w.desktop} ${w.id} ${w.wmClass}`;
+
+    const options = [
+      ["icon", "desktop"],
+      ["meta", meta],
+      ["info", "window__" + w.id],
+    ];
+
+    const optionsString = "\0" + options.flat(Infinity).join("\x1f");
+
+    output.push(`${w.wmClass}\t${title}${optionsString}`);
+  }
+
+  return output.join("\n");
 }
 
-async function showTabs() {
+async function getTabs() {
   const tabs = [];
   const tabsDir = path.join(TABFS_DIR, "tabs", "by-id");
 
@@ -55,19 +143,25 @@ async function showTabs() {
   return tabs;
 }
 
-async function showWindows() {
+async function getWindows() {
   const windows = [];
 
-  const rawWindows = await $`wmctrl -l`;
+  const rawWindows = await $`wmctrl -lx`;
   rawWindows.stdout.split("\n").forEach((line) => {
-    let [id, desktop, _host, ...title] = line.split(/\s+/);
+    if (!line) return;
+    let [id, desktop, wmClass, _host, ...title] = line.split(/\s+/);
     title = title.join(" ");
+
+    wmClass = wmClass.split(".");
+    if (wmClass.length > 1) wmClass = wmClass[1];
+    wmClass = wmClass
+      .split("-")
+      .map((s) => s[0].toUpperCase() + s.slice(1))
+      .join(" ");
 
     if (desktop === "-1") return;
 
-    if (id && desktop && title) {
-      windows.push({ id, desktop, title });
-    }
+    windows.push({ id, desktop, wmClass, title });
   });
 
   return windows;
