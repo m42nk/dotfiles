@@ -1,0 +1,7 @@
+/* Colors */
+@import "~/.config/rofi/colors/catppuccin.rasi"
+
+/* Fonts */
+* {
+    font: "JetBrains Mono Nerd Font 10";
+}
