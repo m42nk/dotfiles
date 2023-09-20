@@ -1,0 +1,190 @@
+#!/bin/env python3
+
+from sys import argv
+from os import listdir, environ
+from os.path import join, expanduser
+from subprocess import check_output
+from urllib.parse import urlparse
+
+HOME_DIR = expanduser("~")
+TABFS_DIR = f"{HOME_DIR}/Repos/TabFS/fs/mnt"
+
+"""
+TODO:
+- Add icons
+- Refactor
+   - Format output better
+   - Add window icons
+   - Make rofi meta formatting more readable
+- Probably add jsdoc
+- optimize perf
+"""
+
+
+def main():
+    args = argv[1:]
+
+    if len(args) < 1:
+        handle_startup()
+    else:
+        handle_select()
+
+
+def handle_startup():
+    options = {
+        "prompt": "Switcher",
+    }
+
+    tabs = getBrowserTabs()
+    windows = getWindows()
+
+    for key, value in options.items():
+        print(f"\0{key}\x1f{value}\n")
+
+    print(formatWindows(windows))
+    print(formatTabs(tabs))
+
+
+def handle_select():
+    rofi_info = environ.get("ROFI_INFO")
+
+    if not rofi_info:
+        return
+
+    [type, id] = rofi_info.split("__")
+
+    if type == "tab":
+        activateTab(id)
+    elif type == "window":
+        activateWindow(id)
+
+
+def activateTab(id):
+    base_path = join(TABFS_DIR, "tabs", "by-id", id)
+    with open(join(base_path, "active"), "w") as f:
+        f.write("true")
+    with open(join(base_path, "window", "focused"), "w") as f:
+        f.write("true")
+
+
+def activateWindow(id):
+    check_output(["wmctrl", "-ia", id])
+
+
+def formatTabs(tabs):
+    output = []
+
+    for tab in tabs:
+        meta = f"{tab['title']} {tab['url']} {tab['id']}"
+
+        # get only hostname and path from url
+        url = urlparse(tab["url"])
+        url = (url.hostname + url.path)[:20] + "..."
+
+        title = tab["title"]
+        if len(title) > 40:
+            title = title[:40] + "..."
+
+        options = {
+            "icon": "browser",
+            "meta": meta,
+            "info": "tab__" + tab["id"]
+        }
+
+        options_str = "\0"
+        for key, value in options.items():
+            options_str += f"{key}\x1f{value}\x1f"
+
+        output.append(f"{url}\t{title}{options_str}")
+
+    return "\n".join(output)
+
+
+def formatWindows(windows):
+    output = []
+
+    for window in windows:
+        meta = f"{window['title']} {window['wm_class']} {window['id']}"
+
+        title = window["title"]
+        if len(title) > 40:
+            title = title[:40] + "..."
+
+        wm_class = window["wm_class"]
+        if len(wm_class) > 20:
+            wm_class = wm_class[:20] + "..."
+        else:
+            wm_class = wm_class + " " * (20 - len(wm_class))
+
+        options = {
+            "icon": "desktop",
+            "meta": meta,
+            "info": "window__" + window["id"]
+        }
+
+        options_str = "\0"
+        for key, value in options.items():
+            options_str += f"{key}\x1f{value}\x1f"
+
+        output.append(f"{wm_class}\t{title}{options_str}")
+
+    return "\n".join(output)
+
+
+def getBrowserTabs():
+    tabs = []
+    tabsDir = join(TABFS_DIR, "tabs", "by-id")
+
+    for id in listdir(tabsDir):
+        if not id:
+            continue
+
+        tab = {'id': id, 'title': "", 'url': ""}
+
+        with open(join(tabsDir, id, "title.txt"), "r") as f:
+            tab["title"] = f.read().strip()
+
+        with open(join(tabsDir, id, "url.txt"), "r") as f:
+            tab["url"] = f.read().strip()
+
+        tabs.append(tab)
+
+    return tabs
+
+
+def getWindows():
+    windows = []
+
+    output = check_output(["wmctrl", "-lx"]).decode("utf-8")
+    for line in output.split("\n"):
+        if not line:
+            continue
+
+        id, desktop, wm_class, _host, *title = line.split()
+
+        if desktop == "-1":
+            continue
+
+        title = " ".join(title)
+
+        wm_class = wm_class.split(".")
+        if len(wm_class) > 1:
+            wm_class = wm_class[1]
+
+        # convert wmClass from kebab-case to Title Case
+        wm_class = " ".join([word.capitalize()
+                             for word in str(wm_class).split("-")])
+
+        window = {
+            "id": id,
+            "title": title,
+            'wm_class': wm_class,
+            'desktop': desktop
+        }
+
+        windows.append(window)
+
+    return windows
+
+
+main()

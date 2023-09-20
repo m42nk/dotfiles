@@ -1,4 +1,6 @@
-#!/usr/bin/env zx
+#!/usr/bin/env /home/m42nk/.asdf/shims/zx
+// ^^^ workaround since zx is not found in PATH outside of terminal
+
 
 /*
  * TODO:
@@ -16,6 +18,8 @@ $.verbose = false;
 const LOG_PATH = `${os.homedir()}/.config/rofi/scripts/tabwin.log`;
 const args = argv["_"];
 const TABFS_DIR = `${os.homedir()}/Repos/TabFS/fs/mnt`;
+
+$`echo $(date +"%Y-%m-%d %H:%M:%S") Called with ${args.join(" ")} >> ${LOG_PATH}`;
 
 if (args.length === 0) {
   const [tabs, windows] = await Promise.all([getTabs(), getWindows()]);
@@ -36,8 +40,6 @@ if (args.length === 0) {
 }
 
 if (args.length > 0) {
-  $`echo ${args.join(" ")} > ${LOG_PATH}`;
-
   const rofiInfo = process.env["ROFI_INFO"];
 
   // await $`echo $ROFI_INFO >> ${LOG_PATH}`;
