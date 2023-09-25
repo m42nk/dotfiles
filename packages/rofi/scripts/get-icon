@@ -1,0 +1,24 @@
+#!/usr/bin/env gjs
+
+const { Gio } = imports.gi;
+
+let apps = Gio.AppInfo.get_all();
+
+for (let a of apps) {
+  const app = {
+    id: a.get_id(),
+    name: a.get_name(),
+    icon: a?.get_icon()?.to_string(),
+    wm_class: a?.get_startup_wm_class(),
+  };
+
+  if (app.wm_class === null) {
+    continue;
+  }
+
+  print(app.wm_class)
+  if (app.wm_class === ARGV[0]) {
+    print(app.icon);
+    break;
+  }
+}

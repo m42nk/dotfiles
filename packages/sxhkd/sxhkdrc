@@ -70,7 +70,7 @@ super + ctrl + space
 super + space
   rofi -show window
 
-super + bracketright
+super + a
   rofi -show tw -modes "tw:$HOME/.config/rofi/scripts/tabwin-py,drun,window"
 
 super + shift + bracketright
@@ -81,9 +81,6 @@ super + ctrl + o
 
 super + ctrl + b
   $HOME/.bin/rofi-bluetooth
-
-super + a
-  rofi -show window
 
 super + ctrl + p
   $HOME/.bin/passman

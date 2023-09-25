@@ -11,11 +11,6 @@ TABFS_DIR = f"{HOME_DIR}/Repos/TabFS/fs/mnt"
 
 """
 TODO:
-- Add custom exit code for: Last Tab, Last Window, Open drun modi, {Tab,Window} Only, etc
-- Add toggle favorites/pinned
-- Sort by recent?
-
-old todo:
 - Add icons
 - Refactor
    - Format output better
@@ -38,7 +33,6 @@ def main():
 def handle_startup():
     options = {
         "prompt": "Switcher",
-        "Message": "1: halo\t 2: geming"
     }
 
     tabs = getBrowserTabs()
@@ -67,16 +61,10 @@ def handle_select():
 
 def activateTab(id):
     base_path = join(TABFS_DIR, "tabs", "by-id", id)
-
     with open(join(base_path, "active"), "w") as f:
         f.write("true")
-
-    with open(join(base_path, "window", "focused"), "r+") as f:
-        is_focused = f.read().strip()
-        if is_focused != "true":
-            f.seek(0)
-            f.write("true")
-            f.truncate()
+    with open(join(base_path, "window", "focused"), "w") as f:
+        f.write("true")
 
 
 def activateWindow(id):
@@ -87,7 +75,7 @@ def formatTabs(tabs):
     output = []
 
     for tab in tabs:
-        meta = f"tab__ {tab['title']} {tab['url']} {tab['id']}"
+        meta = f"{tab['title']} {tab['url']} {tab['id']}"
 
         # get only hostname and path from url
         url = urlparse(tab["url"])
@@ -116,7 +104,7 @@ def formatWindows(windows):
     output = []
 
     for window in windows:
-        meta = f"window__ {window['title']} {window['wm_class']} {window['id']}"
+        meta = f"{window['title']} {window['wm_class']} {window['id']}"
 
         title = window["title"]
         if len(title) > 40:
@@ -128,10 +116,8 @@ def formatWindows(windows):
         else:
             wm_class = wm_class + " " * (20 - len(wm_class))
 
-        icon = window["icon"] or "desktop"
-
         options = {
-            "icon": icon,
+            "icon": "desktop",
             "meta": meta,
             "info": "window__" + window["id"]
         }
@@ -182,7 +168,6 @@ def getWindows():
         title = " ".join(title)
 
         wm_class = wm_class.split(".")
-        icon = wm_class[0]
         if len(wm_class) > 1:
             wm_class = wm_class[1]
 
@@ -194,8 +179,7 @@ def getWindows():
             "id": id,
             "title": title,
             'wm_class': wm_class,
-            'desktop': desktop,
-            'icon': icon,
+            'desktop': desktop
         }
 
         windows.append(window)

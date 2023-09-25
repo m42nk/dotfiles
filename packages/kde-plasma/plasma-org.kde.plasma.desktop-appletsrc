@@ -22,7 +22,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
-PreloadWeight=0
+PreloadWeight=7
 
 [Containments][2][Applets][20][Configuration][Appearance]
 showSeconds=true
@@ -165,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -208,10 +208,10 @@ immutability=1
 plugin=org.kde.plasma.colorpicker
 
 [Containments][2][Applets][62][Configuration]
-PreloadWeight=6
+PreloadWeight=0
 
 [Containments][2][Applets][62][Configuration][General]
-history=#f41d00,#137c55,#030712,#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
+history=#f3f3f3,#f41d00,#137c55,#030712,#0d4491,#0e1419,#c1c9d6,#2a2e32,#99a1b1
 
 [Containments][2][Applets][63]
 immutability=1
@@ -513,14 +513,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=92
+PreloadWeight=89
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=33
+PreloadWeight=42
 
 [Containments][8][Applets][25]
 immutability=1
@@ -551,4 +551,4 @@ shownItems=org.kde.plasma.notifications
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,1,desktop:/dishub.png
-screenMapping=desktop:/Yudisium Syakhisk,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/spotify_spotify.desktop,0,desktop:/res,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/Interview.html,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0,desktop:/steam.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/spotify.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0
+screenMapping=desktop:/steam.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/Interview.html,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/res,0,desktop:/spotify_spotify.desktop,0,desktop:/spotify.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/wps-office-prometheus.desktop,0
