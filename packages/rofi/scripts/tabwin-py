@@ -5,6 +5,7 @@ from os import listdir, environ
 from os.path import join, expanduser
 from subprocess import check_output
 from urllib.parse import urlparse
+from tempfile import gettempdir, TemporaryFile
 
 HOME_DIR = expanduser("~")
 TABFS_DIR = f"{HOME_DIR}/Repos/TabFS/fs/mnt"
@@ -36,9 +37,18 @@ def main():
 
 
 def handle_startup():
+    shortcuts = [
+        "Last Tab",
+        "Last Window",
+        "Open Drun",
+        "Tab Only",
+        "Window Only",
+    ]
+
     options = {
         "prompt": "Switcher",
-        "Message": "1: halo\t 2: geming"
+        "message": " ".join(f"{i + 1}: {s}" for i, s in enumerate(shortcuts)),
+        "use-hot-keys": "true",
     }
 
     tabs = getBrowserTabs()
@@ -53,6 +63,11 @@ def handle_startup():
 
 def handle_select():
     rofi_info = environ.get("ROFI_INFO")
+    rofi_exit = environ.get("ROFI_RETV")
+
+    if rofi_exit not in ["0", "1", "2"]:
+        handle_shortcut(rofi_exit)
+        return
 
     if not rofi_info:
         return
@@ -63,6 +78,8 @@ def handle_select():
         activateTab(id)
     elif type == "window":
         activateWindow(id)
+
+    saveHistory(type, id)
 
 
 def activateTab(id):
@@ -81,6 +98,32 @@ def activateTab(id):
 
 def activateWindow(id):
     check_output(["wmctrl", "-ia", id])
+
+
+def saveHistory(type, id):
+    tempdir = gettempdir()
+    history_file = join(tempdir, f"tabwin-last-{type}")
+    with open(history_file, "w") as f:
+        f.write(id)
+
+
+def handle_shortcut(shortcut):
+    tempdir = gettempdir()
+
+    if int(shortcut) is 10 + 0:
+        with open(join(tempdir, "tabwin-last-tab"), "r") as f:
+            id = f.read().strip()
+            activateTab(id)
+    elif int(shortcut) is 10 + 1:
+        with open(join(tempdir, "tabwin-last-window"), "r") as f:
+            id = f.read().strip()
+            activateWindow(id)
+    # elif shortcut == "3":
+    #     check_output(["rofi", "-modi", "drun", "-show", "drun"])
+    # elif shortcut == "4":
+    #     check_output(["rofi", "-modi", "tabwin", "-show", "tabwin"])
+    # elif shortcut == "5":
+    #     check_output(["rofi", "-modi", "tabwin", "-show", "tabwin"])
 
 
 def formatTabs(tabs):
@@ -201,6 +244,10 @@ def getWindows():
         windows.append(window)
 
     return windows
+
+
+def debug(*args):
+    check_output(["notify-send", "TabWin", " ".join(args)])
 
 
 main()
