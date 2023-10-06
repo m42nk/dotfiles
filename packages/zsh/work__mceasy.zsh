@@ -94,8 +94,36 @@ alias lvstg="link-vsms staging"
 # alias pr-create-feature="gh pr create --base develop-platform --reviewer ersakantibelva --reviewer fathilarham"
 # alias pr-create-relfix="gh pr create --base staging --reviewer ersakantibelva --reviewer fathilarham --reviewer ahmadmustainmarzuki"
 
-alias pr-create-feature="gh pr create --base develop-vms --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
-alias pr-create-relfix="gh pr create --base staging --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
+# alias pr-create-feature="gh pr create --base develop-vms --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
+# alias pr-create-relfix="gh pr create --base staging --reviewer ahmadmustainmarzuki --reviewer DwiAldi"
+
+pr-create-feature(){
+  gh pr create --base develop-vms --reviewer ahmadmustainmarzuki --reviewer DwiAldi
+
+  # change _current
+  current_path="$VSMS_WT_DIR/_current"
+  in_review_path="$VSMS_WT_DIR/_in-review"
+  current_dir="$(pwd)"
+
+  if [[ "$current_dir" == "$(readlink "$current_path")" ]]; then
+    rm "$current_path"
+    ln -s "$in_review_path" "$current_path"
+  fi
+}
+
+pr-create-relfix(){
+  gh pr create --base staging --reviewer ahmadmustainmarzuki --reviewer DwiAldi
+
+  # change _current
+  current_path="$VSMS_WT_DIR/_current"
+  in_review_path="$VSMS_WT_DIR/_in-review"
+  current_dir="$(pwd)"
+
+  if [[ "$current_dir" == "$(readlink "$current_path")" ]]; then
+    rm "$current_path"
+    ln -s "$in_review_path" "$current_path"
+  fi
+}
 
 # alias move-branch-to-inactive='fd -d 1 -E develop-platform -E inactives -E staging -a -x git -C develop-platform worktree move "{}" inactives'
 
@@ -116,3 +144,30 @@ jira-sprint(){
 if [[ $(command -v google-chrome) ]] && [[ $(command -v jira) ]]; then
   export JIRA_BROWSER="$(which google-chrome)"
 fi
+
+wt-mkcur(){
+  # symlink current dir to current path
+  current_path="$VSMS_WT_DIR/_current"
+  current_dir="$(pwd)"
+
+  if [[ -L "$current_path" ]]; then
+    echo "Removing existing symlink $(readlink "$current_path")"
+    rm "$current_path"
+  fi
+
+  ln -s "$current_dir" "$current_path"
+
+  echo "Current dir is now $current_dir"
+}
+
+wt-cdcur(){
+  current_path="$VSMS_WT_DIR/_current"
+
+  if [[ ! -L "$current_path" ]]; then
+    echo "Current dir is not set"
+    return 1
+  fi
+
+  current_dir="$(readlink "$current_path")"
+  cd "$current_dir"
+}

@@ -136,8 +136,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=837,594
-History Items[$e]=file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
+DirSelectDialog Size=1920,1005
+History Items[$e]=file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/pg-extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
 
 [General]
 AccentColor=94,129,172
@@ -164,22 +164,22 @@ Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=135
+Preview Width=494
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=true
 Show Speedbar=true
 Show hidden files=true
-Sort by=Date
+Sort by=Size
 Sort directories first=true
-Sort reversed=true
+Sort reversed=false
 Speedbar Width=138
-View Style=Simple
+View Style=Detail
 
 [KScreen]
-ScaleFactor=1.25
-ScreenScaleFactors=eDP-1=1.25;DP-1=1.25;HDMI-1=1.25;HDMI-2=1.25;DP-2=1.25;HDMI-3=1.25;
+ScaleFactor=1
+ScreenScaleFactors=eDP-1=1;DP-1=1;HDMI-1=1;HDMI-2=1;DP-2=1;HDMI-3=1;
 
 [WM]
 activeBackground=49,54,59

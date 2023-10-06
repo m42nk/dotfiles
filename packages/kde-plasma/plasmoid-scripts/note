@@ -2,4 +2,5 @@
 # dbus-monitor "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'" --profile
 # dbus-monitor | while read LINE; do echo $LINE; done
 # dbus-monitor | grep --line-buffered "$WATCH_FOR" | while read LINE; do echo $LINE; done
+# dbus-monitor "destination='org.kde.KWin',path='/VirtualDesktopManager',member='Get'"
 

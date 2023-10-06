@@ -1,24 +1,36 @@
 [$Version]
 update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
 
+[03157797-9ba4-44a6-a564-57edaa639feb]
+Description=Window settings for kitty
+clientmachine=localhost
+skippagerrule=2
+title=Work-1:1:Server - tmux 3!
+titlematch=1
+types=1
+wmclass=kitty
+wmclassmatch=1
+
 [1]
+Description=Window settings for kitty
+clientmachine=localhost
+desktops=3a857332-7844-443c-86d1-2fd244e8db47
+skippagerrule=2
+skipswitcher=true
+title=Work-1:1:Server - tmux 3!
+titlematch=1
+types=1
+wmclass=kitty
+wmclassmatch=1
+
+[2]
 Description=Spotify on Third Workspace
 clientmachine=localhost
 desktops=3a857332-7844-443c-86d1-2fd244e8db47
 desktopsrule=3
-skipswitcher=true
-title=Spotify
-wmclass=spotify
-wmclassmatch=1
-
-[2]
-Description=Whatsapp on Second Workspace
-desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
-desktopsrule=3
 fsplevel=4
 title=Spotify
-wmclass=crx_hnpfjngllnobngcgfapefoaidbinmjnm google-chrome
-wmclasscomplete=true
+wmclass=spotify
 wmclassmatch=1
 
 [20bd36ce-217a-405f-9e41-51921786c214]
@@ -30,12 +42,12 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=Teams on Second Workspace
+Description=Whatsapp on Second Workspace
 desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
 desktopsrule=3
 fsplevel=4
 title=Spotify
-wmclass=crx_cifhbcnohmdccbgoicgdjpfamggdegmo google-chrome
+wmclass=crx_hnpfjngllnobngcgfapefoaidbinmjnm google-chrome
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -59,15 +71,23 @@ wmclass=microsoft-edge
 wmclassmatch=1
 
 [4]
-Description=Skip DevTools Edge
-desktops=0fea5868-2086-46d7-b757-e27466d8f275
-skipswitcherrule=2
-skiptaskbarrule=2
-title=DevTools
-titlematch=2
+Description=Line Messenger
+desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
+desktopsrule=3
+title=Spotify
 windowrole=pop-up
-windowrolematch=1
-wmclass=microsoft-edge
+wmclass=ophjlpahpchlmihnnnihgmmeilfjmjjc__index.html google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
+[5]
+Description=Microsoft Teams
+desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
+desktopsrule=3
+title=Spotify
+windowrole=pop-up
+wmclass=crx__gebnlfejkjhoifjjfbofapjhaibkibim microsoft-edge
+wmclasscomplete=true
 wmclassmatch=1
 
 [5e2b31fc-d785-421a-95ec-803411948d86]
@@ -78,6 +98,17 @@ wmclass=crx_hnpfjngllnobngcgfapefoaidbinmjnm google-chrome
 wmclasscomplete=true
 wmclassmatch=1
 
+[6]
+Description=Skip DevTools Edge
+skipswitcherrule=2
+skiptaskbarrule=2
+title=DevTools
+titlematch=2
+windowrole=pop-up
+windowrolematch=1
+wmclass=microsoft-edge
+wmclassmatch=1
+
 [72f52e24-eb20-42ee-9512-1470b0a5b640]
 Description=Whatsapp on Second Workspace
 desktops=0fea5868-2086-46d7-b757-e27466d8f275
@@ -86,9 +117,18 @@ title=WhatsApp Web
 windowrole=pop-up
 wmclassmatch=1
 
+[96947c4c-ac2a-4fa3-968d-6832bc736f48]
+Description=Line Messenger
+desktops=6251e000-f20d-4cf8-ab72-6c140db62a95
+desktopsrule=3
+title=Spotify
+wmclass=ophjlpahpchlmihnnnihgmmeilfjmjjc__index.html google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
 [General]
-count=4
-rules=1,2,3,4
+count=6
+rules=1,2,3,4,5,6
 
 [a6e5d733-41ce-45d8-af46-6addff9c1e9e]
 Description=Spotify on Third Workspace

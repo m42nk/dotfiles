@@ -29,6 +29,7 @@ alias cp="cp -iv"      # Verbose + safer cp
 alias vim="nvim"
 alias v="nvim"
 alias cat="bat"
+alias cdp="cd -P" # Follow symlink
 
 ## Program specific alias
 
@@ -58,9 +59,13 @@ alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
 alias gpl='git pull $(git remote) $(git branch --show-current)'
+alias gpll='git pull $(git remote) $(git branch --show-current) || git pull $(git remote) $(git branch --show-current)'
 alias gbro='gh browse --branch $(git branch --show-current)'
 alias gs="gss"
 alias gcb="git branch --show-current"
+
+alias gpr="gh pr view"
+alias gprw="gh pr view --web"
 
 ## -- Node
 alias nrd="npm run dev"
