@@ -165,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][49][Configuration]
-PreloadWeight=100
+PreloadWeight=97
 
 [Containments][2][Applets][49][Configuration][ConfigDialog]
 DialogHeight=720
@@ -244,7 +244,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=97
+PreloadWeight=92
 SystrayContainmentId=8
 
 [Containments][2][Applets][73]
@@ -252,7 +252,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][73][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2][Applets][73][Configuration][Appearance]
 lastSelectedTimezone=Europe/Amsterdam
@@ -423,8 +423,7 @@ ToolBoxButtonY=20
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][67][Wallpaper][org.kde.potd][General]
-Category=1065374
-FillMode=2
+FillMode=1
 Provider=unsplash
 
 [Containments][68]
@@ -454,10 +453,19 @@ immutability=1
 lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.potd
+
+[Containments][70][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][70][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
+
+[Containments][70][Wallpaper][org.kde.potd][General]
+Category=1339090
+FillMode=1
+Provider=unsplash
 
 [Containments][8]
 activityId=
@@ -494,7 +502,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=74
+PreloadWeight=41
 
 [Containments][8][Applets][13][Configuration][ConfigDialog]
 DialogHeight=540
@@ -529,7 +537,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][17][Configuration]
-PreloadWeight=0
+PreloadWeight=3
 
 [Containments][8][Applets][18]
 immutability=1
@@ -557,14 +565,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=60
+PreloadWeight=81
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=75
+PreloadWeight=26
 
 [Containments][8][Applets][25]
 immutability=1
@@ -594,5 +602,5 @@ scaleIconsToFit=true
 shownItems=org.kde.plasma.notifications,Discover Notifier_org.kde.DiscoverNotifier,org.kde.plasma.bluetooth
 
 [ScreenMapping]
-itemsOnDisabledScreens=
-screenMapping=desktop:/Yudisium Syakhisk,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/steam.desktop,0,desktop:/res,0,desktop:/dishub.png,1,desktop:/spotify_spotify.desktop,0,desktop:/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/Interview.html,0,desktop:/wps-office-prometheus.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/spotify.desktop,0
+itemsOnDisabledScreens=1,1,desktop:/dishub.png
+screenMapping=desktop:/spotify_spotify.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,0,desktop:/Interview.html,0,desktop:/Yudisium Syakhisk,0,desktop:/res,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/steam.desktop,0,desktop:/spotify.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/wps-office-prometheus.desktop,0

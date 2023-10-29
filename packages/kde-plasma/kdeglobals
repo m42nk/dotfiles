@@ -136,8 +136,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=1920,1005
-History Items[$e]=file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/pg-extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
+DirSelectDialog Size=1276,657
+History Items[$e]=file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/pg-extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
 
 [General]
 AccentColor=94,129,172
@@ -164,16 +164,16 @@ Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=494
+Preview Width=414
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=true
 Show Speedbar=true
 Show hidden files=true
-Sort by=Size
+Sort by=Date
 Sort directories first=true
-Sort reversed=false
+Sort reversed=true
 Speedbar Width=138
 View Style=Detail
 
