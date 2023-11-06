@@ -136,8 +136,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=1276,657
-History Items[$e]=file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/pg-extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
+DirSelectDialog Size=1920,1005
+History Items[$e]=file:$HOME/Codes/_extension/watchparty/dist,file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/quickdraw/src-extension,file:$HOME/Codes/_quickdraw/pg-extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Repos/TabFS/extension,file:$HOME/Work/vsms/feature__DEVA-436-2,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper,file:$HOME/Downloads/Wallpaper
 
 [General]
 AccentColor=94,129,172

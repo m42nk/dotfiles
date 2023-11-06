@@ -1,3 +1,6 @@
+autoload -U select-word-style
+select-word-style bash
+
 bindkey -e
 bindkey "^@" _expand_alias
 bindkey '^[[A' history-substring-search-up
@@ -20,5 +23,12 @@ bindkey '^x^e' edit-command-line
 # [Backspace] - delete backward
 # bindkey '^H' backward-kill-word
 
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+# bindkey '^[[1;5C' forward-word
+# bindkey '^[[1;5D' backward-word
+
+# Emacs style
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
+
+bindkey '\ef' emacs-forward-word
+bindkey '\eb' emacs-backward-word
