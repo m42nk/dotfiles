@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+TODOS_DIR="$HOME/Todos"
+
+function find_todos() {
+	fd . "$TODOS_DIR" --type=file --extension "md"
+}
+
+function fuzzy_find() {
+	fzf --layout=reverse-list --preview-window=up --preview="bat --color=always --style=numbers {}"
+}
+
+SELECTED=$(find_todos | fuzzy_find)
+
+if [[ -z "$SELECTED" ]]; then
+	exit 0
+fi
+
+nvim $SELECTED

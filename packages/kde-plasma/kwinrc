@@ -21,6 +21,9 @@ Rows=1
 Height=500
 Width=500
 
+[Effect-PresentWindows]
+BorderActivateAll=0
+
 [Effect-Slide]
 Duration=50
 HorizontalGap=0

@@ -69,98 +69,14 @@ historyAmount=30
 [Containments][2][Applets][4][Configuration]
 PreloadWeight=42
 
-[Containments][2][Applets][44]
-immutability=1
-plugin=org.kde.plasma.systemmonitor
-
-[Containments][2][Applets][44][Configuration]
-PreloadWeight=0
-
-[Containments][2][Applets][44][Configuration][Appearance]
-chartFace=org.kde.ksysguard.textonly
-showTitle=false
-title=Memory Usage
-updateRateLimit=0
-
-[Containments][2][Applets][44][Configuration][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
-
 [Containments][2][Applets][44][Configuration][SensorColors]
-memory/physical/used=42,46,50
-
-[Containments][2][Applets][44][Configuration][SensorLabels]
-memory/physical/used=
-
-[Containments][2][Applets][44][Configuration][Sensors]
-highPrioritySensorIds=["memory/physical/used"]
-lowPrioritySensorIds=[]
-totalSensors=[]
-
-[Containments][2][Applets][45]
-immutability=1
-plugin=org.kde.plasma.systemmonitor
-
-[Containments][2][Applets][45][Configuration]
-PreloadWeight=0
-
-[Containments][2][Applets][45][Configuration][Appearance]
-chartFace=org.kde.ksysguard.textonly
-showTitle=false
-title=
-updateRateLimit=0
-
-[Containments][2][Applets][45][Configuration][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
+memory/physical/used=73,99,130
 
 [Containments][2][Applets][45][Configuration][SensorColors]
-cpu/all/usage=42,46,50
-
-[Containments][2][Applets][45][Configuration][SensorLabels]
-cpu/all/usage=\s
-
-[Containments][2][Applets][45][Configuration][Sensors]
-highPrioritySensorIds=["cpu/all/usage"]
-lowPrioritySensorIds=[]
-totalSensors=[]
-
-[Containments][2][Applets][46]
-immutability=1
-plugin=org.kde.plasma.systemmonitor
-
-[Containments][2][Applets][46][Configuration]
-PreloadWeight=0
-
-[Containments][2][Applets][46][Configuration][Appearance]
-chartFace=org.kde.ksysguard.textonly
-updateRateLimit=0
-
-[Containments][2][Applets][46][Configuration][ConfigDialog]
-DialogHeight=720
-DialogWidth=960
+cpu/all/usage=73,99,130
 
 [Containments][2][Applets][46][Configuration][SensorColors]
-cpu/cpu\temperature=148,61,233
-cpu/cpu0/temperature=61,174,233
-cpu/cpu1/temperature=61,88,233
-cpu/cpu10/temperature=61,233,120
-cpu/cpu11/temperature=61,233,206
-cpu/cpu2/temperature=120,61,233
-cpu/cpu3/temperature=206,61,233
-cpu/cpu4/temperature=233,61,174
-cpu/cpu5/temperature=233,61,88
-cpu/cpu6/temperature=233,120,61
-cpu/cpu7/temperature=233,206,61
-cpu/cpu8/temperature=174,233,61
-cpu/cpu9/temperature=88,233,61
-lmsensors/acpitz-acpi-0/temp1=42,46,50
-
-[Containments][2][Applets][46][Configuration][SensorLabels]
-lmsensors/acpitz-acpi-0/temp1=󰈐\s
-
-[Containments][2][Applets][46][Configuration][Sensors]
-highPrioritySensorIds=["lmsensors/acpitz-acpi-0/temp1"]
+cpu/all/usage=73,99,130
 
 [Containments][2][Applets][49]
 immutability=1
@@ -175,7 +91,6 @@ DialogWidth=960
 
 [Containments][2][Applets][49][Configuration][General]
 favoritesPortedToKAstats=true
-icon=start-here-kubuntu
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][49][Shortcuts]
@@ -217,29 +132,8 @@ PreloadWeight=0
 [Containments][2][Applets][62][Configuration][General]
 history=#cfdae9,#ff8a00,#f3f3f3,#f41d00,#137c55,#030712,#0d4491,#0e1419,#c1c9d6
 
-[Containments][2][Applets][63]
-immutability=1
-plugin=org.kde.plasma.systemmonitor
-
-[Containments][2][Applets][63][Configuration]
-PreloadWeight=0
-
-[Containments][2][Applets][63][Configuration][Appearance]
-chartFace=org.kde.ksysguard.textonly
-title=Used Swap Memory
-
-[Containments][2][Applets][63][Configuration][ConfigDialog]
-DialogHeight=660
-DialogWidth=880
-
 [Containments][2][Applets][63][Configuration][SensorColors]
-memory/swap/usedPercent=42,46,50
-
-[Containments][2][Applets][63][Configuration][SensorLabels]
-memory/swap/usedPercent=󰓢
-
-[Containments][2][Applets][63][Configuration][Sensors]
-highPrioritySensorIds=["memory/swap/usedPercent"]
+memory/swap/usedPercent=73,99,130
 
 [Containments][2][Applets][7]
 immutability=1
@@ -267,6 +161,39 @@ use24hFormat=2
 DialogHeight=540
 DialogWidth=720
 
+[Containments][2][Applets][82]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][82][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+updateRateLimit=1000
+
+[Containments][2][Applets][82][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][82][Configuration][SensorColors]
+cpu/all/usage=73,78,130
+cpu/cpu\temperature=130,73,98
+cpu/cpu0/temperature=85,73,130
+cpu/cpu1/temperature=123,73,130
+cpu/cpu2/temperature=130,73,99
+cpu/cpu3/temperature=130,85,73
+cpu/cpu4/temperature=130,123,73
+cpu/cpu5/temperature=99,130,73
+cpu/cpu6/temperature=73,130,85
+cpu/cpu7/temperature=73,130,123
+lmsensors/acpitz-acpi-0/temp1=73,130,128
+
+[Containments][2][Applets][82][Configuration][SensorLabels]
+cpu/all/usage=CPU
+cpu/cpu0/temperature=CPU...
+
+[Containments][2][Applets][82][Configuration][Sensors]
+highPrioritySensorIds=["cpu/cpu0/temperature"]
+lowPrioritySensorIds=[]
+
 [Containments][2][ConfigDialog]
 DialogHeight=84
 DialogWidth=1920
@@ -275,7 +202,7 @@ DialogWidth=1920
 PreloadWeight=0
 
 [Containments][2][General]
-AppletOrder=49;5;46;45;44;63;6;37;62;7;73;20;21
+AppletOrder=49;5;82;37;6;62;7;73;20;21
 
 [Containments][29]
 activityId=
@@ -394,8 +321,8 @@ DialogWidth=1920
 AppletOrder=51;75;60;34;57;30;33;59;61
 
 [Containments][67]
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
+ItemGeometries-1920x1080=Applet-46:464,384,176,96,0;Applet-45:464,480,176,96,0;Applet-44:464,576,176,96,0;Applet-63:464,672,176,96,0;Applet-81:-0.2312,864,544,160,0;
+ItemGeometriesHorizontal=Applet-46:464,384,176,96,0;Applet-45:464,480,176,96,0;Applet-44:464,576,176,96,0;Applet-63:464,672,176,96,0;Applet-81:-0.2312,864,544,160,0;
 activityId=58db076a-68b1-43b5-a34e-cd9ca380c227
 formfactor=0
 immutability=1
@@ -403,6 +330,148 @@ lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.potd
+
+[Containments][67][Applets][44]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][67][Applets][44][Configuration]
+PreloadWeight=0
+
+[Containments][67][Applets][44][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+showTitle=false
+title=Memory Usage
+updateRateLimit=0
+
+[Containments][67][Applets][44][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][67][Applets][44][Configuration][SensorColors]
+memory/physical/used=42,46,50
+
+[Containments][67][Applets][44][Configuration][SensorLabels]
+memory/physical/used=
+
+[Containments][67][Applets][44][Configuration][Sensors]
+highPrioritySensorIds=["memory/physical/used"]
+lowPrioritySensorIds=[]
+totalSensors=[]
+
+[Containments][67][Applets][45]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][67][Applets][45][Configuration]
+PreloadWeight=0
+
+[Containments][67][Applets][45][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+showTitle=false
+title=
+updateRateLimit=0
+
+[Containments][67][Applets][45][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][67][Applets][45][Configuration][SensorColors]
+cpu/all/usage=42,46,50
+
+[Containments][67][Applets][45][Configuration][SensorLabels]
+cpu/all/usage=\s
+
+[Containments][67][Applets][45][Configuration][Sensors]
+highPrioritySensorIds=["cpu/all/usage"]
+lowPrioritySensorIds=[]
+totalSensors=[]
+
+[Containments][67][Applets][46]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][67][Applets][46][Configuration]
+PreloadWeight=0
+
+[Containments][67][Applets][46][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+title=Total CPU Use
+updateRateLimit=0
+
+[Containments][67][Applets][46][Configuration][ConfigDialog]
+DialogHeight=720
+DialogWidth=960
+
+[Containments][67][Applets][46][Configuration][SensorColors]
+cpu/all/usage=96,73,130
+cpu/cpu\temperature=148,61,233
+cpu/cpu0/temperature=61,174,233
+cpu/cpu1/temperature=61,88,233
+cpu/cpu10/temperature=61,233,120
+cpu/cpu11/temperature=61,233,206
+cpu/cpu2/temperature=120,61,233
+cpu/cpu3/temperature=206,61,233
+cpu/cpu4/temperature=233,61,174
+cpu/cpu5/temperature=233,61,88
+cpu/cpu6/temperature=233,120,61
+cpu/cpu7/temperature=233,206,61
+cpu/cpu8/temperature=174,233,61
+cpu/cpu9/temperature=88,233,61
+lmsensors/acpitz-acpi-0/temp1=42,46,50
+
+[Containments][67][Applets][46][Configuration][SensorLabels]
+cpu/all/usage=󰈐\s
+lmsensors/acpitz-acpi-0/temp1=CPU Temp
+
+[Containments][67][Applets][46][Configuration][Sensors]
+highPrioritySensorIds=["cpu/all/usage"]
+lowPrioritySensorIds=["cpu/all/cpuCount","cpu/all/coreCount"]
+totalSensors=["cpu/all/usage"]
+
+[Containments][67][Applets][63]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][67][Applets][63][Configuration]
+PreloadWeight=0
+
+[Containments][67][Applets][63][Configuration][Appearance]
+chartFace=org.kde.ksysguard.textonly
+showTitle=false
+title=Used Swap Memory
+
+[Containments][67][Applets][63][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
+[Containments][67][Applets][63][Configuration][SensorColors]
+memory/swap/usedPercent=42,46,50
+
+[Containments][67][Applets][63][Configuration][SensorLabels]
+memory/swap/usedPercent=󰓢\s
+
+[Containments][67][Applets][63][Configuration][Sensors]
+highPrioritySensorIds=["memory/swap/usedPercent"]
+
+[Containments][67][Applets][81]
+immutability=1
+plugin=org.kde.plasma.systemmonitor
+
+[Containments][67][Applets][81][Configuration][Appearance]
+chartFace=org.kde.ksysguard.linechart
+title=Network speed
+
+[Containments][67][Applets][81][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][67][Applets][81][Configuration][SensorColors]
+network/all/download=73,99,130
+network/all/upload=130,104,73
+
+[Containments][67][Applets][81][Configuration][Sensors]
+highPrioritySensorIds=["network/all/download","network/all/upload"]
 
 [Containments][67][ConfigDialog]
 DialogHeight=540
@@ -496,7 +565,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=69
+PreloadWeight=86
 
 [Containments][8][Applets][13][Configuration][ConfigDialog]
 DialogHeight=540
@@ -559,14 +628,14 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=49
+PreloadWeight=46
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=14
+PreloadWeight=16
 
 [Containments][8][Applets][25]
 immutability=1
@@ -597,4 +666,4 @@ shownItems=org.kde.plasma.notifications,Discover Notifier_org.kde.DiscoverNotifi
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/steam.desktop,0,desktop:/Yudisium Syakhisk,0,desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/Interview.html,0,desktop:/wps-office-prometheus.desktop,0,desktop:/dishub.png,1,desktop:/spotify.desktop,0,desktop:/spotify_spotify.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/res,0,desktop:/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0
+screenMapping=desktop:/chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop,0,desktop:/aa250194-a416-403f-ab46-19d7da8d54d0.jpeg,0,desktop:/res,0,desktop:/steam.desktop,0,desktop:/spotify_spotify.desktop,0,desktop:/chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Profile_1.desktop,0,desktop:/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,0,desktop:/chrome-hpgiaddlimejgmmipojjcomffnpphepa-Default.desktop,0,desktop:/PLACEHOLDER_a3dbd4291043152_0.png,0,desktop:/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,0,desktop:/surat_mahasiswa_template_id_1.pdf,0,desktop:/dishub.png,1,desktop:/Yudisium Syakhisk,0,desktop:/wps-office-prometheus.desktop,0,desktop:/Interview.html,0,desktop:/spotify.desktop,0
