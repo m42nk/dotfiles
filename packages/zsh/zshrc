@@ -29,7 +29,8 @@ src $HOME/.profile
 ## External script
 src $ZSH/functions.zsh
 src $ZSH/aliases.zsh
-src $ZSH/autostarts.zsh
+# TODO: Handle mac, bcs lsb-release doesn't exist
+# src $ZSH/autostarts.zsh
 src $ZSH/fzf.zsh
 src $ZSH/asdf.zsh
 src $ZSH/system-specific.zsh

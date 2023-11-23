@@ -1,0 +1,30 @@
+#!/usr/bin/osascript -l JavaScript
+
+// Convert to osascript javascript
+// xdotool search --class Kitty windowactivate || kitty sh -c "tmux -u a || tmux -u"
+
+;(() => {
+  const app = Application.currentApplication();
+  app.includeStandardAdditions = true;
+
+  app.doShellScript(`
+  osascript -e 'display notification "Your message goes here" with title "Notification Title"'
+`);
+  const kittyProcess = app.doShellScript('pgrep -x kitty');
+
+  if (kittyProcess !== "") {
+    app.doShellScript('osascript -e \'tell application "Kitty" to activate\'');
+  } else {
+    app.doShellScript('osascript -e \'tell application "Kitty" to do script "tmux -u a || tmux -u"\'');
+  }
+})()
+
+// examples
+
+// const app = Application("Mail");
+// app.includeStandardAdditions = true;
+// const accountNo = app.accounts().length;
+// app.displayDialog(`You have ${accountNo} mail accounts`,
+//    {withTitle: "Mail info"});
+
+// vim: ft=javascript

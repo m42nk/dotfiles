@@ -1,3 +1,7 @@
+# Profiling
+zmodload zsh/zprof
+
+# Main config
 source ~/.config/zsh/zshrc
 
 [[ -e "$HOME/.config/openai-api-keys" ]] && export OPENAI_API_KEY=$(cat ~/.config/openai-api-keys)
@@ -14,15 +18,6 @@ esac
 # pnpm end
 
 export PATH=$PATH:/home/m42nk/.spicetify
-
-
-
-
-
-
-
-
-
 
 
 # export PATH="/usr/local/opt/erlang@22/bin:$PATH"
