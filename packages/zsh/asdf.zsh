@@ -5,6 +5,9 @@ if [[ $(command -v asdf) ]] || [[ -f "$HOME/.asdf/asdf.sh" ]]; then
     source $HOME/.asdf/asdf.sh
   fi
 
+
+  [[ -d $HOME/.asdf/plugins/golang ]] && source $HOME/.asdf/plugins/golang/set-env.zsh
+
   fpath=(${ASDF_DIR}/completions $fpath)
 fi
 
