@@ -107,6 +107,5 @@
 
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-# cmd - return : $HOME/.bin/lof-kitty-mac
-cmd - return : open "https://google.com"
+cmd + ctrl - return : $HOME/.bin/lof-kitty-mac
 cmd - o : open "https://google.com"

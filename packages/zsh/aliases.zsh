@@ -230,7 +230,17 @@ alias dns="bash $HOME/VPNs/add-dns.sh"
 cpath(){
   _path="$1"
   echo "Copying path: $(realpath "$_path")"
-  realpath "$_path" | xclip -selection clipboard
+
+  _copy() {
+    # use pbcopy on mac
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+      pbcopy
+    else
+      xclip -selection clipboard
+    fi
+  }
+
+  realpath "$_path" | _copy
 }
 
 

@@ -7,19 +7,19 @@
   const app = Application.currentApplication();
   app.includeStandardAdditions = true;
 
-  app.doShellScript(`
-  osascript -e 'display notification "Your message goes here" with title "Notification Title"'
-`);
   const kittyProcess = app.doShellScript('pgrep -x kitty');
-
   if (kittyProcess !== "") {
     app.doShellScript('osascript -e \'tell application "Kitty" to activate\'');
   } else {
-    app.doShellScript('osascript -e \'tell application "Kitty" to do script "tmux -u a || tmux -u"\'');
+    app.doShellScript(`/Applications/kitty.app/Contents/MacOS/kitty sh -c "tmux -u a || tmux -u"`)
   }
 })()
 
 // examples
+
+//   app.doShellScript(`
+//   osascript -e 'display notification "udin" with title "Notification Title"'
+// `);
 
 // const app = Application("Mail");
 // app.includeStandardAdditions = true;

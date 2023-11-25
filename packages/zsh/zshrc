@@ -12,8 +12,21 @@
 ## $ZSH - useful for reference in script
 export ZSH="$HOME/.config/zsh"
 
+## Helper
+dt(){
+  # use gdate if on mac
+  [[ "$(uname)" == "Darwin" ]] && gdate "$@" || date "$@"
+}
+
 ## Source helper, only source when file exists
-src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
+src() {
+  # NOTE: Profiling when sourcing file
+
+  local time_start
+  [[ -n $_SRC_PROF ]] && time_start=$(dt +%s.%N)
+  [[ -f "$1" ]] && source "$1" || echo "404: $1"
+  [[ -n $_SRC_PROF ]] && echo "$1: $(echo "$(dt +%s.%N) - $time_start" | bc -l)"
+}
 
 ## Check shell dependencies
 ## Note: if you wanna check dep, just run it `zsh $ZSH/check-dep.zsh`
