@@ -15,16 +15,4 @@
   }
 })()
 
-// examples
-
-//   app.doShellScript(`
-//   osascript -e 'display notification "udin" with title "Notification Title"'
-// `);
-
-// const app = Application("Mail");
-// app.includeStandardAdditions = true;
-// const accountNo = app.accounts().length;
-// app.displayDialog(`You have ${accountNo} mail accounts`,
-//    {withTitle: "Mail info"});
-
 // vim: ft=javascript

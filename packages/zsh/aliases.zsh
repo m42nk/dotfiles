@@ -248,3 +248,15 @@ alias rmgpucache="rm -r $HOME/.config/google-chrome/Default/GPUCache/"
 cht(){
   cht.sh "$@" | bat
 }
+
+noti(){
+  cmd="$(jobs -s)"
+
+  # check if there are suspended jobs
+  if [[ -z $cmd ]]; then
+    echo "There are suspended jobs"
+    return 1
+  fi
+
+  fg && notify-send "Command: $cmd" "Job Done"
+}
