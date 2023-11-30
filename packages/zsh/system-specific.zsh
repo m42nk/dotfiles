@@ -5,6 +5,12 @@
 # check if mac
 if [[ "$(uname)" == "Darwin" ]]; then
   notify-send(){
-    osascript -e "display notification \"$1\" with title \"$2\""
+    terminal-notifier -message "$1" -title "$2"
   }
+fi
+
+if [[ "$(uname)" == "Darwin" ]] && [[ "$(hostname)" == "Syakhisk-Alazmi.local" ]]; then
+  export GOPRIVATE="source.golabs.io/*"
+  export GONOSUMDB="source.golabs.io/*"
+  export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
 fi
