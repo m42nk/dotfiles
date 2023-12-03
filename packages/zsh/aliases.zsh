@@ -283,3 +283,36 @@ update(){
 
 # alias emulator="~/Library/Android/sdk/emulator/emulator"
 alias emulated="~/Library/Android/sdk/emulator/emulator -avd Integration_App"
+
+update(){
+  ALLOWED_DIRS=(
+    "$HOME/Dotfiles/"
+  )
+
+  # For loop to check if pwd starts with update_dirs
+  # if no, confirm before continuing
+  for dir in "${ALLOWED_DIRS[@]}"; do
+    if [[ "$PWD" == "$dir"* ]]; then
+      continue 2
+    fi
+
+    echo "Current directory is not in allowed dirs"
+    read "?Continue? [Y/n] "
+
+    if [[ $REPLY =~ [Nn]$ ]]; then
+      return 1
+    fi
+  done
+
+
+  git add -A
+  git status -s
+
+  read "?Continue? [Y/n] "
+  if [[ $REPLY =~ [Nn]$ ]]; then
+    return 1
+  fi
+
+  git commit -m "Update"
+  git push
+}
