@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+ansi() { printf "\e[${1}m${*:2}\e[0m\n"; }
+bold() { ansi 1 "$@"; }
+italic() { ansi 3 "$@"; }
+underline() { ansi 4 "$@"; }
+strikethrough() { ansi 9 "$@"; }
+
+for i in {0..255}; do
+	printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
+	if ((i == 15)) || ((i > 15)) && (((i - 15) % 6 == 0)); then
+		printf "\n"
+	fi
+done
+
+printf "\n---\n"
+printf "Bold: "
+bold "This is bold"
+printf "Italic: "
+italic "This is italic"
+printf "Underline:"
+underline "This is underline"
+printf "Strikethrough:"
+strikethrough "This is strikethrough"

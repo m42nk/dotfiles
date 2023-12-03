@@ -18,28 +18,25 @@ esac
 # pnpm end
 
 export PATH=$PATH:/home/m42nk/.spicetify
+export PATH=$PATH:/opt/homebrew/lib/python3.11/site-packages
 
 
-# export PATH="/usr/local/opt/erlang@22/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/erlang@22/lib"
-# export PATH="/usr/local/opt/libxslt/bin:$PATH"
-# export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc'; fi
 
-# export KERL_CONFIGURE_OPTIONS="--with-ssl=`brew --prefix openssl` \
-#                                --with-wx-config=`brew --prefix wxmac`/bin/wx-config \
-#                                --without-javac"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc'; fi
 
-# # _ERL_VER="24"
-# _ERL_VER="22"
-# export PATH="/usr/local/opt/erlang@${_ERL_VER}/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/erlang@${_ERL_VER}/lib"
+[[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
 
-# export ERL_AFLAGS="-kernel shell_history enabled"
+PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+PATH="$PATH:$HOME/Library/Android/sdk/emulator"
 
-# # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/Syakhisk.a.interns/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Syakhisk.a.interns/google-cloud-sdk/path.zsh.inc'; fi
+# export GOPRIVATE="source.golabs.io/*"
+# export GONOSUMDB="source.golabs.io/*"
+# export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
 
-# # # The next line enables shell command completion for gcloud.
-# # if [ -f '/Users/Syakhisk.a.interns/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Syakhisk.a.interns/google-cloud-sdk/completion.zsh.inc'; fi
-
-# alias kuttle_stg="sshuttle --dns -r kt-2-d75d5dd7b-7kpfd -e $HOME/Work/_misc/kuttle 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 10.59.17.0/32"
+# TODO: remove this upon restart
+unset GOPRIVATE
+unset GONOSUMDB
+unset GOPROXY

@@ -260,3 +260,26 @@ noti(){
 
   fg && notify-send "Command: $cmd" "Job Done"
 }
+
+update(){
+  UPDATE_DIRS=(
+    "$HOME/Dotfiles/"
+  )
+
+  # Check if pwd is in update_dirs
+  # if no, confirm before continuing
+  if [[ ! " ${UPDATE_DIRS[@]} " =~ " ${PWD} " ]]; then
+    echo "Current directory is not in update dirs"
+    read -p "Continue? [y/N] "
+
+    if [[ ! $REPLY =~ [Nn]$ ]]; then
+      return 1
+    fi
+  fi
+
+
+  echo "Run update script?"
+}
+
+# alias emulator="~/Library/Android/sdk/emulator/emulator"
+alias emulated="~/Library/Android/sdk/emulator/emulator -avd Integration_App"
