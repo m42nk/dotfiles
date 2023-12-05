@@ -29,12 +29,16 @@ if [ -f '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 [[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
 
-PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-PATH="$PATH:$HOME/Library/Android/sdk/emulator"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
 
-# export GOPRIVATE="source.golabs.io/*"
-# export GONOSUMDB="source.golabs.io/*"
-# export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+# Put homebrew ruby first
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+
+export GOPRIVATE="source.golabs.io/*"
+export GONOSUMDB="source.golabs.io/*"
+export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
 
 # TODO: remove this upon restart
 unset GOPRIVATE

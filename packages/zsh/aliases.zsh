@@ -58,8 +58,8 @@ alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcmsg="git commit -m"
 alias grw="gh repo view --web"
-alias gpl='git pull $(git remote) $(git branch --show-current)'
-alias gpll='git pull $(git remote) $(git branch --show-current) || git pull $(git remote) $(git branch --show-current)'
+alias gpl='git pull'
+alias gpll='git pull $(git remote) $(git branch --show-current)'
 alias gbro='gh browse --branch $(git branch --show-current)'
 alias gs="gss"
 alias gcb="git branch --show-current"
@@ -313,6 +313,6 @@ update(){
     return 1
   fi
 
-  git commit -m "Update"
+  git commit -m "update"
   git push
 }
