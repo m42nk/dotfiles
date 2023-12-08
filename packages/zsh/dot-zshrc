@@ -18,29 +18,23 @@ esac
 # pnpm end
 
 export PATH=$PATH:/home/m42nk/.spicetify
-export PATH=$PATH:/opt/homebrew/lib/python3.11/site-packages
 
+if [[ -d '/Users/syakhisk.syari' ]]; then
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc'; fi
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc'; fi
+  [[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
 
-[[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
+  export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+  export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
+  export PATH="/opt/homebrew/lib/python3.11/site-packages:$PATH"
+  export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
-
-# Put homebrew ruby first
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
-
-export GOPRIVATE="source.golabs.io/*"
-export GONOSUMDB="source.golabs.io/*"
-export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
-
-# TODO: remove this upon restart
-unset GOPRIVATE
-unset GONOSUMDB
-unset GOPROXY
+  export GOPRIVATE="source.golabs.io/*"
+  export GONOSUMDB="source.golabs.io/*"
+  export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+fi
