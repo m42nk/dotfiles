@@ -32,9 +32,41 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
   export PATH="/opt/homebrew/lib/python3.11/site-packages:$PATH"
   export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  export PATH="$PATH:/Applications/GoLand.app/Contents/MacOS"
 
-  export GOPRIVATE="source.golabs.io/*"
-  export GONOSUMDB="source.golabs.io/*"
-  export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+  # Homebrew ruby
+  if $(brew list ruby &>/dev/null); then
+    ## Latest
+    # export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+    # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+    # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+    # export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+
+    ## 2.7
+    # export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+    # export LDFLAGS="-L/opt/homebrew/opt/ruby@2.7/lib"
+    # export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
+    # export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
+  fi
+
+  
+
+  # check if directory starts with "~/Work/"
+  ___update_goenv(){
+    if [[ $(pwd) == $HOME/Work/* ]]; then
+      [[ -n "$DEBUG_GOENV" ]] && echo "[zshrc] Exporting go env"
+      export GOPRIVATE="source.golabs.io/*"
+      export GONOSUMDB="source.golabs.io/*"
+      export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+    else
+      unset GOPRIVATE
+      unset GONOSUMDB
+      unset GOPROXY
+    fi
+  }
+
+  add-zsh-hook chpwd ___update_goenv
+
+  alias vpni="onevpn connect 'GOJEK Integration'"
+  alias vpnidc="onevpn disconnect 'GOJEK Integration'"
 fi

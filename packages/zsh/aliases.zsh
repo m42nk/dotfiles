@@ -316,3 +316,8 @@ update(){
   git commit -m "update"
   git push
 }
+
+# NOTE: Not working on MacOS
+backg(){
+  nohup $@ &>/dev/null &
+}
