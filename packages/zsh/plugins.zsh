@@ -25,6 +25,7 @@ for repo in $plugins; do
   plugin-load https://github.com/${repo}.git
 done; unset repo
 
+## Configuration for plugins
 if plugin-installed zsh-users/zsh-history-substring-search; then
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
