@@ -319,5 +319,5 @@ update(){
 
 # NOTE: Not working on MacOS
 backg(){
-  $@ &>/dev/null &; disown
+  nohup $@ &>/dev/null &
 }

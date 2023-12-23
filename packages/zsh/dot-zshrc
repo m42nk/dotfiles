@@ -1,5 +1,31 @@
+###################################
+## -------------------------------
+##                     __
+##    ____  __________/ /_  _____
+##   /_  / / ___/ ___/ __ \/ ___/
+##  _ / /_(__  ) /  / / / / /__
+## (_)___/____/_/  /_/ /_/\___/
+#
+## --------------------vim:ft=zsh
+###################################
+
 # Profiling
 zmodload zsh/zprof
+
+##################################################
+## NOTE:
+## Add alert when zsh startup time took longer
+##################################################
+
+# NEW_CONFIG=${NEW_CONFIG:-0}
+NEW_CONFIG=${NEW_CONFIG:-1}
+
+# New Main config
+if [[ $NEW_CONFIG -eq 1 ]]; then
+  echo "Using new config"
+  source ~/.config/zsh/v2/zshrc-mac
+  return
+fi
 
 # Main config
 source ~/.config/zsh/zshrc
@@ -33,23 +59,6 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   export PATH="/opt/homebrew/lib/python3.11/site-packages:$PATH"
   export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
   export PATH="$PATH:/Applications/GoLand.app/Contents/MacOS"
-
-  # Homebrew ruby
-  if $(brew list ruby &>/dev/null); then
-    ## Latest
-    # export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-    # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-    # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-    # export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
-
-    ## 2.7
-    # export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
-    # export LDFLAGS="-L/opt/homebrew/opt/ruby@2.7/lib"
-    # export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
-    # export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
-  fi
-
-  
 
   # check if directory starts with "~/Work/"
   ___update_goenv(){

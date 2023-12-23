@@ -7,6 +7,7 @@
 ##  /___/____/_/ /_/_/   \___/  
 ##                  -by m42nk   
 ## --------------------------------
+## vim:ft=zsh
 #####################################
 
 ## $ZSH - useful for reference in script
@@ -25,7 +26,7 @@ src() {
   local time_start
   [[ -n $_SRC_PROF ]] && time_start=$(dt +%s.%N)
   [[ -f "$1" ]] && source "$1" || echo "404: $1"
-  [[ -n $_SRC_PROF ]] && echo "$1: $(echo "$(dt +%s.%N) - $time_start" | bc -l)"
+  [[ -n $_SRC_PROF ]] && echo "$1: $(echo "$(dt +%s.%N) - $time_start" | bc -l | awk '{printf "%.2f", $0}')s"
 }
 
 ## Check shell dependencies
@@ -101,32 +102,33 @@ src $ZSH/k8s.zsh
 # export TERM="xterm-256color"
 # export TERM="xterm-256color"
 
-## Todoist
-src $ZSH/todoist/todoist.zsh
+# ## Todoist
+# src $ZSH/todoist/todoist.zsh
 
-## Work
-## check if hostname starts with "OMG-"
-[[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh
-[[ "$(hostname)" =~ ^starlink ]] && src $ZSH/work__mceasy.zsh
-[[ "$(hostname)" =~ ^coruscant ]] && src $ZSH/work__mceasy.zsh
+# ## Work
+# ## check if hostname starts with "OMG-"
+# [[ "$(hostname)" =~ ^OMG- ]] && src $ZSH/work__mceasy.zsh
+# [[ "$(hostname)" =~ ^starlink ]] && src $ZSH/work__mceasy.zsh
+# [[ "$(hostname)" =~ ^coruscant ]] && src $ZSH/work__mceasy.zsh
 
-## Don't use zsh when in pve (sshfs), starship hangs
-__use_bash_on_sshfs() {
-  echo "Entering bash on $PWD"
-  bash 
-  cd $HOME
-}
-[[ "$(pwd)" =~ ^$HOME/sshfs ]] && __use_bash_on_sshfs
+# ## Don't use zsh when in pve (sshfs), starship hangs
+# __use_bash_on_sshfs() {
+#   echo "Entering bash on $PWD"
+#   bash 
+#   cd $HOME
+# }
+#
+# [[ "$(pwd)" =~ ^$HOME/sshfs ]] && __use_bash_on_sshfs
 
 
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)
 fi
 
-if [[ "$(command -v thefuck)" ]]; then
-  eval $(thefuck --alias fk)
-fi
-
-if [[ "$(command -v minikube)" ]]; then
-  source $ZSH/minikube.zsh
-fi
+# if [[ "$(command -v thefuck)" ]]; then
+#   eval $(thefuck --alias fk)
+# fi
+#
+# if [[ "$(command -v minikube)" ]]; then
+#   source $ZSH/minikube.zsh
+# fi

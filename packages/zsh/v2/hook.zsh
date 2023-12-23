@@ -13,24 +13,6 @@ preexec(){
   esac
 }
 
-__track-alias(){
-  emulate -L zsh
-  DATE=$(gdate +"%Y-%m-%dT%H:%M:%S%:z")
-  COMMAND=$(echo "$1" | cut -d " " -f 1)
-  TARGET="$HOME/tracked-alias"
-
-  if [[ -z "$COMMAND" ]] || [[ ${+aliases[$COMMAND]} -eq 0 ]]; then
-    return
-  fi
-
-  echo "$DATE $COMMAND" >> "$TARGET"
-}
-
-__track-alias-handler(){
-  (__track-alias "$@" &)
-}
-
-add-zsh-hook preexec __track-alias-handler
 
 # ___rename-tmux-session-on-dirs() {
 #   emulate -L zsh
