@@ -8,6 +8,9 @@
 #####################################
 
 ## Load custom completion
+# e.g. if you want completion for `minikube` command,
+# you can create a file in `$ZSH/completions/_minikube` and
+# put the completion configuration there
 fpath+=("$ZSH/completions")
 
 ## Completion Engine

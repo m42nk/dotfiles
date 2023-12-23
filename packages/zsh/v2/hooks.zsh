@@ -13,7 +13,6 @@ preexec(){
   esac
 }
 
-
 # ___rename-tmux-session-on-dirs() {
 #   emulate -L zsh
 #

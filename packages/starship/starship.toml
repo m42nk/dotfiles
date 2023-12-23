@@ -1,20 +1,40 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
-# add_newline = true
+# # Inserts a blank line between shell prompts
+# # add_newline = true
+# scan_timeout = 10
+# command_timeout = 100
+#
+# [os]
+# disabled = true
+#
+# [cmd_duration]
+# min_time = 1
+# format = '[$duration]($style) '
+# # show_notifications = true
+# # min_time_to_notify = 1000
+#
+# [docker_context]
+# disabled = true
 
-scan_timeout = 10
-command_timeout = 100
-
-[os]
-disabled = true
+add_newline = false     # Inserts newline between shell prompts
+scan_timeout = 10       # Timeout for scanning files
+command_timeout = 100   # Timeout for starship commands (modules, etc)
 
 [cmd_duration]
 min_time = 1
 format = '[$duration]($style) '
 # show_notifications = true
 # min_time_to_notify = 1000
+
+[gcloud]
+disabled = true
+symbol = "󱇶 "
+# format = 'on [$symbol]($style) '
+
+[golang]
+symbol = " "
 
 [docker_context]
 disabled = true

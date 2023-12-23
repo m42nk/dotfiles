@@ -8,7 +8,6 @@
 #####################################
 
 ## Load custom completion
-## TODO: migrate to new version
 fpath+=("$ZSH/completions")
 
 ## Completion Engine

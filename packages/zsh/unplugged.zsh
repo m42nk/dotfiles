@@ -44,6 +44,15 @@ function plugin-load () {
   [[ -d $plugindir/functions ]] && fpath+=$plugindir/functions
 }
 
+function plugin-load-gh(){
+  plugin-load "https://github.com/$1.git"
+}
+
+function plugin-installed(){
+  local plugindir="${ZPLUGINDIR:-$HOME/.zsh/plugins}"
+  [[ -d $plugindir/$1 ]]
+}
+
 # if you want to compile your plugins you may see performance gains
 function plugin-compile () {
   local plugindir="${ZPLUGINDIR:-$HOME/.zsh/plugins}"

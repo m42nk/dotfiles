@@ -10,9 +10,11 @@
 ## vim:ft=zsh
 #####################################
 
-#####################################
+# TODO: add git auto fetch plugins
+# TODO: use trash instead of rm
+# TODO: get remote repo url from local file
+
 ## Variables
-#####################################
 export ZSH="$HOME/.config/zsh"      # $ZSH - useful for reference in script
 
 ## XDG Base directory, polyfill if system doesn't have it
@@ -22,56 +24,35 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
+export PAGER="less --mouse" # Use less as default pager, used in man page, git log, etc
+
+export WATCH_INTERVAL=1                                                      # Default interval for watch command
+export LESSHISTFILE=-                                                        # Disable less history file
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"                  # Node repl history file
+export PF_INFO="ascii title os wm editor kernel uptime"                      # Info to display in pfetch
+
 export HISTFILE=$HOME/.zsh_history  # History file
 export SAVEHIST=999999999           # Num of commands saved in history file
 export HISTSIZE=$SAVEHIST           # Num of commands loaded in memory
-
-export ZPLUGINDIR="$XDG_DATA_HOME/zsh/plugins" 
-export ZSH_CUSTOM="$XDG_DATA_HOME/zsh"
 
 ## Source helper, prevent error when file not found
 src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
 
 ## Source global variables set in profile
-src /etc/profile
-
-# TODO:v2: Check .profile contents, create new if needed for mac
-# src $HOME/.profile
+src /etc/profile    # OS default profile
+src $HOME/.profile  # User profile
 
 src $ZSH/v2/options.zsh           # Zsh options
 src $ZSH/v2/completion.zsh        # Zsh completion options
 src $ZSH/v2/keybind.zsh           # Keybinds
 src $ZSH/v2/fzf.zsh               # Fzf config
-src $ZSH/unplugged.zsh            # Simple plugin manager, oh-my-zsh what?
+src $ZSH/functions.zsh            # Shell function
+src $ZSH/v2/aliases.zsh           # Aliases
+src $ZSH/v2/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
+src $ZSH/v2/hooks.zsh             # Zsh hooks
+src $ZSH/v2/plugins.zsh           # Zsh plugins
 
-plugins=(
-  Aloxaf/fzf-tab # Replace default zsh tab completion with fzf
-  agkozak/zsh-z
-  zsh-users/zsh-history-substring-search
-  zsh-users/zsh-completions
-  # zdharma-continuum/fast-syntax-highlighting
-  # zsh_codex
-  # tom-doerr/zsh_codex
-  # wfxr/forgit
-  # jeffreytse/zsh-vi-mode
-)
-
-for repo in $plugins; do
-  plugin-load https://github.com/${repo}.git
-done; unset repo
-
-# TODO: organize alias
-# TODO: organize asdf
-# TODO: organize hooks
-# TODO: how to organize plugins shortcut and config?
-# TODO: find way to define/load custom plugins
-# TODO: add git auto fetch plugins
-# TODO: find way to define/load custom completion
-
-## HACK: TEMP
+## Shell applications and setup
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)
 fi
-
-alias ez="exec zsh"
-alias perf="hyperfine --warmup 3 'zsh -ic exit'"
