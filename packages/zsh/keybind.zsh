@@ -3,14 +3,6 @@ select-word-style bash
 
 bindkey -e
 bindkey "^@" _expand_alias
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-
-bindkey -s '^T' '^ufzf-fd-preview^M'
-bindkey '\ec' fzf-cd-widget
-bindkey '^R' fzf-history-widget
 
 bindkey "\e[3~" delete-char
 bindkey '^X' create_completion
@@ -19,12 +11,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
-
-# [Backspace] - delete backward
-# bindkey '^H' backward-kill-word
-
-# bindkey '^[[1;5C' forward-word
-# bindkey '^[[1;5D' backward-word
 
 # Emacs style
 bindkey '^[[1;5C' emacs-forward-word

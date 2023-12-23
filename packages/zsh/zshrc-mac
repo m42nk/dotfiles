@@ -1,11 +1,11 @@
 #####################################
 ## --------------------------------
-##               __             
-##   ____  _____/ /_  __________
+##               __
+##   ____  _____/ /_
 ##  /_  / / ___/ __ \/ ___/ ___/
-##   / /_(__  ) / / / /  / /__  
-##  /___/____/_/ /_/_/   \___/  
-##                  -by m42nk   
+##   / /_(__  ) / / / /  / /__
+##  /___/____/_/ /_/_/   \___/
+##                  -by m42nk
 ## --------------------------------
 ## vim:ft=zsh
 #####################################
@@ -13,6 +13,7 @@
 # TODO: add git auto fetch plugins
 # TODO: use trash instead of rm
 # TODO: get remote repo url from local file
+# TODO: notify when startup took longer than 200ms
 
 ## Variables
 export ZSH="$HOME/.config/zsh"      # $ZSH - useful for reference in script
@@ -42,15 +43,17 @@ src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
 src /etc/profile    # OS default profile
 src $HOME/.profile  # User profile
 
-src $ZSH/v2/options.zsh           # Zsh options
-src $ZSH/v2/completion.zsh        # Zsh completion options
-src $ZSH/v2/keybind.zsh           # Keybinds
-src $ZSH/v2/fzf.zsh               # Fzf config
-src $ZSH/functions.zsh            # Shell function
-src $ZSH/v2/aliases.zsh           # Aliases
-src $ZSH/v2/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
-src $ZSH/v2/hooks.zsh             # Zsh hooks
-src $ZSH/v2/plugins.zsh           # Zsh plugins
+src $ZSH/options.zsh           # Zsh options
+src $ZSH/completion.zsh        # Zsh completion options
+src $ZSH/keybind.zsh           # Keybinds
+src $ZSH/fzf.zsh               # Fzf config
+src $ZSH/functions.zsh         # Shell function
+src $ZSH/aliases.zsh           # Aliases
+src $ZSH/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
+src $ZSH/hooks.zsh             # Zsh hooks
+src $ZSH/plugins.zsh           # Zsh plugins
+src $ZSH/pnpm.zsh              # Pnpm setup
+# src $ZSH/autostarts.zsh          # Autostart applications, TODO: handle mac
 
 ## Shell applications and setup
 if [[ "$(command -v starship)" ]]; then

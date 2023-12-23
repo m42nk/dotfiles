@@ -1,56 +1,24 @@
-###################################
+## vim:ft=zsh #####################
 ## -------------------------------
 ##                     __
 ##    ____  __________/ /_  _____
 ##   /_  / / ___/ ___/ __ \/ ___/
 ##  _ / /_(__  ) /  / / / / /__
 ## (_)___/____/_/  /_/ /_/\___/
-#
-## --------------------vim:ft=zsh
+## ------------------------------
 ###################################
 
 # Profiling
 zmodload zsh/zprof
 
-##################################################
-## NOTE:
-## Add alert when zsh startup time took longer
-##################################################
-
-# NEW_CONFIG=${NEW_CONFIG:-0}
-NEW_CONFIG=${NEW_CONFIG:-1}
-
-# New Main config
-if [[ $NEW_CONFIG -eq 1 ]]; then
-  echo "Using new config"
-  source ~/.config/zsh/v2/zshrc-mac
-  return
-fi
-
-# Main config
-source ~/.config/zsh/zshrc
-
-[[ -e "$HOME/.config/openai-api-keys" ]] && export OPENAI_API_KEY=$(cat ~/.config/openai-api-keys)
-
-# added by Nix installer
-if [ -e /home/m42nk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/m42nk/.nix-profile/etc/profile.d/nix.sh; fi
-
-# pnpm
-export PNPM_HOME="/home/m42nk/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-export PATH=$PATH:/home/m42nk/.spicetify
+source ~/.config/zsh/zshrc-mac
 
 if [[ -d '/Users/syakhisk.syari' ]]; then
   # The next line updates PATH for the Google Cloud SDK.
-  if [ -f '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/path.zsh.inc'; fi
+  if [[ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
   # The next line enables shell command completion for gcloud.
-  if [ -f '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/syakhisk.syari/google-cloud-sdk/completion.zsh.inc'; fi
+  if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 
   [[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
 
