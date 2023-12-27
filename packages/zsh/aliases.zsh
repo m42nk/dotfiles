@@ -24,7 +24,7 @@ alias cp="cp -iv"                                # Verbose + safer cp
 
 ## one-char
 alias d="dots"         # Custom scripts to fzf dotfiles
-alias e="code -r"      # Open using existing vscode window
+# alias e="code -r"      # Open using existing vscode window
 alias g="git"          # Vim fugitive
 alias l="ls -lab"      # Why ls when you can l
 alias p="ping 8.8.8.8" # Ping!
@@ -94,6 +94,7 @@ alias pins="sudo pacman -S"
 alias prem="sudo pacman -R"
 
 # Random things, rarely used
+alias zsh-delete-cache="rm -riv $XDG_DATA_HOME/zsh/zcompdump $XDG_CACHE_HOME/zsh/zcompcache"
 alias btw="sudo efibootmgr -n 0 && reboot" # Boot to window on next boot
 alias arduino="arduino-cli"
 alias waitfi="while ! ping -c 1 google.com; do sleep 0.5; done"

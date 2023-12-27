@@ -12,6 +12,7 @@ src $ZSH/unplugged.zsh
 plugins=(
   agkozak/zsh-z                          # Jump around directories using z
   Aloxaf/fzf-tab                         # Replace default zsh tab completion with fzf
+  # Freed-Wu/fzf-tab-source                # Make fzf-tab completion more informative
   zsh-users/zsh-history-substring-search # Make up and down arrow keys search subtring from history
   zsh-users/zsh-completions              # Additional completion definitions
   zsh-users/zsh-syntax-highlighting      # Syntax highlighting, can be #slow, should be loaded at the end of zshrc but idc
@@ -26,9 +27,28 @@ for repo in $plugins; do
 done; unset repo
 
 ## Configuration for plugins
-if plugin-installed zsh-users/zsh-history-substring-search; then
+if plugin-installed zsh-history-substring-search; then
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
   bindkey -M emacs '^P' history-substring-search-up
   bindkey -M emacs '^N' history-substring-search-down
+fi
+
+if plugin-installed fzf-tab; then
+  FZF_TAB_FILE_LIST_CMD='exa --long --no-time --header --group-directories-first --no-user'
+  FZF_TAB_FILE_VIEW_CMD='bat --color=always --style=numbers'
+
+  command -v 'exa' >/dev/null || FZF_TAB_FILE_LIST_CMD='ls'
+  command -v 'bat' >/dev/null || FZF_TAB_FILE_VIEW_CMD='cat'
+
+  zstyle ':fzf-tab:*' switch-group ',' '.'
+  zstyle ':fzf-tab:*' fzf-bindings 'ctrl-/:toggle-preview'
+  # zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview "$FZF_TAB_FILE_LIST_CMD \$realpath"
+  zstyle ':fzf-tab:complete:exa:*' fzf-preview "[[ -f \$realpath ]] && $FZF_TAB_FILE_VIEW_CMD \$realpath || $FZF_TAB_FILE_LIST_CMD \$realpath"
+  zstyle ':fzf-tab:complete:ls:*' fzf-preview "[[ -f \$realpath ]] && $FZF_TAB_FILE_VIEW_CMD \$realpath || $FZF_TAB_FILE_LIST_CMD \$realpath"
+
+  # Make sure to set this zstyle if you want zstyle file-sort to be working
+  zstyle ':completion:complete:*:argument-rest' sort false
 fi

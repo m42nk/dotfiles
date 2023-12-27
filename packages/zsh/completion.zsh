@@ -9,17 +9,23 @@
 
 ## Load custom completion
 fpath+=("$ZSH/completions")
+if command -v brew &> /dev/null; then
+  # NOTE: `brew --prefix` can be used, but it's #slow
+  fpath+=(/opt/homebrew/share/zsh/site-functions)
+fi
 
 ## Completion Engine
 autoload -Uz compinit
+zmodload zsh/complist
 
 ## Start the completion engine and cache completion setting
 compinit -d $XDG_DATA_HOME/zsh/zcompdump
 
-# # _expand # expand env var, if turned on this will expand env var instead of completing it
-# # _expand_alias # expand alias on tab, if turned on this will expand alias instead of completing it
-# # _extensions # complete extensions when typing *.
+# _expand # expand env var, if turned on this will expand env var instead of completing it
+# _expand_alias # expand alias on tab, if turned on this will expand alias instead of completing it
+# _extensions # complete extensions when typing *.
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' completer _complete _approximate
 
 # Formatting and verbosity
 zstyle ':completion:*' verbose yes # Verbose completion
@@ -30,26 +36,22 @@ zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 
-# ## Ignore case in matches, try to complete from any parts of text
-# ## eg. file: _ABC123; if you type 123<tab> it will try to match that too
-# # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# # zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+## Ignore case in matches, try to complete from any parts of text
+## eg. file: _ABC123; if you type 123<tab> it will try to match that too
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 
 ## Don't autocomplete host names
 zstyle ':completion:*' hosts off
 
-# # Custom sort order for file ops
-# zstyle ':completion:*:*:cp:*' file-sort modification
-# zstyle ':completion:*:*:mv:*' file-sort modification
-# zstyle ':completion:*:*:rm:*' file-sort modification
+# Custom sort order for file ops
+zstyle ':completion:*' file-sort modification
 
 ## Group matches
+# This will make group show at the top of the list and result at the bottom
 zstyle ':completion:*' group-name ''
 
 ## Colorize ls
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 ## Completion menu
 ## Use select menu if there's more than 2 match

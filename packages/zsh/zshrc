@@ -15,6 +15,11 @@
 # TODO: get remote repo url from local file
 # TODO: notify when startup took longer than 200ms
 
+## Startup calculation
+[[ "$(uname)" == "Darwin" ]] && _date="gdate" || _date="date"
+_SHELL_STARTUP_TRESHOLD=200 # ms
+_SHELL_STARTUP_START=$($_date +%s%N)
+
 ## Variables
 export ZSH="$HOME/.config/zsh"      # $ZSH - useful for reference in script
 
@@ -46,16 +51,30 @@ src $HOME/.profile  # User profile
 src $ZSH/options.zsh           # Zsh options
 src $ZSH/completion.zsh        # Zsh completion options
 src $ZSH/keybind.zsh           # Keybinds
+src $ZSH/homebrew.zsh          # Homebrew setup, variables, fpath, etc
 src $ZSH/fzf.zsh               # Fzf config
+src $ZSH/colored-man-page.zsh  # Make man page colorful
 src $ZSH/functions.zsh         # Shell function
 src $ZSH/aliases.zsh           # Aliases
 src $ZSH/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
 src $ZSH/hooks.zsh             # Zsh hooks
 src $ZSH/plugins.zsh           # Zsh plugins
 src $ZSH/pnpm.zsh              # Pnpm setup
-# src $ZSH/autostarts.zsh          # Autostart applications, TODO: handle mac
+# src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
 
 ## Shell applications and setup
 if [[ "$(command -v starship)" ]]; then
   eval $(starship init zsh)
 fi
+
+## Startup calculation
+_SHELL_STARTUP_TIME=$((($($_date +%s%N) - $_SHELL_STARTUP_START) / 1000000))
+if [[ $_SHELL_STARTUP_TIME -gt $_SHELL_STARTUP_TRESHOLD ]]; then
+  echo -e "---"
+  echo -e "WARNING: Slow shell (${_SHELL_STARTUP_TIME}ms)"
+  echo -e "---"
+  zprof | head -n 12
+  echo -e "---"
+  echo "fix your shell plz #slow"
+fi
+
