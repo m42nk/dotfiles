@@ -20,6 +20,12 @@
 _SHELL_STARTUP_TRESHOLD=200 # ms
 _SHELL_STARTUP_START=$($_date +%s%N)
 
+## Starship is put here so that command execution time is
+## more accurate
+if [[ "$(command -v starship)" ]]; then
+  eval $(starship init zsh)
+fi
+
 ## Variables
 export ZSH="$HOME/.config/zsh"      # $ZSH - useful for reference in script
 
@@ -32,17 +38,20 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 export PAGER="less --mouse" # Use less as default pager, used in man page, git log, etc
 
-export WATCH_INTERVAL=1                                                      # Default interval for watch command
-export LESSHISTFILE=-                                                        # Disable less history file
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"                  # Node repl history file
-export PF_INFO="ascii title os wm editor kernel uptime"                      # Info to display in pfetch
+# Use `bat` for pager
+(( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+export WATCH_INTERVAL=1                                     # Default interval for watch command
+export LESSHISTFILE=-                                       # Disable less history file
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history" # Node repl history file
+export PF_INFO="ascii title os wm editor kernel uptime"     # Info to display in pfetch
 
 export HISTFILE=$HOME/.zsh_history  # History file
 export SAVEHIST=999999999           # Num of commands saved in history file
 export HISTSIZE=$SAVEHIST           # Num of commands loaded in memory
 
 ## Source helper, prevent error when file not found
-src(){ [[ -f "$1" ]] && source "$1" || echo "404: $1" }
+src(){ [[ -f "$1" ]] && source "$1" || echo "Error src(): $1" }
 
 ## Source global variables set in profile
 src /etc/profile    # OS default profile
@@ -62,13 +71,8 @@ src $ZSH/plugins.zsh           # Zsh plugins
 src $ZSH/pnpm.zsh              # Pnpm setup
 # src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
 
-## Shell applications and setup
-if [[ "$(command -v starship)" ]]; then
-  eval $(starship init zsh)
-fi
-
 ## Startup calculation
-_SHELL_STARTUP_TIME=$((($($_date +%s%N) - $_SHELL_STARTUP_START) / 1000000))
+export _SHELL_STARTUP_TIME=$((($($_date +%s%N) - $_SHELL_STARTUP_START) / 1000000))
 if [[ $_SHELL_STARTUP_TIME -gt $_SHELL_STARTUP_TRESHOLD ]]; then
   echo -e "---"
   echo -e "WARNING: Slow shell (${_SHELL_STARTUP_TIME}ms)"
@@ -77,4 +81,3 @@ if [[ $_SHELL_STARTUP_TIME -gt $_SHELL_STARTUP_TRESHOLD ]]; then
   echo -e "---"
   echo "fix your shell plz #slow"
 fi
-
