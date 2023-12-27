@@ -10,6 +10,7 @@
 
 # Profiling
 zmodload zsh/zprof
+autoload -U add-zsh-hook
 
 source ~/.config/zsh/zshrc
 
