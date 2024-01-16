@@ -1,7 +1,3 @@
-if ! command -v asdf >/dev/null; then
-  return
-fi
-
 # TODO: Do when installing asdf with brew,
 # scripts bellow is not tested
 # if command -v brew >/dev/null; then
@@ -11,7 +7,6 @@ fi
 #   fi
 # fi
 
-# [[ -d $HOME/.asdf/plugins/golang ]] && source $HOME/.asdf/plugins/golang/set-env.zsh
 if ! [[ -f "$HOME/.asdf/asdf.sh" ]]; then
   return
 fi
@@ -28,3 +23,8 @@ if [[ -d "$ASDF_DIR/plugins/golang" ]]; then
   # export GOPATH="$(asdf where golang)/packages"
 fi
 
+function asdf-golang-env(){
+  go_dir=$(asdf where golang)
+  export GOPATH="$go_dir/packages"
+  export PATH="$go_dir/packages/bin:$PATH"
+}

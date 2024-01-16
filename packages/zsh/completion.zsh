@@ -19,13 +19,23 @@ autoload -Uz compinit
 zmodload zsh/complist
 
 ## Start the completion engine and cache completion setting
-compinit -d $XDG_DATA_HOME/zsh/zcompdump
+## every 24 hours
+DUMPFILE="$XDG_DATA_HOME/zsh/zcompdump"
+
+# TODO: not working, dumpfile is not created
+# if [[ -n $DUMPFILE(#qN.mh+24) ]]; then
+#   compinit -d "$DUMPFILE"
+# else
+#   compinit -C
+# fi
+
+compinit -d "$DUMPFILE"
 
 # _expand # expand env var, if turned on this will expand env var instead of completing it
 # _expand_alias # expand alias on tab, if turned on this will expand alias instead of completing it
 # _extensions # complete extensions when typing *.
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' completer _complete _approximate
+# zstyle ':completion:*' completer _complete _approximate
 
 # Formatting and verbosity
 zstyle ':completion:*' verbose yes # Verbose completion

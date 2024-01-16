@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+TMP_FILE=$(mktemp)
+IFACE_PREFIX="ipsec"
+
+while true; do
+	LAST_STATUS=$(cat $TMP_FILE)
+	CURRENT_STATUS=$(ifconfig | grep $IFACE_PREFIX -A2 | grep -c inet)
+	[[ -z "$CURRENT_STATUS" ]] && CURRENT_STATUS=0
+
+	echo "Last status: $LAST_STATUS, current status: $CURRENT_STATUS"
+
+	if [[ "$LAST_STATUS" == "$CURRENT_STATUS" ]]; then
+		echo "No change"
+		sleep 1
+		continue
+	fi
+
+	if [[ $CURRENT_STATUS -lt $LAST_STATUS ]]; then
+		echo "VPN disconnected"
+
+		if [[ "$CURRENT_STATUS" -eq 0 ]]; then
+			terminal-notifier -message "VPN disconnected" -title "VPN"
+		else
+			terminal-notifier -message "Some VPN disconnected" -title "VPN"
+		fi
+	fi
+
+	if [[ $CURRENT_STATUS -gt 0 ]]; then
+		echo "VPN connected"
+		terminal-notifier -message "VPN connected" -title "VPN"
+	fi
+
+	echo $CURRENT_STATUS >$TMP_FILE
+	sleep 1
+done

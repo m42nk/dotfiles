@@ -21,6 +21,7 @@ alias ls="exa --icons --group-directories-first" # Pretty ls
 alias cat="bat"                                  # Pretty cat, syntax highlight, etc
 alias mv="mv -iv"                                # Verbose + safer move
 alias cp="cp -iv"                                # Verbose + safer cp
+alias rm="trash"
 
 ## one-char
 alias d="dots"         # Custom scripts to fzf dotfiles

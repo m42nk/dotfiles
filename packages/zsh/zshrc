@@ -11,9 +11,7 @@
 #####################################
 
 # TODO: add git auto fetch plugins
-# TODO: use trash instead of rm
 # TODO: get remote repo url from local file
-# TODO: notify when startup took longer than 200ms
 
 ## Startup calculation
 [[ "$(uname)" == "Darwin" ]] && _date="gdate" || _date="date"
@@ -51,7 +49,12 @@ export SAVEHIST=999999999           # Num of commands saved in history file
 export HISTSIZE=$SAVEHIST           # Num of commands loaded in memory
 
 ## Source helper, prevent error when file not found
-src(){ [[ -f "$1" ]] && source "$1" || echo "Error src(): $1" }
+src(){
+  # timestart=$($_date +%s%N)
+  [[ -f "$1" ]] && source "$1" || echo "Error src(): $1"
+  # timeend=$($_date +%s%N)
+  # echo -e "[$(( ($timeend - $timestart) / 1000000 ))ms] src ${1}"
+}
 
 ## Source global variables set in profile
 src /etc/profile    # OS default profile
