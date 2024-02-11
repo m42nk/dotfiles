@@ -97,3 +97,7 @@ _cap () { tee /tmp/capture.out; }
 # Return the output of the most recent command that was captured by cap
 _ret () { cat /tmp/capture.out; }
 
+
+kubecomplete(){
+  source <(kubectl completion zsh)
+}

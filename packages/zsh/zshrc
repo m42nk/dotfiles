@@ -72,6 +72,7 @@ src $ZSH/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternativ
 src $ZSH/hooks.zsh             # Zsh hooks
 src $ZSH/plugins.zsh           # Zsh plugins
 src $ZSH/pnpm.zsh              # Pnpm setup
+src $ZSH/git-auto-fetch.zsh    # Fetch git repos every 60s
 # src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
 
 ## Startup calculation
