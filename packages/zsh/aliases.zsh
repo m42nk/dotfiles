@@ -74,6 +74,7 @@ alias gss="git status -s"
 alias gd="git diff"
 alias lg="lazygit"
 alias gco="git checkout"
+alias grom="git rebase origin/master"
 
 ## Docker
 alias dcud="docker compose up -d"
