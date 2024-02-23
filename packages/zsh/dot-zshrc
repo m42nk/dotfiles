@@ -51,4 +51,8 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
 
   alias vpni="onevpn connect 'GOJEK Integration'"
   alias vpnidc="onevpn disconnect 'GOJEK Integration'"
+
+  export GOPATH=$HOME/go
+  export GOROOT="$(brew --prefix golang)/libexec"
+  export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 fi

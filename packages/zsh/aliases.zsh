@@ -9,6 +9,12 @@ alias -g ...="../.."
 alias -g ....="../../.."
 alias -g .....="../../../.."
 
+## Global alias for directory
+alias -g @lazy="~/.local/share/nvim/lazy/LazyVim"
+alias -g @l="~/.local/share/nvim/lazy/LazyVim"
+alias -g @owo="~/Work/order-workflow-orchestrator"
+alias -g @oda="~/Work/order-data-aggregator"
+
 ## Hash - add another directory to hash
 ## eg. hash -d t="$HOME/todo" will make ~t expand to $HOME/todo
 hash -d t="$HOME/todo"
@@ -65,7 +71,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 alias glogn="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 5"
 alias gp="git push"
-alias gpf="git push --force"
+alias gpf="git push --force-with-lease"
 alias gpl='git pull'
 alias gpll='git pull $(git remote) $(git branch --show-current)'
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
