@@ -80,7 +80,9 @@ alias gss="git status -s"
 alias gd="git diff"
 alias lg="lazygit"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias grom="git rebase origin/master"
+alias gcb="git rev-parse --abbrev-ref HEAD"
 
 ## Docker
 alias dcud="docker compose up -d"
