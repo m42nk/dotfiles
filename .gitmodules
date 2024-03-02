@@ -18,16 +18,3 @@
 	branch = master
   ;update = rebase 
 	update = none; skip init
-
-; [submodule "dotfiles-nvim"]
-; 	path = packages/nvim
-; 	url = https://github.com/m42nk/dotfiles-nvim
-; 	ignore = dirty
-; 	branch = master
-; 	update = rebase
-; [submodule "dotfiles-tmux"]
-; 	path = packages/tmux
-; 	url = https://github.com/m42nk/dotfiles-tmux
-; 	ignore = dirty
-; 	branch = master
-; 	update = rebase
