@@ -15,8 +15,10 @@
 
 ## Startup calculation
 [[ "$(uname)" == "Darwin" ]] && _date="gdate" || _date="date"
-_SHELL_STARTUP_TRESHOLD=200 # ms
+_SHELL_STARTUP_TRESHOLD=400 # ms
 _SHELL_STARTUP_START=$($_date +%s%N)
+# _SHELL_DEBUG=${SHELL_DEBUG:-}
+_SHELL_DEBUG=
 
 ## Starship is put here so that command execution time is
 ## more accurate
@@ -50,14 +52,14 @@ export HISTSIZE=$SAVEHIST           # Num of commands loaded in memory
 
 ## Source helper, prevent error when file not found
 src(){
-  # timestart=$($_date +%s%N)
+  [[ -n $_SHELL_DEBUG ]] && timestart=$($_date +%s%N)
   [[ -f "$1" ]] && source "$1" || echo "Error src(): $1"
-  # timeend=$($_date +%s%N)
-  # echo -e "[$(( ($timeend - $timestart) / 1000000 ))ms] src ${1}"
+  [[ -n $_SHELL_DEBUG ]] && timeend=$($_date +%s%N)
+  [[ -n $_SHELL_DEBUG ]] && echo -e "[$(( ($timeend - $timestart) / 1000000 ))ms] src ${1}"
 }
 
 ## Source global variables set in profile
-src /etc/profile    # OS default profile
+src /etc/profile    # OS default profile #slow in mac
 src $HOME/.profile  # User profile
 
 src $ZSH/options.zsh           # Zsh options

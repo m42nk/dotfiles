@@ -23,13 +23,14 @@ zmodload zsh/complist
 DUMPFILE="$XDG_DATA_HOME/zsh/zcompdump"
 
 # TODO: not working, dumpfile is not created
-# if [[ -n $DUMPFILE(#qN.mh+24) ]]; then
-#   compinit -d "$DUMPFILE"
-# else
-#   compinit -C
-# fi
+## Requires setopt extended_glob
+if [[ -n ${DUMPFILE}(#qN.mh+24) ]]; then
+    compinit -d "$DUMPFILE"
+else
+    compinit -C -d "$DUMPFILE"
+fi
 
-compinit -d "$DUMPFILE"
+# compinit -d "$DUMPFILE"
 
 # _expand # expand env var, if turned on this will expand env var instead of completing it
 # _expand_alias # expand alias on tab, if turned on this will expand alias instead of completing it

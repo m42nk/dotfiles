@@ -22,6 +22,10 @@ add_newline = false     # Inserts newline between shell prompts
 scan_timeout = 10       # Timeout for scanning files
 command_timeout = 100   # Timeout for starship commands (modules, etc)
 
+[fill]
+symbol = '-'
+style = 'bold green'
+
 [cmd_duration]
 min_time = 1
 format = '[$duration]($style) '

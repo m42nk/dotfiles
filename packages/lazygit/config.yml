@@ -2,3 +2,14 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+customCommands:
+  - key: "G"
+    command: "glab mr view {{.SelectedLocalBranch.UpstreamBranch}} | cat"
+    context: "localBranches"
+    description: "Go to MR in gitlab"
+    loadingText: Opening Gitlab MR
+    showOutput: True
+    prompts:
+      - type: confirm
+        title: "glab"
+        body: "Open GitLab MR using glab?"

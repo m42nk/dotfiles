@@ -15,9 +15,17 @@ alias -g @l="~/.local/share/nvim/lazy/LazyVim"
 alias -g @owo="~/Work/order-workflow-orchestrator"
 alias -g @oda="~/Work/order-data-aggregator"
 
+## Global alias for utility
+alias -g @branch="\$(git branch --show-current)"
+
 ## Hash - add another directory to hash
 ## eg. hash -d t="$HOME/todo" will make ~t expand to $HOME/todo
 hash -d t="$HOME/todo"
+## Currently trying this out, not sure to use global alias ("@") or hash ("~")
+hash -d lazy="~/.local/share/nvim/lazy/LazyVim"
+hash -d l="~/.local/share/nvim/lazy/LazyVim"
+hash -d owo="~/Work/order-workflow-orchestrator"
+hash -d oda="~/Work/order-data-aggregator"
 
 ## Overwrite existing command
 ##  to use actual command without alias prefix it with backslash (\)
@@ -81,8 +89,10 @@ alias gd="git diff"
 alias lg="lazygit"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias grom="git rebase origin/master"
-alias gcb="git rev-parse --abbrev-ref HEAD"
+alias grbom="git rebase origin/master"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias gcb="git branch --show-current"
 
 ## Docker
 alias dcud="docker compose up -d"
