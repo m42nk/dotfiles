@@ -55,4 +55,7 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   export GOPATH=$HOME/go
   export GOROOT="$(brew --prefix golang)/libexec"
   export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+  # Mac M1 compatibility
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
 fi

@@ -80,8 +80,8 @@ alias gloga="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias glogn="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 5"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
-alias gpl='git pull'
-alias gpll='git pull $(git remote) $(git branch --show-current)'
+alias gpll='git pull'
+alias gpl='git pull $(git remote) $(git branch --show-current)'
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gs="gss"
 alias gss="git status -s"

@@ -12,11 +12,11 @@ src $ZSH/unplugged.zsh
 plugins=(
   agkozak/zsh-z                          # Jump around directories using z
   Aloxaf/fzf-tab                         # Replace default zsh tab completion with fzf
-  # Freed-Wu/fzf-tab-source                # Make fzf-tab completion more informative
   zsh-users/zsh-history-substring-search # Make up and down arrow keys search subtring from history
   zsh-users/zsh-completions              # Additional completion definitions
   zsh-users/zsh-syntax-highlighting      # Syntax highlighting, can be #slow, should be loaded at the end of zshrc but idc
   zsh-users/zsh-autosuggestions          # Suggests commands based on history, can be #slow
+  # Freed-Wu/fzf-tab-source                # Make fzf-tab completion more informative
   # MichaelAquilina/zsh-auto-notify        # Send notifications when long running command finishes
   # wfxr/forgit
   # jeffreytse/zsh-vi-mode
