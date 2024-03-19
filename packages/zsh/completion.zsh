@@ -25,10 +25,10 @@ ZCOMPCACHE="$XDG_CACHE_HOME/zsh/zcompdump"
 
 # TODO: not working, dumpfile is not created
 ## Requires setopt extended_glob
-if [[ -n ${DUMPFILE}(#qN.mh+24) ]]; then
-    compinit -d "$DUMPFILE"
+if [[ -n ${ZCOMPDUMP}(#qN.mh+24) ]]; then
+    compinit -d "$ZCOMPDUMP"
 else
-    compinit -C -d "$DUMPFILE"
+    compinit -C -d "$ZCOMPDUMP"
 fi
 
 # _expand # expand env var, if turned on this will expand env var instead of completing it
@@ -43,8 +43,8 @@ zstyle ':completion:*' format 'Completing [%d]'
 zstyle ':completion:*' auto-description 'specify: %d'
 
 ## Cache completion result (useful for apt, dnf, or pacman)
-# zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path "$ZCOMPCACHE"
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$ZCOMPCACHE"
 
 ## Ignore case in matches, try to complete from any parts of text
 ## eg. file: _ABC123; if you type 123<tab> it will try to match that too

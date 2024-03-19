@@ -52,10 +52,14 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   alias vpni="onevpn connect 'GOJEK Integration'"
   alias vpnidc="onevpn disconnect 'GOJEK Integration'"
 
-  export GOPATH=$HOME/go
-  export GOROOT="$(brew --prefix golang)/libexec"
-  export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+  # Homebrew Go
+  # export GOPATH=$HOME/go
+  # export GOROOT="$(brew --prefix golang)/libexec"
+  # export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
   # Mac M1 compatibility
   export DOCKER_DEFAULT_PLATFORM=linux/amd64
 fi
+
+# Created by `pipx` on 2024-03-17 12:15:45
+export PATH="$PATH:/Users/syakhisk.syari/.local/bin"

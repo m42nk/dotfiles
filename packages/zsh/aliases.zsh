@@ -12,6 +12,9 @@ alias -g .....="../../../.."
 ## Global alias for directory
 alias -g @lazy="~/.local/share/nvim/lazy/LazyVim"
 alias -g @l="~/.local/share/nvim/lazy/LazyVim"
+alias -g @zsh="~/.config/zsh"
+alias -g @nvim="~/.config/nvim"
+
 alias -g @owo="~/Work/order-workflow-orchestrator"
 alias -g @oda="~/Work/order-data-aggregator"
 
@@ -59,6 +62,8 @@ alias lsnew="exa -1snew"                                    # Ls sort by newest 
 alias cdp="cd -P"                                           # Follow symlink
 alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh" # Change alias and reload zsh
 alias chkb="$EDITOR ~/.config/sxhkd/sxhkdrc"                # Change keybind and reload sxhkd
+alias vls="vpnutil list"
+alias vlsc="vpnutil list | grep Connected"
 
 ## Typo fix
 alias exi="exit"
@@ -98,6 +103,12 @@ alias gcb="git branch --show-current"
 alias dcud="docker compose up -d"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
+
+## Kubernetes
+alias k="kubectl"
+alias kns="kubens"
+alias kctx="kubectx"
+alias kx="kubectl exec -it"
 
 ## Tmux
 alias tks='tmux kill-server'

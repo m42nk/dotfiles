@@ -12,7 +12,7 @@ if ! [[ -f "$HOME/.asdf/asdf.sh" ]]; then
 fi
 
 source "$HOME/.asdf/asdf.sh"
-fpath=($ASDF_DIR/completions $fpath)
+fpath+=($ASDF_DIR/completions)
 
 if [[ -d "$ASDF_DIR/plugins/golang" ]]; then
   # TODO: this command is so slow, consider switching from asdf?

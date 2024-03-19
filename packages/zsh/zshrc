@@ -62,19 +62,19 @@ src /etc/profile    # OS default profile #slow in mac
 src $HOME/.profile  # User profile
 
 src $ZSH/options.zsh           # Zsh options
+src $ZSH/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
 src $ZSH/completion.zsh        # Zsh completion options
 src $ZSH/keybind.zsh           # Keybinds
 src $ZSH/fzf.zsh               # Fzf config
 src $ZSH/functions.zsh         # Shell function
 src $ZSH/colored-man-page.zsh  # Make man page colorful
 src $ZSH/aliases.zsh           # Aliases
-src $ZSH/asdf.zsh              # Load asdf, asdf is kinda #slow, find alternative?
 src $ZSH/hooks.zsh             # Zsh hooks
 src $ZSH/plugins.zsh           # Zsh plugins
-# src $ZSH/git-auto-fetch.zsh    # Fetch git repos every 60s
-# # src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
-# # src $ZSH/homebrew.zsh          # Homebrew setup, variables, fpath, etc # DELETEME
-# src $ZSH/pnpm.zsh              # Pnpm setup # THIS BROKE IT
+src $ZSH/pnpm.zsh              # Pnpm setup # THIS BROKE IT
+src $ZSH/git-auto-fetch.zsh    # Fetch git repos every 60s
+# src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
+# src $ZSH/homebrew.zsh          # Homebrew setup, variables, fpath, etc #DELETEME
 
 ## Startup calculation
 export _SHELL_STARTUP_TIME=$((($($_date +%s%N) - $_SHELL_STARTUP_START) / 1000000))
