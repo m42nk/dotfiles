@@ -14,12 +14,17 @@ alias -g @lazy="~/.local/share/nvim/lazy/LazyVim"
 alias -g @l="~/.local/share/nvim/lazy/LazyVim"
 alias -g @zsh="~/.config/zsh"
 alias -g @nvim="~/.config/nvim"
+alias -g @dl="~/Downloads"
 
 alias -g @owo="~/Work/order-workflow-orchestrator"
 alias -g @oda="~/Work/order-data-aggregator"
+alias -g @tps="~/Work/transport-pricing-service"
 
 ## Global alias for utility
 alias -g @branch="\$(git branch --show-current)"
+
+## To be extended, common string
+alias -g ghc="github.com/"
 
 ## Hash - add another directory to hash
 ## eg. hash -d t="$HOME/todo" will make ~t expand to $HOME/todo
@@ -98,6 +103,8 @@ alias grbom="git rebase origin/master"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias gcb="git branch --show-current"
+alias grsh="git reset --soft HEAD~1"
+
 
 ## Docker
 alias dcud="docker compose up -d"
@@ -113,7 +120,8 @@ alias kx="kubectl exec -it"
 ## Tmux
 alias tks='tmux kill-server'
 alias tls='tmux list-session'
-alias tcl='tmux-clean'
+# alias tcl='tmux-clean'
+alias tcl='clear; tmux clear-history'
 
 ## Node
 alias nrd="npm run dev"
@@ -143,3 +151,9 @@ alias dns="bash $HOME/VPNs/add-dns.sh"
 alias itsvpn-downloadonly="node ~/Codes/myits-vpn-download-script/index.js"
 alias itsvpn="cd ~/VPNs && node ~/Codes/myits-vpn-download-script/index.js && unzip -o Server2.zip"
 alias rmgpucache="rm -r $HOME/.config/google-chrome/Default/GPUCache/"
+
+# Temp
+alias runtps='GO111MODULE=on go build -o "out/transport-pricing-service" ./cmd/transport_pricing_service && SPANNER_EMULATOR_HOST=localhost:9010 ./out/transport-pricing-service 2>&1 | tee /tmp/a'
+alias runtraps='GO111MODULE=on go build -o ./traps-server ./cmd/traps-server && ./traps-server start 2>&1 | tee /tmp/a'
+alias tailjq='tail -f /tmp/a | jq -R "fromjson"'
+alias tailclear="echo '' > /tmp/a"

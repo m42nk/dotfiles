@@ -46,8 +46,8 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history" # Node repl history 
 export PF_INFO="ascii title os wm editor kernel uptime"     # Info to display in pfetch
 
 export HISTFILE=$HOME/.zsh_history  # History file
-export SAVEHIST=999999999           # Num of commands saved in history file
-export HISTSIZE=$SAVEHIST           # Num of commands loaded in memory
+export SAVEHIST=9999999999           # Num of commands saved in history file
+export HISTSIZE=$SAVEHIST            # Num of commands loaded in memory
 
 ## Source helper, prevent error when file not found
 src(){

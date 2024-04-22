@@ -23,7 +23,7 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [user]
 	name = Syakhisk Al Azmi
-	email = mail.syakhisk@gmail.com
+	email = syakhisk.syari@gojek.com
 
 [url "ssh://git@source.golabs.io/"]
 	insteadOf = https://source.golabs.io/

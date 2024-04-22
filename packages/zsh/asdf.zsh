@@ -21,6 +21,8 @@ if [[ -d "$ASDF_DIR/plugins/golang" ]]; then
   # TODO: need to use hooks so that go versions updates
   # as directory changes, see set-env.zsh script above
   # export GOPATH="$(asdf where golang)/packages"
+  export GOPATH="$GOROOT/packages"
+  export PATH="$GOPATH/bin:$PATH"
 fi
 
 function asdf-golang-env(){
