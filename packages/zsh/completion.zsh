@@ -18,6 +18,10 @@ fi
 autoload -Uz compinit
 zmodload zsh/complist
 
+## Supports bash completion
+autoload bashcompinit
+bashcompinit
+
 ## Start the completion engine and cache completion setting
 ## every 24 hours
 ZCOMPDUMP="$XDG_DATA_HOME/zsh/zcompdump"
@@ -30,6 +34,11 @@ if [[ -n ${ZCOMPDUMP}(#qN.mh+24) ]]; then
 else
     compinit -C -d "$ZCOMPDUMP"
 fi
+
+## Bash completion
+# Add completions for wordpress cli
+[[ -f "$ZSH/completions/wp-completion.bash" ]] && source "$ZSH/completions/wp-completion.bash"
+
 
 # _expand # expand env var, if turned on this will expand env var instead of completing it
 # _expand_alias # expand alias on tab, if turned on this will expand alias instead of completing it

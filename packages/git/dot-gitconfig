@@ -1,5 +1,6 @@
 [core]
     pager = delta
+	  excludesfile = /Users/syakhisk.syari/.gitignore
 
 [interactive]
     diffFilter = delta --color-only
@@ -30,3 +31,6 @@
 
 [rerere]
 	enabled = true
+
+[init]
+	defaultBranch = master

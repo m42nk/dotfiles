@@ -9,9 +9,9 @@ defer(){
   nohup "$@" >/dev/null 2>&1 &; disown
 }
 
-golandd(){
-  defer goland "$@"
-}
+# golandd(){
+#   defer goland "$@"
+# }
 
 # Copy full path to clipboard
 cpath(){
