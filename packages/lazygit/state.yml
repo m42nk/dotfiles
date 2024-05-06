@@ -1,10 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/syakhisk.syari/Codes/tf-wp-docker
+- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/traps
+- /Users/syakhisk.syari/Codes/tf-wp-docker
 - /Users/syakhisk.syari/Work/octopus
 - /Users/syakhisk.syari/Codes/al-az.me
-- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/trams
 - /Users/syakhisk.syari/Work/transport-pricing-service
 - /Users/syakhisk.syari/Work/gtfs
@@ -29,7 +29,8 @@ recentrepos:
 - /Users/syakhisk.syari/Codes/_retrux/newweb
 startuppopupversion: 5
 lastversion: 0.41.0
-customcommandshistory: []
+customcommandshistory:
+- echo
 hidecommandlog: false
 ignorewhitespaceindiffview: true
 diffcontextsize: 3
