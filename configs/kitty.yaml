@@ -1,6 +1,8 @@
 - link:
     ~/.config/kitty/kitty.conf: kitty/kitty.linux.conf
     ~/.config/kitty/ayu.conf: kitty/ayu.conf
+    ~/.config/kitty/dracula.conf: kitty/dracula.conf
+    ~/.config/kitty/diff.conf: kitty/diff.conf
 
 # - create:
 #     ~/.config/kitty/
