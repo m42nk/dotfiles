@@ -19,18 +19,23 @@
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+
 [user]
 	name = Syakhisk Al Azmi
-	email = syakhisk.syari@gojek.com
+	email = mail.syakhisk@gmail.com
 
-[url "ssh://git@source.golabs.io/"]
-	insteadOf = https://source.golabs.io/
+[includeIf "gitdir:~/Work/"]
+    path = ~/.gojek.gitconfig
 
 [rerere]
 	enabled = true
 
 [init]
 	defaultBranch = master
+
+[pull]
+	ff = true
