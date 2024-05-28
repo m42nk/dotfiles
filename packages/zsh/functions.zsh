@@ -105,11 +105,37 @@ kubecomplete(){
 set_gojek_env(){
   export GOPRIVATE="source.golabs.io/*"
   export GONOSUMDB="source.golabs.io/*"
-  export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+  # export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
 }
 
 unset_gojek_env(){
   unset GOPRIVATE
   unset GONOSUMDB
-  unset GOPROXY
+  # unset GOPROXY
 }
+
+ips(){
+  ifconfig | awk '
+      /^[a-zA-Z0-9]+:/ {
+          if (interface != "" && ipv4 != "") {
+              print interface ": " ipv4
+          }
+          interface=$1
+          sub(/:$/, "", interface)
+          ipv4=""
+      }
+      /inet / {
+          ipv4=$2
+      }
+      END {
+          if (interface != "" && ipv4 != "") {
+              print interface ": " ipv4
+          }
+      }
+  '
+}
+
+# wtf(){
+#   export WTF_JIRA_API_KEY=$(security find-generic-password -l jira-cli -w)
+#   wtfutil
+# }

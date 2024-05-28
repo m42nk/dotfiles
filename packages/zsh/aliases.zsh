@@ -47,12 +47,13 @@ alias rm="trash"
 
 ## one-char
 alias d="dots"         # Custom scripts to fzf dotfiles
-# alias e="code -r"      # Open using existing vscode window
 alias g="git"          # Vim fugitive
 alias l="ls -lab"      # Why ls when you can l
 alias p="ping 8.8.8.8" # Ping!
 alias x="chmod +x"     # Add executable permission to file
 alias s="sudo"         # Why sudo when you can s
+alias \$=""
+# alias e="code -r"      # Open using existing vscode window
 
 ## Shorter variant of commands
 alias py="python"

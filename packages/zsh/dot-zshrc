@@ -25,6 +25,8 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   # Add jdk support for ruby
   [[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
 
+  export PATH="$PATH:$HOME/.bin"
+
   export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
   export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
 
@@ -44,11 +46,11 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
       [[ -n "$DEBUG_GOENV" ]] && echo "[zshrc] Exporting go env"
       export GOPRIVATE="source.golabs.io/*"
       export GONOSUMDB="source.golabs.io/*"
-      export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+      # export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
     else
       unset GOPRIVATE
       unset GONOSUMDB
-      unset GOPROXY
+      # unset GOPROXY
     fi
   }
 
@@ -68,3 +70,10 @@ fi
 
 # Created by `pipx` on 2024-03-17 12:15:45
 export PATH="$PATH:/Users/syakhisk.syari/.local/bin"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

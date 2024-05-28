@@ -1,0 +1,165 @@
+# TODO:
+# gitlab
+# gcal
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+  # grid:
+    # columns: [32, 32, 32, 32, 90]
+    # rows: [10, 10, 10, 4, 4, 90]
+  refreshInterval: 100
+  mods:
+    todo:
+      title: "Todo 🚀"
+      args: ["listall"]
+      cmd: "todo.sh"
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 4
+        width: 2
+      refreshInterval: 1000
+      type: cmdrunner
+
+    clocks:
+      type: "clocks"
+      title: "Clocks"
+      enabled: true
+      sort: "natural"
+      refreshInterval: 15
+      locations:
+        JKT: "Asia/Jakarta"
+        BLR: "Asia/Kolkata"
+        AMS: "Europe/Amsterdam"
+        UTC: "UTC"
+      dateFormat: "1 Jan"
+      timeFormat: "03:04 PM MST"
+      colors:
+        rows:
+          even: "lightblue"
+          odd: "white"
+      position:
+        top: 0
+        left: 2
+        height: 1
+        width: 1
+
+    ipinfo:
+      enabled: false
+      colors:
+        name: "lightblue"
+        value: "white"
+      position:
+        top: 3
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 1m
+
+    resourceusage:
+      title: "CPU/MEM"
+      cpuCombined: true
+      enabled: true
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 1s
+      showCPU: true
+      showMem: true
+      showSwp: true
+
+    gitlab:
+      apiKey: "glpat-tMQAzyK1TssvsZnzUkuT"
+      enabled: true
+      position:
+        top: 2
+        left: 3
+        height: 2
+        width: 2
+      projects:
+        - "transport/octopus"
+      refreshInterval: 5m
+      username: "syakhisk"
+
+    # jira:
+    #   enabled: true
+    #   colors:
+    #     rows:
+    #       even: "lightblue"
+    #       odd: "white"
+    #   domain: "https://go-jek.atlassian.net"
+    #   email: "syakhisk.syari@gojek.com"
+    #   jql: "assignee = currentUser() AND resolution = Unresolved ORDER BY cf[10007] ASC, updated DESC"
+    #   position:
+    #     top: 0
+    #     left: 3
+    #     height: 2
+    #     width: 3
+    #   project: "tpe"
+    #   refreshInterval: 15m
+    #   verifyServerCertificate: true
+
+    # feedreader:
+    #   enabled: true
+    #   feeds:
+    #   - http://feeds.bbci.co.uk/news/rss.xml
+    #   feedLimit: 10
+    #   position:
+    #     top: 1
+    #     left: 1
+    #     width: 2
+    #     height: 1
+    #   refreshInterval: 14400
+
+    # power:
+    #   enabled: true
+    #   position:
+    #     top: 2
+    #     left: 2
+    #     height: 1
+    #     width: 1
+    #   refreshInterval: 15
+    #   title: "⚡️"
+
+    # uptime:
+    #   args: [""]
+    #   cmd: "uptime"
+    #   enabled: true
+    #   position:
+    #     top: 3
+    #     left: 1
+    #     height: 1
+    #     width: 2
+    #   refreshInterval: 30
+    #   type: cmdrunner
+
+    # yfinance:
+    #   enabled: true
+    #   title: "Stock and exchange rate 🚀"
+    #   sort: true
+    #   refreshInterval: 1m
+    #   symbols:
+    #     - "GOTO.JK"
+    #   position:
+    #     top: 0
+    #     left: 0
+    #     height: 1
+    #     width: 3
+
+    # textfile:
+    #   enabled: true
+    #   filePath: "~/.config/wtf/config.yml"
+    #   format: true
+    #   position:
+    #     top: 0
+    #     left: 0
+    #     height: 4
+    #     width: 1
+    #   refreshInterval: 30
+    #   wrapText: false

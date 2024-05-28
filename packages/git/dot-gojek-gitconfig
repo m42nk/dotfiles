@@ -2,4 +2,7 @@
 	name = Syakhisk Al Azmi
 	email = syakhisk.syari@gojek.com
 
+[url "git@source.golabs.io:"]
+	insteadOf = https://source.golabs.io/
+
 # vim: ft=gitconfig

@@ -1,5 +1,6 @@
 [core]
     pager = delta
+    # Global gitignore
 	  excludesfile = /Users/syakhisk.syari/.gitignore
 
 [interactive]
@@ -28,6 +29,9 @@
 	name = Syakhisk Al Azmi
 	email = mail.syakhisk@gmail.com
 
+[url "git@source.golabs.io:"]
+	insteadOf = https://source.golabs.io/
+
 [includeIf "gitdir:~/Work/"]
     path = ~/.gojek.gitconfig
 
@@ -39,3 +43,5 @@
 
 [pull]
 	ff = true
+
+# vim: ft=gitconfig

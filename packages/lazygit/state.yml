@@ -1,17 +1,25 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/syakhisk.syari/Dotfiles
-- /Users/syakhisk.syari/Work/traps/
-- /Users/syakhisk.syari/Work/octopus/
+- /Users/syakhisk.syari/Codes/outstanding-mrs
 - /Users/syakhisk.syari/Work/octopus
+- /Users/syakhisk.syari/.config/nvim
+- /Users/syakhisk.syari/Work/octopus/
+- /Users/syakhisk.syari/Dotfiles/packages/tmux
+- /Users/syakhisk.syari/Codes/scannie
+- /Users/syakhisk.syari/Codes/receipt-scanner
+- /Users/syakhisk.syari/Codes/receipt-scanner/
+- /Users/syakhisk.syari/Local Sites/wkri-blok-q/app/public/wp-content/themes/blockify
+- /Users/syakhisk.syari/Codes/_misc/privateGPT
+- /Users/syakhisk.syari/Work/traps/
+- /Users/syakhisk.syari/Work/traps
+- /Users/syakhisk.syari/Work/zee/
+- /Users/syakhisk.syari/Dotfiles/packages/nvim
+- /Users/syakhisk.syari/Dotfiles
 - /Users/syakhisk.syari/Codes/_speechify/web-functional-Syakhisk
 - /Users/syakhisk.syari/Codes/_speechify/dummy
 - /Users/syakhisk.syari/Work/trams/
-- /Users/syakhisk.syari/Dotfiles/packages/tmux
 - /Users/syakhisk.syari/Work/tps
 - /Users/syakhisk.syari/Work/transport-pricing-service
-- /Users/syakhisk.syari/Work/traps
-- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Codes/tf-wp-docker
 - /Users/syakhisk.syari/Codes/al-az.me
 - /Users/syakhisk.syari/Work/trams
@@ -36,8 +44,10 @@ recentrepos:
 startuppopupversion: 5
 lastversion: 0.41.0
 customcommandshistory:
+- qa
+- echo {{filename}}
 - echo
-hidecommandlog: false
+hidecommandlog: true
 ignorewhitespaceindiffview: true
 diffcontextsize: 3
 localbranchsortorder: recency

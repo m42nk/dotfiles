@@ -1,2 +1,3 @@
 - link:
     ~/.gitconfig: git/dot-gitconfig
+    ~/.gojek.gitconfig: git/dot-gojek-gitconfig

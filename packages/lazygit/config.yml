@@ -2,6 +2,10 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+  # log:
+  #   showGraph: always
+  #   showWholeGraph: true
+
 customCommands:
   - key: "G"
     command: "glab mr view {{.SelectedLocalBranch.UpstreamBranch}} | cat"
@@ -13,3 +17,11 @@ customCommands:
       - type: confirm
         title: "glab"
         body: "Open GitLab MR using glab?"
+  - key: '<c-f>'
+    command: "git difftool -y {{.SelectedLocalCommit.Sha}} -- {{.SelectedCommitFile.Name}}"
+    context: 'commitFiles'
+    description: 'Compare (difftool) with local copy'
+
+gui:
+  showIcons: true
+  nerdFontsVersion: "3"
