@@ -135,6 +135,13 @@ ips(){
   '
 }
 
+# Open vim with the given file and line
+vimline(){
+  filename=$(awk -F ':' '{print $1}' <<< "$1")
+  line=$(awk -F ':' '{print $2}' <<< "$1")
+  nvim +$line $filename
+}
+
 # wtf(){
 #   export WTF_JIRA_API_KEY=$(security find-generic-password -l jira-cli -w)
 #   wtfutil
