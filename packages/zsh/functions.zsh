@@ -60,7 +60,7 @@ noti(){
 # $ update
 update(){
   ALLOWED_DIRS=(
-    "$HOME/Dotfiles/"
+    "$HOME/Dotfiles"
   )
 
   # For loop to check if pwd starts with update_dirs

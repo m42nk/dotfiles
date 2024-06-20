@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+## Deep update of dotfiles, including submodules
+
+ALLOWED_DIRS=(
+	"$HOME/Dotfiles"
+)
+
+main() {
+	# For loop to check if pwd starts with update_dirs
+	# if no, confirm before continuing
+	for dir in "${ALLOWED_DIRS[@]}"; do
+		if [[ "$PWD" == "$dir"* ]]; then
+			continue 2
+		fi
+
+		echo "Current directory is not in allowed dirs"
+		confirm
+	done
+
+	addAndStatus
+
+  confirm
+
+	commitAndPush
+}
+
+addAndStatus() {
+	git add -A
+	git status -s
+}
+
+commitAndPush() {
+	git commit -m "update"
+	git push
+}
+
+confirm() {
+	read -rp "Continue? [Y/n] "
+	if [[ $REPLY =~ [Nn]$ ]]; then
+		return 1
+	fi
+}
+
+main
