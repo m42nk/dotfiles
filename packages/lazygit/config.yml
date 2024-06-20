@@ -2,9 +2,9 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-  # log:
-  #   showGraph: always
-  #   showWholeGraph: true
+  log:
+    showGraph: when-maximised
+    showWholeGraph: false
 
 customCommands:
   - key: "G"

@@ -20,7 +20,7 @@
 
 add_newline = false     # Inserts newline between shell prompts
 scan_timeout = 10       # Timeout for scanning files
-command_timeout = 100   # Timeout for starship commands (modules, etc)
+command_timeout = 500   # Timeout for starship commands (modules, etc)
 
 [fill]
 symbol = '-'

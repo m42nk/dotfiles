@@ -53,7 +53,7 @@ alias p="ping 8.8.8.8" # Ping!
 alias x="chmod +x"     # Add executable permission to file
 alias s="sudo"         # Why sudo when you can s
 alias \$=""
-# alias e="code -r"      # Open using existing vscode window
+alias t="todo.sh"
 
 ## Shorter variant of commands
 alias py="python"
@@ -80,6 +80,7 @@ for c in $clear; do
 done; unset clear
 
 ## Git
+alias gl="glab"
 alias cdg="cd \`git rev-parse --show-toplevel\`" # Cd to git root
 alias ga="git add"
 alias gaa="git add -A"
@@ -106,8 +107,8 @@ alias grbom="git rebase origin/master"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias gcb="git branch --show-current"
-alias grsh="git reset --soft HEAD~1"
-
+alias grsh1="git reset --soft HEAD~1"
+alias glmrvw="glab mr view --web"
 
 ## Docker
 alias dcud="docker compose up -d"
@@ -149,7 +150,6 @@ alias mobile5173='qrencode -t ansiutf8 http://$(ip -4 addr | grep eth0 | grep -o
 alias asd='ip -4 addr | grep eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}"'
 alias pnf="pnpm --filter"
 alias ttd='tt -t 15 -csv >> ~/wpm.csv'
-alias t="todoist"
 alias dns="bash $HOME/VPNs/add-dns.sh"
 alias itsvpn-downloadonly="node ~/Codes/myits-vpn-download-script/index.js"
 alias itsvpn="cd ~/VPNs && node ~/Codes/myits-vpn-download-script/index.js && unzip -o Server2.zip"
@@ -160,3 +160,6 @@ alias runtps='GO111MODULE=on go build -o "out/transport-pricing-service" ./cmd/t
 alias runtraps='GO111MODULE=on go build -o ./traps-server ./cmd/traps-server && ./traps-server start 2>&1 | tee /tmp/a'
 alias tailjq='tail -f /tmp/a | jq -R "fromjson"'
 alias tailclear="echo '' > /tmp/a"
+
+alias editst="$EDITOR $HOME/Work/ep-esb-log-entities/src/main/proto/gojek/esb/types/ServiceType.proto"
+alias lsst="cat /Users/syakhisk.syari/Work/ep-esb-log-entities/src/main/proto/gojek/esb/types/ServiceType.proto | grep -E '^\s+' | grep -E '=' | sed -E 's/^[[:space:]]+//' | fzf"

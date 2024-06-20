@@ -16,11 +16,25 @@ autoload -U add-zsh-hook
 source ~/.config/zsh/zshrc
 
 if [[ -d '/Users/syakhisk.syari' ]]; then
+  ###
+  ### Kernel
+  ###
+
+  # Gcloud python kernel support
+  export CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.8
+
+  # Use kernel base, used for gcloud, etc
+  KERNEL="$HOME/.kernel"
+
   # The next line updates PATH for the Google Cloud SDK.
-  [[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]] && source "$HOME/google-cloud-sdk/path.zsh.inc"
+  [[ -f "$KERNEL/google-cloud-sdk/path.zsh.inc" ]] && source "$KERNEL/google-cloud-sdk/path.zsh.inc"
 
   # The next line enables shell command completion for gcloud.
-  [[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]] && source "$HOME/google-cloud-sdk/completion.zsh.inc"
+  [[ -f "$KERNEL/google-cloud-sdk/completion.zsh.inc" ]] && source "$KERNEL/google-cloud-sdk/completion.zsh.inc"
+
+  ###
+  ### End Kernel
+  ###
 
   # Add jdk support for ruby
   [[ -f "$ZSH/jdk-brew.zsh" ]] && source "$ZSH/jdk-brew.zsh"
@@ -30,8 +44,9 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
   export PATH="$PATH:$HOME/Library/Android/sdk/emulator"
 
-  export PATH="/opt/homebrew/lib/python3.11/site-packages:$PATH"
-  export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+  PYTHON_VER="3.11"
+  export PATH="/opt/homebrew/lib/python${PYTHON_VER}/site-packages:$PATH"
+  export PATH="/opt/homebrew/opt/python@${PYTHON_VER}/libexec/bin:$PATH"
 
   export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
   export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
