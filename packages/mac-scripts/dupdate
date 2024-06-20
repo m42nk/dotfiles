@@ -15,41 +15,53 @@ main() {
 		fi
 
 		echo "Current directory is not in allowed dirs"
-		read -rp "Continue? [Y/n] "
-		if [[ $REPLY =~ [Nn]$ ]]; then
+		read -n1 -rp "Continue? [Y/n] " reply
+		if [[ $reply =~ [Nn]$ ]]; then
 			return 1
 		fi
 	done
 
 	# Go into submodules and update the, but confirm first
 	git submodule -q foreach 'echo $path' | while read -r path; do
+		gitDir="${PWD}/${path}/.git"
+
 		if [[ "$path" != "packages/"* ]]; then
 			echo "Skipping $path"
 			continue 2
 		fi
 
-    gitDir="${PWD}/${path}/.git"
-		echo "Going into $path"
-
-		git --git-dir="${gitDir}" add -A
 		git --git-dir="${gitDir}" status -s
 
-		echo "Updating $path"
+		echo "Listing files in $path"
+	done
 
-		read -p "Continue? [Y/n] "
-		if [[ $REPLY =~ [Nn]$ ]]; then
-			return 1
+  echo "--"
+	read -n1 -rp "Continue updating submodules? [Y/n] " reply
+	if [[ $reply =~ [Nn]$ ]]; then
+		return 1
+	fi
+
+	git submodule -q foreach 'echo $path' | while read -r path; do
+		gitDir="${PWD}/${path}/.git"
+
+		if [[ "$path" != "packages/"* ]]; then
+			echo "Skipping $path"
+			continue 2
 		fi
 
+		git --git-dir="${gitDir}" add -A
 		git --git-dir="${gitDir}" commit -m "update"
 		git --git-dir="${gitDir}" push
 	done
 
+  echo "--"
+  echo "Listing files in root"
+
 	git add -A
 	git status -s
 
-	read -p "Continue? [Y/n] "
-	if [[ $REPLY =~ [Nn]$ ]]; then
+	read -n1 -rp "Continue? [Y/n] " reply
+	if [[ $reply =~ [Nn]$ ]]; then
 		return 1
 	fi
 
