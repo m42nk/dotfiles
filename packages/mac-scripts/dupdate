@@ -15,31 +15,46 @@ main() {
 		fi
 
 		echo "Current directory is not in allowed dirs"
-		confirm
+		read -rp "Continue? [Y/n] "
+		if [[ $REPLY =~ [Nn]$ ]]; then
+			return 1
+		fi
 	done
 
-	addAndStatus
+	# Go into submodules and update the, but confirm first
+	git submodule -q foreach 'echo $path' | while read -r path; do
+		if [[ "$path" != "packages/"* ]]; then
+			echo "Skipping $path"
+			continue 2
+		fi
 
-  confirm
+    gitDir="${PWD}/${path}/.git"
+		echo "Going into $path"
 
-	commitAndPush
-}
+		git --git-dir="${gitDir}" add -A
+		git --git-dir="${gitDir}" status -s
 
-addAndStatus() {
+		echo "Updating $path"
+
+		read -p "Continue? [Y/n] "
+		if [[ $REPLY =~ [Nn]$ ]]; then
+			return 1
+		fi
+
+		git --git-dir="${gitDir}" commit -m "update"
+		git --git-dir="${gitDir}" push
+	done
+
 	git add -A
 	git status -s
-}
 
-commitAndPush() {
-	git commit -m "update"
-	git push
-}
-
-confirm() {
-	read -rp "Continue? [Y/n] "
+	read -p "Continue? [Y/n] "
 	if [[ $REPLY =~ [Nn]$ ]]; then
 		return 1
 	fi
+
+	git commit -m "update"
+	git push
 }
 
 main
