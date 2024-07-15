@@ -21,9 +21,23 @@
 add_newline = false     # Inserts newline between shell prompts
 scan_timeout = 10       # Timeout for scanning files
 command_timeout = 500   # Timeout for starship commands (modules, etc)
+format = """
+$all\
+$fill\
+$kubernetes\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character
+"""
 
 [fill]
-symbol = '-'
+symbol = ' '
 style = 'bold green'
 
 [cmd_duration]
@@ -35,10 +49,27 @@ format = '[$duration]($style) '
 [gcloud]
 disabled = true
 symbol = "󱇶 "
-# format = 'on [$symbol]($style) '
+format = '[$symbol$active]($style) '
 
 [golang]
 symbol = " "
 
 [docker_context]
 disabled = true
+
+[kubernetes]
+format = '[$context( \($namespace\)) $symbol]($style)'
+symbol = '\[k8s\]'
+disabled = false
+detect_env_vars = ['STARSHIP_KUBE_ENABLED']
+
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+prd[\\w-]*)"
+context_alias = "gke-$cluster"
+symbol = '\[k8s PROD\]'
+style = "bold red"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+context_alias = "gke-$cluster"

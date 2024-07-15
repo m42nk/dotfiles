@@ -146,3 +146,7 @@ vimline(){
 #   export WTF_JIRA_API_KEY=$(security find-generic-password -l jira-cli -w)
 #   wtfutil
 # }
+
+starship_kube_disable(){
+  unset STARSHIP_KUBE_ENABLED
+}

@@ -60,6 +60,7 @@ alias py="python"
 alias pn="pnpm"
 alias tk="taskell"
 
+alias cdl="cd ~/.local/share/nvim/lazy/LazyVim"
 alias prof="zprof | bat"                                    # List shell startup execution time
 alias perf="hyperfine --warmup 3 'zsh -ic exit'"            # Shell startup time
 alias ez="exec zsh"                                         # Restart zsh
@@ -135,6 +136,9 @@ alias nr="npm run"
 alias pacman="sudo pacman"
 alias pins="sudo pacman -S"
 alias prem="sudo pacman -R"
+
+## Golang
+alias gmt="go mod tidy"
 
 # Random things, rarely used
 alias zsh-delete-cache="rm -riv $XDG_DATA_HOME/zsh/zcompdump $XDG_CACHE_HOME/zsh/zcompcache"

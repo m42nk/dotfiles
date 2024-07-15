@@ -22,7 +22,10 @@ _SHELL_DEBUG=
 ## Starship is put here so that command execution time is
 ## more accurate
 if [[ "$(command -v starship)" ]]; then
-  eval $(starship init zsh)
+  eval "$(starship init zsh)"
+
+  # Custom var for k8s plugin (showing kube ctx)
+  export STARSHIP_KUBE_ENABLED=true
 fi
 
 ## Variables
