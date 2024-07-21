@@ -127,6 +127,7 @@ alias tks='tmux kill-server'
 alias tls='tmux list-session'
 # alias tcl='tmux-clean'
 alias tcl='clear; tmux clear-history'
+alias ts='~/.config/tmux/scripts/sessionizer.sh'
 
 ## Node
 alias nrd="npm run dev"
