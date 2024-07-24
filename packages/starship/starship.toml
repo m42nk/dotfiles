@@ -53,6 +53,7 @@ format = '[$symbol$active]($style) '
 
 [golang]
 symbol = " "
+disabled = true
 
 [docker_context]
 disabled = true
@@ -60,7 +61,7 @@ disabled = true
 [kubernetes]
 format = '[$context( \($namespace\)) $symbol]($style)'
 symbol = '\[k8s\]'
-disabled = false
+disabled = true
 detect_env_vars = ['STARSHIP_KUBE_ENABLED']
 
 

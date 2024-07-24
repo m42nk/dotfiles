@@ -1,8 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/syakhisk.syari/Dotfiles/packages/nvim
-- /Users/syakhisk.syari/Work/trams/
+- /Users/syakhisk.syari/Dotfiles
+- /Users/syakhisk.syari/.config/tmux
 - /Users/syakhisk.syari/Work/trams
+- /Users/syakhisk.syari/Work/trams/
+- /Users/syakhisk.syari/Dotfiles/packages/tmux
+- /Users/syakhisk.syari/Work/transport-pricing-service
+- /Users/syakhisk.syari/Work/tps
+- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/oda
 - /Users/syakhisk.syari/Work/tucs
 - /Users/syakhisk.syari/Work/octopus/
@@ -16,10 +21,8 @@ recentrepos:
 - /Users/syakhisk.syari/Work/order-data-aggregator
 - /Users/syakhisk.syari/Work/discount-library
 - /Users/syakhisk.syari/Work/traps
-- /Users/syakhisk.syari/Work/transport-pricing-service
 - /Users/syakhisk.syari/.config/nvim
 - /Users/syakhisk.syari/Codes/_challenge/wordgrid
-- /Users/syakhisk.syari/Dotfiles
 - /Users/syakhisk.syari/Codes/_ancestry/ancestry-service
 - /Users/syakhisk.syari/.local/share/nvim/lazy/LazyVim
 - /Users/syakhisk.syari/Work/traps/
@@ -27,7 +30,6 @@ recentrepos:
 - /Users/syakhisk.syari/Work/omar/
 - /Users/syakhisk.syari/Codes/template-react
 - /Users/syakhisk.syari/Local Sites/wkri-blok-q/app/public/wp-content/themes/blockify
-- /Users/syakhisk.syari/Dotfiles/packages/tmux
 - /Users/syakhisk.syari/Codes/scannie
 - /Users/syakhisk.syari/Codes/receipt-scanner
 - /Users/syakhisk.syari/Codes/receipt-scanner/
@@ -35,7 +37,6 @@ recentrepos:
 - /Users/syakhisk.syari/Work/zee/
 - /Users/syakhisk.syari/Codes/_speechify/web-functional-Syakhisk
 - /Users/syakhisk.syari/Codes/_speechify/dummy
-- /Users/syakhisk.syari/Work/tps
 - /Users/syakhisk.syari/Codes/tf-wp-docker
 - /Users/syakhisk.syari/Work/gtfs
 - /Users/syakhisk.syari/Work/transport-pricing-service__exploration

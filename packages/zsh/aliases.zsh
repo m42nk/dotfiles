@@ -125,9 +125,8 @@ alias kx="kubectl exec -it"
 ## Tmux
 alias tks='tmux kill-server'
 alias tls='tmux list-session'
-# alias tcl='tmux-clean'
 alias tcl='clear; tmux clear-history'
-alias ts='~/.config/tmux/scripts/sessionizer.sh'
+alias ts='~/.config/tmux/scripts/launcher.sh -mode session'
 
 ## Node
 alias nrd="npm run dev"

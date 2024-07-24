@@ -2,6 +2,9 @@
 export ZPLUGINDIR="$XDG_DATA_HOME/zsh/plugins"
 export ZSH_CUSTOM="$XDG_DATA_HOME/zsh"
 
+## zsh-vi-mode
+export ZVM_INIT_MODE=sourcing
+
 ## Plugin installer/helper
 # this contains plugin-load and plugin-compile function
 src $ZSH/unplugged.zsh
@@ -12,14 +15,14 @@ src $ZSH/unplugged.zsh
 plugins=(
   agkozak/zsh-z                          # Jump around directories using z
   Aloxaf/fzf-tab                         # Replace default zsh tab completion with fzf
-  zsh-users/zsh-history-substring-search # Make up and down arrow keys search subtring from history
+  zsh-users/zsh-history-substring-search # Make up and down arrow keys search substring from history
   zsh-users/zsh-completions              # Additional completion definitions
   zsh-users/zsh-syntax-highlighting      # Syntax highlighting, can be #slow, should be loaded at the end of zshrc but idc
   zsh-users/zsh-autosuggestions          # Suggests commands based on history, can be #slow
+  jeffreytse/zsh-vi-mode
   # Freed-Wu/fzf-tab-source                # Make fzf-tab completion more informative
   # MichaelAquilina/zsh-auto-notify        # Send notifications when long running command finishes
   # wfxr/forgit
-  # jeffreytse/zsh-vi-mode
 )
 
 for repo in $plugins; do
@@ -52,3 +55,11 @@ if plugin-installed fzf-tab; then
   # Make sure to set this zstyle if you want zstyle file-sort to be working
   zstyle ':completion:complete:*:argument-rest' sort false
 fi
+
+if plugin-installed zsh-vi-mode; then
+  function zvm_after_lazy_keybindings() {
+    # Unbind keys
+    bindkey -M vicmd -r ':'
+  }
+fi
+

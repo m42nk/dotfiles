@@ -6,6 +6,9 @@ select-word-style bash
 bindkey -e
 
 bindkey "^@" _expand_alias             # <C-Space>
+bindkey -M viins "^@" _expand_alias    # <C-Space>
+bindkey -M vicmd "^@" _expand_alias    # <C-Space>
+
 bindkey "\e[3~" delete-char            # <Delete>
 
 # Enable to edit current command in $EDITOR

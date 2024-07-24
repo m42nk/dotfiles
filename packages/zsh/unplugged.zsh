@@ -1,5 +1,5 @@
 #####################################
-## Simple DIY zsh plugin manager 
+## Simple DIY zsh plugin manager
 #####################################
 
 # clone a plugin, find an init.zsh, source it, and add it to your fpath
