@@ -61,6 +61,7 @@ noti(){
 update(){
   ALLOWED_DIRS=(
     "$HOME/Dotfiles"
+    "$HOME/.config"
   )
 
   # For loop to check if pwd starts with update_dirs

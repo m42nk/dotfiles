@@ -108,6 +108,7 @@ alias grbom="git rebase origin/master"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias gcb="git branch --show-current"
+alias gbr="git branch --show-current"
 alias grsh1="git reset --soft HEAD~1"
 alias glmrvw="glab mr view --web"
 

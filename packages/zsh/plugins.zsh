@@ -57,9 +57,18 @@ if plugin-installed fzf-tab; then
 fi
 
 if plugin-installed zsh-vi-mode; then
+  function zvm_after_init() {
+    [[ -f $ZSH/fzf.zsh ]] && source $ZSH/fzf.zsh
+  }
+
   function zvm_after_lazy_keybindings() {
     # Unbind keys
     bindkey -M vicmd -r ':'
+
+    # Bind fzf if exists
+    if which fzf-history-widget >/dev/null 2>&1; then
+      bindkey -M viins '^R' fzf-history-widget
+    fi
   }
 fi
 
