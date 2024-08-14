@@ -39,10 +39,10 @@ hash -d oda="~/Work/order-data-aggregator"
 ##  to use actual command without alias prefix it with backslash (\)
 ##  eg. \ls, \rm -rf
 alias vim="nvim"
-alias ls="exa --icons --group-directories-first" # Pretty ls
-alias cat="bat"                                  # Pretty cat, syntax highlight, etc
-alias mv="mv -iv"                                # Verbose + safer move
-alias cp="cp -iv"                                # Verbose + safer cp
+alias ls="exa --icons --across --group-directories-first" # Pretty ls
+alias cat="bat"                                           # Pretty cat, syntax highlight, etc
+alias mv="mv -iv"                                         # Verbose + safer move
+alias cp="cp -iv"                                         # Verbose + safer cp
 alias rm="trash"
 
 ## one-char

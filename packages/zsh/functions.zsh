@@ -151,3 +151,23 @@ vimline(){
 starship_kube_disable(){
   unset STARSHIP_KUBE_ENABLED
 }
+
+jira-issue-key(){
+  url=$1
+  if [[ -z $url ]]; then
+    echo "No input found"
+    return 1
+  fi
+
+  issue_key=$(echo $url | sed -E "s|^.*[/=]([A-Za-z]{2,}-[0-9]+)$|\1|")
+  if [[ -n $issue_key ]]; then
+    echo "$issue_key" | pbcopy
+    echo "$issue_key"
+  else
+    echo "No issue key found in URL: $url"
+  fi
+}
+
+ls-modified-files(){
+  git status -s | sed -E "s/^[[:space:]]//" | awk '{print $2}'
+}

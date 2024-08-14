@@ -55,6 +55,13 @@ format = '[$symbol$active]($style) '
 symbol = " "
 disabled = true
 
+[git_status]
+stashed = '' # Hide stash marker (most likely there's something there anyway)
+
+
+[git_metrics]
+disabled = false
+
 [docker_context]
 disabled = true
 

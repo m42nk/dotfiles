@@ -38,10 +38,10 @@ __track-alias(){
   DATE=$(gdate +"%Y-%m-%dT%H:%M:%S%:z")
   COMMAND=$(echo "$1" | cut -d " " -f 1)
   TARGET="$HOME/tracked-alias"
-  EXCLUDE=(
-    ls
-    vim
-  )
+  # EXCLUDE=(
+  #   ls
+  #   vim
+  # )
 
   if [[ -z "$COMMAND" ]] || [[ ${+aliases[$COMMAND]} -eq 0 ]]; then
     return
