@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CONNECTED_VPN=$(/usr/local/bin/vpnutil list | grep -v Disconnected | sed 's/ Connected/,/')
+CONNECTED_VPN=$(/usr/local/bin/vpnutil list | grep -v Disconnected | sed 's/ Connected//' | sed -E 's/(.*) Connecting.*/...\1 Connecting...,/')
 if [ -z "$CONNECTED_VPN" ]; then
   sketchybar --set "$NAME" label=""
 	exit 0
