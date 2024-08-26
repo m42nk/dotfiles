@@ -25,6 +25,7 @@ alias -g @branch="\$(git branch --show-current)"
 
 ## To be extended, common string
 alias -g ghc="github.com/"
+alias workscripts="~/Work/_scripts/"
 
 ## Hash - add another directory to hash
 ## eg. hash -d t="$HOME/todo" will make ~t expand to $HOME/todo

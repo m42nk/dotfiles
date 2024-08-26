@@ -1,5 +1,5 @@
 # TODO: Do when installing asdf with brew,
-# scripts bellow is not tested
+# scripts below is not tested
 # if command -v brew >/dev/null; then
 #   brew_prefix=$(brew --prefix asdf)
 #   if [[ -f "$brew_prefix/libexec/asdf.sh" ]]; then

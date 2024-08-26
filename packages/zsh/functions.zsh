@@ -51,7 +51,21 @@ noti(){
     return 1
   fi
 
-  fg && notify-send "Command: $cmd" "Job Done"
+  notify() {
+    if which notify-send >/dev/null 2>&1; then
+      notify-send "Command: $cmd" "Job Done"
+      return
+    fi
+
+    if which terminal-notifier >/dev/null 2>&1; then
+      terminal-notifier -message "Command: $cmd" -title "Job Done"
+      return
+    fi
+
+    echo "Job done"
+  }
+
+  fg && notify
 }
 
 # Commit and push to git, used in dotfiles but can be extended

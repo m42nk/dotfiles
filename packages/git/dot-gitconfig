@@ -19,11 +19,11 @@
     colorMoved = default
 
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 
 [user]
@@ -32,9 +32,6 @@
 
 [url "git@source.golabs.io:"]
 	insteadOf = https://source.golabs.io/
-
-[includeIf "gitdir:~/Work/"]
-    path = ~/.gojek.gitconfig
 
 [rerere]
 	enabled = true
@@ -49,10 +46,5 @@
   find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n |  tail -1 | cut -f2'"
   show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 
-; [difftool "sourcetree"]
-; 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-; 	path = 
-; [mergetool "sourcetree"]
-; 	cmd = /Users/syakhisk.syari/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-; 	trustExitCode = true
-;
+[includeIf "gitdir:~/Work/"]
+    path = ~/.gojek.gitconfig

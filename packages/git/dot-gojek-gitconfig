@@ -1,6 +1,13 @@
 [user]
 	name = Syakhisk Al Azmi
 	email = syakhisk.syari@gojek.com
+	signingkey = /Users/syakhisk.syari/.ssh/id_rsa.pub
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
 
 [url "git@source.golabs.io:"]
 	insteadOf = https://source.golabs.io/

@@ -33,9 +33,14 @@ items_left=(
   --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh"
   --subscribe front_app front_app_switched
 
+  --add item mem left
+  --set mem icon=  icon.padding_left=6 update_freq=3 script=$PLUGIN_DIR/cpumem.sh
+
+  --add item cpu left
+  --set cpu icon=  icon.padding_left=6 background.padding_right=0
+
   --add alias "Superpowered,Item-0" left
   --set "Superpowered,Item-0" padding_left=0 padding_right=0
-
 )
 # }}}
 sketchybar "${items_left[@]}"
