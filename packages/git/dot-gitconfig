@@ -1,6 +1,5 @@
 # vim: ft=gitconfig
 [core]
-    pager = delta
     # Global gitignore
 	excludesfile = /Users/syakhisk.syari/.gitignore
 

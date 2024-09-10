@@ -115,3 +115,7 @@ gocloud-int-jump(){
     --tunnel-through-iap \
     -- -L ${PORT}:localhost:${PORT} -q "gcloud compute ssh i-developer-workstation-tpe-01 --project i-gjk-a000005-359b --zone asia-east1-a --internal-ip -- -D ${PORT} -q -N"
 }
+
+
+# FIX: Use proper installation when development is done
+export PATH="$PATH:$HOME/Work/_projects/toolbelt/bin/"
