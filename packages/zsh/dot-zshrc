@@ -93,29 +93,8 @@ export PATH="$PATH:/Users/syakhisk.syari/.local/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# GoCloud
-
-gocloud-int(){
-  kernel ssh i-developer-workstation-tpe-01 --google-project i-gjk-a000005-359b
-}
-
-gocloud-prd(){
-  kernel ssh p-developer-workstation-tpe-01 --google-project p-gjk-a000005-834c
-}
-
-gocloud-bastion(){
-  gcloud compute ssh core-bastion-systems-0001-asia-south1-b-01 --zone "asia-south1-b" --project "systems-0001" --tunnel-through-iap
-}
-
-gocloud-int-jump(){
-  PORT="8002"
-  gcloud compute ssh core-bastion-systems-0001-asia-south1-b-01 \
-    --zone "asia-south1-b" \
-    --project "systems-0001" \
-    --tunnel-through-iap \
-    -- -L ${PORT}:localhost:${PORT} -q "gcloud compute ssh i-developer-workstation-tpe-01 --project i-gjk-a000005-359b --zone asia-east1-a --internal-ip -- -D ${PORT} -q -N"
-}
-
+# TODO: track .gojek.zshrc in some repo
+[[ -f "$HOME/.gojek.zshrc" ]] && source "$HOME/.gojek.zshrc"
 
 # FIX: Use proper installation when development is done
 export PATH="$PATH:$HOME/Work/_projects/toolbelt/bin/"

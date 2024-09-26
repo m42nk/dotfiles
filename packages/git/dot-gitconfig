@@ -1,49 +1,46 @@
-# vim: ft=gitconfig
-[core]
-    # Global gitignore
-	excludesfile = /Users/syakhisk.syari/.gitignore
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    line-numbers = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
+# vim: filetype=gitconfig shiftwidth=2 tabstop=2 expandtab
 
 [credential "https://github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 
 [user]
-	name = Syakhisk Al Azmi
-	email = mail.syakhisk@gmail.com
-
-[url "git@source.golabs.io:"]
-	insteadOf = https://source.golabs.io/
+  name = Syakhisk Al Azmi
+  email = mail.syakhisk@gmail.com
 
 [rerere]
-	enabled = true
+  enabled = true # enable reuse recorded resolution for merge conflicts (https://git-scm.com/book/en/v2/Git-Tools-Rerere)
 
 [init]
-	defaultBranch = master
+  defaultBranch = master
 
 [pull]
-	ff = true
+  ff = true
 
 [alias]
   find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n |  tail -1 | cut -f2'"
   show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+  hide = update-index --assume-unchanged    # hide changes from being tracked, e.g. git hide .tool-versions
+  unhide = update-index --no-assume-unchanged   # undo git hide
+  show-hidden = ! git ls-files -v | grep '^h' | cut -c3-
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  line-numbers = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
 
 [includeIf "gitdir:~/Work/"]
-    path = ~/.gojek.gitconfig
+  path = ~/.gojek.gitconfig

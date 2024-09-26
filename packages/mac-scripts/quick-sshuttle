@@ -1,0 +1,30 @@
+#!/usr/bin/env expect
+
+# Read password from the user
+send_user "Password: "
+
+# Turn off echo to hide password
+stty -echo
+
+expect -re "(.*)\n"
+send_user "\n"
+set password $expect_out(1,string)
+
+# Turn on echo
+stty echo
+
+spawn sshuttle -r proxy-bastion --dns 10.69.0.0/16 10.224.0.0/16
+
+expect "\\\[local sudo\\\] Password: "
+send -- "$password\r"
+
+expect "Enter the number for the authentication method to use"
+send -- "2\r"
+
+expect -re "Enter your one-time password: "
+
+set otp_seed [exec security find-generic-password -a gojek-mfa -w]
+set otp [exec /opt/homebrew/bin/oathtool --totp --base32 "$otp_seed"]
+send -- "$otp\r"
+
+interact
