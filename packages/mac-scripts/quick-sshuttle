@@ -1,5 +1,7 @@
 #!/usr/bin/env expect
 
+exec terminal-notifier -title "sshuttle" -message "Connecting.." -group "loading" -sound "default"
+
 # Read password from the user
 send_user "Password: "
 
@@ -26,5 +28,8 @@ expect -re "Enter your one-time password: "
 set otp_seed [exec security find-generic-password -a gojek-mfa -w]
 set otp [exec /opt/homebrew/bin/oathtool --totp --base32 "$otp_seed"]
 send -- "$otp\r"
+
+expect -re "c : Connected to server."
+exec terminal-notifier -title "sshuttle" -message "Connected!" -group "loading" -sound "default"
 
 interact
