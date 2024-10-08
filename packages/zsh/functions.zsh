@@ -58,7 +58,7 @@ noti(){
     fi
 
     if which terminal-notifier >/dev/null 2>&1; then
-      terminal-notifier -message "Command: $cmd" -title "Job Done"
+      terminal-notifier -message "Command: $cmd" -title "Job Done" -sound default
       return
     fi
 
@@ -115,18 +115,6 @@ _ret () { cat /tmp/capture.out; }
 
 kubecomplete(){
   source <(kubectl completion zsh)
-}
-
-set_gojek_env(){
-  export GOPRIVATE="source.golabs.io/*"
-  export GONOSUMDB="source.golabs.io/*"
-  # export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
-}
-
-unset_gojek_env(){
-  unset GOPRIVATE
-  unset GONOSUMDB
-  # unset GOPROXY
 }
 
 ips(){

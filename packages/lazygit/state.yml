@@ -1,23 +1,26 @@
 lastupdatecheck: 0
 recentrepos:
+- /Users/syakhisk.syari/.config/nvim
 - /Users/syakhisk.syari/Work/octopus
-- /Users/syakhisk.syari/Work/octopus/
-- /Users/syakhisk.syari/GoVault
+- /Users/syakhisk.syari/Dotfiles/packages/nvim
+- /Users/syakhisk.syari/Work/gowork-web
+- /Users/syakhisk.syari/Work/trams
+- /Users/syakhisk.syari/.config/tmux
 - /Users/syakhisk.syari/Work/owo
-- /Users/syakhisk.syari/Work/oda
 - /Users/syakhisk.syari/Work/_projects/toolbelt
-- /Users/syakhisk.syari/Work/_projects
+- /Users/syakhisk.syari/Work/octopus/
+- /Users/syakhisk.syari/Work/transport-user-config-service
+- /Users/syakhisk.syari/GoVault
+- /Users/syakhisk.syari/Dotfiles/packages/tmux
 - /Users/syakhisk.syari/Work/trams/
+- /Users/syakhisk.syari/Work/find-by-order-no-service
+- /Users/syakhisk.syari/Work/oda
+- /Users/syakhisk.syari/Work/_projects
 - /Users/syakhisk.syari/Work/traps/
 - /Users/syakhisk.syari/Work/_projects/toolbelt__initial-exploration
-- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Repos/docker-cli
 - /Users/syakhisk.syari/Dotfiles
 - /Users/syakhisk.syari/.local/share/nvim/lazy/LazyVim
-- /Users/syakhisk.syari/Dotfiles/packages/tmux
-- /Users/syakhisk.syari/.config/nvim
-- /Users/syakhisk.syari/Work/trams
-- /Users/syakhisk.syari/.config/tmux
 - /Users/syakhisk.syari/Work/BaritoMarket
 - /Users/syakhisk.syari/Work/barito-market
 - /Users/syakhisk.syari/Work/go-commons/
@@ -28,7 +31,6 @@ recentrepos:
 - /Users/syakhisk.syari/Work/gowork-service/
 - /Users/syakhisk.syari/Work/temp-repo-glab
 - /Users/syakhisk.syari/Work/kong-transport
-- /Users/syakhisk.syari/Work/gowork-web
 - /Users/syakhisk.syari/Work/godev
 - /Users/syakhisk.syari/Work/trams//
 - /Users/syakhisk.syari/Work/order-data-aggregator/
@@ -38,7 +40,6 @@ recentrepos:
 - /Users/syakhisk.syari/Work/tps
 - /Users/syakhisk.syari/Work/tucs
 - /Users/syakhisk.syari/Work/gowork-service
-- /Users/syakhisk.syari/Work/find-by-order-no-service
 - /Users/syakhisk.syari/Work/zee
 - /Users/syakhisk.syari/Work/order-data-aggregator
 - /Users/syakhisk.syari/Work/discount-library
@@ -78,7 +79,7 @@ customcommandshistory:
 - echo {{filename}}
 - echo
 hidecommandlog: true
-ignorewhitespaceindiffview: false
+ignorewhitespaceindiffview: true
 diffcontextsize: 4
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical

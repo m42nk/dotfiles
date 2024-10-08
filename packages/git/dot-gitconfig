@@ -44,3 +44,6 @@
 
 [includeIf "gitdir:~/Work/"]
   path = ~/.gojek.gitconfig
+
+[url "git@source.golabs.io:"]
+	insteadOf = https://source.golabs.io/

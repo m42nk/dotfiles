@@ -55,24 +55,21 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
 
   export PATH="$PATH:/Applications/GoLand.app/Contents/MacOS"
 
-  # check if directory starts with "~/Work/"
-  ___update_goenv(){
-    if [[ $(pwd) == $HOME/Work/* ]]; then
-      [[ -n "$DEBUG_GOENV" ]] && echo "[zshrc] Exporting go env"
-      export GOPRIVATE="source.golabs.io/*"
-      export GONOSUMDB="source.golabs.io/*"
-      # export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
-    else
-      unset GOPRIVATE
-      unset GONOSUMDB
-      # unset GOPROXY
-    fi
-  }
-
-  add-zsh-hook chpwd ___update_goenv
-
-  alias vpni="onevpn connect 'GOJEK Integration'"
-  alias vpnidc="onevpn disconnect 'GOJEK Integration'"
+  # # check if directory starts with "~/Work/"
+  # ___update_goenv(){
+  #   if [[ $(pwd) == $HOME/Work/* ]]; then
+  #     [[ -n "$DEBUG_GOENV" ]] && echo "[zshrc] Exporting go env"
+  #     export GOPRIVATE="source.golabs.io/*"
+  #     export GONOSUMDB="source.golabs.io/*"
+  #     # export GOPROXY="http://artifactory-gojek.golabs.io/artifactory/go,https://proxy.golang.org,direct"
+  #   else
+  #     unset GOPRIVATE
+  #     unset GONOSUMDB
+  #     # unset GOPROXY
+  #   fi
+  # }
+  #
+  # add-zsh-hook chpwd ___update_goenv
 
   # Homebrew Go
   # export GOPATH=$HOME/go

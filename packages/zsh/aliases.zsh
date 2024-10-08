@@ -129,6 +129,7 @@ alias tks='tmux kill-server'
 alias tls='tmux list-session'
 alias tcl='clear; tmux clear-history'
 alias ts='~/.config/tmux/scripts/launcher.sh -mode session'
+alias tss='~/.config/tmux/scripts/launcher.sh -mode session -replace'
 
 ## Node
 alias nrd="npm run dev"

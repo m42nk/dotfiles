@@ -20,8 +20,11 @@ spawn sshuttle -r proxy-bastion --dns 10.69.0.0/16 10.224.0.0/16
 expect "\\\[local sudo\\\] Password: "
 send -- "$password\r"
 
-expect "Enter the number for the authentication method to use"
-send -- "2\r"
+expect {
+  "Enter the number for the authentication method to use" {
+    send -- "2\r"
+  }
+}
 
 expect -re "Enter your one-time password: "
 
