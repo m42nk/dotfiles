@@ -1,7 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/syakhisk.syari/.config/nvim
+- /Users/syakhisk.syari/Dotfiles
 - /Users/syakhisk.syari/Work/octopus
+- /Users/syakhisk.syari/Vault
+- /Users/syakhisk.syari/Work/octopus__master
+- /Users/syakhisk.syari/.config/nvim
 - /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/gowork-web
 - /Users/syakhisk.syari/Work/trams
@@ -19,7 +22,6 @@ recentrepos:
 - /Users/syakhisk.syari/Work/traps/
 - /Users/syakhisk.syari/Work/_projects/toolbelt__initial-exploration
 - /Users/syakhisk.syari/Repos/docker-cli
-- /Users/syakhisk.syari/Dotfiles
 - /Users/syakhisk.syari/.local/share/nvim/lazy/LazyVim
 - /Users/syakhisk.syari/Work/BaritoMarket
 - /Users/syakhisk.syari/Work/barito-market
