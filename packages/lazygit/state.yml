@@ -1,20 +1,20 @@
 lastupdatecheck: 0
 recentrepos:
 - /Users/syakhisk.syari/Dotfiles
+- /Users/syakhisk.syari/Work/octopus/
+- /Users/syakhisk.syari/Dotfiles/packages/tmux
+- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/octopus
 - /Users/syakhisk.syari/Vault
 - /Users/syakhisk.syari/Work/octopus__master
 - /Users/syakhisk.syari/.config/nvim
-- /Users/syakhisk.syari/Dotfiles/packages/nvim
 - /Users/syakhisk.syari/Work/gowork-web
 - /Users/syakhisk.syari/Work/trams
 - /Users/syakhisk.syari/.config/tmux
 - /Users/syakhisk.syari/Work/owo
 - /Users/syakhisk.syari/Work/_projects/toolbelt
-- /Users/syakhisk.syari/Work/octopus/
 - /Users/syakhisk.syari/Work/transport-user-config-service
 - /Users/syakhisk.syari/GoVault
-- /Users/syakhisk.syari/Dotfiles/packages/tmux
 - /Users/syakhisk.syari/Work/trams/
 - /Users/syakhisk.syari/Work/find-by-order-no-service
 - /Users/syakhisk.syari/Work/oda
@@ -70,7 +70,6 @@ recentrepos:
 - /Users/syakhisk.syari/Codes/_misc/jago-trx
 - /Users/syakhisk.syari/Work/view-maker
 - /Users/syakhisk.syari/Work/business-config-sidecar
-- /Users/syakhisk.syari/.local/share/nvim/lazy/neotest-go
 - /Users/syakhisk.syari/Work/trip-advisor
 - /Users/syakhisk.syari/Work/transport-payments-service
 - /Users/syakhisk.syari/Codes/_retrux/newweb

@@ -15,18 +15,27 @@ source "$HOME/.asdf/asdf.sh"
 fpath+=($ASDF_DIR/completions)
 
 if [[ -d "$ASDF_DIR/plugins/golang" ]]; then
-  # TODO: this command is so slow, consider switching from asdf?
-  source $ASDF_DIR/plugins/golang/set-env.zsh
+  function asdf_update_golang_env_additional(){
+    local go_path="$(asdf where golang)"
+    local go_dir="$(dirname "${go_path}")"
 
-  # TODO: need to use hooks so that go versions updates
-  # as directory changes, see set-env.zsh script above
-  # export GOPATH="$(asdf where golang)/packages"
-  export GOPATH="$GOROOT/packages"
-  export PATH="$GOPATH/bin:$PATH"
+    export GOROOT="$go_path/go"
+    export GOPATH="$go_path/packages"
+
+    local bin="$go_path/packages/bin"
+
+    # only add if not already in PATH
+    [[ ":$PATH:" != *":$bin:"* ]] && export PATH="$bin:$PATH"
+
+    # remove other version (in go_dir) from path
+    for dir in $go_dir/*; do
+      [[ "$dir" == "$go_path" ]] && continue
+
+      other_bin="$dir/packages/bin"
+      export PATH="${PATH//$other_bin:/}"
+    done
+  }
+
+  autoload -U add-zsh-hook
+  add-zsh-hook precmd asdf_update_golang_env_additional
 fi
-
-function asdf-golang-env(){
-  go_dir=$(asdf where golang)
-  export GOPATH="$go_dir/packages"
-  export PATH="$go_dir/packages/bin:$PATH"
-}
