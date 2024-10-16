@@ -45,6 +45,9 @@ items_left=(
   --add item cpu left
   --set cpu icon=  icon.padding_left=6 background.padding_right=0
 
+  --add item bluetooth left
+  --set bluetooth icon.padding_left=6 background.padding_right=0 update_freq=3 script=$PLUGIN_DIR/bluetooth.sh
+
   --add alias "Superpowered,Item-0" left
   --set "Superpowered,Item-0" padding_left=0 padding_right=0
 )
