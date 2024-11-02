@@ -172,3 +172,5 @@ alias tailclear="echo '' > /tmp/a"
 
 alias editst="$EDITOR $HOME/Work/ep-esb-log-entities/src/main/proto/gojek/esb/types/ServiceType.proto"
 alias lsst="cat /Users/syakhisk.syari/Work/ep-esb-log-entities/src/main/proto/gojek/esb/types/ServiceType.proto | grep -E '^\s+' | grep -E '=' | sed -E 's/^[[:space:]]+//' | fzf"
+
+alias lastcmd="fc -ln -1"

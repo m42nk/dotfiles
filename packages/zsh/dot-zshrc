@@ -95,3 +95,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # FIX: Use proper installation when development is done
 export PATH="$PATH:$HOME/Work/_projects/toolbelt/bin/"
+
+# Rust
+source "$HOME/.cargo/env"

@@ -19,7 +19,7 @@ if [[ -d "$ASDF_DIR/plugins/golang" ]]; then
     local go_path="$(asdf where golang)"
     local go_dir="$(dirname "${go_path}")"
 
-    export GOROOT="$go_path/go"
+    # export GOROOT="$go_path/go"
     export GOPATH="$go_path/packages"
 
     local bin="$go_path/packages/bin"

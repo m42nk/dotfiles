@@ -173,3 +173,29 @@ jira-issue-key(){
 ls-modified-files(){
   git status -s | sed -E "s/^[[:space:]]//" | awk '{print $2}'
 }
+
+py-envinit(){
+  env_dir=${1:-./.env}
+  python -m venv $env_dir
+  echo "env created at: $env_dir"
+}
+
+py-activate() {
+  env_dir=${1:-./.env}
+  echo "activating python env: $env_dir"
+
+  source $env_dir/bin/activate
+}
+
+# Escapes quotes in a string, useful for strings that contains quotes
+# e.g.
+# $ echo 'hello "world"' | escape-quotes -> hello \"world\"
+# $ echo "hello 'world'" | escape-quotes -> hello \'world\'
+# or
+# $ escape-quotes
+# # paste / type input
+# # press ctrl-d
+escape-quotes() {
+  quote_char="${1:-\"}"
+  cat | sed -E "s/\\$quote_char/\\\\$quote_char/g"
+}

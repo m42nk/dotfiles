@@ -17,6 +17,7 @@
 
 [init]
   defaultBranch = master
+	templateDir = ~/.git-templates
 
 [pull]
   ff = true
