@@ -48,3 +48,6 @@
 
 [url "git@source.golabs.io:"]
 	insteadOf = https://source.golabs.io/
+[diff "lockb"]
+	textconv = bun
+	binary = true

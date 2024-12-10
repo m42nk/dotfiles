@@ -47,7 +47,7 @@ noti(){
 
   # check if there are suspended jobs
   if [[ -z $cmd ]]; then
-    echo "There are suspended jobs"
+    echo "There are no suspended jobs"
     return 1
   fi
 
