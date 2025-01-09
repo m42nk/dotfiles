@@ -1,6 +1,16 @@
 #!/usr/bin/env expect
 
-exec terminal-notifier -title "sshuttle" -message "Connecting.." -group "loading" -sound "default"
+set otp_seed [exec security find-generic-password -a gojek-mfa -w]
+
+proc notify {message} {
+  exec terminal-notifier -title "sshuttle" -message $message -group "sshuttle" -sound "default"
+}
+
+proc log {message} {
+  send_user "\n\[log\] $message\n"
+}
+
+notify "Connecting..."
 
 # Read password from the user
 send_user "Password: "
@@ -20,38 +30,43 @@ spawn sshuttle -r proxy-bastion --dns 10.69.0.0/16 10.224.0.0/16
 expect "\\\[local sudo\\\] Password: "
 send -- "$password\r"
 
+log "Waiting for authentication method list\n"
 set code_line_number ""
 expect {
   "Please choose from the available authentication methods" {
     expect {
       -re {(\d+): Security code from Google Authenticator application} {
         set code_line_number $expect_out(1,string)
+        log "found code line number: $code_line_number"
         exp_continue
       }
       timeout {
-        puts "\nTimeout while waiting for authentication method list"
-        exit 1
+        log "Timeout while waiting for authentication method list"
+        interact
       }
       eof {
-        puts "\nUnexpected end of input while selecting authentication method"
+        log "Unexpected end of input while selecting authentication method"
         exit 1
       }
     }
-    exp_continue
   }
   "Enter the number for the authentication method to use" {
     send -- "$code_line_number\r"
     exp_continue
   }
   "Enter your one-time password" {
-    set otp_seed [exec security find-generic-password -a gojek-mfa -w]
     set otp [exec /opt/homebrew/bin/oathtool --totp --base32 "$otp_seed"]
     send -- "$otp\r"
-    exp_continue
   }
 }
 
-expect -re "c : Connected to server."
-exec terminal-notifier -title "sshuttle" -message "Connected!" -group "loading" -sound "default"
+expect {
+  -re "c : Connected to server\." {
+    notify "Connected!"
+  }
+  timeout {
+    log "Timeout while waiting for connection"
+  }
+}
 
 interact

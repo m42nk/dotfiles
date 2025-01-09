@@ -1,0 +1,323 @@
+#!/bin/zsh
+
+set -e
+
+CONFIG_DIR=~/.config/kssh
+[ -d "$CONFIG_DIR" ] || mkdir -p "$CONFIG_DIR"
+
+ssh_from_url() {
+    # example:
+    # https://console.cloud.google.com/compute/instancesDetail/zones/asia-east1-b/instances/p-lmmu-h-go-meetup-server-lv-tpe-2srh?project=p-gjk-a000084-4fa6
+
+    if [[ $1 =~ ^https:.+instancesDetail.zones.+instances.([pi]-[a-z0-9-]+).+project=([pi]-[a-z0-9-]+) ]]
+    then
+        echo "instance: ${match[1]}"
+        echo "project: ${match[2]}"
+    else
+        echo "Unsupported URL: $1"
+        exit 1
+    fi
+    shift
+
+    echo kernel ssh --google-project=${match[2]} ${match[1]} "$@"
+    exec kernel ssh --google-project=${match[2]} ${match[1]} "$@"
+}
+
+__update_projects() {
+    >&2 echo 'updating projects..'
+
+    gcloud projects list \
+        --format='json(PROJECT_ID,NAME)' \
+        --filter='(labels.product-group-name: transport OR labels.product-group-name: kernel) AND NOT (labels.type: firebase)' \
+        | jq '.[]' \
+        > $CONFIG_DIR/projects.json
+
+    # patroni
+    gcloud projects list \
+        --format='json(PROJECT_ID,NAME)' \
+        --filter='name: p-gjk-patroni OR name: i-gjk-patroni' \
+        | jq '.[]' \
+        >> $CONFIG_DIR/projects-patroni.json
+
+    # mongodb
+    gcloud projects list \
+        --format='json(PROJECT_ID,NAME)' \
+        --filter='name: p-gjk-mongodb OR name: i-gjk-mongodb' \
+        | jq '.[]' \
+        >> $CONFIG_DIR/projects-mongodb.json
+}
+
+__update_services() {
+    >&2 echo 'updating services..'
+
+    tmp=$(mktemp)
+    trap "rm -f $tmp" EXIT
+
+    typeset -A project_name
+    cat $CONFIG_DIR/projects.json $CONFIG_DIR/projects-patroni.json $CONFIG_DIR/projects-mongodb.json | jq -r '"\(.projectId) \(.name)"' | while read -r project_id name
+    do
+        project_name["$project_id"]="$name"
+    done
+
+    for project in $(cat $CONFIG_DIR/projects.json | jq -r '.projectId' | sort -u)
+    do
+        name=${project_name["$project"]}
+        >&2 echo "- $name"
+
+        out=$CONFIG_DIR/services-$project.json
+        gcloud compute instances list \
+            --project $project \
+            --format='json(labels.app,labels.app-short-code)' \
+            --filter='labels.app-short-code: *' \
+            | jq 'unique_by(.labels."app") | .[].labels' \
+            | jq '.code=."app-short-code"' \
+            | jq --arg project $project '.project=$project' \
+            | jq --arg name $name '.project_name=$name' \
+            > $out
+
+        cat $out >> $tmp
+    done
+
+    cat $tmp | jq -s 'unique_by(.app, .project) | .[]' > $CONFIG_DIR/services.json
+
+    # patroni
+    rm -f $tmp
+
+    for project in $(cat $CONFIG_DIR/projects-patroni.json | jq -r '.projectId' | sort -u)
+    do
+        name=${project_name["$project"]}
+        >&2 echo "- $name"
+
+        out=$CONFIG_DIR/services-$project.json
+        gcloud compute instances list \
+            --project $project \
+            --format='json(labels.app)' \
+            | jq 'unique_by(.labels."app") | .[].labels' \
+            | jq --arg code patroni '.code=$code' \
+            | jq --arg project $project '.project=$project' \
+            | jq --arg name $name '.project_name=$name' \
+            > $out
+
+        cat $out >> $tmp
+    done
+
+    cat $tmp | jq -s 'unique_by(.app, .project) | .[]' > $CONFIG_DIR/services-patroni.json
+
+    # mongodb
+    rm -f $tmp
+
+    for project in $(cat $CONFIG_DIR/projects-mongodb.json | jq -r '.projectId' | sort -u)
+    do
+        name=${project_name["$project"]}
+        >&2 echo "- $name"
+
+        out=$CONFIG_DIR/services-$project.json
+        gcloud compute instances list \
+            --project $project \
+            --format='json(labels.app)' \
+            | jq 'unique_by(.labels."app") | .[].labels' \
+            | jq --arg code mongodb '.code=$code' \
+            | jq --arg project $project '.project=$project' \
+            | jq --arg name $name '.project_name=$name' \
+            > $out
+
+        cat $out >> $tmp
+    done
+
+    cat $tmp | jq -s 'unique_by(.app, .project) | .[]' > $CONFIG_DIR/services-mongodb.json
+}
+
+update_inventory() {
+    __update_projects
+    __update_services
+}
+
+__connect_with_config() {
+    cmd=$1
+    host=$2
+    ip=$3
+    shift
+    shift
+    shift
+
+    cfg=~/.kernel/.ssh/ssh_config
+    if [ ! -f "$cfg" ];
+    then
+        >&2 echo "kernel ssh config $cfg is not found. Please use 'kernel ssh' first and try again"
+        exit 1
+    fi
+
+    tmpcfg=$(mktemp ~/.kernel/.ssh/ssh_config.XXXXXXXX)
+    trap "rm $tmpcfg" EXIT
+
+    cat $cfg > $tmpcfg
+    echo >> $tmpcfg
+    echo "Host $host" >> $tmpcfg
+    echo "HostName $ip" >> $tmpcfg
+
+    $cmd -F "$tmpcfg" "$@"
+}
+
+__connect_with_ip() {
+    cmd=$1
+    shift
+
+    cfg=~/.kernel/.ssh/ssh_config
+    if [ ! -f "$cfg" ];
+    then
+        >&2 echo "kernel ssh config $cfg is not found. Please use 'kernel ssh' first and try again"
+        exit 1
+    fi
+
+    exec $cmd -F "$cfg" "$@"
+}
+
+ssh_to_ip() {
+    __connect_with_ip ssh "$@"
+}
+
+__find_ip() {
+    project=$1
+    vm=$2
+
+    gcloud compute instances list --project $project --filter=name="$vm" --format='get(INTERNAL_IP)'
+}
+
+__find_project() {
+    env=$1
+    short_code=$2
+
+    cat $CONFIG_DIR/services.json $CONFIG_DIR/services-patroni.json $CONFIG_DIR/services-mongodb.json \
+        | jq --arg short_code $short_code --arg env $env 'select(.code == $short_code and (.project | startswith($env)))' \
+        | jq -r .project \
+        | head -n1
+}
+
+ssh_to_vm() {
+    vm=$1
+    shift
+
+    env_short_code=$(echo $vm | grep -E '^[pi]-[a-z0-9]+-' | sed -E 's/^(.)-([a-z0-9]+)-.+/\1 \2/')
+    if [ -z "$env_short_code" ]
+    then
+        >&2 echo "The VM $vm does not seem to be a Skynet VM"
+        exit 1
+    fi
+
+    env=$(echo $env_short_code | cut -d' ' -f 1)
+    short_code=$(echo $env_short_code | cut -d' ' -f 2)
+
+    project=$(__find_project $env $short_code)
+    if [ -z "$project" ]
+    then
+        >&2 echo "Cannot find project for $vm. Please run 'kssh update-inventory'"
+        exit 2
+    fi
+
+    ip=$(__find_ip $project $vm)
+    if [ -z "$ip" ]
+    then
+        >&2 echo "Cannot get the IP address of $vm in project $project"
+        exit 3
+    fi
+
+    # >&2 echo "ssh $vm -> $ip"
+    __connect_with_config ssh $vm $ip $vm "$@"
+}
+
+do_scp() {
+  vm=
+  args=()
+  for arg in "$@"
+  do
+    if [[ $arg =~ ^([ip]-....-.+)(:)(.*) ]]
+    then
+        vm=("${match[1]}")
+    fi
+    args+=("$arg")
+  done
+
+  if [ -z "$vm" ]
+  then
+      __connect_with_ip scp "${args[@]}"
+      return 0
+  fi
+
+  env=$(echo $vm | cut -d'-' -f 1)
+  short_code=$(echo $vm | cut -d'-' -f 2)
+
+  project=$(__find_project $env $short_code)
+  if [ -z "$project" ]
+  then
+      >&2 echo "Cannot find project for $vm. Please run 'kssh update-inventory'"
+      exit 2
+  fi
+
+  ip=$(__find_ip $project $vm)
+  if [ -z "$ip" ]
+  then
+      >&2 echo "Cannot get the IP address of $vm in project $project"
+      exit 3
+  fi
+
+  __connect_with_config scp $vm $ip "$@"
+}
+
+ssh_app() {
+    qapp=$1
+    qproject=$2
+    qvm=$3
+
+    app=$(cat $CONFIG_DIR/services.json | jq -r '.app'  | sort -u | fzf -q "$qapp" --reverse)
+    [ -z "$app" ] && exit 1
+
+    project=$(cat $CONFIG_DIR/services.json $CONFIG_DIR/services-patroni.json $CONFIG_DIR/services-mongodb.json | jq -r --arg app $app 'select(.app==$app) | "\(.project) \(.project_name)"' | fzf -q "$qproject" --reverse | cut -d' ' -f 1)
+    [ -z "$project" ] && exit 1
+
+    vm_ip=$(gcloud compute instances list --project $project --filter="labels.app: $app" --format='table(NAME,INTERNAL_IP,STATUS,creationTimestamp.date(tz=LOCAL))' | fzf -q "$qvm" --header-lines=1 --reverse | awk '{print $1 " " $2}')
+    [ -z "$vm_ip" ] && exit 1
+
+    read vm ip <<< "$vm_ip"
+
+    echo kernel ssh --google-project=$project $vm
+    __connect_with_config ssh $vm $ip $vm
+}
+
+cmd=$(basename "$0")
+
+if [[ $1 =~ ^https: ]]
+then
+    ssh_from_url $@
+elif [[ $1 = "update-inventory" ]]
+then
+    update_inventory
+elif [[ $1 = "vm" ]]
+then
+    shift
+    ssh_to_vm $@
+elif [[ $1 = "ip" ]]
+then
+    shift
+    ssh_to_ip $@
+elif [[ $1 = "scp" ]]
+then
+    shift
+    do_scp $@
+elif [[ "$cmd" = "kscp" ]]
+then
+    do_scp $@
+elif [[ $1 == "app" ]]
+then
+    shift
+    ssh_app $@
+elif [[ $1 =~ ^[ip]-....- ]]
+then
+    ssh_to_vm $@
+elif [[ $1 =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]
+then
+    ssh_to_ip $@
+else
+    echo "Unsupported parameter: $1"
+    exit 1
+fi
+

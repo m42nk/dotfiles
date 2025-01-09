@@ -25,3 +25,6 @@ customCommands:
 gui:
   showIcons: true
   nerdFontsVersion: "3"
+
+# os:
+#   edit: "nvim --server $NVIM --remote-tab {{filename}}"
