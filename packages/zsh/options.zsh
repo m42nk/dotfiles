@@ -11,7 +11,7 @@ setopt inc_append_history_time   # Append to history after each command is compl
 # setopt inc_append_history   # Append to history after each command is started
 
 setopt hist_ignore_space    # Don't add to history if a command starts with space
-setopt hist_reduce_blanks   # Remove unnecessary blanks (replace multiple consecutive space with single space)
+# setopt hist_reduce_blanks   # Remove unnecessary blanks (replace multiple consecutive space with single space), ignore new line
 setopt hist_find_no_dups    # Remove duplicate from find history (ctrl+r)
 setopt hist_ignore_all_dups # Remove older dupe regardless if they aren't consecutive
 # setopt hist_ignore_dups     # Don't add command to history if it's the same as the previous one

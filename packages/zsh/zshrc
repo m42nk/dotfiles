@@ -76,6 +76,7 @@ src $ZSH/hooks.zsh             # Zsh hooks
 src $ZSH/plugins.zsh           # Zsh plugins
 src $ZSH/pnpm.zsh              # Pnpm setup # THIS BROKE IT
 src $ZSH/git-auto-fetch.zsh    # Fetch git repos every 60s
+src $ZSH/z-fzf.zsh             # zshz and fzf integration
 # src $ZSH/autostarts.zsh        # Autostart applications, TODO: handle mac
 # src $ZSH/homebrew.zsh          # Homebrew setup, variables, fpath, etc #DELETEME
 

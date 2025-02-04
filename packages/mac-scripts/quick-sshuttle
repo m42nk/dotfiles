@@ -7,10 +7,11 @@ proc notify {message} {
 }
 
 proc log {message} {
-  send_user "\n\[log\] $message\n"
+  send_user "\n\[log\] $message"
 }
 
 notify "Connecting..."
+exec say Enter password
 
 # Read password from the user
 send_user "Password: "
@@ -30,15 +31,13 @@ spawn sshuttle -r proxy-bastion --dns 10.69.0.0/16 10.224.0.0/16
 expect "\\\[local sudo\\\] Password: "
 send -- "$password\r"
 
-log "Waiting for authentication method list\n"
+log "Waiting for authentication method list"
 set code_line_number ""
 expect {
   "Please choose from the available authentication methods" {
     expect {
       -re {(\d+): Security code from Google Authenticator application} {
         set code_line_number $expect_out(1,string)
-        log "found code line number: $code_line_number"
-        exp_continue
       }
       timeout {
         log "Timeout while waiting for authentication method list"
@@ -49,6 +48,8 @@ expect {
         exit 1
       }
     }
+
+    exp_continue
   }
   "Enter the number for the authentication method to use" {
     send -- "$code_line_number\r"

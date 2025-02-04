@@ -199,3 +199,46 @@ escape-quotes() {
   quote_char="${1:-\"}"
   cat | sed -E "s/\\$quote_char/\\\\$quote_char/g"
 }
+
+scratch-notes() {
+  SCRATCH_DIR="$HOME/Scratch"
+
+  filename="$1"
+  if [[ -n $filename ]]; then
+    nvim "$SCRATCH_DIR/$filename"
+    return
+  fi
+
+  prefix="untitled-"
+  ext=".txt"
+
+  # Extract numbers from filenames, sort, and get the highest
+  highest_num=$(ls | awk -F'[-.]' '/untitled-[0-9]+\.txt$/ {print $2}' | sort -V | tail -1)
+
+  # Default to 0 if no files exist, then increment
+  next_num=$(( (highest_num + 0) + 1 ))  # Ensure numeric increment
+
+  # Print the next filename
+  filename="${prefix}${next_num}${ext}"
+  nvim "$SCRATCH_DIR/$filename"
+}
+
+
+diff-trams(){
+  # # awk note: it uses to ignore moved lines
+  # # dbpostgres/factory/gtfs_route.go:12:6: unreachable func: MakeGTFSRoute
+  # # $1: dbpostgres/factory/gtfs_route.go
+  # # $5: MakeGTFSRoute
+  # diff -u \
+  #   <(cat /tmp/trams-deadcode-original) \
+  #   <(deadcode ./...) \
+  #   | grep -E "^[+|-]" | grep -v -E "^[+|-]{3}" \
+  #   | sed -E 's/^[+|-]//' \
+  #   | awk -F ':' '!seen[$1, $5]++' \
+  #   | sort | bat --style=grid --paging=never
+
+  grep -Fvx -f \
+    <(cut -d: -f1,4,5 /tmp/trams-deadcode-original) \
+    <(deadcode ./... | cut -d: -f1,4,5) \
+    | bat --style=grid --paging=never
+}
