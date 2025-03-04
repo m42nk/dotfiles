@@ -242,3 +242,9 @@ diff-trams(){
     <(deadcode ./... | cut -d: -f1,4,5) \
     | bat --style=grid --paging=never
 }
+
+quote-lines() {
+  quote_char="${1:-\"}"
+  comma_char="${2:-,}"
+  sed -E "s/(.*)/$quote_char\1$quote_char$comma_char/"
+}

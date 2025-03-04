@@ -51,3 +51,5 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
+[protocol]
+	version = 2

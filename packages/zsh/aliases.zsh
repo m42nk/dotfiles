@@ -40,7 +40,7 @@ hash -d oda="~/Work/order-data-aggregator"
 ##  to use actual command without alias prefix it with backslash (\)
 ##  eg. \ls, \rm -rf
 alias vim="nvim"
-alias ls="exa --icons --group-directories-first"          # Pretty ls
+alias ls="eza --icons --group-directories-first"          # Pretty ls
 alias cat="bat"                                           # Pretty cat, syntax highlight, etc
 alias mv="mv -iv"                                         # Verbose + safer move
 alias cp="cp -iv"                                         # Verbose + safer cp
@@ -66,7 +66,7 @@ alias prof="zprof | bat"                                    # List shell startup
 alias perf="hyperfine --warmup 3 'zsh -ic exit'"            # Shell startup time
 alias ez="exec zsh"                                         # Restart zsh
 alias vbox="virtualbox"                                     # Shorter virtualbox
-alias lsnew="exa -1snew"                                    # Ls sort by newest (bottom -> top)
+alias lsnew="eza -1snew"                                    # Ls sort by newest (bottom -> top)
 alias cdp="cd -P"                                           # Follow symlink
 alias chal="$EDITOR $0 && echo 'Reloading zsh' && exec zsh" # Change alias and reload zsh
 alias chkb="$EDITOR ~/.config/sxhkd/sxhkdrc"                # Change keybind and reload sxhkd
