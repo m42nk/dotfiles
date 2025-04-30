@@ -1,0 +1,48 @@
+#!/bin/bash
+
+SESSION_NAME="$(basename "$0")"
+
+# Start a new tmux session detached
+tmux new-session -d -s "$SESSION_NAME"
+if [ $? -ne 0 ]; then
+  echo "$SESSION_NAME session already exists, recreate it? [y/N]"
+  read -r RECREATE
+  if [[ "$RECREATE" =~ ^[yY]$ ]]; then
+    tmux kill-session -t "$SESSION_NAME"
+    tmux new-session -d -s "$SESSION_NAME"
+  else
+    echo "Exiting without changes."
+    exit 1
+  fi
+fi
+
+CMD_1="echo 'kubectl exec -it octopus-server-xxx -c octopus-server -- sh -c \"tcpdump -s0 -Aql port 8080 | grep -A100 'xanhsm/callback'\"'"
+CMD_2='/opt/homebrew/opt/privoxy/sbin/privoxy --no-daemon /opt/homebrew/etc/privoxy/config'
+CMD_3="gocloud-int-proxy"
+
+# Capture the window ID dynamically
+WINDOW_ID=$(tmux list-windows -t "$SESSION_NAME" -F '#{window_id}')
+
+# Run command in left pane
+LEFT_PANE=$(tmux list-panes -t "$WINDOW_ID" -F '#{pane_id}' | sed -n '1p')
+tmux send-keys -t "$LEFT_PANE" "$CMD_1" C-m
+
+# Split right vertically (creating top right)
+tmux split-window -h -t "$LEFT_PANE"
+TOP_RIGHT_PANE=$(tmux list-panes -t "$WINDOW_ID" -F '#{pane_id}' | sed -n '2p')
+tmux send-keys -t "$TOP_RIGHT_PANE" "$CMD_2" C-m
+
+# Split bottom right
+BOTTOM_RIGHT_PANE=$(tmux split-window -v -t "$TOP_RIGHT_PANE")
+BOTTOM_RIGHT_PANE_ID=$(tmux list-panes -t "$WINDOW_ID" -F '#{pane_id}' | sed -n '3p')
+tmux send-keys -t "$BOTTOM_RIGHT_PANE_ID" "$CMD_3" C-m
+
+# Focus back to left pane
+tmux select-pane -t "$LEFT_PANE"
+
+# Switch to the session if inside tmux, otherwise attach
+if [ -n "$TMUX" ]; then
+  tmux switch-client -t "$SESSION_NAME"
+else
+  tmux attach-session -t "$SESSION_NAME"
+fi
