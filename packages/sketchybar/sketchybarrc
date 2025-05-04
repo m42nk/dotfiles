@@ -39,11 +39,14 @@ items_left=(
   --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh"
   --subscribe front_app front_app_switched
 
-  --add item mem left
-  --set mem icon=  icon.padding_left=6 update_freq=3 script=$PLUGIN_DIR/cpumem.sh
-
   --add item cpu left
   --set cpu icon=  icon.padding_left=6 background.padding_right=0
+
+  --add item cputemp left
+  --set cputemp icon= icon.padding_left=6 background.padding_right=0
+
+  --add item mem left
+  --set mem icon=  icon.padding_left=6 update_freq=3 script=$PLUGIN_DIR/cpumem.sh
 
   --add item bluetooth left
   --set bluetooth icon.padding_left=6 background.padding_right=0 update_freq=3 script=$PLUGIN_DIR/bluetooth.sh

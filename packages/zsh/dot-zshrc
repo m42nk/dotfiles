@@ -80,7 +80,8 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
 
   # Mac M1 compatibility
   export DOCKER_DEFAULT_PLATFORM=linux/amd64
-  export PATH="/opt/homebrew/bin:$PATH"
+  # export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="$PATH:/opt/homebrew/bin"
 fi
 
 # Created by `pipx` on 2024-03-17 12:15:45

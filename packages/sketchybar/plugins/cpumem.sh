@@ -16,6 +16,10 @@ cpu_total=$(echo $cpu_info | awk -v ncpu=$ncpu '{ sum += $1 } END {printf("%2d\n
 
 mem=$(memory_pressure | awk '/^System-wide memory free percentage: /{ printf("%d\n", 100-$5) }')
 
+if command -v /usr/local/bin/smctemp &> /dev/null; then
+  cputemp=$(/usr/local/bin/smctemp -cf)
+fi
+
 case $cpu_total in
 [7-9]? | 100) cpu_color=$COLOR[red] ;;
 [4-6]?) cpu_color=$COLOR[orange] ;;
@@ -30,8 +34,16 @@ case $mem in
 *) mem_color=$COLOR[green] ;;
 esac
 
+case $cputemp in
+[7-9]? | 100) temp_color=$COLOR[red] ;;
+[4-6]?) temp_color=$COLOR[orange] ;;
+[2-3]?) temp_color=$COLOR[yellow] ;;
+*) temp_color=$COLOR[green] ;;
+esac
+
 # cpu_total=$(printf "%03d" $cpu_total | sed -E 's/^0+/ /')
 # mem=$(printf "%03d" $mem | sed -E 's/^0+/ /')
 
 sketchybar --set cpu label=$cpu_total% icon.color=$cpu_color \
-	--set mem label=$mem% icon.color=$mem_color
+	--set mem label=$mem% icon.color=$mem_color \
+  --set cputemp label=$cputemp°C icon.color=$temp_color
