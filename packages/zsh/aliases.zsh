@@ -40,6 +40,7 @@ hash -d oda="~/Work/order-data-aggregator"
 ##  to use actual command without alias prefix it with backslash (\)
 ##  eg. \ls, \rm -rf
 alias vim="nvim"
+alias vimm="echo '' | nvim -"                             # Open new empty file in nvim
 alias ls="eza --icons --group-directories-first"          # Pretty ls
 alias cat="bat"                                           # Pretty cat, syntax highlight, etc
 alias mv="mv -iv"                                         # Verbose + safer move
@@ -123,8 +124,9 @@ alias dcd="docker compose down"
 ## Kubernetes
 alias k="kubectl"
 alias kns="kubens"
-alias kctx="kubectx"
+alias kcx="kubectx"
 alias kx="kubectl exec -it"
+alias kgp="kubectl get pods"
 
 ## Tmux
 alias tks='tmux kill-server'
@@ -132,6 +134,7 @@ alias tls='tmux list-session'
 alias tcl='clear; tmux clear-history'
 alias ts='~/.config/tmux/scripts/launcher.sh -mode session'
 alias tss='~/.config/tmux/scripts/launcher.sh -mode session -replace'
+alias trn="tmux "
 
 ## Node
 alias nrd="npm run dev"
@@ -175,3 +178,5 @@ alias lsst="cat /Users/syakhisk.syari/Work/ep-esb-log-entities/src/main/proto/go
 
 alias lastcmd="fc -ln -1"
 alias scr="scratch-notes"
+
+alias ask="gh copilot suggest -t shell"

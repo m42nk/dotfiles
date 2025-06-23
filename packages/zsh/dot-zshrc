@@ -57,6 +57,8 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
 
   export PATH="$PATH:/Applications/GoLand.app/Contents/MacOS"
 
+  [[ -d "$HOME/zig-installation" ]] && export PATH="$PATH:$HOME/zig-installation"
+
   # # check if directory starts with "~/Work/"
   # ___update_goenv(){
   #   if [[ $(pwd) == $HOME/Work/* ]]; then
@@ -121,4 +123,9 @@ _gitlab-ci-local_yargs_completions()
 }
 compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
 ###-end-gitlab-ci-local-completions-###
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/syakhisk.syari/.lmstudio/bin"
+# End of LM Studio CLI section
 

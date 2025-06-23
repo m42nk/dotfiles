@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+
+import json
+import csv
+import argparse
+import sys
+from typing import Any, Dict, List, TextIO
+
+
+def flatten(d: Dict[str, Any], parent_key: str = "", sep: str = ".") -> Dict[str, Any]:
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+
+def exclude_fields(d: Dict[str, Any], exclude_keys: List[str]) -> Dict[str, Any]:
+    return {k: v for k, v in d.items() if k not in exclude_keys}
+
+
+def extract_query(data: Any, query: str) -> Any:
+    keys = query.lstrip(".").split(".")
+    for key in keys:
+        if isinstance(data, dict) and key in data:
+            data = data[key]
+        else:
+            sys.exit(f"Error: Key '{key}' not found in JSON data.")
+    return data
+
+
+def read_input(input_path: str | None, query: str | None) -> List[Dict[str, Any]]:
+    source: TextIO = open(input_path, encoding="utf-8") if input_path else sys.stdin
+    with source:
+        data = json.load(source)
+
+    if query:
+        data = extract_query(data, query)
+
+    if not isinstance(data, list):
+        sys.exit("Error: JSON root must be a list of objects after query resolution.")
+    return data
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Convert JSON to CSV")
+    parser.add_argument(
+        "-i", "--input", help="Input JSON file. Reads from stdin if not provided."
+    )
+    parser.add_argument("-o", "--output", help="Output CSV file (default: stdout)")
+    parser.add_argument(
+        "-x",
+        "--exclude",
+        nargs="*",
+        default=[],
+        help="Fields to exclude (dot notation)",
+    )
+    parser.add_argument(
+        "-n",
+        "--no-flatten",
+        action="store_true",
+        help="Disable flattening of nested fields",
+    )
+    parser.add_argument(
+        "-q",
+        "--query",
+        help="JQ-style query to select the list to convert, e.g. .data.items",
+    )
+    args = parser.parse_args()
+
+    data = read_input(args.input, args.query)
+
+    processed = []
+    for item in data:
+        row = item if args.no_flatten else flatten(item)
+        row = exclude_fields(row, args.exclude)
+        processed.append(row)
+
+    if not processed:
+        sys.exit("Error: No data to write.")
+
+    fieldnames = sorted({key for row in processed for key in row.keys()})
+    output_file = (
+        open(args.output, "w", encoding="utf-8", newline="")
+        if args.output
+        else sys.stdout
+    )
+    writer = csv.DictWriter(output_file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(processed)
+
+    if args.output:
+        output_file.close()
+
+
+if __name__ == "__main__":
+    main()

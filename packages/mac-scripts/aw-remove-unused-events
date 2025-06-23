@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+import requests
+import socket
+import re
+
+from concurrent.futures import ThreadPoolExecutor
+
+BUCKET = "aw-watcher-window_{}".format(socket.gethostname())
+
+POOL = ThreadPoolExecutor(max_workers=10)
+EXCLUDE_PATTERN = [r"^loginwindow$"]
+
+events = requests.get(
+    f"http://localhost:5600/api/0/buckets/{BUCKET}/events?limit=5000"
+).json()
+
+
+def delete(e):
+    resp = requests.delete(
+        f'http://localhost:5600/api/0/buckets/{BUCKET}/events/{e["id"]}'
+    )
+    if resp.status_code != 200:
+        print("failed to delete event", e["data"]["title"])
+    else:
+        print("deleted event", e["data"]["title"])
+
+
+for e in events:
+    for pattern in EXCLUDE_PATTERN:
+        if re.compile(pattern).search(e["data"]["title"]):
+            POOL.submit(delete, e)

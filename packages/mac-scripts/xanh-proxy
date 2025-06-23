@@ -18,7 +18,8 @@ fi
 
 CMD_1="echo 'kubectl exec -it octopus-server-xxx -c octopus-server -- sh -c \"tcpdump -s0 -Aql port 8080 | grep -A100 'xanhsm/callback'\"'"
 CMD_2='/opt/homebrew/opt/privoxy/sbin/privoxy --no-daemon /opt/homebrew/etc/privoxy/config'
-CMD_3="gocloud-int-proxy"
+# CMD_3="gocloud-int-proxy"
+CMD_3="tsh-int-proxy"
 
 # Capture the window ID dynamically
 WINDOW_ID=$(tmux list-windows -t "$SESSION_NAME" -F '#{window_id}')
