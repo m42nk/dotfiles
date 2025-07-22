@@ -1,0 +1,61 @@
+#!/bin/bash
+
+target_branch="${1:-master}" # Default to 'master' if not provided
+
+get_remote_url() {
+  git remote get-url origin
+}
+
+# parse_repo_url() {
+#   local remote_url="$1"
+#
+#   if [[ "$remote_url" =~ ^git@([^:]+):(.+?)(\.git)?$ ]]; then
+#     echo "https://${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+#   elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+?)(\.git)?$ ]]; then
+#     echo "https://${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+#   else
+#     echo "Error: can't parse remote URL" >&2
+#     exit 1
+#   fi
+# }
+
+parse_repo_url() {
+  local remote_url="$1"
+
+  if [[ "$remote_url" =~ ^git@([^:]+):(.+)$ ]]; then
+    echo "https://${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+  elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)$ ]]; then
+    echo "https://${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+  else
+    echo "Error: can't parse remote URL" >&2
+    exit 1
+  fi
+}
+
+open_mr_url() {
+  local repo_url="$1"
+  local source_branch="$2"
+  local target_branch="$3"
+  local mr_url="${repo_url}/-/merge_requests/new?merge_request[source_branch]=${source_branch}&merge_request[target_branch]=${target_branch}"
+
+  if command -v xdg-open >/dev/null; then
+    xdg-open "$mr_url"
+  else
+    open "$mr_url" # macOS
+  fi
+}
+
+main() {
+  local remote_url
+  remote_url=$(get_remote_url)
+
+  local repo_url
+  repo_url=$(parse_repo_url "$remote_url")
+
+  local source_branch
+  source_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  open_mr_url "$repo_url" "$source_branch" "$target_branch"
+}
+
+main

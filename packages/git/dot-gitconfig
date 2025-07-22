@@ -43,13 +43,13 @@
 [diff]
   colorMoved = default
 
-[includeIf "gitdir:~/Work/"]
-  path = ~/.gojek.gitconfig
-
-[url "git@source.golabs.io:"]
-	insteadOf = https://source.golabs.io/
 [diff "lockb"]
 	textconv = bun
 	binary = true
+
 [protocol]
 	version = 2
+
+[includeIf "gitdir:~/Work/"]
+  path = ~/.gojek.gitconfig
+

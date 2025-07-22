@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Apps to place in the 1/4 screen (right side)
+APP_NAMES=(
+  "Safari"
+  "YT Music"
+  "YouTube"
+)
+
+# Get display dimensions
+DISPLAY_ID=$(yabai -m query --displays --display | jq '.id')
+SCREEN_WIDTH=$(yabai -m query --displays --display | jq '.frame.w' | xargs printf "%.0f")
+SCREEN_HEIGHT=$(yabai -m query --displays --display | jq '.frame.h' | xargs printf "%.0f")
+
+# Calculate split sizes
+LEFT_WIDTH=$((SCREEN_WIDTH * 5 / 6))
+RIGHT_WIDTH=$((SCREEN_WIDTH - LEFT_WIDTH))
+
+# Loop through all windows on the current space
+yabai -m query --windows --space | jq -c '.[]' | while read -r window; do
+  WIN_ID=$(echo "$window" | jq '.id')
+  APP_NAME=$(echo "$window" | jq -r '.app')
+
+  # Check if this app is in the right-side list
+  IS_MATCH=false
+  for TARGET_APP in "${APP_NAMES[@]}"; do
+    if [[ "$APP_NAME" == "$TARGET_APP" ]]; then
+      IS_MATCH=true
+      break
+    fi
+  done
+
+  LOG_PATH="/tmp/yabai-movie-mode.log"
+  (
+    if $IS_MATCH; then
+      # Move to right 1/4
+      yabai -m window "$WIN_ID" --move abs:$LEFT_WIDTH:0 2>>"$LOG_PATH"
+      yabai -m window "$WIN_ID" --resize abs:$RIGHT_WIDTH:$SCREEN_HEIGHT 2>>"$LOG_PATH"
+    else
+      # Move to left 3/4
+      yabai -m window "$WIN_ID" --move abs:0:0 2>>"$LOG_PATH"
+      yabai -m window "$WIN_ID" --resize abs:$LEFT_WIDTH:$SCREEN_HEIGHT 2>>"$LOG_PATH"
+    fi
+  )
+
+  err=$?
+  if [ $err -ne 0 ]; then
+    echo "Error processing window ID $WIN_ID for app $APP_NAME"
+  fi
+done

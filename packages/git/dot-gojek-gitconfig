@@ -12,4 +12,9 @@
 [url "git@source.golabs.io:"]
 	insteadOf = https://source.golabs.io/
 
+[core]
+    hooksPath = ~/.git-templates/hooks
+[init]
+	templateDir = ~/.git-templates
+
 # vim: ft=gitconfig

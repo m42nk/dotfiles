@@ -80,6 +80,8 @@ if [[ -d '/Users/syakhisk.syari' ]]; then
   # export GOROOT="$(brew --prefix golang)/libexec"
   # export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
+  # export GO111MODULE="off"
+
   # Mac M1 compatibility
   export DOCKER_DEFAULT_PLATFORM=linux/amd64
   # export PATH="/opt/homebrew/bin:$PATH"
@@ -129,3 +131,4 @@ compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
 export PATH="$PATH:/Users/syakhisk.syari/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# export MLC_LLM_SOURCE_DIR="$HOME/Repos/mlc-llm"
