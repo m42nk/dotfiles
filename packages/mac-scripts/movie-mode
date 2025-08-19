@@ -5,6 +5,7 @@ APP_NAMES=(
   "Safari"
   "YT Music"
   "YouTube"
+  "mpv"
 )
 
 # Get display dimensions
@@ -12,8 +13,12 @@ DISPLAY_ID=$(yabai -m query --displays --display | jq '.id')
 SCREEN_WIDTH=$(yabai -m query --displays --display | jq '.frame.w' | xargs printf "%.0f")
 SCREEN_HEIGHT=$(yabai -m query --displays --display | jq '.frame.h' | xargs printf "%.0f")
 
+RATIOSTR="${1:-5/6}"
+RATIO=$(echo "scale=10; $RATIOSTR" | bc 2>/dev/null)
+
 # Calculate split sizes
-LEFT_WIDTH=$((SCREEN_WIDTH * 5 / 6))
+# LEFT_WIDTH=$((SCREEN_WIDTH * 5 / 6))
+LEFT_WIDTH=$(echo "$SCREEN_WIDTH * $RATIO" | bc | xargs printf "%.0f")
 RIGHT_WIDTH=$((SCREEN_WIDTH - LEFT_WIDTH))
 
 # Loop through all windows on the current space

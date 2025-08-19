@@ -132,3 +132,6 @@ export PATH="$PATH:/Users/syakhisk.syari/.lmstudio/bin"
 # End of LM Studio CLI section
 
 # export MLC_LLM_SOURCE_DIR="$HOME/Repos/mlc-llm"
+
+# opencode
+export PATH=/Users/syakhisk.syari/.opencode/bin:$PATH

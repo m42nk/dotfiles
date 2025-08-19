@@ -120,6 +120,7 @@ alias glmrvw="glab mr view --web"
 alias dcud="docker compose up -d"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
+alias lzd="lazydocker"
 
 ## Kubernetes
 alias k="kubectl"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+URL="${1:-"https://vid.speedlight.site/video.m3u8?q=N0lvWXFLU2JpYVZQS0hVcnhobnJZQTphcDJKSDlad0dBS1B0X1I0WURTMmNaQVh4STB1U1FfTkV3S1pjVm1jbkNRRzFJa09hMUx4bWEzbzNtTHhxaVc2N3pKZTZFaWI1NE1ZdWdRaHJkN2w3T3JXN1RuQjhGOGl0c3ZpMVJNTUwwNHpPbXFZQ2Z1ak4xc1p5REg5dElLcEo1RVMwRU4zODl4M2ZScDZsSmFHNXJBYWFpYnpWYUxwY01KendUOFhaY0IzSlkzUDdwUE5FNkl3M1NYcW9tOXVMbGUtbk4tZWxnNWx3b1h3NHI4SzF1UFlyQ3JTOGJoWG11VzFYLUxwV21oVVBYQ0JUaloxdXhZN2tvYktWQVk2S2hfbmVvYVVvZG1GdnBiSkdRaC1qQ2llQk1OcnRDRmprZlhRSHU2alJnVmUwNDZ3bWs1R1RGbE90cGlyTm1tTi1MeXQ0aGdzV0RkZUJ0M0ptNmFKVklnMXh4Q0cybmlyQ2lEVUlpQ3hDdlBYUTFMQjdlTGdaLUhidWVJQ1R6YXdCS3lCWVllcU5LbHA2b3RfT3lsSXo5Q3NpelNseFgyVnlWNFpURkozZl9F"}"
+SUB="${2:-"https://cca.megafiles.store/58/b1/58b108555cd2fc6c93dfeafc08b5e657/58b108555cd2fc6c93dfeafc08b5e657.vtt"}"
+REFERRER="${3:-"https://www.cineby.app/"}"
+
+mpv "$URL" \
+  --sub-file="$SUB" \
+  --referrer="$REFERRER" \
+  --start=00:34:30 \
+  --sub-font-size=72
