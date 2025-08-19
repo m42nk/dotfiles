@@ -23,6 +23,8 @@ setopt list_rows_first      # Sort match in row instead of cols
 setopt list_packed          # Completion menu takes less space
 setopt no_auto_param_slash  # Add trailing / at the end of directory
 setopt auto_remove_slash    # Add trailing / at the end of directory
-# setopt menu_complete      # Put first match if multiple match is found
+setopt menu_complete      # Put first match if multiple match is found
 
 setopt globdots # Include dotfile in completion without typing `.`
+
+setopt no_list_ambiguous # don't insert common prefix for ambiguous matches

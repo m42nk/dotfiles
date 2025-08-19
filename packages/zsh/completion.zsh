@@ -74,4 +74,5 @@ zstyle ':completion:*' group-name ''
 
 ## Completion menu
 ## Use select menu if there's more than 2 match
-zstyle '*:completion:*' menu select=2
+# zstyle '*:completion:*' menu select=2
+zstyle '*:completion:*' menu select
